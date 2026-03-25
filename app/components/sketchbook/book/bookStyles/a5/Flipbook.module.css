@@ -1,0 +1,50 @@
+.coverPage {
+    background-color: #3b2319;
+    border-width: 1px;
+    border-color: #482b1e;
+    border-radius: 20px;
+    border-left: #72442f75 solid 10px;
+
+    border-right: #482b1e solid 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .6));
+}
+
+.InnerCoverPage {
+    border-color: #482b1e;
+    background-color: #3b2319;
+    border-width: 1px;
+    border-radius: 20px;
+    border-left: #482b1e solid 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .2));
+}
+
+.rightPage {
+    background-color: bisque;
+    border-width: 1px;
+    border-color: #3b231971;
+    border-radius: 20px;
+    overflow: hidden;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
+
+}
+
+.leftPage {
+    background-color: bisque;
+    border-width: 1px;
+    border-right-width: 0;
+    border-color: #3b231971;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 640px;
+    width: 400;
+    margin-left: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, .3));
+}

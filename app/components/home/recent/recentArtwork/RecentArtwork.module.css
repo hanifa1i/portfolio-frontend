@@ -1,0 +1,53 @@
+.artCard {
+    flex: 1;
+    border-radius: 0.5rem;
+    background-color: #000;
+    transition: all;
+    transition-duration: 500ms;
+}
+
+.artCard:hover {
+    transition: all;
+    transition-duration: 500ms;
+    transition-delay: 0ms;
+    flex: 6;
+}
+
+.artCardImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.expandButton {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px;
+    padding: 10px;
+    border-radius: 2rem;
+    background-color: #0000009a;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.artCard:hover .expandButton {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    opacity: 100;
+
+}
+
+.expandButton:hover {
+    transform: rotate(90deg) scale(1.2);
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 0.3rem;
+    background-color: #000000;
+    animation-name: none;
+}

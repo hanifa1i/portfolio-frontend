@@ -1,0 +1,47 @@
+.iconContainer {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5rem;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all;
+    transition-duration: 500ms;
+}
+.iconImage {
+    transition: all 500ms;
+    width: 20px;
+    height: 20px;
+}
+.iconName {
+    opacity: 0;
+    width: 0;
+    color: #222;
+    font-weight: 500;
+    overflow: hidden;
+    font-size: medium;
+    transition: all 500ms;
+}
+
+.iconContainer:hover {
+    background-color: #f1f1f1;
+    width: 150px;
+    height: 60px;
+    transition: all;
+    transition-duration: 200ms;
+    justify-content: flex-start;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+.iconContainer:hover .iconName {
+    opacity: 100;
+    transition: all;
+    transition-duration: 500ms;
+    width: fit-content;
+    margin: auto;
+}
+.iconContainer:hover .iconImage {
+    transform: rotate(360deg);
+}
+

@@ -1,0 +1,33 @@
+.innerCoverStitching {
+    border-width: 2px;
+    border-color: #523322;
+    height: 668px;
+    margin: 15px;
+    margin-right: 0px;
+    border-right-width: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-style: dashed;
+    display: flex;
+}
+
+.innerCoverPocket {
+    flex: 2;
+    background-color: #3b2319;
+    filter: drop-shadow(5px 0px 1px rgba(0, 0, 0, .3));
+}
+
+.innerCoverPocketStitching {
+    border-right: #523322 dashed 2px;
+    height: 100%;
+    margin-right: 10px;
+    filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, .5));
+}
+
+.innerCoverBook {
+    flex: 3;
+    background-color: bisque;
+    height: auto;
+    border-top: #333 solid 10px;
+    border-bottom: #333 solid 10px;
+}

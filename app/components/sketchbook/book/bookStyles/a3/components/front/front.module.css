@@ -1,0 +1,50 @@
+.default {
+        transition: all 500ms;
+
+}
+.ring {
+    position: absolute;
+    top: calc(30px+ var(--ringGapFront));
+    background-color: #222;
+    width: 10px;
+    height: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 100;
+}
+
+
+
+.ringAfter {
+    position: absolute;
+    top: calc(30px+ var(--ringGapFront));
+    background-color: #555;
+    border-left: #ccc solid 10px;
+    border-right: #333 solid 20px;
+    left: -25px;
+    width: 50px;
+    height: 10px;
+    border-radius: 10px;
+    z-index: 200;
+
+}
+.hole {
+    position: absolute;
+    top: calc(25px+ var(--ringGapFront));
+    background-color: #0000003b;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    z-index: 200;
+
+}
+.transition {
+    animation: ringAni 500ms forwards;
+    left: 20px;
+
+}
+@keyframes ringAni {
+    90%{ left: 0px;}
+    100%{left: -25px;}
+}

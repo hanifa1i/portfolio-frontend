@@ -1,0 +1,315 @@
+.avatar {
+    width: fit-content;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 1.5rem;
+    margin-right: 20px;
+    background-color: #FFC700;
+    transition: all;
+    transition-duration: 500ms;
+    overflow: visible;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .2));
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    transition: all;
+    transition-duration: 500ms;
+}
+
+.avatarImage {
+    height: 95%;
+    margin: auto;
+    position: relative;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.avatarImageHidden {
+    width: 0px;
+}
+
+.form {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.openLogin {
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.openLogin:hover {
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.paddingRight{ padding-right: 15px;}
+.paddingRight:hover{ padding-right: 15px;}
+
+
+.password {
+    height: 70%;
+    width: 40px;
+    font-size: small;
+    margin-left: 10px;
+    background-color: #ffffff80;
+    padding-left: 10px;
+    color: #111;
+    border-radius: 10px;
+    font-weight: 500;
+
+}
+
+input::placeholder {
+
+    color: #111111;
+}
+
+.password:hover {
+        background-color: #ffffff80;
+
+}
+
+.password:focus {
+    width: 100px;
+    background-color: #ffffff;
+}
+.loginButton {
+display: flex;
+padding-top: 1px;
+  align-items: start;
+    background-color: #111;
+    height: 70%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+.loginButton:hover {
+    background-color: #349c42;
+    padding-left: 30px;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
+
+}
+.loginButton:active {
+    background-color: #223925;
+    padding-left: 40px;
+}
+.logoutButton {
+    align-items: center;
+    padding-top: 0;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #111;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #00000050;
+    animation: loadingProfile 500ms  ;
+}
+.logoutButton:hover {
+    background-color: #9c3434;
+    color: #ccc;
+}
+.loginButton:active {
+    background-color: #392222;
+}
+@keyframes loadingProfile{
+    0%{
+        padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+    }
+    100%{
+
+    margin-left: 10px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+}
+
+.input {
+    transition: all 500ms;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.usernameDisplay {
+    height: fit-content;
+    margin-left: 5px;
+    margin-right: 10px;
+    color: #fff;
+    background: #14602f;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: all 500ms;
+    font-size: 13px;
+    animation: easeInUsername 500ms ;
+}
+
+
+.exit {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -20px;
+    margin-top: 5px;
+    background-color: #333;
+    text-align: center;
+    align-content: center;
+    border-radius: 15px;
+    transition: all 200ms;
+    font-size: 10px;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
+    cursor: pointer;
+}
+.exit:hover {
+    background-color: #9c3434;
+        font-size: 12px;
+        transform: scale(1.1);
+
+}
+.exit:active {
+    background-color: #662121;
+}
+.hide {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+}
+.hideExit {
+    position: absolute;
+    left: 0px;
+    margin-top: 20px;
+}
+
+.loading {
+    height: 20px;
+    width: 5px;
+    border-radius: 10px;
+    background-color: #11111170;
+    margin-left: 0px;
+    margin-right: 0px;
+    transition: all 500ms;
+}
+.loadingRotate {
+    margin-left: 10px;
+    margin-right: 10px;
+        height: 20px;
+    width: 7px;
+    animation: rotate 1500ms forwards;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate {
+    0% { background-color:#111111 }
+    16% { background-color:#ff8d03; width: 20px }
+    33%{ transform: rotate(360deg) }
+    100%{ transform: rotate(360deg); background-color:#111111 }
+}
+
+.success {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20px;
+    width: 7px;
+    animation: success 500ms forwards;
+}
+@keyframes success {
+    100% {    background-color:#199d4c;
+    width: 20px;}
+    
+}
+
+
+
+@keyframes easeInUsername{
+    0%{
+        padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+    color: #fff;
+    }
+    100%{
+    height: fit-content;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000000;
+    transition: all 500ms;
+    font-size: 13px;
+        color: #fff;
+
+    }
+    
+}
+.error {
+    position: absolute;
+    bottom: -35;
+    background-color: #9c3434;
+    font-size: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: all 500ms;
+}
+.hideError {
+    opacity: 0;
+    transform: translateY(-20);
+    transition: all 500ms;
+
+}
+.hideUsername{
+    animation: easeOutUsername 300ms forwards;
+}
+@keyframes easeOutUsername{
+    
+    100%{
+    height: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000000;
+    transition: all 500ms;
+    font-size: 13px;
+    }
+    100%{
+        padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+    }
+}

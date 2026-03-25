@@ -1,0 +1,184 @@
+.navButton {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    cursor: pointer;
+    background-color: #222;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    transition-property: all;
+    transition-duration: 500ms;
+    gap: 10px;
+}
+.navButtonSmall {
+    height: 5px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.125rem;
+    transition-duration: 100ms;
+    background-color: #22222200;
+}
+
+.navButtonLarge {
+    height: 160px;
+    width: 130px;
+    justify-content: center;
+    transition-duration: 200ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #222222b5;
+    backdrop-filter: blur(50px);
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .5));
+}
+
+.navImage {
+    visibility: visible;
+    filter: invert(1);
+    transition: all 200ms;
+    height: 25px;
+}
+
+.navButtonLarge:hover {
+    margin-bottom: 50px;
+    transition-duration: 200ms;
+    background: #eeeeee7b;
+    font-size: medium;
+    color: #222;
+    animation-name: hoverMotion;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.navButtonLarge:hover .navImage {
+    visibility: visible;
+    filter: invert(0);
+    height: 40px;
+}
+
+.navButtonSmall:hover {
+    background-color: #d2d2d2;
+    color: #222;
+    transition-duration: 300ms;
+    border-radius: 0.2rem;
+    align-items: left;
+}
+.navButtonSmall:active {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    transition-duration: 100ms;
+        background-color: #afafaf;
+    box-shadow: inset 0 3 4px rgb(0,0,0,.1);
+
+}
+
+.navImageSmall {
+    width: 0px;
+    transition: all 200ms;
+}
+
+.navButtonSmall:hover .navImage {
+    width: 15px;
+    filter: invert(0);
+}
+
+
+.blockAction {
+    background-color: #7d2929;
+    color: #d4d4d4;
+    animation: accessDenied 500ms;
+        
+}
+.blockAction:hover {
+    background-color: #7d2929;
+    color: #d4d4d4;
+    animation: accessDenied 500ms ;
+        
+}
+.blockAction:hover .navImage{
+    filter: invert(1);
+}
+.currentPage {
+    font-weight: 500;
+    color: #eee;
+}
+.blockMessage {
+    position: absolute;
+    top:50px;
+    transform: translateX(0%);
+    font-size: small;
+    color: #ccc;
+}
+
+
+
+@media (max-width: 900px) {
+    
+    .navButton-large {
+        width: 100%;
+        height: 120px;
+        padding: 10px;
+    }
+}
+
+@keyframes hoverMotion {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -30px;
+        margin-left: 0px;
+        margin-right: 0px;
+
+        scale: 1.00;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+@keyframes accessDenied {
+    0% {
+         margin-left: 0px;
+    }
+    15% {
+        margin-left: 10px;
+                margin-right: 0px;
+
+    }
+
+    30% {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+    45% {
+        margin-left: 10px;
+                margin-right: 0px;
+
+    }
+
+    60% {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+    75% {
+        margin-left: 10px;
+                margin-right: 0px;
+
+
+    }
+
+    90% {
+        margin-right: 10px;
+        margin-left: 0px;
+
+    }
+
+    100% {
+
+    }
+}

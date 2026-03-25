@@ -1,0 +1,108 @@
+.recentBlogs {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    gap: 20px;
+}
+
+.blogCard {
+    flex-direction: column;
+    flex: 1;
+    border-radius: 0.5rem;
+    background-color: #44444457;
+    transition: all 500ms;
+    padding-left: 20px;
+}
+
+.blogCard:hover {
+    background-color: #444;
+    flex: 15;
+}
+
+.blogCardHeading {
+    flex: 1;
+    display: flex;
+    padding-top: 20px;
+    font-size: larger;
+    transition: all 300ms;
+
+}
+
+.blogDate {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #777;
+    font-size: small;
+    margin-right: 15px;
+}
+
+.blogCardInfo {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    margin-right: 40px;
+    opacity: 0;
+    transition: all 300ms;
+    z-index: 50;
+    text-align: justify;
+}
+
+.blogCardLink {
+    display: none;
+    flex: 1;
+    padding-left: 20px;
+    width: 130px;
+    font-size: small;
+    border-radius: 0.5rem;
+    background-color: #000000;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: all 500ms;
+}
+
+.blogCard:hover .blogCardInfo {
+    font-size: small;
+    margin-top: 5px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    opacity: 0.7;
+
+}
+
+.blogCard:hover .blogCardLink {
+    display: block;
+}
+
+.blogCardLink:hover {
+    width: 170px;
+    background-color: #cccccc;
+    color: #000000;
+}
+
+.recentBlogs:hover .blogCardHeading {
+    font-size: 16px;
+    opacity: 0.6;
+    padding-top: 0;
+}
+
+.recentBlogs:hover .blogCard:hover .blogCardHeading {
+    font-size: larger;
+    padding-top: 20px;
+    opacity: 1;
+}
+
+.recentArtworks {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    gap: 20px;
+}
+

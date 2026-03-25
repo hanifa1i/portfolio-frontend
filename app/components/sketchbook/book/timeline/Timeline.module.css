@@ -1,0 +1,62 @@
+.timelineContainer {
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+    bottom: 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 200ms;
+
+}
+.fadeOut{
+    transform: scale(0);
+}
+.shrinkX{
+    width: 0px;
+}
+
+.backButton {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #303030;
+    transition: all 100ms;
+    text-align: center;
+    align-content: center;
+    font-size: 10px;
+    color: #ccc;
+    margin-right: 30px;
+}
+.backButton:hover {
+        background-color: #e75c5c;
+    height: 30px;
+    width: 50px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .3));
+
+}
+.backButton:active {
+        background-color: #d25454;
+    padding-right: 20px;
+    font-size: 13px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .0));
+
+}
+
+.timeline {
+    background-color: #444;
+    height: 10px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.timelineContainer:hover {
+    transform: scale(1.2);
+}
+.fadeOut:hover {
+    transform: scale(0);
+}

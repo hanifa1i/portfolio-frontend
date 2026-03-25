@@ -1,0 +1,62 @@
+.pageButton {
+    height: 30px;
+    width: 20px;
+    border-radius: 15px;
+    background-color: #222;
+    transition: all 200ms;
+    text-align: center;
+    align-content: center;
+    font-size: 10px;
+    color: transparent;
+    display: flex;
+
+}
+
+.pageButton:hover {
+    height: 40;
+    width: 60px;
+    border-radius: 5px;
+    color: #111;
+    background-color: bisque;
+}
+
+.pageButton:active {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    transform: translateY(-10px);
+    font-size: medium;
+        background-color: rgb(212, 190, 163);
+        color: #111;
+
+}
+.coverButton:hover {
+    width: 30px;
+    background-color: #3b2319;
+    color: #ccc;
+
+}
+
+.divider {
+    flex: 1;
+    height: 100%;
+    align-content: center;
+}
+
+.pageButton:hover .line {
+    border-right-width: 1px;
+    border-color: #7d7d7d75;
+}
+.visited{
+    background-color:#c7c1b9;
+}
+.visited:hover {
+    background-color: #c7c1b9;
+    color: #111;
+}
+.current{
+        width: 20px;
+        height: 40px;
+        border: 2px solid #fff;
+}
+

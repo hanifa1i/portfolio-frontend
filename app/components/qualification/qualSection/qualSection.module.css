@@ -1,0 +1,81 @@
+.section {
+    height: 100%;
+    width: 60vw;
+    transition: all 500ms;
+    display: flex;
+}
+.unselected {
+    transform: scale(75%);
+    opacity: .2;
+}
+.unselectedInfo {
+    transform: translateY(200px);
+}
+.selected {
+    transform: scale(100%);
+    border-radius: 20px;
+}
+.qualInfoContainer {
+    height: 100%;
+    flex: 1;
+    align-content: center;
+    justify-items: end;
+    padding: 20px;
+    transition: all 500ms;
+
+}
+.qualLevel{
+    font-size: 30px;
+    color: #111;
+    
+}
+.qualSubject{
+    text-align: end;
+    font-size: 50px;
+    color: #111;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #111 ;
+    margin-bottom: 10px;
+}
+.qualGrade {
+    font-size: 80px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+.qualInstitution {
+    font-size: 25px;
+    color: #111;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #111 ;
+
+    margin-bottom: 10px;
+    
+}
+.qualDescription {
+    text-align: end;
+    color: #111;
+    width: 70%;
+}
+.qualCertificateContainer {
+    height: 100%;
+    flex: 1;
+    align-content: center;
+    padding: 20px;
+}
+
+.certificate {
+    height: 700;
+    width: 550px;
+    background-color: rgb(202, 202, 202);
+    border-radius: 5px;
+    transition: all 500ms;
+    filter: drop-shadow(10px 10px 0px rgba(0, 0, 0, .2));
+
+}
+.unselectedCert{
+    border-radius: 400px;
+    height: 200;
+    width: 200;
+}

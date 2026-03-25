@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    height: fit-content;
+    transition: all 500ms;
+    width: 80vw;
+    animation-delay: 300ms;
+    animation: aniCon 500ms;
+}
+
+.condenseContainer {
+    width: 0vw;
+    overflow: hidden;
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.formContainer {
+    flex: 20;
+    margin-left: 200px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 50px;
+}
+
+.input {
+    height: 50px;
+    width: 400px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background-color: #cac3ae;
+    padding-left: 40px;
+    outline: none;
+    box-shadow: none;
+    transition: all 300ms;
+    color: #111111;
+    animation: aniIn 500ms;
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .1));
+}
+
+.input:hover {
+    margin-left: 10px;
+}
+
+.input:focus {
+    margin-left: 40px;
+    border-radius: 20px;
+    height: 70px;
+    width: 500px;
+    background-color: #ffffff90;
+    color: #111;
+}
+
+.input::placeholder {
+    color: #11111150;
+}
+
+.textArea {
+    height: 200px;
+    width: 600px;
+    padding-top: 30px;
+}
+
+.textArea:focus {
+    height: 300px;
+    width: 800px;
+}
+
+.dropDown {
+    padding-right: 20px;
+}
+
+@keyframes aniIn {
+    0% {
+        width: 0;
+        height: 0;
+    }
+}
+
+.hide {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.validation {
+    background-color: #222;
+    font-size: small;
+    color: #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    transform: translateY(-20px);
+    transition: all 300ms;
+    white-space: pre;
+}
+
+.hideValidation {
+    margin-left: 40px;
+    transform: translateY(-30px);
+}

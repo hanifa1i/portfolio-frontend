@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 40px;
+    align-items: center;
+    height: 160px;
+}
+.defaultBook {
+    width: 100px;
+    height: 140px;
+    background-color: #ccc;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .2));
+}
+.a5Sketchbook {
+    background-color: #3b2319;
+}
+.a4Sketchbook {
+    background-color: #5c4b3c;
+    align-content: center;
+}
+.a4Notebook {
+    background-color: #111;
+}
+.a4NoteBookYear2 {
+    background-color: #111;
+    justify-items: end;
+    align-content: center;
+}
+.a4NoteBookYear2Details {
+    border: 1px solid #444;
+    width: 20px;
+    height: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transform: translateX(2px);
+    background-color: #111;
+
+}
+.a3SketchBook {
+    width: 200px;
+    background-color: #726f6c;
+    align-content: center;
+}
+.rings {
+    height: 90%;
+    width: 5px;
+    background-color: #888;
+}
+.selector {
+    transition: 300ms all;
+    margin: 10px;
+    border-radius: 10px;
+}
+.a5SketchbookSelector {
+    scale: .85;
+}
+.selector:hover {
+    scale: 1.05;
+}
+.a5SketchbookSelector:hover {
+    scale: .90;
+}
+.selector:active {
+    scale: .95;
+}
+.selected {
+    padding: 10px;
+    background-color: #cccc;
+    border-radius: 10px;
+}

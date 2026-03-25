@@ -1,0 +1,11 @@
+.coverStitching {
+    border-width: 3px;
+    border-color: #ffffff20;
+    height: 95%;
+    margin-top: 15px;
+        margin-bottom: 15px;
+    border-left-width: 0px;
+        border-right-width: 0px;
+
+    border-style: dashed;
+}

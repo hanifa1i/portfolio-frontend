@@ -1,0 +1,59 @@
+.container {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.project {
+    height: 200px;
+    border: 1px #222 solid ;
+    flex: 1;
+    border-radius: 10px;
+    transition: all 300ms;
+    font-size: 1vw;
+    padding: 20px;
+    overflow: hidden;
+        color:#444;
+        align-content: start;
+
+}
+
+.project:hover {
+    flex: 5;
+        height: 300px;
+
+        border: 5px #999 solid ;
+        border-radius: 20px;
+    padding: 30px;
+        color: #ccc;
+
+}
+.projectHeading {
+
+    padding: 10px;
+    border-bottom: 1px solid #333;
+        margin-bottom: 20px;
+        color: #ccc;
+        width: fit-content;
+        transition: all 500ms;
+
+}
+.projectDescription {
+    transition: all 200ms;
+        font-size: medium;
+        color: #333;
+        transform: translateX(-30px);
+
+}
+.project:hover .projectHeading{
+}
+.project:hover .projectDescription{
+    color: #aaa;
+            transition: all 500ms;
+
+    transition-delay: 200ms;
+
+            transform: translateX(0px);
+
+}
+

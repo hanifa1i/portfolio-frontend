@@ -1,0 +1,212 @@
+.dashboardDivider {
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+}
+.dashboardDividerForNewEntry {
+    height: fit-content;
+}
+.section {
+    transition: 300ms;
+}
+.listContainer {
+    flex: 0;
+    justify-items: center;
+}
+.buttonContainer { 
+    flex: 1;
+    display: grid;
+}
+.hideButtons { 
+    flex: 0;
+    overflow: hidden;
+}
+.addNewContainer {
+    flex: 0;
+    height: fit-content;
+}
+
+.statButtons {
+    padding-top: 40vh;
+    justify-items: end;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
+
+}
+
+.profileButton {
+    transition: all 300ms;
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: #ccc;
+}
+
+.statButtonContainer {
+    display: flex;
+    align-items: center;
+}
+.button {
+    transition: all 300ms;
+    width: 300px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #222;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    display: flex;
+    font-size: small;
+}
+
+.buttonIcon {
+    transition: all 300ms;
+    height: 15px;
+    margin: 10px;
+    filter: invert(1);
+    opacity: 0.5;
+}
+.selectedButtonIcon{
+    opacity: 1;
+}
+
+.button:hover{
+    transform: scale(1.05);
+    background-color: #333;
+}
+.button:active {
+    transform: scale(0.95);
+    background-color: #111;
+
+}
+.button:hover .buttonIcon{
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.addButton {
+    transition: all 300ms;
+    width: 0px;
+    height: 0px;
+    margin: 15px;
+    margin-left: auto;
+    border-radius: 10px;
+    background-color: #555;
+    transform: translateX(-50%);
+    font-size: 0;
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+.statButtonContainer:hover .addButton {
+    width: 25px;
+    height: 25px;
+    transform: translateX(0%);
+    font-size: small;
+}
+.statButtonContainer:hover .addButton:hover{
+    background-color: #ccc;
+    color: #111;
+    scale: 1.2;
+
+}
+.statButtonContainer:hover .addButton:active{
+    transform: scale(.9);
+    background-color: #999;
+}
+
+.shrinkButton {
+    width: 50px;
+    border: 0px solid #454545;
+    justify-content: center;
+    text-align: center;
+        padding: 0px;
+
+}
+.shrinkButton:hover{
+}
+.selectedButton {
+    border: 0px solid #ccc;
+    transform: translateY(-5px) translateX(10px) scale(1.1);
+    margin-top: 15px;
+        filter: drop-shadow(-5 0px 5px rgba(0, 0, 0, .2));
+
+}
+.selectedButton:hover {
+    border: 0px solid #ccc;
+    transform: translateY(-5px) translateX(10px) scale(1.1);
+
+}
+.open {
+    flex:20;
+    padding: 100px;
+}
+.openNew {
+    flex:1;
+}
+.close {
+    flex: 0;
+    overflow: hidden;
+}
+
+.editCardHidden {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -300;
+    height: 300px;
+    width: 200px;
+    transition: all 500ms;
+    border-radius: 10px;
+    z-index: 250;
+    background-color: #222;
+}
+.editCard {
+    height: 600px;
+    width: 400px;
+        margin-right: 50px;
+    right: -0;
+
+    border-radius: 10px;
+    transform: translateY(-50%) translateX(-15vw);
+    filter: drop-shadow(-20 20px 10px rgba(0, 0, 0, .2));
+}
+.tint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all 500ms;
+    background-color: #1111116a;
+    z-index: 200;
+}
+.exitButton {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 20px;
+    margin: 15px;
+    text-align: center;
+    align-content: center;
+    font-size: small;
+    color: #111;
+    transition: all 300ms;
+}
+.exitButton:hover {
+   
+    background-color: #be4040;
+    color: #ccc;
+    transform: rotate(360deg) scale(1.2);
+}
+.hide {
+    padding: 0;
+    margin: 30;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+}

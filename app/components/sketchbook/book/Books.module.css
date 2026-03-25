@@ -1,0 +1,133 @@
+.bookContainer {
+    height: 90%;
+    width: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(0);
+
+}
+
+.books {
+    position: absolute;
+    justify-items: left;
+    align-content: center;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+}
+
+.pageInfo {
+    width: 100%;
+    padding-left: 50%;
+    padding-right: 25%;
+    font-size: 100px;
+    color: #333;
+    display: grid;
+    transform: translateY(00px);
+    transition: all 500ms;
+    }
+
+.subInfo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+        margin-left: 0%;
+
+    width: fit-content;
+    font-size: 20px;
+    border-top: #333 solid 5px;
+    display: flex;
+}
+
+.arrow {
+    background: #222;
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.fadeOut {
+    transition: all;
+    opacity: 0;
+}
+
+.flipbookContainer {
+    height: 780;
+    width: var(--bookContainerWidth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ada09900;
+    padding: 40px;
+    border-radius: 20px;
+    transition: all 500ms;
+    z-index: -10;
+
+}
+.landscapeTransformX{
+    transform: translateX(-1100);
+}
+
+.bookFrontCenter {
+    transform: translateX(-275px);
+}
+
+.bookBackCenter {
+    transform: translateX(275px);
+}
+
+.bookFrontCenterLandscape {
+    transform: translateX(-1100px);
+}
+
+.bookBackCenterLandscape {
+    transform: translateX(0px);
+}
+.flap {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-color: #222;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: 1200px;
+    z-index: -1;
+    transform: translateX(-100px);
+    animation: flapAni 500ms forwards;
+    opacity: 0;
+    animation-delay: 500ms;
+}
+
+.stitching {
+    border: #333 dashed 1px;
+    border-left-width: 0px;
+    height: 40px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 5px;
+    margin-left: 0px;
+    align-content: center;
+    justify-items: end;
+}
+
+.button {
+    width: 20px;
+    height: 20px;
+    background-color: #999;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: #777 solid 5px;
+}
+
+@keyframes flapAni {
+    0%{
+        opacity: 100;
+    }
+    100% {
+        opacity: 100;
+        transform: translateX(-0);
+    }
+}

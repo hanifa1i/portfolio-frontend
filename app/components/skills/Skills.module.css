@@ -1,0 +1,453 @@
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #4b67af;
+    overflow: hidden;
+}
+
+.headingsContainer {
+    margin-top: 20px;
+    position: sticky;
+    transition: all 500ms;
+    height: 80vh;
+    margin-bottom: 20vh;
+    align-content: center;
+
+}
+
+.subHeadingsContainer {
+    flex: 2;
+    transition: all 500ms;
+}
+
+.headingSubDivider {
+    display: flex;
+    transition: all 500ms;
+
+}
+
+.heading {
+    background-color: #111;
+    color: #ccc;
+    width: 250px;
+    height: 70px;
+    align-items: center;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: small;
+    transition: all 500ms;
+    display: flex;
+    padding-left: 20px;
+    filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .3));
+}
+
+.heading:hover {
+    transform: translateY(-5);
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, .3));
+}
+
+.container {
+    margin: 10px;
+    font-size: small;
+    display: flex;
+    gap: 20px;
+    transition: all 500ms;
+}
+
+.subheading {
+    background: #acb1c0;
+    width: 90px;
+    height: 70px;
+    border-radius: 5px;
+    align-content: center;
+    color: #222;
+    transition: all 300ms;
+    font-size: small;
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .3));
+    cursor: pointer;
+}
+
+.subheading:hover {
+    transform: translateY(-5);
+    background-color: #c4cadb;
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, .3));
+}
+
+.subheading:active {
+    transform: translateY(5);
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, .0));
+    box-shadow: inset 0 3 4px rgb(67, 63, 55);
+    background-color: #888b9c;
+    color: #000;
+    transition: all 200ms;
+
+}
+
+.arrowDown {
+    width: 40px;
+    height: 25px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+
+    background: #999;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+
+}
+
+.sidebarHidden {
+    position: fixed;
+    top: 200px;
+    margin-left: 15%;
+    transform: translateX(-400%);
+    overflow: hidden;
+    transition: all 500ms;
+    height: fit-content;
+}
+
+.sidebar {
+    z-index: 200;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10%;
+    width: 300px;
+    transition: all 500ms;
+    justify-items: end;
+    height: fit-content;
+
+    justify-items: end;
+
+}
+
+.sidebarHeading {
+    background: #ccc;
+
+    text-align: end;
+    padding: 10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: small;
+    transform: scale(1);
+    transition: all 500ms;
+    transition-delay: 0ms;
+    color: #111;
+    transition-delay: 0ms;
+    display: flex;
+}
+
+.sidebarHeadingHidden {
+    transform: scale(0);
+}
+
+.sidebarHeadingVisible {
+    transition-delay: var(--delay);
+}
+
+.sidebarHeadingContainer {
+    justify-items: end;
+}
+
+.backButton {
+    margin-bottom: 20px;
+    background-color: #000;
+    color: #ccc;
+
+    padding-right: 20px;
+    padding-left: 20px;
+
+    cursor: pointer;
+}
+
+.backButton:hover {
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: #7c3c3c;
+}
+
+.backButton:active {
+    background-color: #9e1f1f;
+    transform: translateY(-10px);
+}
+
+.sidebarHeadingContainer:hover .sidebarHeading {
+    transition-delay: 0ms;
+    background-color: #eee;
+    padding-left: 30px;
+}
+
+.sidebarSubHeading {
+    background: #333;
+
+    text-align: end;
+    align-content: center;
+    border-radius: 10px;
+    font-size: small;
+    transition: all 300ms;
+    transition-delay: 0ms;
+    color: #999;
+    height: 0;
+    padding: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+}
+
+.sidebarHeadingContainer:hover .sidebarSubHeading {
+    height: 30;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #ccc;
+}
+
+.sidebarHeadingContainer:hover .sidebarSubHeading:hover {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+    background-color: #444;
+}
+
+.sidebarHeadingContainer:hover .sidebarSubHeading:active {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 0px;
+    background-color: #111;
+    transition-duration: 100ms;
+}
+
+.completed {
+    width: 20px;
+    text-align: end;
+    transition: all 500ms;
+    transform: scale(1) rotate(0deg);
+    color: #438b29;
+    font-weight: bold;
+}
+
+.active {
+    width: 20px;
+    text-align: end;
+    transition: all 500ms;
+    transform: scale(1) rotate(145deg) translateX(-8px) translateY(-2);
+    color: #316ea6;
+    font-weight: bold;
+}
+
+.sidebarHeadingContainer:hover .active {}
+
+.sidebarHeadingContainer:hover .active:hover {}
+
+.inActive {
+    width: 0;
+    overflow: hidden;
+    transform: scale(0) rotate(180deg);
+    transition: all 500ms;
+
+}
+
+
+.title {
+
+    font-size: 20px;
+    color: #333;
+    padding: 50px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    width: 30%;
+}
+
+.offscreenPopUp {
+    border-radius: 20px;
+
+    width: 60%;
+    background: #222;
+
+    height: fit-content;
+    margin-bottom: 50px;
+    margin-left: 30%;
+    align-content: center;
+    color: #999;
+    transition: all 500ms;
+    transform: scale(75%) translateX(-100px);
+    transition: all 500ms;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    gap: 30px;
+    padding: 40px;
+    opacity: .5;
+    border: #222;
+}
+
+.subheadingInfo {
+    background: #222;
+    align-content: center;
+    transform: scale(100%) translateX(0px);
+
+    transition: all 500ms;
+    opacity: 1;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+
+}
+
+.skillHeading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 5px solid #333;
+
+}
+
+.skillDescription {
+    text-align: left;
+    flex: 2;
+}
+
+.skillHeadingName {
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: #ccc;
+
+}
+
+.skillExperience {
+    display: flex;
+    align-items: center;
+    color: #777;
+}
+
+.skillExperienceName {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    font-size: 12px;
+    color: #999;
+    filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .3));
+
+}
+
+.skillExamples {
+    display: flex;
+    transition: all 500ms;
+    gap: 10px;
+}
+
+.skillLinks {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+    height: 20px;
+    background-color: #a55d22;
+    border-radius: 5px;
+    align-content: center;
+    color: #ccc;
+    font-size: 10px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.skillLinks:hover {
+    background-color: #c16d29;
+}
+
+.skillLinks:active {
+    background-color: transparent;
+}
+
+.skillExample {
+
+    width: 20px;
+    height: 20px;
+    background-color: #777;
+    border-radius: 5px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.skillExample:hover {
+    transform: scale(1.5);
+}
+.skillExample:active {
+    opacity: 0;
+}
+.divider {
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.showImageHidden {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 300px;
+    width: 0;
+    transition: all 500ms;
+    border-radius: 10px;
+    display: flex;
+
+
+}
+.showImage {
+    height: 600px;
+    width: 400px;
+        margin-right: 50px;
+
+    border-radius: 10px;
+        transform: translateY(-50%) translateX(-10vw);
+
+}
+.exampleImageHidden {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -300;
+    height: 300px;
+    transition: all 500ms;
+    border-radius: 10px;
+    z-index: 250;
+}
+.exampleImage {
+    height: 600px;
+        margin-right: 50px;
+    right: -0;
+
+    background-color: #969696;
+    border-radius: 10px;
+        transform: translateY(-50%) translateX(-10vw);
+
+}
+.tint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all 500ms;
+    background-color: #1111116a;
+    z-index: 200;
+}

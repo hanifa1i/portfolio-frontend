@@ -1,0 +1,33 @@
+.backCover {
+    background-color: #786351;
+    width: 20%;
+    height: 100%
+}
+
+.pages {
+    background-color: #8d8787;
+    width: 60%;
+    box-shadow: inset 10px 0px 1px rgba(70, 51, 40, 0.2);
+    height: 95%
+}
+
+.frontCover {
+    background-color: #786351;
+    width: 20%;
+    height: 100%
+}
+
+.ring {
+    position: absolute;
+    top: calc(30px+ var(--ringGap));
+    background-color: #555;
+    border-left: #ccc solid 20px;
+    border-right: #333 solid 30px;
+    border-bottom: #cccccc62 solid 3px;
+
+    width: 70px;
+    height: 10px;
+    border-radius: 10px;
+    z-index: 100;
+
+}

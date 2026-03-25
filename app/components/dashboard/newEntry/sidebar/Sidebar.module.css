@@ -1,0 +1,140 @@
+.backContainer {
+    flex: 1;
+    align-content: center;
+    justify-items: center;
+    height: 80vh;
+}
+
+.heading {
+    font-size: 50px;
+    font-weight: 500;
+    color: #111111;
+    top: 0%;
+    right: -0;
+    padding: 50px;
+    writing-mode: sideways-lr;
+    text-align: end;
+    margin-left: auto;
+}
+
+.backButton {
+    background-color: #222;
+    min-width: 60px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #743131;
+    transition: all 300ms;
+    margin: 20px;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.backButton:hover {
+    background-color: #994444;
+    padding-left: 20px;
+    padding-right: 20px;
+    filter: drop-shadow(0 5px 2px rgba(0, 0, 0, .2));
+    scale: 1.1;
+}
+
+.backButton:active {
+    scale: 0.9;
+    filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0));
+    background-color: #502121;
+
+}
+
+.saveButton {
+    background-color: #2a7037;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.saveButton:hover {
+    background-color: #378f47;
+}
+
+.saveButton:active {
+    background-color: #1e5228;
+}
+
+.buttonIcon {
+    filter: invert(1);
+    height: 15px;
+}
+
+.hide {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.loading {
+    height: 20px;
+    width: 5px;
+    border-radius: 10px;
+    background-color: #11111170;
+    margin-left: 0px;
+    margin-right: 0px;
+    transition: all 500ms;
+}
+
+.loadingRotate {
+    margin-left: 10px;
+    height: 20px;
+    width: 7px;
+    animation: rotate 1500ms forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    0% {
+        background-color: #111111
+    }
+
+    16% {
+        background-color: #5fc364;
+        width: 20px
+    }
+
+    33% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: #111111
+    }
+}
+
+.completed {
+    white-space: nowrap;
+    padding-left: 10px;
+    transform: all 300ms;
+    width: fit-content;
+    align-content: center;
+    text-align: center;
+    animation: fontGrow 500ms forwards;
+}
+
+@keyframes fontGrow {
+    0% {
+        font-size: 0;
+        rotate: -180deg;
+    }
+
+    100% {
+        font-size: small;
+        rotate: 0deg
+    }
+}

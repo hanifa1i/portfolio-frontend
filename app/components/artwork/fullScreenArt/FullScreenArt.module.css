@@ -1,0 +1,315 @@
+.fullscreenArt {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    align-items: end;
+    display: flex;
+    padding: 40px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+}
+
+.spotlight {
+
+    object-fit: contain;
+    height: 85%;
+    margin: auto;
+        margin-bottom: 15%;
+
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+    
+}
+
+.fadeOut {
+
+    height: 0%;
+    margin-bottom: 0%;
+    border-radius: 400px;
+    opacity: 0;
+
+}
+
+.fadeIn {
+    height: 85%;
+
+}
+
+.infoBar {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+
+
+}
+
+.imageSlider {
+    bottom: 0;
+    height: fit-content;
+    width: 250px;
+    display: flex;
+    gap: 5px;
+
+}
+
+.imagePreview {
+    height: 80px;
+    flex: 3;
+    border-radius: 5px;
+    background-color: #222;
+    transition: all 200ms;
+    overflow: hidden;
+    opacity: 50%;
+}
+
+
+.imagePreview:hover {
+    top: -50px;
+    flex: 4;
+    opacity: 100%;
+}
+.imagePreview:active {
+    transform: translateY(-10px);
+    border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+}
+.imagePreviewSelected {
+    transform: translateY(-10px);
+    opacity: 100%;
+    border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-bottom: 3px solid #ffffffa0;
+
+}
+
+.sideContainer {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exitButton {
+    width: fit-content;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #222;
+    display: flex;
+    transition: all 100ms;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: #c94444;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.exitButton:hover {
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #c94444;
+    color: #111;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.exitButton:active {
+    border-radius: 20px;
+    background-color: #933333;
+}
+
+.infoButton {
+    width: fit-content;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #222;
+    display: flex;
+    transition: all 100ms;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: #999;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.infoButton:hover {
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #eee;
+    color: #111;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.infoButton:active {
+    border-radius: 20px;
+    background-color: #aaa;
+}
+
+.moreInfoHidden {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0px;
+    width: 700px;
+    bottom: 150px;
+    overflow: hidden;
+    transition: all 300ms;
+
+}
+
+.moreInfo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 700px;
+    padding: 30px;
+    bottom: 150px;
+    background-color: #111111c6;
+    border-radius: 10px;
+    transition: all 300ms;
+    backdrop-filter: blur(50px);
+    filter: drop-shadow(0 -10px 10px rgba(0, 0, 0, .3));
+    overflow: hidden;
+    font-size: small;
+    color: #999;
+    display: flex;
+
+}
+
+.hiddenInfo {
+    opacity: 0;
+}
+
+.sideInfo {
+    opacity: 100;
+
+    height: 100%;
+    padding: 20px;
+    padding-left: 25px;
+    padding-bottom: 30px;
+    flex: 1;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-areas:
+        "box2 box2V"
+        "box3 box3V"
+        "box4 box4V"
+        "box5 box5V";
+    background-color: #00000032;
+    border-width: 0px;
+    border-color: #000;
+    border-radius: 5px;
+    transition: all 0ms;
+}
+
+.description {
+    opacity: 100;
+
+    flex: 2;
+    border-right: 1px solid #000;
+    padding-right: 20px;
+    margin-right: 20px;
+    height: 100%;
+    transition: all 0ms;
+}
+
+.date {
+    grid-area: box2;
+    color: #656565;
+}
+
+.tool {
+    grid-area: box3;
+    color: #656565;
+
+}
+
+.category {
+    grid-area: box4;
+    color: #656565;
+
+}
+
+.dimensions {
+    grid-area: box5;
+    color: #656565;
+
+}
+
+.dateValue {
+    grid-area: box2V;
+}
+
+.toolValue {
+    grid-area: box3V;
+}
+
+.categoryValue {
+    grid-area: box4V;
+}
+
+.dimensionsValue {
+    grid-area: box5V;
+}
+
+.infoBlocks {
+    border-width: 1px;
+}
+
+.closing {
+    transition: all 300ms;
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+@keyframes circleClose {
+
+    50% {
+        position: fixed;
+
+        border-radius: 100px;
+    }
+
+    100% {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        border-radius: 400px;
+        width: 0;
+        height: 0;
+
+    }
+}
+
+
+
+@keyframes hoverAni {
+    0% {
+        padding: 0px;
+    }
+
+    50% {
+        padding: 20px;
+    }
+}

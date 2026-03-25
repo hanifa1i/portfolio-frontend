@@ -1,0 +1,84 @@
+.input {
+    height: 50px;
+    width: 400px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background-color: #cac3ae;
+    padding-left: 40px;
+    outline: none;
+    box-shadow: none;
+    transition: all 300ms;
+    color: #555;
+    animation: aniIn 500ms;
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .1));
+}
+.input:hover {
+    margin-left: 10px;
+}
+.input:focus {
+    margin-left: 40px;
+    border-radius: 20px;
+    height: 70px;
+    width: 500px;
+    background-color: #ffffff90;
+    color: #222222;
+}
+.input::placeholder {
+    color: #555;
+}
+.upload {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    font-size: large;
+    overflow: visible;
+    transform: all 200ms;
+    animation: aniIn 200ms;
+}
+.upload:hover {
+    margin-left: 0;
+    scale: 1.1;
+    background-color: #ffffff30;
+}
+.upload:active {
+    scale: 0.9;
+    background-color: #00000020;
+
+}
+.uploadImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+.removeImage {
+    width: 0px;
+    height: 0px;
+    border-radius: 10px;
+    background-color: #743131;
+    margin-top: 5px;
+    transition: all 300ms;
+    font-size: 0;
+    color: #ccc;
+    align-content: center;
+}
+.upload:hover .removeImage {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+}
+.removeImage:hover{
+    rotate: calc(90deg);
+    scale: 1.2;
+    background-color: #994444;
+}
+@keyframes aniIn {
+    0%{
+        width: 0;
+        height: 0;
+    }
+}
