@@ -1,4 +1,4 @@
-import type { Qualification } from "@/app/types/dashboard";
+import type { Qualification } from "@/app/types/Dashboard";
 
 export const qualifications: Qualification[] = [
   {

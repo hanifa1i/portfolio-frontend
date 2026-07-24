@@ -1,15 +1,28 @@
+"use client"
 import Nav from "../components/navigation/Nav";
 import Book from "../components/sketchbook/book/Books"
 import Divider from "../components/common/Divider";
+import styles from "./page.module.css"
+import { useEffect, useState } from "react";
+import Background from "../components/sketchbook/background/Background";
+import Info from "../components/info/Info";
 
 export default function SketchbooksPage() {
+  
+  const [bookActive, setBookActive] = useState<boolean>(false);
+
+  useEffect (() => {
+    console.log(bookActive)
+  }, [bookActive])
+  
   return (
     <div className="sketchbookContainer">
 
       <div className="pageCenterer h-[100vh] w-[100vw] ">
-        {/*<img src="/images/me3.jpeg" className="fixed opacity-5 top-[-500px] w-full left-1/2 -translate-x-1/2" />*/}
+        <Background bookActive={bookActive}/>
+        <Info/>
         <Nav/>
-        <Book/>
+        <Book setBookActive={setBookActive}/>
       </div>
     </div>
   );

@@ -1,17 +1,31 @@
 import { useEffect, useState } from "react"
 import inputStyles from "../NewEntry.module.css"
 import styles from "./AddLinks.module.css"
+import { ExampleResponse } from "@/app/types/Dashboard"
 
 type Props = {
     linkNames: (value: string[]) => void
     links: (value: string[]) => void
+    preSetLinks: ExampleResponse[]
 }
 
-export default function AddLinks({ linkNames, links }: Props) {
+export default function AddLinks({ linkNames, links, preSetLinks }: Props) {
 
     const [linkInputs, setLinkInputs] = useState(0);
     const [currentLinkNames, setCurrentLinkNames] = useState<string[]>([]);
     const [currentLinks, setCurrentLinks] = useState<string[]>([]);
+
+    const [oneTimeRun, setOneTimeRun] = useState(true);
+    if (oneTimeRun && preSetLinks.length !== 0) {
+        preSetLinks.map(link => {
+            if (link.exampleType === "LINK") {
+                currentLinkNames.push(link.note);
+                currentLinks.push(link.url);
+            }
+        })
+        setLinkInputs(preSetLinks.filter(example => example.exampleType === "LINK").length);
+        setOneTimeRun(false);
+    }
 
     const handleNameInput = (index: number, value: string) => {
         setCurrentLinkNames(prev => {
@@ -38,7 +52,7 @@ export default function AddLinks({ linkNames, links }: Props) {
     };
 
     const removeInput = () => {
-        if (linkInputs <= 1) return;
+        if (linkInputs <= 0) return;
 
         setLinkInputs(prev => prev - 1);
         setCurrentLinkNames(prev => prev.slice(0, -1));

@@ -1,4 +1,4 @@
-import { Skill } from "@/app/types/dashboard"
+import { Skill } from "@/app/types/Dashboard"
 import style from "./EditCard.module.css"
 
 type Props = {

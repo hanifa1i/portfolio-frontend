@@ -1,15 +1,13 @@
 import useScrollReveal from "@/app/hooks/useScrollReveal";
 import { useEffect, useRef, useState } from "react";
 import styles from "./FullScreenArt.module.css"
-
-type Art ={
-    images: string[];
-    date: string;
-    tool: string;
-}
+import { ArtworkResponse } from "@/app/types/Dashboard";
+import { formatDateFromDistanceToNow } from "@/app/services/CommonService";
+import { toolIconMatcher } from "@/app/data/artwork/toolIcon";
+import { playSound } from "@/app/lib/SoundManager";
 
 type Props = {
-    artwork: Art;
+    artwork: ArtworkResponse;
     onClose: () => void;
 };
 
@@ -19,7 +17,7 @@ export default function FullScreenArt({ artwork, onClose }: Props) {
 
     const [moreInfo, setMoreInfo] = useState(false);
 
-    const [spotlight, setSpotlight] = useState<string>(artwork.images[0]);
+    const [spotlight, setSpotlight] = useState<string>(artwork.image_urls[0].image_url);
     const [spotlightTransition, setSpotlightTransition] = useState(false);
 
     const [exit, onExit] = useState(false);
@@ -27,82 +25,96 @@ export default function FullScreenArt({ artwork, onClose }: Props) {
     const handleSpotlight = (selectedImage: string) => {
         if (selectedImage === spotlight) return;
 
+        playSound("click");
         setSpotlightTransition(true);
 
         setTimeout(() => {
 
-        setSpotlightTransition(false);
-        setSpotlight(selectedImage);
+            setSpotlightTransition(false);
+            setSpotlight(selectedImage);
         }, 200);
 
-                    
+
 
     }
 
     const handleMoreInfo = () => {
+        playSound("blob");
         if (moreInfo == false) setMoreInfo(true);
         else if (moreInfo == true) setMoreInfo(false);
     }
 
     const handleExit = () => {
+        playSound("back");
         onExit(true);
         setTimeout(() => {
             onClose();
         }, 500);
     }
- 
-    useScrollReveal(".offscreenLeft", "easeIn");
-    useScrollReveal(".offscreenUp", "easeIn");
+
+    const toolIcon = (tool: string) => {
+        const match = toolIconMatcher.find(matcher => matcher.label === tool)
+        return match ? match.icon : ""
+    }
+
+    useScrollReveal(".offscreenLeft", "easeIn", false);
+    useScrollReveal(".offscreenUp", "easeIn", false);
 
 
     return (
         <>
-            <div className={`${styles.fullscreenArt} ${exit ? styles.closing:"offscreenLeft"}`}>
-                <img src={spotlight} className={`${styles.spotlight} ${spotlightTransition ? styles.fadeOut : styles.fadeIn}`} />
+            <div className={`${styles.fullscreenArt} ${exit ? styles.closing : "offscreenLeft"}`}>
+                <div className={`${styles.spotlight} ${spotlightTransition ? styles.fadeOut : styles.fadeIn}`}>
+                    <img src={spotlight} className={`${styles.spotlightImage}`}/>
+                </div>
                 <div className={`${moreInfo ? styles.moreInfo : styles.moreInfoHidden}`}>
                     <div className={`${moreInfo ? styles.description : "hidden"}`}>
-                        Flimbarous wendled the quast of shimmering plinths while the overmorrow tickled sideways into a blur of almost-thoughts.
-                        Somewhere between the wobble of luminary sprockets and the hush of neon drapples, a notion unspooled itself, backwards
-                        and humming. Grindlehop echoes layered upon themselves like polite avalanches, each softer than the last but somehow
-                        louder in intent.
-
+                        <div className={`${styles.title}`}>{artwork.title}</div>
+                        <div className={`${styles.descriptionInfo}`}>{artwork.description}</div>
 
                     </div>
                     <div className={`${moreInfo ? styles.sideInfo : styles.hiddenInfo}`}>
-                        <div className={`${styles.date}`}>date created</div>
-                        <div className={`${styles.dateValue}`}>{artwork.date}</div>
-                        <div className={`${styles.tool}`}>tool used</div>
-                        <div className={`${styles.toolValue}`}>{artwork.tool}</div>
-                        <div className={`${styles.category}`}>category</div>
-                        <div className={`${styles.categoryValue}`}>Water</div>
-                        <div className={`${styles.dimensions}`}>dimensions</div>
-                        <div className={`${styles.dimensionsValue}`}>1920X1080</div>
+                        <div className={`${styles.sideInfoContainer}`}>
+                            <div className={`${styles.heading}`}>added</div>
+                            <div className={`${styles.value}`}><div className={`${styles.tag}`}>{formatDateFromDistanceToNow(artwork.created_at)}</div></div>
+                        </div>
+                        <div className={`${styles.sideInfoContainer}`}>
+                            <div className={`${styles.heading}`}>last updated</div>
+                            <div className={`${styles.value}`}><div className={`${styles.tag}`}>{formatDateFromDistanceToNow(artwork.updated_at)}</div></div>
+                        </div>
+                        <div className={`${styles.sideInfoContainer}`}>
+                            <div className={`${styles.heading}`}>tool used</div>
+                            <div className={`${styles.value} ${styles.valueTool}`}>
+                                <div className={`${styles.tag}`}>{artwork.tool}</div>
+                                {toolIcon(artwork.tool) !== "" && (<img src={toolIcon(artwork.tool)} className={`${styles.toolImage}`} />)}
+                            </div>
+                        </div>
+                        <div className={`${styles.sideInfoContainer}`}>
+                            <div className={`${styles.heading}`}>tags</div>
+                            <div className={`${styles.value}`}>
+                                {artwork.tag_names.map((tag, key) => (
+                                    <div key={key} className={`${styles.tag}`}>{tag}</div>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <div className={`${styles.infoBar} `}>
                     <div className={`${styles.sideContainer}  `}>
-                        <button className={`${styles.exitButton}`} onClick={handleExit}>exit</button>
+                        <button onMouseEnter={() => playSound("hover")}  className={`${styles.exitButton}`} onClick={handleExit}>exit</button>
                     </div>
                     <div className={`${styles.imageSlider}`}>
-                        <div className={`${styles.imagePreview} ${artwork.images[0] === spotlight ? styles.imagePreviewSelected : ""} `} onClick={() => handleSpotlight(artwork.images[0])}>
-                            <img src={artwork.images[0]} className="h-full object-cover"/>
-                        </div>
-                        <div className={`${styles.imagePreview} ${artwork.images[1] === spotlight ? styles.imagePreviewSelected : ""} `} onClick={() => handleSpotlight(artwork.images[1])}>
-                            <img src={artwork.images[1]} className="h-full object-cover"/>
-                        </div>
-                        <div className={`${styles.imagePreview} ${artwork.images[2] === spotlight ? styles.imagePreviewSelected : ""} `} onClick={() => handleSpotlight(artwork.images[2])}>
-                            <img src={artwork.images[2]} className="h-full object-cover"/>
-                        </div>
-                        <div className={`${styles.imagePreview} ${artwork.images[3] === spotlight ? styles.imagePreviewSelected : ""} `} onClick={() => handleSpotlight(artwork.images[3])}>
-                            <img src={artwork.images[3]} className="h-full object-cover"/>
-                        </div>
-                        <div className={`${styles.imagePreview} ${artwork.images[4] === spotlight ? styles.imagePreviewSelected : ""} `} onClick={() => handleSpotlight(artwork.images[4])}>
-                            <img src={artwork.images[4]} className="h-full object-cover"/>
-                        </div>
+                        {artwork.image_urls.map((image, key) => (
+                            <div key={key} className={`${styles.imagePreview} ${image.image_url === spotlight ? styles.imagePreviewSelected : ""} `} onMouseEnter={() => playSound("hover")} onClick={() => handleSpotlight(image.image_url)}>
+                                <img src={image.image_url} className={`${styles.imagePrevieImage}`} />
+                            </div>
+                        ))}
+
                     </div>
                     <div className={`${styles.sideContainer}  `}>
-                        <button className={`${styles.infoButton}`} onClick={handleMoreInfo}> 
+                        <button className={`${styles.infoButton}`} onMouseEnter={() => playSound("hover")} onClick={handleMoreInfo}>
 
                             show info</button>
                     </div>

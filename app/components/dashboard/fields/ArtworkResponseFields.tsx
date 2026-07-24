@@ -1,4 +1,4 @@
-import type { Artwork, ArtworkResponse } from "@/app/types/dashboard";
+import type { Artwork, ImageResponse, ArtworkResponse } from "@/app/types/Dashboard";
 import type { Field } from "@/app/types/Field";
 
 export const artworkResponseFields: Field<ArtworkResponse>[] = [
@@ -7,9 +7,12 @@ export const artworkResponseFields: Field<ArtworkResponse>[] = [
     {
         key: "image_urls",
         label: "Preview",
-        render: (urls) => {
-            if (!Array.isArray(urls) || urls.length === 0) return "—";
-            return <img src={urls[0] as string} width={50} />;
+        render: (value) => {
+            if (!Array.isArray(value) || value.length === 0) return "-";
+
+            const images = value as ImageResponse[];
+
+            return <img src={images[0].image_url} width={50} />;
         }
     },
 
@@ -17,6 +20,14 @@ export const artworkResponseFields: Field<ArtworkResponse>[] = [
 
     { key: "description", label: "Description", width: "2fr" },
 
+    { key: "tool", label: "Tool" },
+
+    {
+        key: "created_at",
+        label: "Created",
+        render: (date) =>
+            new Date(date as string).toLocaleDateString(),
+    },
     {
         key: "updated_at",
         label: "Updated",

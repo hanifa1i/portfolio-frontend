@@ -1,4 +1,4 @@
-import type { Page } from "@/app/types/dashboard";
+import type { Page } from "@/app/types/Dashboard";
 import styles from "./SketchbookPages.module.css";
 
 type Props = {

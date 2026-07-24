@@ -60,6 +60,13 @@
   border-radius: 0.3rem;
   background-color: #000000;
   animation-name: none;
+  cursor: pointer;
+}
+.expandButton:active {
+  border-radius: 30px;
+    transform: rotate(90deg) scale(1.4);
+
+  filter: invert(1);
 }
 
 .sorter {
@@ -76,10 +83,10 @@
   text-align: center;
   align-content: center;
   font-size: small;
-
   display: grid;
 }
-.filterHeading{
+
+.filterHeading {
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
@@ -88,6 +95,7 @@
   color: #777;
   align-items: center;
 }
+
 .activeFilter {
   border-width: 0px;
   background-color: #5ba974;
@@ -100,14 +108,16 @@
 
   height: 20px;
   width: fit-content;
-  
+
   padding-left: 10px;
   padding-right: 10px;
-  
+
 }
-.sorter:hover .filterHeading{
+
+.sorter:hover .filterHeading {
   display: none;
 }
+
 .sorter:hover {
   min-width: 80px;
   min-height: 40px;
@@ -118,6 +128,7 @@
   overflow: visible;
   transition: all 500ms;
   padding: 40px;
+  padding-top: 60px;
   background-color: #cccccca5;
   color: #111;
   backdrop-filter: blur(50px);
@@ -128,7 +139,7 @@
   width: 0px;
   height: 0px;
   visibility: hidden;
-  transition: all 500ms;
+  transition: all 300ms;
   align-items: center;
   display: flex;
   opacity: 0;
@@ -145,12 +156,14 @@
   transition: all 500ms;
   animation: aniOpacity 500ms forwards;
 }
+
 @keyframes aniOpacity {
-  50%{
+  50% {
     opacity: 0;
 
   }
-  100%{
+
+  100% {
     opacity: 100;
   }
 }
@@ -197,6 +210,7 @@
   justify-items: center;
   transition: all 300ms;
 }
+
 .filterName:hover .filterSubNameRatio {
   opacity: 100;
   overflow: visible;
@@ -204,7 +218,11 @@
   width: 45px;
   text-align: center;
 }
-.ratioImage{  filter: invert(100%); height: 20px;}
+
+.ratioImage {
+  filter: invert(100%);
+  height: 20px;
+}
 
 .filterName:hover .filterSubNameRatio:hover {
   color: #111;
@@ -212,7 +230,10 @@
   border-color: #fff;
   height: 35px;
 }
-.filterSubNameRatio:hover .ratioImage{  filter: invert(0%);}
+
+.filterSubNameRatio:hover .ratioImage {
+  filter: invert(0%);
+}
 
 .filterSubNameRatioOn {
   border-width: 0px;
@@ -233,13 +254,15 @@
 .filterName:hover .filterSubNameRatioOn {
   width: 70px;
 }
+
 .filterName:hover .filterSubNameRatioOn:hover {
   color: #fff;
   background-color: #5ba974;
   border-color: #5ba974;
   width: 70px;
 }
-.filterSubNameRatioOn:hover .ratioImage{
+
+.filterSubNameRatioOn:hover .ratioImage {
   filter: invert(100%);
 }
 
@@ -261,7 +284,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 30px;
   min-width: 90px;
   width: 110px;
@@ -272,6 +294,7 @@
 
 .filterName:hover .filterSubNameOn {
   width: 110px;
+
 }
 
 .filterName:hover .filterSubNameOn:hover {
@@ -280,17 +303,84 @@
   background-color: #5eb87b;
   color: #fff;
 }
+
 .tick {
-      transform: rotate(90deg);
+  transform: rotate(90deg);
   opacity: 0%;
   transition: all 300ms;
-  font-size: smaller ;
+  font-size: smaller;
   animation: aniTick 500ms forwards;
 }
+
 @keyframes aniTick {
- 100% {
+  100% {
     transform: rotate(0deg);
     font-size: medium;
     opacity: 100%;
   }
+}
+
+.tagContainer {
+  display: flex;
+  gap: 10px;
+  max-width: 850px;
+  width: 100;
+  height: 0;
+  transform: translateY(-15px);
+}
+
+.filterName:hover .tagContainer {
+  width: fit-content;
+  height: fit-content;
+  gap: 10px;
+  flex-wrap: wrap;
+  transform: translateY(0px);
+}
+
+.tag {
+  position: absolute;
+
+}
+
+.filterName:hover .tag {
+  position: relative;
+}
+
+.filterName:hover .tag:hover {
+  height: 30px;
+}
+
+
+.removeFilter {
+  font-size: 0;
+  position: absolute;
+  top: 20;
+  right: 20;
+
+  transition: all 300ms;
+}
+
+.sorter:hover .removeFilter {
+  background: #a4464646;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ccc;
+  font-size: small;
+  cursor: pointer;
+  width: 50px;
+  text-align: right;
+}
+
+.sorter:hover .removeFilter:hover {
+    background-color: #b84f4f;
+  width: 70px;
+  scale: 1.1;
+
+}
+.sorter:hover .removeFilter:active {
+  scale: 0.9;
+      background: #853838;
+
 }

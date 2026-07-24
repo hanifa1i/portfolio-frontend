@@ -1,16 +1,22 @@
-import type { Sketchbook } from "@/app/types/dashboard";
+import type { Artwork, ImageResponse, ArtworkResponse, Page, Sketchbook } from "@/app/types/Dashboard";
 import type { Field } from "@/app/types/Field";
 
-export const sketchbookFields: Field<Sketchbook>[] = [
+export const SketchbookFields: Field<ArtworkResponse>[] = [
   { key: "id", label: "ID" , width: "0.5fr" },
-  { key: "title", label: "Title", width: "2fr"},
-  { key: "description", label: "Description", width: "3fr" },
-  { key: "year", label: "Year" },
-  { key: "totalPages", label: "Pages" },
-  { key: "pageSize", label: "Page Size" },
   {
-    key: "pages",
-    label: "Page Count",
-    render: (_, row) => row.pages.length,
+          key: "image_urls",
+          label: "Preview",
+          render: (value) => {
+              if (!Array.isArray(value) || value.length === 0) return "-";
+  
+              const images = value as ImageResponse[];
+  
+              return <img src={images[0].image_url} width={50} />;
+          }
   },
+  { key: "title", label: "Book", width: "1fr"},
+
+  { key: "page_number", label: "Page No", width: "1fr" },
+
+  { key: "description", label: "Decription", width: "3fr" }
 ];

@@ -1,4 +1,4 @@
-import type { Sketchbook } from "@/app/types/dashboard";
+import type { Sketchbook } from "@/app/types/Dashboard";
 import { pages } from "./Pages"
 
 export const sketchbooks: Sketchbook[] = [

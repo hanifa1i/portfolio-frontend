@@ -38,20 +38,23 @@
 .heading {
     background-color: #22222220;
     font-size: small;
-    color: #111;
+    color: #222;
     border-radius: 10px;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 0px;
     width: fit-content;
-    height: fit-content;
+    height: 50px;
     margin-left: 20px;
-    margin-right: 20px ;
-    transform: translateY(-20px);
+    margin-right: 10px ;
+    align-content: center;
     transition: all 300ms;
     white-space: pre;
 }
+.headingExpand {
+    padding-right: 50px;
+}
 .container {
     display: flex;
-    align-items: center;
 }

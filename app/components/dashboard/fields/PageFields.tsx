@@ -1,4 +1,4 @@
-import type { Page } from "@/app/types/dashboard";
+import type { Page } from "@/app/types/Dashboard";
 import type { Field } from "@/app/types/Field";
 
 export const pageFields: Field<Page>[] = [

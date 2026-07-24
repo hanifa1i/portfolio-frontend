@@ -3,6 +3,8 @@
     align-content: center;
     justify-items: center;
     height: 80vh;
+    position: sticky;
+    top: 0;
 }
 
 .heading {

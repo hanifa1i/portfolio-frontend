@@ -1,4 +1,4 @@
-import type { Section } from "@/app/types/dashboard"
+import type { Section } from "@/app/types/Dashboard"
 
 export const sections: Section[] = [
     {

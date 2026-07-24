@@ -19,7 +19,6 @@
 
 .rightPage {
     background-color: bisque;
-    border-width: 1px;
     border-color: #3b231971;
     border-radius: 20px;
     overflow: hidden;
@@ -31,7 +30,6 @@
 
 .leftPage {
     background-color: bisque;
-    border-width: 1px;
     border-right-width: 0;
     border-color: #3b231971;
     border-radius: 20px;
@@ -42,4 +40,9 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, .3));
+}
+
+.image {
+    max-height: 100%;
+    width: 100%;
 }

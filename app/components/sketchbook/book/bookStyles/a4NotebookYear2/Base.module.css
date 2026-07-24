@@ -2,13 +2,12 @@
     border-radius: 10px;
     border-color: #222;
     height: fit-content;
-    overflow: hidden;
     display: flex;
     transition: all 500ms;
     position: absolute;
-    top: 10%;
+    top: 50%;
     left: calc(15% + var(--bookGap));
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
     filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, 0.5));
 
 }
@@ -16,7 +15,7 @@
 .bookHover:hover {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    top: 5%;
+    top: 45%;
     filter: drop-shadow(60px 10px 10px rgba(0, 0, 0, .3));
 
 }
@@ -34,9 +33,9 @@
     border-bottom-left-radius: 5px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    transform: translateY(40px) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
     left: 50%;
-    top: 0%;
+    top: 45%;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .6));
 
 }
@@ -96,12 +95,13 @@
 .bookInfo {
     position: absolute;
     transition: all 300ms;
-    top: 200px;
+    top: 50%;
     left: calc(50px + 15% + var(--bookGap));
     background-color: #ccc;
     border: #ccc solid 0px;
-    width: 0;
-    height: fit-content;
+    width: 300px;
+    opacity: 0;
+    transform: scaleY(0) translateY(-800px);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     z-index: 400;
@@ -112,8 +112,10 @@
     color: #222;
 }
 .book:hover~.bookInfo {
-    top: 50px;
+    top: 50%;
     width: 300px;
+    opacity: 1;
+    transform: scaleY(1) translateY(-400px);
     height: fit-content;
     left: calc(60px + 15% + var(--bookGap));
     padding: 20px;

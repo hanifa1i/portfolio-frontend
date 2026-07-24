@@ -1,0 +1,30 @@
+.sketchbookBg {
+    transition: all 700ms;
+    position: fixed;
+    opacity: .8;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    object-fit: cover;
+    animation: sketchbookBgAnimation 1000ms;
+}
+
+@keyframes sketchbookBgAnimation {
+    0% {
+        left: 100%;
+        opacity: 0;
+        transform:  scale(1.7);
+    }
+
+    100% {
+        left: 50%;
+        opacity: .8;
+                transform: scale(1);
+
+    }
+}
+
+.sketchbookBgHidden {
+    left: 100%;
+
+}

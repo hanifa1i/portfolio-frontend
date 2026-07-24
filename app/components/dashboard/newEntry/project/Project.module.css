@@ -1,0 +1,118 @@
+
+.projectWrapper {
+    position: relative;
+    transform: translateX(-120px);
+}
+.projectWrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(to right, #a39b83, transparent);
+    pointer-events: none;
+    z-index: 100px;
+}
+
+/* RIGHT fade */
+.projectWrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(to left, #a39b83, transparent);
+    pointer-events: none;
+}
+.projects {
+    display: flex;
+    gap: 20px;
+    transition: all 300ms;
+    overflow-x: auto;
+    width: 1000px;
+    margin-bottom: 20px;
+    background-color: #11111110;
+
+
+}
+.projects::-webkit-scrollbar {
+    display: none;
+}
+.spacer {
+    min-width: 80px;
+}
+
+.projectContainer {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: all 300ms;
+
+}
+
+.projectInput {
+    margin: 0px;
+    width: 300px;
+}
+
+.projectInput:focus {
+    margin: 0px;
+    width: 300px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 120px;
+}
+
+.projectHeading {
+    background-color: #22222220;
+    font-size: small;
+    color: #111;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 300ms;
+    white-space: pre;
+}
+
+.add {
+    height: 30px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    font-size: small;
+    color: #ccc;
+    margin-left: 10px;
+    transition: all 300ms;
+}
+
+.add:hover {
+    background-color: #333;
+    filter: drop-shadow(0 5px 2px rgba(0, 0, 0, .2));
+}
+
+.add:active {
+    background-color: #000;
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .0));
+    transform: translateY(3);
+
+}
+.validation {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}

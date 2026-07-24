@@ -17,7 +17,10 @@ type SoundKey =
     | "error"
     | "loading"
     | "loading2"
-    | "logout";
+    | "logout"
+    | "bell"
+    | "bell2"
+    | "dream";
 
 const sounds: Partial<Record<SoundKey, HTMLAudioElement>> = {};
 
@@ -43,17 +46,41 @@ export function initSounds() {
     sounds.loading = new Audio("/sounds/loading.wav")
     sounds.loading2 = new Audio("/sounds/loading2.mp3")
     sounds.logout = new Audio("/sounds/logout.mp3")
+    sounds.bell = new Audio("/sounds/bell.mp3")
+    sounds.bell2 = new Audio("/sounds/bell-2.mp3")
+    sounds.dream = new Audio("/sounds/dream.wav")
+
+}
+
+let soundEnabled = true;
+
+export function setSoundEnabled(enabled: boolean) {
+    soundEnabled = enabled;
 }
 
 export function playSound(key: SoundKey) {
+    if (!soundEnabled) return;
+
     const sound = sounds[key];
     if (!sound) return;
 
     sound.currentTime = 0;
     sound.play().catch(() => { });
 }
+export function playSoundDelay(first: SoundKey, delay: number) {
+    if (!soundEnabled) return;
+    const sound = sounds[first];
+    if (!sound) return;
+
+    sound.currentTime = 0;
+
+    setTimeout(() => {
+        sound.play().catch(() => { });
+    }, delay);
+}
 
 export function playSoundAt(key: SoundKey, volumn: number) {
+    if (!soundEnabled) return;
     const sound = sounds[key];
     if (!sound) return;
 
@@ -63,6 +90,7 @@ export function playSoundAt(key: SoundKey, volumn: number) {
 }
 
 export function playLoopSoundAt(key: SoundKey, delay: number, volumn: number) {
+    if (!soundEnabled) return;
     const sound = sounds[key];
     if (!sound) return;
 
@@ -80,6 +108,7 @@ export function playLoopSoundAt(key: SoundKey, delay: number, volumn: number) {
 }
 
 export function playSequential(first: SoundKey, second: SoundKey, delay: number) {
+    if (!soundEnabled) return;
     const sound = sounds[first];
     if (!sound) return;
 
@@ -94,6 +123,7 @@ export function playSequential(first: SoundKey, second: SoundKey, delay: number)
 }
 
 export function stopSound(key: SoundKey) {
+    if (!soundEnabled) return;
     const sound = sounds[key];
     if (!sound) return;
 

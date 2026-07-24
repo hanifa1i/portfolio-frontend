@@ -11,6 +11,7 @@
     transition-duration: 500ms;
     gap: 10px;
 }
+
 .navButtonSmall {
     height: 5px;
     padding-left: 0.75rem;
@@ -44,12 +45,24 @@
     margin-bottom: 50px;
     transition-duration: 200ms;
     background: #eeeeee7b;
-    font-size: medium;
+    font-size: 14px;
     color: #222;
     animation-name: hoverMotion;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    font-weight: 500;
+
+}
+
+.navButtonLarge:active {
+    background: #ffffffb0;
+    border-radius: 70px;
+    width: 200px;
+    height: 200px;
+    animation-name: none;
+    transform: translateY(-30px);
+
 }
 
 .navButtonLarge:hover .navImage {
@@ -65,13 +78,14 @@
     border-radius: 0.2rem;
     align-items: left;
 }
+
 .navButtonSmall:active {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
     transition-duration: 100ms;
-        background-color: #afafaf;
-    box-shadow: inset 0 3 4px rgb(0,0,0,.1);
+    background-color: #afafaf;
+    box-shadow: inset 0 3 4px rgb(0, 0, 0, .1);
 
 }
 
@@ -90,24 +104,28 @@
     background-color: #7d2929;
     color: #d4d4d4;
     animation: accessDenied 500ms;
-        
+
 }
+
 .blockAction:hover {
     background-color: #7d2929;
     color: #d4d4d4;
-    animation: accessDenied 500ms ;
-        
+    animation: accessDenied 500ms;
+
 }
-.blockAction:hover .navImage{
+
+.blockAction:hover .navImage {
     filter: invert(1);
 }
+
 .currentPage {
     font-weight: 500;
     color: #eee;
 }
+
 .blockMessage {
     position: absolute;
-    top:50px;
+    top: 50px;
     transform: translateX(0%);
     font-size: small;
     color: #ccc;
@@ -116,7 +134,7 @@
 
 
 @media (max-width: 900px) {
-    
+
     .navButton-large {
         width: 100%;
         height: 120px;
@@ -141,44 +159,41 @@
         margin-top: 0;
     }
 }
+
 @keyframes accessDenied {
     0% {
-         margin-left: 0px;
+        margin-left: 0px;
     }
+
     15% {
         margin-left: 10px;
-                margin-right: 0px;
-
+        margin-right: 0px;
     }
 
     30% {
         margin-right: 10px;
         margin-left: 0px;
     }
+
     45% {
         margin-left: 10px;
-                margin-right: 0px;
-
+        margin-right: 0px;
     }
 
     60% {
         margin-right: 10px;
         margin-left: 0px;
     }
+
     75% {
         margin-left: 10px;
-                margin-right: 0px;
-
-
+        margin-right: 0px;
     }
 
     90% {
         margin-right: 10px;
         margin-left: 0px;
-
     }
 
-    100% {
-
-    }
+    100% {}
 }

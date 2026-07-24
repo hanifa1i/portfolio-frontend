@@ -16,6 +16,8 @@ export default function HomeNav() {
     const triggerRef = useRef<HTMLDivElement | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isSamePage, setIsSamePage] = useState(false);
+    const [pageName, setPageName] = useState("");
+
 
     const switchPage = (url: string) => {
         if (page === url) {
@@ -24,6 +26,7 @@ export default function HomeNav() {
         }
         else {
             setClicked(true);
+            setPageName(url);
             setTimeout(() => { router.push("/" + url); }, 1500);
         }
     };
@@ -45,25 +48,31 @@ export default function HomeNav() {
 
     return (
         <>
-            <div ref={triggerRef} className="border h-1 z-[400]">hello world</div>
-            <div className={`${style.pageSwitchInactive} ${clicked ? style.pageSwitchActive : ""}`}></div>
+            <div ref={triggerRef} className="opacity-0 border h-1 z-[400]">hello world</div>
+            <div className={`${style.pageSwitchInactive} 
+                    ${clicked ? style.pageSwitchActive : ""}
+                    ${pageName === "sketchbooks" ? style.sketchbookBg : ""}
+                    ${pageName === "skills" ? style.skillsBg : ""}
+                    ${pageName === "qualification" ? style.qualificationBg : ""}
+                    `}></div>
 
             <nav className={`${style.navigation}`}>
                 
-                {isScrolled && (<Login/>)}
+                {isScrolled && (<Login switchPage={switchPage}/>)}
 
-                <div className={`${style.navButtons} ${isScrolled ? style.navButtonsSmall : style.navButtonsLarge}`}>
+                <div className={`home ${style.navButtons} ${isScrolled ? style.navButtonsSmall : style.navButtonsLarge}`}>
                     {
-                        navigation.map((items, index) => (
-                            <NavButton
+                        navigation.map((items, index) => 
+                            (items.label !== "←" && (<NavButton
                                 key={index}
                                 label={items.label}
+                                page={page}
                                 icon={items.image}
                                 isScrolled={isScrolled}
                                 isSamePage={isSamePage}
                                 switchPage={switchPage}
-                            />
-                        ))
+                            />))
+                        )
                     }
                 </div>
             </nav >

@@ -34,6 +34,7 @@
     border-radius: 10px;
     background-color: #cac3ae;
     padding-left: 40px;
+    padding-right: 40px;
     outline: none;
     box-shadow: none;
     transition: all 300ms;
@@ -81,16 +82,6 @@
     }
 }
 
-.hide {
-    padding: 0;
-    margin: 0;
-    width: 0;
-    height: 0;
-    transition: all 300ms;
-    overflow: hidden;
-    font-size: 0;
-}
-
 .validation {
     background-color: #222;
     font-size: small;
@@ -110,4 +101,89 @@
 .hideValidation {
     margin-left: 40px;
     transform: translateY(-30px);
+}
+
+.shake {
+    animation: shakeAni 500ms forwards;
+}
+
+@keyframes shakeAni {
+    0% {
+        margin-left: 0px;
+    }
+
+    15% {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+
+    30% {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+
+    45% {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+
+    60% {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+
+    75% {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+
+    90% {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+
+    100% {}
+}
+
+.hide {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+    transition: all 300ms;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.inputTick {
+    padding: 5px;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    font-size: small;
+    background-color: #2a7037;
+    border-radius: 20px;
+    transition: 300ms all;
+    transform: translateX(-50px) scale(0.8);
+}
+.inputTickHide{
+    transform: translateX(-50px) scale(0);
+}
+
+.input:focus~.inputTick {
+    margin-top: 20px;
+    transform: translateX(-60px)
+}
+
+.inputTickDate {
+    margin-left: 0px;
+}
+.input:focus~.inputTickDate {
+    margin-top: 10px;
+    margin-left: 0px;
+    transform: translateX(-50px) scale(0.8);
+}
+.input:focus~.inputTickHide {
+        transform: translateX(-60px) scale(0);
 }

@@ -1,20 +1,28 @@
+import { playSound } from "@/app/lib/SoundManager";
 import styles from "./SocialsLinks.module.css";
 
 type SocialsProps = {
-    name : string;
-    image : string;
+    name: string;
+    image: string;
+    link: string;
 };
 
-export default function Socials({name, image }: SocialsProps) {
+export default function Socials({ name, image, link }: SocialsProps) {
+    const isEmail = link.startsWith("mailto:");
 
     return (
         <>
-            <div className={`${styles.iconContainer} offscreenLeft`}>
+            <a
+                href={link}
+                target={isEmail ? undefined : "_blank"}
+                rel={isEmail ? undefined : "noopener noreferrer"}
+                onClick={() => playSound("whosh")}
+                onMouseEnter={() => playSound("hover")} className={`${styles.iconContainer} offscreenLeft`}>
                 <img src={image} className={styles.iconImage} />
                 <div className={styles.iconName}>
                     {name}
                 </div>
-            </div>
+            </a>
         </>
     )
 }

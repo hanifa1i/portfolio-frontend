@@ -6,27 +6,26 @@ import { recentArt } from "@/app/data/recentArt"
 import useScrollReveal from "@/app/hooks/useScrollReveal";
 import FullScreenArt from "../fullScreenArt/FullScreenArt";
 import Sort from "./sort/Sort";
+import { ArtworkResponse } from "@/app/types/Dashboard";
 
-type Art ={
-    images: string[];
-    date: string;
-    tool: string;
-}
 type Props = {
-    art: Art;
+    artworks: ArtworkResponse[];
 };
 
-export default function ArtGrid({ art }: Props) {
+export default function ArtGrid({ artworks }: Props) {
 
     const [expandArt, setExpandArt] = useState(false);
 
-    const [artwork, setArtwork] = useState(art);
+    const [artwork, setArtwork] = useState<ArtworkResponse>();
 
     const [activeTool, setActiveTool] = useState("All");
+    const [filtertedArtworks, setFilteredArtworks] = useState<ArtworkResponse[]>([]);
 
-    var sortedArt
+    useEffect(() => {
+        setFilteredArtworks(artworks);
+    }, [artworks]);
 
-    const handleExpandArt = (artwork: Art) => {
+    const handleExpandArt = (artwork: ArtworkResponse) => {
         setExpandArt(true);
         setArtwork(artwork);
     }
@@ -39,25 +38,58 @@ export default function ArtGrid({ art }: Props) {
         setActiveTool(tool);
     }
 
-    if (activeTool === "most recent") {
-        sortedArt = [...recentArt]
-            .filter(item => item.date) // remove bad entries
-            .sort((a, b) => {
-                const [dA, mA, yA] = a.date.split("/").map(Number);
-                const [dB, mB, yB] = b.date.split("/").map(Number);
+    const handleSorting = (filterType: string, filter: string) => {
+        console.log(artworks)
+        if (filterType === "") {
+            setFilteredArtworks(artworks);
+            console.log("hello", filtertedArtworks)
 
-                const dateA = new Date(yA, mA - 1, dA);
-                const dateB = new Date(yB, mB - 1, dB);
+        }
+        else if (filterType === "date") {
+            if (filter === "most recent") {
+                const sorted = [...artworks].sort(
+                    (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+                );
+                setFilteredArtworks(sorted);
 
-                return dateB.getTime() - dateA.getTime();
-            });
+            }
+            if (filter === "least recent") {
+                const sorted = [...artworks].sort(
+                    (a, b) => new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()
+                );
+                setFilteredArtworks(sorted);
+
+            }
+        }
+        else if (filterType === "tool") {
+            if (filter === "Others") {
+                const filtered = artworks.filter(artwork => artwork.tool !== "Procreate" && artwork.tool !== "Photoshop");
+                setFilteredArtworks(filtered);
+            }
+            else {
+                const filtered = artworks.filter(artwork => artwork.tool === filter);
+                setFilteredArtworks(filtered);
+            }
+        }
+        else if (filterType === "ratio") {
+
+            if (filter === "wide") {
+                const filtered = artworks.filter(artwork => artwork.tag_names.includes("landscape"));
+                setFilteredArtworks(filtered);
+            }
+            else if (filter === "square") {
+                const filtered = artworks.filter(artwork => artwork.tag_names.includes("square"));
+                setFilteredArtworks(filtered);
+            }
+        }
+        else if (filterType === "tag") {
+            const filtered = artworks.filter(artwork => artwork.tag_names.includes(filter));
+            setFilteredArtworks(filtered);
+        }
     }
-    else {
-        sortedArt = recentArt.filter(art =>
-            activeTool === "All" ? true : art.tool === activeTool
-        )
-    }
-    useScrollReveal(".offscreenDown", "easeIn");
+
+
+    useScrollReveal(".offscreenDown", "easeIn", false);
 
 
     return (
@@ -67,7 +99,7 @@ export default function ArtGrid({ art }: Props) {
 
                 <Sort
                     filterName={activeTool}
-                    setFilter={handleActiveTool}
+                    setFilter={handleSorting}
                 />
 
                 {expandArt && (<FullScreenArt
@@ -76,37 +108,12 @@ export default function ArtGrid({ art }: Props) {
                 />)}
 
                 <div className={`${styles.artGrid} `}>
-                    {sortedArt.map((items, index) => (
+                    {filtertedArtworks.map((items, index) => (
                         <ArtCard
                             key={index}
-                            art={items}
+                            artwork={items}
                             onExpand={handleExpandArt} />
                     ))}
-                    {sortedArt.map((items, index) => (
-                        <ArtCard
-                            key={index}
-                            art={items}
-                            onExpand={handleExpandArt} />
-                    ))}
-                    {sortedArt.map((items, index) => (
-                        <ArtCard
-                            key={index}
-                            art={items}
-                            onExpand={handleExpandArt} />
-                    ))}
-                    {sortedArt.map((items, index) => (
-                        <ArtCard
-                            key={index}
-                            art={items}
-                            onExpand={handleExpandArt} />
-                    ))}
-                    {sortedArt.map((items, index) => (
-                        <ArtCard
-                            key={index}
-                            art={items}
-                            onExpand={handleExpandArt} />
-                    ))}
-                    
                 </div>
             </div>
         </>

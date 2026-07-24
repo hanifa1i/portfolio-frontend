@@ -1,5 +1,9 @@
 export const navigation = [
     {
+        label: "←",
+        image: "/images/nav/home.svg",
+    },
+    {
         label: "artwork",
         image: "/images/nav/digital-art-b.svg",
     },
@@ -18,9 +22,6 @@ export const navigation = [
     {
         label: "experience",
         image: "/images/nav/experience.svg",
-    },
-    {
-        label: "projects",
-        image: "/images/nav/projects.svg",
     }
+
 ]

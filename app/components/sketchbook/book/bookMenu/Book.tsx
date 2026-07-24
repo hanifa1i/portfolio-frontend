@@ -17,14 +17,10 @@ import SpiralBookFront from "../bookStyles/spiralBook/components/front/front"
 import BookInfo from "@/app/components/sketchbook/bookInfo/BookInfo"
 import { sketchbooks } from "@/app/data/sketchbooks"
 import { playSound, playSoundAt } from "@/app/lib/SoundManager"
+import stylesCommon from "./Book.module.css"
+import { Sketchbook } from "../Books"
+import { useState } from "react"
 
-export type Sketchbook = {
-  id: number;
-  title: string;
-  pages: number;
-  page_size: "A4" | "A5" | "A3";
-  page_style: string;
-}
 
 type Props = {
     selected: number
@@ -33,9 +29,11 @@ type Props = {
     bookId: number
     selectBook: (bookNo: number, book: Sketchbook) => void;
     bookGap: number;
+    pages: number;
+    enableAni: boolean
+    setEnableAni: (state: boolean) => void
 }
-export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap }: Props) {
-
+export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni}: Props) {
 
     const BOOK_STYLES: Record<number, typeof a5Styles> = {
         1: a5Styles,
@@ -52,37 +50,52 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
         <>
             <div
                 onMouseEnter={() => playSoundAt("bookHover", 0.1)}
-                onClick={() => { playSound("bookPick"), selectBook(sketchbook.id, sketchbook) }}
+                onClick={() => { playSound("bookPick"), selectBook(sketchbook.id, sketchbook)}}
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
                     ${selected !== -1 && selected < bookNumber ? styles.moveRight : ""}
                     ${selected !== -1 && selected > bookNumber ? styles.moveLeft : ""}`}>
 
-                <div className={`${styles.bookSpine} ${selected === bookNumber ? styles.bookSpineAfter : styles.bookSpineBefore}`}>
-                    {bookId === 1 && (<A5Spine />)}
-                    {bookId === 2 && (<A3Spine />)}
-                    {bookId === 4 && (<A4NotebookYear2Spine />)}
-                    {bookId === 5 && (<SpiralBookSpine />)}
+                <div style={{ "--delay": `${bookGap}ms` } as React.CSSProperties}
+                    onAnimationStart={() => {
+                        setTimeout(() => {
+                            enableAni ? playSound("drum") : "";
+                        }, 500);
+                    }}
+                    onAnimationEnd={() => setTimeout(() => { setEnableAni(false)}, 500)}
+                    className={`flex ${enableAni ? stylesCommon.popInBooks : ""}
+                        ${bookId === 1 ? stylesCommon.a5 : ""}
+                        ${bookId === 2 ? stylesCommon.a3 : ""}
+                        ${bookId === 5 ? stylesCommon.spiral : ""}`}>
+
+                    <div className={`${styles.bookSpine} ${selected === bookNumber ? styles.bookSpineAfter : styles.bookSpineBefore}`}>
+                        {bookId === 1 && (<A5Spine />)}
+                        {bookId === 2 && (<A3Spine />)}
+                        {bookId === 4 && (<A4NotebookYear2Spine />)}
+                        {bookId === 5 && (<SpiralBookSpine />)}
 
 
-                </div>
-                <div className={`${styles.bookFront} ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}`}>
-                    {bookId === 1 && (<A5Front />)}
-                    {bookId === 2 && (<A3Front state={selected === bookNumber ? "transition" : "peek"} />)}
-                    {bookId === 4 && (<A4Year2Front/>)}
-                    {bookId === 5 && (<SpiralBookFront state={selected === bookNumber ? "transition" : "peek"} />)}
+                    </div>
+                    <div className={`${styles.bookFront} ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}`}>
+                        {bookId === 1 && (<A5Front />)}
+                        {bookId === 2 && (<A3Front state={selected === bookNumber ? "transition" : "peek"} />)}
+                        {bookId === 4 && (<A4Year2Front />)}
+                        {bookId === 5 && (<SpiralBookFront state={selected === bookNumber ? "transition" : "peek"} />)}
+
+                    </div>
 
                 </div>
 
             </div>
-            
-            <div
+
+            {enableAni === false && (<div
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
-                className={` ${selected >= 1 && selected <= 5? `opacity-0` : styles.bookInfo}`}>
+                className={` ${selected >= 1 && selected <= 5 ? `opacity-0` : styles.bookInfo}`}>
                 {/*<div className={`${styles.line}`}></div>*/}
 
-                <BookInfo/>
-            </div>
+                <BookInfo sketchbook={sketchbook} pages={pages} />
+            </div>)}
+
         </>
     )
 }

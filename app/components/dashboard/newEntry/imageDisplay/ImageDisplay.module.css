@@ -1,0 +1,57 @@
+.imageContainer {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.image {
+    object-fit: cover;
+    height: 200px;
+    border-radius: 10px;
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .1));
+    border: 0px solid #dbd4b7;
+    transition: all 300ms;
+
+}
+
+.x {
+    position: relative;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%) scale(0);
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    font-size: small;
+    color: #ccc;
+    opacity: 0;
+    transition: all 300ms;
+    cursor: pointer;
+
+}
+
+.image:hover~.x {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.x:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+    filter: drop-shadow(5 5px 2px rgba(0, 0, 0, .1));
+}
+
+.x:active {
+    transform: translateX(-50%) scale(0.8);
+}
+
+.fadeOut {
+    opacity: 0.5;
+    background-color: #111;
+    scale: 0.9;
+}

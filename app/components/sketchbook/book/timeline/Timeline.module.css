@@ -2,15 +2,16 @@
     padding: 20px;
     width: fit-content;
     margin: auto;
-    bottom: 0px;
-    position: relative;
+    bottom: 20px;
+    left: 50%;
+    position: absolute;
     display: flex;
     align-items: center;
     transition: all 200ms;
-
+    transform: translateX(-50%) scale(1);
 }
 .fadeOut{
-    transform: scale(0);
+    transform: translateX(-50%) scale(0);
 }
 .shrinkX{
     width: 0px;
@@ -55,8 +56,8 @@
 }
 
 .timelineContainer:hover {
-    transform: scale(1.2);
+    transform: translateX(-50%) scale(1.2);
 }
 .fadeOut:hover {
-    transform: scale(0);
+    transform: translateX(-50%) scale(0);
 }

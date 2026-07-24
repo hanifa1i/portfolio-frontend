@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.no-animations *,
+.no-animations *::before,
+.no-animations *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.no-shadows *,
+.no-shadows *::before,
+.no-shadows *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+
+}
 
 .portfolioHeadingContainer {
     font-size: 40px;
@@ -22,6 +37,24 @@
     padding-left: 30px;
     padding-right: 30px;
     font-weight: bold;
+    color: #fff;
+    
+    animation: portHeading 4000ms forwards ;
+}
+@keyframes portHeading{
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px) scale(3);
+    }
+    80% {
+        opacity: 0;
+        transform: translateX(-1000px) scale(3);
+
+    }
+    100% {
+        opacity: .7;
+        transform: translateX(0) scale(1);
+    }
 }
 
 
@@ -95,6 +128,7 @@
     transform: translateY(50px);
 
 }
+
 .offscreenPopUp {
     opacity: .5;
     height: 100px;
@@ -103,6 +137,7 @@
     transform: translateY(0) scale(90%);
 
 }
+
 .subheadingInfo {
     background: #222;
     width: 80%;
@@ -110,10 +145,11 @@
     margin-bottom: 50px;
     margin-left: 20%;
     border-radius: 20px;
-        align-content: center;
+    align-content: center;
     color: #222;
     transition: all 500ms;
 }
+
 
 .offscreenDown {
     opacity: 0;
@@ -128,25 +164,31 @@
     transform: translateX(0);
 }
 
+
 .artworkContainer {
     background-color: #111;
 }
+
 .sketchbookContainer {
-    background-color: #a79891;
+    background-color: #a09c97;
 }
+
 .skillsContainer {
     background-color: #111;
 }
+
 .qualContainer {
-    background-color: #de7544;
+    background-color: #4b4140;
 }
+
 .expContainer {
     background-color: #111;
     height: fit-content;
     min-height: 100vh;
 }
+
 .dashboardContainer {
-    background-color: #a39b83;   
+    background-color: #a39b83;
 }
 
 .pageCenterer {
@@ -154,6 +196,125 @@
     margin-left: auto;
     margin-right: auto;
     justify-items: center;
-        min-height: 100vh;
+    min-height: 100vh;
+}
 
+.homeBg {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+}
+
+.homeIntro {
+    animation: homeAni 4000ms forwards;
+}
+
+@keyframes homeAni {
+    0% {
+        opacity: 0;
+        scale: 2;
+    }
+    66% {
+        opacity: 0;
+        scale: 2;
+    }
+
+    82% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.9;
+        scale: 1;
+    }
+
+}
+
+.home {
+    animation: home 4000ms;
+}
+
+@keyframes home {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    66% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    82% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.title {
+    position: fixed;
+    font-size: 3vw;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    transform: translateY(-100px);
+
+    animation: title 1000ms forwards;
+}
+.title2 {
+    animation-delay: 700ms;
+    opacity: 0;
+}
+.title3 {
+    animation-delay: 1400ms;
+    opacity: 0;
+}
+.avatar {
+    width: 6vw;
+    height: 6vw;
+    background-color: #a0a0a0;
+    border-radius: 100px;
+    padding: 10px;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #dbcdcd, #baadd0, #878e90);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient {
+    background: linear-gradient(90deg, #ff4d4d, #6200ff, #00ff33);
+}
+@keyframes title {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    50% {
+
+        opacity: 0.6;
+                transform: translateY(0px);
+
+    }
+
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+        display: hidden;
+    }
+}
+
+.fadeOutRecent{
+    transition: all 500ms;
+    opacity: 0;
+    transform: translateX(20px);
 }

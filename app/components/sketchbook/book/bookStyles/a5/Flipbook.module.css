@@ -23,21 +23,19 @@
 }
 
 .rightPage {
-    background-color: bisque;
-    border-width: 1px;
+    border-width: 0px;
+    background-color: #fff;
     border-color: #3b231971;
     border-radius: 20px;
     overflow: hidden;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .3));
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .2));
 
 }
 
 .leftPage {
-    background-color: bisque;
-    border-width: 1px;
-    border-right-width: 0;
+    background-color: #fff;
     border-color: #3b231971;
     border-radius: 20px;
     overflow: hidden;
@@ -46,5 +44,11 @@
     margin-left: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, .3));
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, .2));
+    justify-items: end;
+}
+.image {
+    max-height: 100%;
+    width: 100%;
+    opacity: .7;
 }

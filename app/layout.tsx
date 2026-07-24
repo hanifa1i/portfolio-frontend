@@ -4,9 +4,31 @@ import "./globals.css";
 import "./lib/SoundManager";
 import { initSounds } from "./lib/SoundManager";
 import { AuthProvider } from "../auth/AuthContext";
+import { SettingsProvider } from "./settingsProvider";
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+
+    const unlockAudio = () => {
+
+        const audio = new Audio("/sounds/hover.mp3");
+
+        audio.volume = 0;
+
+        audio.play();
+
+        window.removeEventListener("click", unlockAudio);
+    };
+
+    window.addEventListener("click", unlockAudio);
+
+    return () => {
+        window.removeEventListener("click", unlockAudio);
+    };
+
+}, []);
+  
   useEffect(() => {
     initSounds();
   }, []);
@@ -14,7 +36,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <SettingsProvider>{children}</SettingsProvider>
+        </AuthProvider>
       </body>
     </html>
   );

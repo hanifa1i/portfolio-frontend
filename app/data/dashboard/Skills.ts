@@ -1,4 +1,4 @@
-import type { Skill } from "@/app/types/dashboard";
+import type { Skill } from "@/app/types/Dashboard";
 
 export const skills: Skill[] = [
   {

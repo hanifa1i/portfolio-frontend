@@ -2,35 +2,66 @@
     display: flex;
     width: 80vw;
     height: 80vh;
+    align-items: flex-start;
+    max-width: 1500px;
 }
-.dashboardDividerForNewEntry {
+
+.dashboardDividerForNewEntryList {
     height: fit-content;
 }
+
 .section {
-    transition: 300ms;
 }
+
 .listContainer {
     flex: 0;
-    justify-items: center;
 }
-.buttonContainer { 
+
+.buttonContainer {
     flex: 1;
     display: grid;
+    border-width: 0px;
 }
-.hideButtons { 
+.heading {
+    font-size: 40px;
+    width: fit-content;
+    margin: 10px;
+    color: #ece0bd;
+}
+
+.hideButtons {
     flex: 0;
     overflow: hidden;
 }
+
 .addNewContainer {
     flex: 0;
     height: fit-content;
 }
-
+.dashboardContainer {
+    display: flex;
+}
+.recentActivites{
+    flex: 3;
+    border-width: 0px;
+}
+.entryCount{
+    flex: 1;
+    border-width: 0px;
+}
+.dashboardModules{
+    flex: 4;
+    border-width: 0px;
+}
 .statButtons {
-    padding-top: 40vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: sticky;
     justify-items: end;
-        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
-
+    height: 100%;
+    margin-top: 10px;
 }
 
 .profileButton {
@@ -41,23 +72,30 @@
     border-radius: 25px;
     background-color: #ccc;
 }
-
+.buttons{
+margin-top: auto;
+}
 .statButtonContainer {
     display: flex;
     align-items: center;
+    
+    height: fit-content;
 }
+
 .button {
     transition: all 300ms;
     width: 300px;
     height: 50px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #222;
     align-items: center;
     text-align: center;
     padding-left: 20px;
     display: flex;
     font-size: small;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
+
 }
 
 .buttonIcon {
@@ -65,22 +103,25 @@
     height: 15px;
     margin: 10px;
     filter: invert(1);
-    opacity: 0.5;
+    opacity: 0.7;
 }
-.selectedButtonIcon{
+
+.selectedButtonIcon {
     opacity: 1;
 }
 
-.button:hover{
+.button:hover {
     transform: scale(1.05);
     background-color: #333;
 }
+
 .button:active {
     transform: scale(0.95);
     background-color: #111;
 
 }
-.button:hover .buttonIcon{
+
+.button:hover .buttonIcon {
     background-color: #ccc;
     opacity: 1;
 }
@@ -106,13 +147,15 @@
     transform: translateX(0%);
     font-size: small;
 }
-.statButtonContainer:hover .addButton:hover{
+
+.statButtonContainer:hover .addButton:hover {
     background-color: #ccc;
     color: #111;
     scale: 1.2;
 
 }
-.statButtonContainer:hover .addButton:active{
+
+.statButtonContainer:hover .addButton:active {
     transform: scale(.9);
     background-color: #999;
 }
@@ -122,30 +165,36 @@
     border: 0px solid #454545;
     justify-content: center;
     text-align: center;
-        padding: 0px;
+    padding: 0px;
+    border-radius: 20px;
+}
 
-}
-.shrinkButton:hover{
-}
+.shrinkButton:hover {}
+
 .selectedButton {
     border: 0px solid #ccc;
     transform: translateY(-5px) translateX(10px) scale(1.1);
     margin-top: 15px;
-        filter: drop-shadow(-5 0px 5px rgba(0, 0, 0, .2));
+    filter: drop-shadow(-5 0px 5px rgba(0, 0, 0, .2));
 
 }
+
 .selectedButton:hover {
     border: 0px solid #ccc;
     transform: translateY(-5px) translateX(10px) scale(1.1);
 
 }
+
 .open {
-    flex:20;
+    flex: 20;
     padding: 100px;
+    padding-top: 50px;
 }
+
 .openNew {
-    flex:1;
+    flex: 1;
 }
+
 .close {
     flex: 0;
     overflow: hidden;
@@ -163,16 +212,18 @@
     z-index: 250;
     background-color: #222;
 }
+
 .editCard {
     height: 600px;
     width: 400px;
-        margin-right: 50px;
+    margin-right: 50px;
     right: -0;
 
     border-radius: 10px;
     transform: translateY(-50%) translateX(-15vw);
     filter: drop-shadow(-20 20px 10px rgba(0, 0, 0, .2));
 }
+
 .tint {
     position: fixed;
     top: 0;
@@ -183,6 +234,7 @@
     background-color: #1111116a;
     z-index: 200;
 }
+
 .exitButton {
     width: 30px;
     height: 30px;
@@ -195,18 +247,91 @@
     color: #111;
     transition: all 300ms;
 }
+
 .exitButton:hover {
-   
+
     background-color: #be4040;
     color: #ccc;
     transform: rotate(360deg) scale(1.2);
 }
+
 .hide {
     padding: 0;
-    margin: 30;
+    margin: 0;
     width: 0;
     height: 0;
     transition: all 300ms;
     overflow: hidden;
     font-size: 0;
+}
+
+.tableEditToggle {
+    right: 10px;
+    top: 100px;
+    width: 40px;
+    height: 20px;
+    background-color: #22222250;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 300ms all;
+    justify-items: center;
+    rotate: calc(270deg);
+    scale: 1.3;
+}
+
+.tableEditToggleTrue {
+    background-color: #cccccc50;
+
+}
+
+.toggleButton {
+    height: 20px;
+    width: 20px;
+    transform: translateX(-15px) scale(1.2);
+    border-radius: 20px;
+    background-color: #222;
+    filter: drop-shadow(0 5px 2px rgba(0, 0, 0, .1));
+    transition: 300ms all;
+}
+
+.tableEditToggle:hover .toggleButton {
+    width: 30px;
+    transform: translateX(-15px) scale(1.2);
+}
+
+.toggleTrue {
+    transform: translateX(15px) scale(1.2);
+    background-color: #ccc;
+}
+
+.tableEditToggle:hover .toggleTrue {
+    width: 30px;
+    transform: translateX(15px) scale(1.2);
+}
+
+.toggleHide {
+    scale: 0;
+}
+
+.toggleText {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    color: #111;
+    font-size: medium;
+    font-weight: 400;
+    border: 0px solid #11111150;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.toggleTextTrue {
+    border: 1px solid #21511f50;
+    color: #eee;
+}
+.toggleContainer {
+    height: 300px;
+    justify-items: center;
+    padding-top: 100px;
 }

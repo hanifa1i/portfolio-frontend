@@ -1,11 +1,15 @@
 import { playSound } from "@/app/lib/SoundManager";
 import styles from "./BookSelector.module.css"
+import { useState } from "react";
 
 type Props = {
     setBook: (bookId: number) => void;
     bookId: number
 }
 export default function BookSelector({setBook, bookId}: Props){
+    useState(() => {
+        bookId;
+    },)
     return (
 
         <div className={`${styles.container}`}>

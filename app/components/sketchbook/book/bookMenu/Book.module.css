@@ -1,0 +1,42 @@
+.popInBooks {
+    animation: popInBooks 1000ms forwards;
+    animation-delay: var(--delay);
+    opacity: 0;
+    display: flex;
+    border-color: #111;
+    border-radius: 15px;
+}
+.a5 {
+    border-color: #3b2319;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+.a3 {
+    border-color: #5c4b3c;
+}
+.spiral {
+    border-color: #726f6c;
+}
+@keyframes popInBooks {
+    0% {
+        transform: translateY(1000px) scale(0);
+        opacity: 0;
+        border-bottom-width: 0px;
+        border-right-width: 300px;
+    }
+
+    50% {
+        transform: translateY(-100px) scale(.5);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-100px) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+}

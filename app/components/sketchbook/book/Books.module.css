@@ -19,30 +19,52 @@
 }
 
 .pageInfo {
-    width: 100%;
-    padding-left: 50%;
-    padding-right: 25%;
+    width: fit-content;
+
+    padding: 30px;
+
+    margin-left: 55%;
+    padding-left: 30px;
+    padding-right: 10%;
     font-size: 100px;
-    color: #333;
+    color: #ccc;
     display: grid;
-    transform: translateY(00px);
     transition: all 500ms;
+    background-color: #191919;
+    font-size: large;
+    border-radius: 20px;
+    white-space: pre-wrap;
+    transform: scale(0);
+    animation: popIn 500ms forwards;
+    animation-delay: 500ms;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
     }
 
-.subInfo {
-    padding-top: 20px;
-    padding-bottom: 20px;
-        margin-left: 0%;
+    100% {
+        transform: scale(1);
+    }
 
+}
+
+.subInfo {
+    padding-top: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 14;
     width: fit-content;
-    font-size: 20px;
-    border-top: #333 solid 5px;
+    border-top: #333 solid 2px;
     display: flex;
+    white-space: pre-wrap;
+    color: #aaa;
 }
 
 .arrow {
-    background: #222;
-    color: #999;
+    background: #ccc;
+    color: #222;
     padding-left: 10px;
     padding-right: 10px;
     margin-right: 10px;
@@ -65,27 +87,30 @@
     border-radius: 20px;
     transition: all 500ms;
     z-index: -10;
-
+    transform: translateX(0px) translateY(-5.7%);
+    position: absolute;
 }
-.landscapeTransformX{
-    transform: translateX(-1100);
+
+.landscapeTransformX {
+    transform: translateX(-1100) translateY(-5.7%);
 }
 
 .bookFrontCenter {
-    transform: translateX(-275px);
+    transform: translateX(-275px) translateY(-5.7%);
 }
 
 .bookBackCenter {
-    transform: translateX(275px);
+    transform: translateX(275px) translateY(-5.7%);
 }
 
 .bookFrontCenterLandscape {
-    transform: translateX(-1100px);
+    transform: translateX(-1100px) translateY(-5.7%);
 }
 
 .bookBackCenterLandscape {
-    transform: translateX(0px);
+    transform: translateX(0px) translateY(-5.7%);
 }
+
 .flap {
     position: absolute;
     width: 100px;
@@ -96,8 +121,13 @@
     margin-left: 1200px;
     z-index: -1;
     transform: translateX(-100px);
-    animation: flapAni 500ms forwards;
+
     opacity: 0;
+
+}
+
+.flapAni {
+    animation: flapAni 500ms forwards;
     animation-delay: 500ms;
 }
 
@@ -123,11 +153,112 @@
 }
 
 @keyframes flapAni {
-    0%{
+    0% {
         opacity: 100;
     }
+
     100% {
         opacity: 100;
         transform: translateX(-0);
     }
 }
+
+.flapHide {
+    animation: flapHideAni 500ms forwards;
+}
+
+@keyframes flapHideAni {
+    0% {
+        opacity: 100;
+                transform: translateX(0);
+
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100);
+    }
+}
+
+.infoBar {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ccc;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    font-size: 30px;
+    color: #999;
+    z-index: 10;
+    cursor: pointer;
+    transition: 300ms;
+    transform: scale(1);
+    animation: popIn 500ms;
+}
+
+.infoBarHide {
+    transform: scale(0);
+
+}
+
+.infoBar:hover {
+    scale: 1.1;
+}
+
+.infoBar:active {
+    scale: 1;
+    background-color: #aaa;
+
+}
+
+.expand {
+    display: flex;
+    width: 500px;
+    height: 200px;
+    align-items: baseline;
+    border-radius: 15px;
+    padding: 20px;
+    padding-right: 40px;
+    background-color: #cccccc60;
+    backdrop-filter: blur(30px);
+}
+
+.expand:hover {
+    scale: 1;
+}
+
+.closeInfo {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+}
+
+.description {
+    display: flex;
+    font-size: small;
+    margin-left: 20px;
+    width: auto;
+    color: #222;
+    padding-left: 20px;
+    border-left: 1px solid #22222230;
+    text-align: start;
+    animation: descriptionAnimation 500ms forwards;
+    animation-delay: 300ms;
+}
+
+@keyframes descriptionAnimation {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+

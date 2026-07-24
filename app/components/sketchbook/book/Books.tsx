@@ -9,14 +9,26 @@ import Flipbook from "./flipbook/Flipbook"
 
 import { useEffect, useRef, useState } from "react"
 import { LargeNumberLike } from "crypto"
+import BookUpdate from "../bookUpdate/BookUpdate"
+import useScrollReveal from "@/app/hooks/useScrollReveal"
+import { playSound } from "@/app/lib/SoundManager"
+import { ArtworkResponse } from "@/app/types/Dashboard"
+import { getSketchbookArt } from "@/app/services/artworkService"
+import { set } from "date-fns"
 
+export type Props = {
+    setBookActive: (active: boolean) => void
+}
 export type Sketchbook = {
     id: number;
-    title: string;
-    pages: number;
-    page_size: "A4" | "A5" | "A3";
+    name: string;
+    page_size: string;
     page_style: string;
-};
+    title: string;
+    year: string;
+    description: string
+}
+
 
 export type PageSettings = {
     page_style: string;
@@ -24,26 +36,47 @@ export type PageSettings = {
     container_width: number;
     transform_x: number;
 };
-export default function book() {
+
+export type BookData = {
+    book: number
+    pages: ArtworkResponse[];
+}
+export default function book({ setBookActive }: Props) {
 
     const bookRef = useRef();
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [selectedBook, setSelectedBook] = useState(-1);
+    const [selectedBookData, setSelectedBookData] = useState<BookData>({ book: 0, pages: [] });
+    const [enableAnimation, setEnableAnimation] = useState(true);
+
+
     const [enableBook, setEnableBook] = useState(false);
     const [sketchbook, setSketchbook] = useState<Sketchbook>();
     const [settings, setSettings] = useState<PageSettings>();
+    const [expandInfo, setExpandInfo] = useState(false);
+    const [hovered, setHovered] = useState(false);
+    const [books, setBooks] = useState<BookData[]>([]);
 
+
+    const handleExpand = (state: boolean) => {
+        if (selectedBookData.pages[currentPage - 3] !== undefined) {
+            if (expandInfo) { setExpandInfo(false) }
+            else { setExpandInfo(true) }
+        }
+    }
+    useScrollReveal(".offscreenDown", "easeIn", false);
 
     const targetBook = (bookNo: number, book: Sketchbook) => {
-        if (book.page_style === "portrait"){
+        if (book.page_style === "portrait") {
             setSettings(pageSettings[1])
         }
-        else{
+        else {
             setSettings(pageSettings[0])
         }
         setSketchbook(book)
         setSelectedBook(bookNo);
+        setSelectedBookData(books[bookNo - 1]);
         setTimeout(() => { setEnableBook(true); }, 500);
     }
     const reset = () => {
@@ -57,26 +90,95 @@ export default function book() {
         setTimeout(() => { setSelectedBook(-1); }, 800);
     }
 
+    useEffect(() => {
+        if (selectedBook === -1) {
+            setBookActive(false);
+        }
+        else {
+            setBookActive(true);
+        }
+    }, [selectedBook]);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data: ArtworkResponse[] = await getSketchbookArt();
+
+                organiseBooks(data);
+
+            } catch (error) {
+                console.error("Failed to get sketchbook data", error);
+            }
+        };
+
+        fetchData();
+    }, [])
+
+    const organiseBooks = (pages: ArtworkResponse[]) => {
+
+        const book1: ArtworkResponse[] = [];
+        const book2: ArtworkResponse[] = [];
+        const book3: ArtworkResponse[] = [];
+        const book4: ArtworkResponse[] = [];
+        const book5: ArtworkResponse[] = [];
+
+        pages.forEach(page => {
+            if (page.title === "Book 1") { book1.push(page); }
+            if (page.title === "Book 2") { book2.push(page); }
+            if (page.title === "Book 3") { book3.push(page); }
+            if (page.title === "Book 4") { book4.push(page); }
+            if (page.title === "Book 5") { book5.push(page); }
+        });
+
+        book1.sort((a, b) => a.page_number - b.page_number);
+        book2.sort((a, b) => a.page_number - b.page_number);
+        book3.sort((a, b) => a.page_number - b.page_number);
+        book4.sort((a, b) => a.page_number - b.page_number);
+        book5.sort((a, b) => a.page_number - b.page_number);
+
+
+        setBooks(
+            [
+                { book: 1, pages: book1 },
+                { book: 2, pages: book2 },
+                { book: 3, pages: book3 },
+                { book: 4, pages: book4 },
+                { book: 5, pages: book5 },
+            ]
+        )
+    }
+
+    useEffect(() => {
+        console.log("test", selectedBookData)
+        console.log("test1, ", selectedBookData.pages[currentPage - 3])
+    }, [selectedBookData, currentPage])
+
     return (
         <>
+            <BookUpdate book={selectedBook} />
 
-            <div 
-            style={{ "--bookContainerWidth": `${settings?.container_width}px` } as React.CSSProperties}
+            <div
+                style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
 
-            className={`${styles.bookContainer}`}>
+                className={`${styles.bookContainer} `}>
 
 
                 {!enableBook && (
                     <div className={`${styles.books}`}>
 
                         <div className={`${styles.pageInfo} ${selectedBook !== -1 ? styles.fadeOut : ""}`}>
-                            <div>sketchbooks</div>
-                            <div className={`${styles.subInfo}`}>hello melon eat mango and you will get superpowers of oranges the shoot out apples </div>
+                            <div>ⓘ   Sketchbooks</div>
+                            <p className={`${styles.subInfo} `}>These are some of my physical sketchbooks i had drawn in, throughout my life. From practicing, to studies and live drawings.
+                                I had recreated these in digital form so anyone can view them </p>
+                            <div className={`${styles.subInfo}`}>Click<img src={"/images/sketchbook/bell-static.png"} className={` ml-[5px] mr-[5px] h-[20px] invert`} />icon on the far left to know if I have added any new sketches</div>
+
                             <div className={`${styles.subInfo}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
                         </div>
 
-
                         {sketchbooks.map((sketchbook, index) => (
+                                                    
+
                             <Book
                                 key={index}
                                 selected={selectedBook}
@@ -85,8 +187,13 @@ export default function book() {
                                 bookId={sketchbook.id}
                                 selectBook={targetBook}
                                 bookGap={index * 100}
+                                pages={books[index] !== undefined ? books[index].pages.length : 0}
+                                enableAni={enableAnimation}
+                                setEnableAni={setEnableAnimation}
                             />
                         ))}
+
+
                     </div>
                 )}
 
@@ -99,31 +206,45 @@ export default function book() {
 
                     ${settings?.page_style === "landscape" ? styles.landscapeTransformX : ""}
                     ${settings?.page_style === "landscape" && currentPage === 0 ? styles.bookFrontCenterLandscape : ""}
-                    ${settings?.page_style === "landscape" && currentPage === totalPages - 1 ? styles.bookBackCenterLandscape : ""}
+                    ${settings?.page_style === "landscape" && currentPage === totalPages - 1 ? styles.bookBackCenterLandscape : ""}`}>
 
-
-`}>
                     {enableBook && (
-
                         <Flipbook
                             bookId={selectedBook}
                             bookRef={bookRef}
                             setCurrentPage={setCurrentPage}
                             setTotalPages={setTotalPages}
-                            flipbookWidth={settings?.page_width ?? 550} />
-
+                            flipbookWidth={settings?.page_width ?? 550}
+                            data={books[selectedBook - 1]} />
 
                     )}
                     {(selectedBook === 4) && (
-                        <div className={`${styles.flap}`}>
+                        <div className={`${styles.flap} ${selectedBookData.pages.length + 3 <= currentPage ? styles.flapHide : styles.flapAni}`}>
                             <div className={`${styles.stitching}`}>
                                 <div className={`${styles.button}`}></div>
                             </div>
                         </div>
                     )}
+
+                    {expandInfo && (<div onClick={() => { setExpandInfo(false), playSound("bell") }} className={`${styles.closeInfo}`} />)}
+                    
+                    <div 
+                        className={`
+                            ${styles.infoBar} 
+                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined ? styles.infoBarHide : ""} 
+                            ${expandInfo ? styles.expand : ""}`}
+                        onClick={() => { handleExpand(true), playSound("bell") }}
+                        onMouseEnter={() => { setHovered(true), playSound("hover") }}
+                        onMouseLeave={() => setHovered(false)}>
+                        <img className={`w-[30px] h-[30px]`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
+                        {expandInfo && (
+                            <div className={`${styles.description} offscreenLeft`}>{selectedBookData.pages[currentPage - 3] !== undefined ? selectedBookData.pages[currentPage - 3].description : ""}</div>
+                        )
+                        }
+                    </div>
                 </div>
 
-                <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} />
+                <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo}/>
             </div>
 
 

@@ -64,9 +64,9 @@ export default function Login( { switchPage } : Props) {
                 onMouseEnter={() => playSound("hover")}
                 onClick={() => { playSound("blob"), setOpenLogin(true) }}
                 className={`${style.avatar} ${openLogin ? style.openLogin : ""} ${isAuthenticated && openLogin ? style.paddingRight : ""}`}>
-                <img src="/images/nav/avatar.png" className={`${style.avatarImage}`} />
+                <img src="/images/nav/avatarTrans.png" className={`${style.avatarImage}`} />
                 
-                {isAuthenticated && (<div className={`${style.usernameDisplay} ${logoutTransition ? style.hideUsername : ""}`}>{username}</div>)}
+                {isAuthenticated && (<div className={`${style.usernameDisplay} ${logoutTransition ? style.hideUsername : ""}`}>{username !== "" ? "hanif" : ""}</div>)}
 
 
                 <div className={`${loading ? `${style.loading} ${style.loadingRotate}` : style.hide}

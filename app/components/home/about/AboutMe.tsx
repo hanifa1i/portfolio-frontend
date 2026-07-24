@@ -8,9 +8,9 @@ import useScrollReveal from "@/app/hooks/useScrollReveal";
 
 export default function AboutMe() {
 
-    useScrollReveal(".offscreenLeft", "easeIn");
-    useScrollReveal(".offscreenRight", "easeIn");
-    useScrollReveal(".offscreenUp", "easeIn");
+    useScrollReveal(".offscreenLeft", "easeIn", false);
+    useScrollReveal(".offscreenRight", "easeIn", false);
+    useScrollReveal(".offscreenUp", "easeIn", false);
 
 
     return (
@@ -23,7 +23,8 @@ export default function AboutMe() {
                             <SocialsLinks
                                 key={index}
                                 name={items.name}
-                                image={items.image} />
+                                image={items.image}
+                                link={items.link} />
                         ))}
                     </div>
                 </div>
@@ -46,7 +47,7 @@ export default function AboutMe() {
 
                         hi so blah blah blah and also blah blah
                         and dont forget to blah blah blah :()
-
+Í
                         oranges like the number 10 hi so blah blah blah and also blah blah
                     </div>
                 </div>

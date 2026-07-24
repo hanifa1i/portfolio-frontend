@@ -2,6 +2,19 @@
     height: 77vh;
     width: 100vw;
     overflow: hidden;
+    animation: qualFadeUp  500ms ease-in-out;
+}
+@keyframes qualFadeUp {
+    0% {
+        
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+ 
 }
 .qualSlider {
     height: 100%;
@@ -18,15 +31,17 @@
     position: absolute;
     bottom: 0;
     align-content: center;
-        background-color: #de7544;
-
+    transition: 300ms all;
+}
+.qualTimelineContainer:hover {
+    scale: 1.03;
 }
 .year {
     position: fixed;
-    bottom: 0;
-    left: 100;
+    top: 30;
+    left: 50;
     font-size: 50px;
-    color:#11111110;
+    color:#fff;
     
 }
 
@@ -73,3 +88,29 @@
     background-color: #ff804a;
 
 }
+
+.background {
+    position: fixed;
+    bottom: 0px;
+    right: 670;
+    height: 100%;
+    object-fit:cover;
+    overflow: visible;
+    transform: translateX(var(--xPos));
+    opacity: .4;
+    filter: blur(0px) invert();
+    transition: all 1000ms;
+    animation: bgFade  2000ms;
+}
+@keyframes bgFade {
+    0% {
+        opacity: 0;
+        transform: translateX(var(--xPos)) translateY(300px) scale(1.6);
+    }
+    100% {
+        opacity: .4;
+        transform: translateX(var(--xPos)) translateY(0px) scale(1);
+    }
+    
+}
+

@@ -8,9 +8,10 @@ type Props = {
     switchSection: (section: string) => void;
     setFadeOut: (state: boolean) => void;
     loading: string;
+    handleBackButton: () => void;
 }
 
-export default function Sidebar({heading, handleCreate, switchSection, setFadeOut, loading}: Props) {
+export default function Sidebar({heading, handleCreate, switchSection, setFadeOut, loading, handleBackButton}: Props) {
 
     useScrollReveal(".offscreenRight", "easeIn", false);
 
@@ -21,12 +22,12 @@ export default function Sidebar({heading, handleCreate, switchSection, setFadeOu
     }
 
     return (
-        <div className={`${styles.backContainer} offscreenRight `}>
+        <div className={`${styles.backContainer} offscreenRight`}>
             <div className={`${styles.heading}`}>{heading}</div>
             <div 
                 className={`${styles.backButton}`}
                 onMouseEnter={() => playSound("hover")}
-                onClick={() => {handleSwitch(""), playSound("blob")}}>
+                onClick={() => {handleSwitch(""), playSound("blob"), handleBackButton()}}>
                     ←
             </div>
             <div

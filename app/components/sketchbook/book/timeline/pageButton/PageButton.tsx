@@ -6,21 +6,22 @@ import HTMLFlipBook from "react-pageflip"
 type Props = {
     bookRef: RefObject<HTMLFlipBook>;
     currentPage: number;
-    pageNumber: number
-    lastPageNumber: number
+    pageNumber: number;
+    lastPageNumber: number;
+    booleanFunction: (state: boolean) => void;
 }
 
-export default function PageButton({bookRef, currentPage, pageNumber, lastPageNumber} : Props) {
+export default function PageButton({bookRef, currentPage, pageNumber, lastPageNumber, booleanFunction} : Props) {
     return (
         <button
             className={`
                 ${styles.pageButton} 
                 ${currentPage >= pageNumber ? styles.visited : ""}
                 ${currentPage === pageNumber ? styles.current : ""}
-
                 ${pageNumber === 0 || pageNumber === lastPageNumber - 1 ? styles.coverButton: ""}`}
             onMouseEnter={() => playSoundAt("hover", 0.5)}
             onClick={() => { 
+                booleanFunction(false)
                 if (pageNumber === 0 || pageNumber === lastPageNumber - 1) { playSound("bookClose") }
                 else { playSound("bookFlip")} bookRef.current.pageFlip().flip(pageNumber, top)}}>
 

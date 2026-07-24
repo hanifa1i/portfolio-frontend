@@ -24,38 +24,48 @@
     transition: all 500ms;
 
 }
-.qualLevel{
-    font-size: 30px;
+.qualDate {
+    background-color: #ccc;
     color: #111;
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: small;
+}
+.qualLevel {
+    font-size: 30px;
+    color: #fff;
     
 }
-.qualSubject{
+.qualSubject {
     text-align: end;
     font-size: 50px;
-    color: #111;
+    color: #fff;
     padding-bottom: 10px;
-    border-bottom: 1px solid #111 ;
+    border-bottom: 1px solid #ccc ;
     margin-bottom: 10px;
 }
 .qualGrade {
     font-size: 80px;
-    font-weight: bold;
-    color: #111;
+    font-weight: 500;
+    color: #fff;
     margin-top: 20px;
     padding-right: 20px;
 }
 .qualInstitution {
     font-size: 25px;
-    color: #111;
+    color: #fff;
     padding-bottom: 10px;
-    border-bottom: 1px solid #111 ;
-
+    border-bottom: 1px solid #ccc ;
+    text-align: end;
     margin-bottom: 10px;
     
 }
 .qualDescription {
     text-align: end;
-    color: #111;
+    color: #fff;
     width: 70%;
 }
 .qualCertificateContainer {
@@ -66,8 +76,10 @@
 }
 
 .certificate {
-    height: 700;
-    width: 550px;
+    max-height: 90%;
+    width: 100%;
+    object-fit: scale-down;
+    overflow: hidden;
     background-color: rgb(202, 202, 202);
     border-radius: 5px;
     transition: all 500ms;

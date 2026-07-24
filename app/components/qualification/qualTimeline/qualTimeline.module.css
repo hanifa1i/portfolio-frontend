@@ -5,7 +5,7 @@
     padding-left: 100px;
     padding-right: 100px;
     gap: 5px;
-    border: 1px solid #11111130;
+    border: 1px solid #cccccc70;
     transition: all 500ms;
 }
 
@@ -87,10 +87,10 @@ padding-left: 10px;
 
 .yearDivider {
     height: 80px;
-    width: 10px;
+    width: 100px;
     border-left: 30px solid #111111;
     padding-left: 10px;
-    color: #111111;
+    color: #ccc;
     margin-left: 10px;
     font-size: 13px;
     transform: translateY(-50%);

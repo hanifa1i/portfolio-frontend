@@ -1,3 +1,4 @@
+"use client"
 import HomeNav from "./components/navigation/HomeNav";
 import Recent from "./components/home/recent/Recent";
 import Divider from "./components/common/Divider";
@@ -6,30 +7,55 @@ import DepthImage from "./components/common/DepthImage";
 
 
 import Image from "next/image";
+import Info from "./components/info/Info";
+import { useState } from "react";
 
 export default function Home() {
+
+    const [fadeOutRecent, setFadeOutRecent] = useState(false);
   return (
-    <div className="flex h-[200vh]  w-full bg-zinc-900 font-sans ">
+    <div className={`flex h-[200vh]  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
       <main className="w-full">
         <div className="bg-[#FFC700] items-center w-full h-fit ">
-          <img src="/images/me5.jpg" className="fixed top-[00px] w-full left-1/2 -translate-x-1/2" />
+          <div className="homeBg"></div>
 
-          <div className="portfolioHeadingContainer ">
-            <div className="portfolioHeading">artist</div>
+          <div className="title gradient-text">software engineer</div>
+          <div className="title title2 gradient-text">and a artist</div>
+          <div className="title title3 gradient-text">welcome </div>
+          
+          <div className="homeIntro homeBg gradient"></div>
 
-            <div className="portfolioHeading">software developer</div>
+          <div className="homeIntro fixed top-[00px] w-full h-[95vh]">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className={`min-h-full object-cover`}
+            >
+              <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
+            </video>
+          </div>
+
+
+          <Info />
+          <div className=" portfolioHeadingContainer ">
+            <div className="portfolioHeading ">artist</div>
+            <div className="portfolioHeading ">software developer</div>
 
           </div>
 
           <div className="pt-[100px] text-center top-0 text-[320px] h-[70vh] text-[#222]/0 font-bold">porfolio</div>
           <HomeNav />
 
-          <div className="px-[100px] bg-zinc-900 h-fit justify-center pb-[200px] pt-[150px] z-20 relative text-4xl ">
+          <div className="home px-[100px] bg-zinc-900 h-fit justify-center pb-[200px] pt-[150px] z-20 relative text-4xl ">
 
             <AboutMe />
             <Divider />
             <div className="customBigHeading">RECENT</div>
-            <Recent />
+            <Recent 
+              fadeOutRecent={fadeOutRecent}
+              setFadeOutRecent={setFadeOutRecent}/>
 
           </div>
 

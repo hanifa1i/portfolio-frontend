@@ -2,28 +2,66 @@
 
 import { useEffect, useRef, useState } from "react";
 import useScrollReveal from "@/app/hooks/useScrollReveal";
+import { useRouter, usePathname } from "next/navigation";
 import { recentArt } from "@/app/data/recentArt"
 import styles from "./Recent.module.css";
 import RecentArtwork from "./recentArtwork/RecentArtwork";
 import RecentBlogs from "./recentBlogs/RecentBlogs";
+import { ArtworkResponse } from "@/app/types/Dashboard";
+import { getRecentArtwork } from "@/app/services/artworkService";
+import { playSound } from "@/app/lib/SoundManager";
+
+type Props = {
+    fadeOutRecent: boolean
+    setFadeOutRecent: (state: boolean) => void
+}
+
+export default function Recent({fadeOutRecent, setFadeOutRecent} : Props) {
+    useScrollReveal(".offscreenLeft", "easeIn", false);
+    useScrollReveal(".offscreenRight", "easeIn", false);
+
+    const router = useRouter();
 
 
-export default function Recent() {
-    useScrollReveal(".offscreenLeft", "easeIn");
-    useScrollReveal(".offscreenRight", "easeIn");
+    const [recent, setRecent] = useState<ArtworkResponse[]>([]);
+
+    const pageTransition = () => {
+        playSound("whosh")
+        setFadeOutRecent(true);
+        setTimeout(() => { router.push("/artwork"); }, 500)
+    }
+
+    useEffect(() => {
+        const fetchRecent = async () => {
+            try {
+                const data: ArtworkResponse[] = await getRecentArtwork(5);
+                setRecent(data);
+                console.log("recent data:", data);
+                console.log("recent data:", data);
+
+
+            } catch (error) {
+                console.error("Failed to get recent artworks", error);
+            }
+        };
+
+        fetchRecent();
+    }, [])
+
     return (
         <>
-            <div className="recent">
+            <div className={`recent` }>
 
                 <div className=" recentArtworkContainer">
                     <div className="custom-heading">artworks</div>
                     <ul className={styles.recentArtworks}>
-                        {recentArt.map((items, index) => (
+                        {recent.map((value, index) => (
                             <RecentArtwork
                                 key={index}
-                                image={items.image} />
+                                image={value.image_urls[0].image_url} />
                         ))}
                     </ul>
+                    <div onClick={pageTransition} onMouseEnter={() => playSound("hover")} className={styles.moreArtworkButton}>view all →</div>
                 </div>
 
                 <div className=" recentBlogsContainer">

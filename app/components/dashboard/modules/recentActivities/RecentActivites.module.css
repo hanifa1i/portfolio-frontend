@@ -1,0 +1,32 @@
+.container {
+    background-color: #11111110;
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    margin: 10px;
+    padding: 30px;
+    color: #111111;
+
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.activity {
+    border-bottom: 1px solid #11111150;
+    height: 40px;
+    align-content: center;
+    font-size: small;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.date {
+    background-color: #eeeeee50;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}

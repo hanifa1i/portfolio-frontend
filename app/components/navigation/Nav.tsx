@@ -8,6 +8,7 @@ import { navigation } from "@/app/data/navigation";
 import useScrollReveal from "@/app/hooks/useScrollReveal";
 import Login from "../login/Login";
 import { playSound } from "@/app/lib/SoundManager";
+import { sketchbooks } from "@/app/data/sketchbooks";
 
 
 export default function HomeNav() {
@@ -17,6 +18,7 @@ export default function HomeNav() {
 
     const [clicked, setClicked] = useState(false);
     const [isSamePage, setIsSamePage] = useState(false);
+    const [pageName, setPageName] = useState("");
 
     const switchPage = (url: string) => {
         if (page === url) {
@@ -25,19 +27,31 @@ export default function HomeNav() {
         }
         else {
             setClicked(true);
-            setTimeout(() => { router.push("/" + url); }, 1000);
+            setPageName(url);
+            if (url === "←") {
+                setTimeout(() => { router.push("/"); }, 1000);
+            }
+            else {
+                setTimeout(() => { router.push("/" + url); }, 1000);
+            }
         }
     };
 
-    useScrollReveal(".offscreenDown", "easeIn");
+    useScrollReveal(".offscreenDown", "easeIn", false);
 
     return (
         <>
-            <div className={`${style.pageSwitchInactive} ${clicked ? style.pageSwitchActive : ""}`}></div>
+            <div className={`
+                    ${style.pageSwitchInactive} 
+                    ${clicked ? style.pageSwitchActive : ""}
+                    ${pageName === "sketchbooks" ? style.sketchbookBg : ""}
+                    ${pageName === "skills" ? style.skillsBg : ""}
+                    ${pageName === "qualification" ? style.qualificationBg : ""}
+                `}></div>
 
-            <nav className={`${style.navigation} offscreenDown`}>
-                
-                <Login switchPage={switchPage}/>
+            <nav className={`${style.navigation} ${style.popIn}`}>
+
+                <Login switchPage={switchPage} />
 
                 <div className={`${style.navButtons} ${style.navButtonsSmall}`}>
                     {

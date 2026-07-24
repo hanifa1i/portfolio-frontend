@@ -38,7 +38,8 @@
 }
 
 .blogCardInfo {
-    display: none;
+    font-size: small;
+    line-height: 1.6;
     position: absolute;
     top: 80px;
     left: 20px;
@@ -47,10 +48,11 @@
     transition: all 300ms;
     z-index: 50;
     text-align: justify;
+    transition: all 300ms;
+    transform: translateX(-20px);
 }
 
 .blogCardLink {
-    display: none;
     flex: 1;
     padding-left: 20px;
     width: 130px;
@@ -60,7 +62,9 @@
     position: absolute;
     bottom: 20px;
     right: 20px;
-    transition: all 500ms;
+    transition: all 300ms;
+    opacity: 0;
+    transform: translateX(-20px);
 }
 
 .blogCard:hover .blogCardInfo {
@@ -73,11 +77,13 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     opacity: 0.7;
+    transform: translateX(0px);
 
 }
 
 .blogCard:hover .blogCardLink {
-    display: block;
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 .blogCardLink:hover {
@@ -105,4 +111,31 @@
     height: 600px;
     gap: 20px;
 }
-
+.moreArtworkButton {
+    margin-left: auto;
+    width: fit-content;
+    font-size: small;
+    padding: 20px;
+    margin-top: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #ccc;
+    border-radius: 30px;
+    color: #222;
+    transition: all 200ms;
+    cursor: pointer;
+}
+.moreArtworkButton:hover {
+    background-color: #ffffff;
+    transform: translateX(20px);
+}
+.moreArtworkButton:active {
+    padding-right: 30px;
+    transform: translateX(30px);
+    background-color: #999;
+}
+.fadeOutRecent{
+    transition: all 500ms;
+    opacity: 0;
+    transform: translateX(20px);
+}
