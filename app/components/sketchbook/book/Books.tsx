@@ -34,7 +34,7 @@ export type PageSettings = {
     page_style: string;
     page_width: number;
     container_width: number;
-    transform_x: number;
+    transform_x?: number;
 };
 
 export type BookData = {
@@ -43,7 +43,7 @@ export type BookData = {
 }
 export default function book({ setBookActive }: Props) {
 
-    const bookRef = useRef();
+    const bookRef = useRef<any>(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [selectedBook, setSelectedBook] = useState(-1);

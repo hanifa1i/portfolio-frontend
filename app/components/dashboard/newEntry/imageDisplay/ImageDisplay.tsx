@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import styles from "./ImageDisplay.module.css"
 import { playSound } from "@/app/lib/SoundManager";
-import { ArtworkImageResponse, ExampleResponse } from "@/app/types/Dashboard";
+import { ImageResponse, ExampleResponse } from "@/app/types/Dashboard";
 
 type Props = {
-    images: ArtworkImageResponse[]
+    images: ImageResponse[]
     setRemovedImages: (removeImages: number[]) => void;
 }
 export default function ImageDisplay({ images, setRemovedImages }: Props) {

@@ -1,6 +1,5 @@
 import { WorkExperienceResponse } from "@/app/types/Dashboard";
 import styles from "./infoPreview.module.css"
-import type { Experience } from "@/app/types/Experience";
 
 type Props = {
     disable: boolean

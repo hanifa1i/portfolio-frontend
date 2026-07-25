@@ -1,4 +1,3 @@
-import { artworks } from "../data/dashboard/Artworks"
 import { QualificationResponse } from "../types/Dashboard"
 
 type QualificationPayload = {

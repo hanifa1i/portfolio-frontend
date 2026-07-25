@@ -1,6 +1,6 @@
 import { playSound } from "@/app/lib/SoundManager"
 import styles from "./workProjects.module.css"
-import type { Project } from "@/app/types/Experience";
+import type { Project } from "@/app/types/experience";
 
 
 type Props = {

@@ -105,19 +105,19 @@ export default function DataTable<T extends { id: number }>({
               </div>
             ))}
             {expand === row.id && type === "artwork" && (
-              <ExpandArtwork data={row as ArtworkResponse} />
+              <ExpandArtwork data={row as unknown as ArtworkResponse} />
             )}
             {expand === row.id && type === "sketchbooks" && (
-              <ExpandSketchbook data={row as ArtworkResponse} />
+              <ExpandSketchbook data={row as unknown as ArtworkResponse} />
             )}
             {expand === row.id && type === "skills" && (
-              <ExpandSkill data={row as SkillResponse} />
+              <ExpandSkill data={row as unknown as SkillResponse} />
             )}
             {expand === row.id && type === "qualifications" && (
-              <ExpandQualification data={row as QualificationResponse} />
+              <ExpandQualification data={row as unknown as QualificationResponse} />
             )}
             {expand === row.id && type === "experience" && (
-              <ExpandExpereince data={row as WorkExperienceResponse} />
+              <ExpandExpereince data={row as unknown as WorkExperienceResponse} />
             )}
           </div>
 

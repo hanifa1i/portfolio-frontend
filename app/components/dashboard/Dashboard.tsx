@@ -13,9 +13,6 @@ import { qualificationFields } from "./fields/QualificationFields";
 import SketchbookPages from "./sketchbookPages/SketchbookPages";
 import DataTable from "./table/DataTable";
 
-
-import { sketchbooks } from "@/app/data/dashboard/Sketchbooks";
-import { skills } from "@/app/data/dashboard/Skills";
 import { playSound } from "@/app/lib/SoundManager";
 import NewArtworkEntry from "./newEntry/NewArtworkEntry";
 import NewSketchbookEntry from "./newEntry/NewSketchEntry";

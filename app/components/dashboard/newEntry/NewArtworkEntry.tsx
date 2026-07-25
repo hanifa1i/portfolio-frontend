@@ -23,7 +23,7 @@ export default function NewEntry({ section, switchSection, setNewEntry, existing
 
     useScrollReveal(".offscreenRight", "easeIn", false);
 
-    const [tagList, setTagList] = useState<String[]>([]);
+    const [tagList, setTagList] = useState<string[]>([]);
     
     
     const [loading, setLoading] = useState("false");

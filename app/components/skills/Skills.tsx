@@ -98,9 +98,11 @@ export default function Skills() {
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
 
-                    const section = Number(entry.target.dataset.section);
-                    const item = Number(entry.target.dataset.item);
-                    const skillId = Number(entry.target.dataset.skillid);
+                    const target = entry.target as HTMLElement;
+
+                    const section = Number(target.dataset.section);
+                    const item = Number(target.dataset.item);
+                    const skillId = Number(target.dataset.skillid);
 
 
                     setProgress({ section, item });

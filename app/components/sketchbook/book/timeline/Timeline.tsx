@@ -5,7 +5,7 @@ import PageButton from "./pageButton/PageButton"
 import { playSequential, playSound, playSoundDelay } from "@/app/lib/SoundManager"
 
 type Props = {
-    bookRef: RefObject<HTMLFlipBook>;
+    bookRef: RefObject<any>;
     currentPage: number;
     totalPages: number;
     visibility: boolean;

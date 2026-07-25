@@ -4,7 +4,7 @@ import { RefObject } from "react"
 import HTMLFlipBook from "react-pageflip"
 
 type Props = {
-    bookRef: RefObject<HTMLFlipBook>;
+    bookRef: RefObject<any>;
     currentPage: number;
     pageNumber: number;
     lastPageNumber: number;

@@ -3,7 +3,6 @@ import { useState } from "react"
 import styles from "./Info.module.css"
 import { playSound } from "@/app/lib/SoundManager";
 import Settings from "../dashboard/modules/settings/Settings";
-import settingsStyles from "@/"
 import CardSettings from "../dashboard/modules/settings/CardSettings";
 
 

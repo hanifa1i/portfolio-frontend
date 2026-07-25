@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from "./DropDownList.module.css"
 import inputStyles from "../NewEntry.module.css"
-import { it } from "node:test";
 
 type Props = {
     heading: string;
@@ -16,7 +15,7 @@ export default function DropDownList({ heading, validationMessage, values, onCha
 
     const [openList, setOpenList] = useState(false);
     const [selected, setSelected] = useState<string>(`select ` + heading);
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<string[]>([]);
     const [validation, setValidation] = useState(validationMessage);
 
     const [oneTimeRun, setOneTimeRun] = useState(true);

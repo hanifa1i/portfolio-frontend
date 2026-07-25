@@ -13,9 +13,7 @@ import { ActivityResponse, WorkExperienceResponse } from "@/app/types/Dashboard"
 import { getExperience } from "@/app/services/ExperienceService";
 
 
-type Props = {
-    experience: Experience;
-}
+
 
 export type WeeklyActivities = {
     monday: ActivityResponse[],
@@ -27,7 +25,7 @@ export type WeeklyActivities = {
     sunday: ActivityResponse[],
 }
 
-export default function experience({ }: Props) {
+export default function experience() {
 
     const [expandSkills, setExpandSkill] = useState(false);
     const [open, setOpen] = useState(false);

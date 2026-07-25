@@ -27,7 +27,7 @@ export type Sketchbook = {
 
 type Props = {
     bookId: number;
-    bookRef: () => void;
+    bookRef: RefObject<any>;
     setCurrentPage: (current: number) => void;
     setTotalPages: (total: number) => void;
     flipbookWidth: number
