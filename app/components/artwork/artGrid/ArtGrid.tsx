@@ -101,7 +101,7 @@ export default function ArtGrid({ artworks }: Props) {
                     setFilter={handleSorting}
                 />
 
-                {expandArt && (<FullScreenArt
+                {expandArt && artwork && (<FullScreenArt
                     artwork={artwork}
                     onClose={handleCloseArt}
                 />)}
