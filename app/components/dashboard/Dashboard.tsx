@@ -14,10 +14,8 @@ import SketchbookPages from "./sketchbookPages/SketchbookPages";
 import DataTable from "./table/DataTable";
 
 
-import { artworks } from "@/app/data/dashboard/Artworks";
 import { sketchbooks } from "@/app/data/dashboard/Sketchbooks";
 import { skills } from "@/app/data/dashboard/Skills";
-import { qualifications } from "@/app/data/dashboard/Qualifications";
 import { playSound } from "@/app/lib/SoundManager";
 import NewArtworkEntry from "./newEntry/NewArtworkEntry";
 import NewSketchbookEntry from "./newEntry/NewSketchEntry";
@@ -161,10 +159,6 @@ export default function Dashboard() {
                     {activeTable === "artwork" && (
                         <DataTable fields={artworkResponseFields} data={artworkData} editToggle={toggle} type={activeTable} setState={setState} setNewEntry={setNewEntry} setExistingId={setExistingId} />
                     )}
-                    {activeTable === "artworkRes" && (
-                        <DataTable fields={ArtworkFields} data={artworks} editToggle={toggle} type={"artwork"} setState={setState} setNewEntry={setNewEntry} setExistingId={setExistingId} />
-                    )}
-
                     {activeTable === "sketchbooks" && (
                         <DataTable fields={SketchbookFields} data={sketchbookData} editToggle={toggle} type={activeTable} setState={setState} setNewEntry={setNewEntry} setExistingId={setExistingId} />
                     )}

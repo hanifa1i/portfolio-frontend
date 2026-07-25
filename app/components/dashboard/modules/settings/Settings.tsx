@@ -10,23 +10,23 @@ export default function Settings() {
                 </div>
                 <div className={`${styles.setting}`}>
                     <div className={`${styles.settingName}`}>Music</div>
-                    <Toggle/>
+                    {/*<Toggle/>*/}
                 </div>
                 <div className={`${styles.setting}`}>
                     <div className={`${styles.settingName}`}>Sound</div>
-                    <Toggle/>
+                    {/*<Toggle/>*/}
                 </div>
                 <div className={`${styles.setting}`}>
                     <div className={`${styles.settingName}`}>Animations</div>
-                    <Toggle/>
+                    {/*<Toggle/>*/}
                 </div>
                  <div className={`${styles.setting}`}>
                     <div className={`${styles.settingName}`}>Shadows</div>
-                    <Toggle/>
+                    {/*<Toggle/>*/}
                 </div>
                  <div className={`${styles.setting}`}>
                     <div className={`${styles.settingName}`}>Dark Mode</div>
-                    <Toggle/>
+                    {/*<Toggle/>*/}
                 </div>
             </div>
         </>
