@@ -3,7 +3,7 @@ import type { Field } from "@/app/types/Field";
 
 export const pageFields: Field<Page>[] = [
   { key: "id", label: "ID" },
-  { key: "sketchbookId", label: "Sketchbook ID" },
+  { key: "book", label: "Book" },
   { key: "pageNumber", label: "Page #" },
   {
     key: "sketchUrl",
