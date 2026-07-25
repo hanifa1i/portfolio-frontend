@@ -98,7 +98,6 @@ export default function ArtGrid({ artworks }: Props) {
 
 
                 <Sort
-                    filterName={activeTool}
                     setFilter={handleSorting}
                 />
 
