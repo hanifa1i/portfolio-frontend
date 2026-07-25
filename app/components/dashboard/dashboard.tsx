@@ -40,7 +40,7 @@ import useScrollReveal from "@/app/hooks/useScrollReveal";
 
 
 
-export default function dashboard() {
+export default function Dashboard() {
 
     useScrollReveal(".offscreenLeft", "easeIn", true);
     useScrollReveal(".offscreenUp", "easeIn", true);
