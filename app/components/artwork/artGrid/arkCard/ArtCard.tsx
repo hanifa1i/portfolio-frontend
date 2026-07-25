@@ -13,7 +13,7 @@ type Props = {
 
 export default function ArtCard({artwork, onExpand} : Props) {
 
-    useScrollReveal(".offscreenLeft", "easeIn");
+    useScrollReveal(".offscreenLeft", "easeIn", false);
 
     return (
         <>

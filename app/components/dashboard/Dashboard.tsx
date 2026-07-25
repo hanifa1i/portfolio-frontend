@@ -1,7 +1,12 @@
 "use client"
 import { useEffect, useState } from "react"
 import styles from "./Dashboard.module.css"
-import { type Section, type Artwork, type Sketchbook, type Skill, type Qualification, type ArtworkResponse, SkillResponse, QualificationResponse, WorkExperienceResponse } from "@/app/types/Dashboard";
+import { type Section, 
+    type Artwork, 
+    type Sketchbook, 
+    type Skill, 
+    type Qualification, 
+    type ArtworkResponse, SkillResponse, QualificationResponse, WorkExperienceResponse } from "@/app/types/Dashboard";
 import { sections } from "@/app/data/dashboard/sections";
 import { ArtworkFields } from "./fields/ArtworkFields";
 import { SketchbookFields } from "./fields/SketchbookFields";
