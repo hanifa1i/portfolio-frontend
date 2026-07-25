@@ -13,32 +13,36 @@ type ImageUrlPayload = {
     images: string[];
 }
 
-export async function getArtwork(){
-    const response = await fetch(`http://localhost:8080/api/artworks`)
-    if(!response.ok) {
+export async function getArtwork() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/artworks`)
+    if (!response.ok) {
         throw new Error("Failed to get artworks")
-    } 
+    }
     const data: ArtworkResponse[] = await response.json();
     console.log("Recieved", data);
 
     return data;
 }
-export async function getRecentArtwork(amount: number){
-    const response = await fetch(`http://localhost:8080/api/artworks/recent/${amount}`)
-    if(!response.ok) {
+export async function getRecentArtwork(amount: number) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/artworks/recent/${amount}`)
+    console.log(response.status);
+    console.log(response.url);
+    console.log(process.env.NEXT_PUBLIC_API_URL);
+
+    if (!response.ok) {
         throw new Error("Failed to get recent artworks")
-    } 
+    }
     const data: ArtworkResponse[] = await response.json();
     console.log("Recieved", data);
 
     return data;
 }
 
-export async function getTags(){
-    const response = await fetch(`http://localhost:8080/api/tags`)
-    if(!response.ok) {
+export async function getTags() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tags`)
+    if (!response.ok) {
         throw new Error("Failed to get tags")
-    } 
+    }
     const data: TagResponse[] = await response.json();
     console.log("Recieved", data);
 
@@ -46,8 +50,8 @@ export async function getTags(){
 }
 
 export async function getArtworkById(id: number) {
-    const response = await fetch(`http://localhost:8080/api/artworks/${id}`)
-    if(!response.ok) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/artworks/${id}`)
+    if (!response.ok) {
         throw new Error(`Failed to get artwork with id: ${id}`)
     }
     const data: ArtworkResponse = await response.json();
@@ -55,21 +59,21 @@ export async function getArtworkById(id: number) {
 
     return data;
 }
-export async function getSketchbookArt(){
-    const response = await fetch(`http://localhost:8080/api/artworks/sketchbooks`)
-    if(!response.ok) {
+export async function getSketchbookArt() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/artworks/sketchbooks`)
+    if (!response.ok) {
         throw new Error("Failed to get sketchbook artworks")
-    } 
+    }
     const data: ArtworkResponse[] = await response.json();
     console.log("Recieved", data);
 
     return data;
 }
-export async function getStandaloneArt(){
-    const response = await fetch(`http://localhost:8080/api/artworks/standalone`)
-    if(!response.ok) {
+export async function getStandaloneArt() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/artworks/standalone`)
+    if (!response.ok) {
         throw new Error("Failed to get standalone artworks")
-    } 
+    }
     const data: ArtworkResponse[] = await response.json();
     console.log("Recieved", data);
 
@@ -77,26 +81,26 @@ export async function getStandaloneArt(){
 }
 export async function deleteArtwork(artworkId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/artworks/${artworkId}/delete`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-            }
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/${artworkId}/delete`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        }
     });
-    if(!response.ok) {
+    if (!response.ok) {
         throw new Error("Failed to delete artwork")
     }
     console.log("Message: ", response);
 }
 export async function deleteArtworkImage(artworkId: number, imageId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/artworks/${artworkId}/image/delete/${imageId}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-            }
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/${artworkId}/image/delete/${imageId}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        }
     });
-    if(!response.ok) {
+    if (!response.ok) {
         throw new Error("Failed to delete artwork image")
     }
     console.log("Message: ", response);
@@ -107,7 +111,7 @@ export async function createArtwork(artwork: ArtworkPayload) {
 
     console.log(artwork);
 
-    const response = await fetch("http://localhost:8080/api/admin/artworks/create", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -130,7 +134,7 @@ export async function addArtworkToS3(artworkId: number, artworkFiles: File[]) {
         const formData = new FormData();
         formData.append("image", file);
 
-        const response = await fetch(`http://localhost:8080/api/admin/artworks/${artworkId}/image/upload`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/${artworkId}/image/upload`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -153,7 +157,7 @@ export async function addArtworkToS3(artworkId: number, artworkFiles: File[]) {
 export async function updateArtwork(artworkId: number, artwork: ArtworkPayload) {
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`http://localhost:8080/api/admin/artworks/${artworkId}/update`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/${artworkId}/update`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -172,7 +176,7 @@ export async function updateArtwork(artworkId: number, artwork: ArtworkPayload) 
 export async function updateArtworkImages(artworkId: number, imageUrls: ImageUrlPayload) {
     const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8080/api/admin/artworks/${artworkId}/image/update`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/artworks/${artworkId}/image/update`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

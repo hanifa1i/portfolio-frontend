@@ -5,7 +5,7 @@ import { ExperienceValidation } from "../types/FormValidation";
 
 export async function getCount(){
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/count`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/count`);
 
     if(!response.ok) {
         throw new Error("Failed to get total count")
@@ -19,7 +19,7 @@ export async function getCount(){
 
 export async function getRecentActivities(){
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/recent`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/recent`);
 
     if(!response.ok) {
         throw new Error("Failed to get recent activities")
@@ -32,7 +32,7 @@ export async function getRecentActivities(){
 }
 export async function getRecentSketchActivities(){
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/recent/sketch`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/recent/sketch`);
 
     if(!response.ok) {
         throw new Error("Failed to get recent sketch activities")

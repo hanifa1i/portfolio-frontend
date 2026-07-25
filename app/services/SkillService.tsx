@@ -18,7 +18,7 @@ type ImageUrlPayload = {
 }
 
 export async function getSkills() {
-    const response = await fetch(`http://localhost:8080/api/skills`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/skills`)
     if(!response.ok) {
         throw new Error("Failed to get skills")
     }
@@ -29,7 +29,7 @@ export async function getSkills() {
 }
 
 export async function getSkillById(id: number) {
-    const response = await fetch(`http://localhost:8080/api/skills/${id}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/skills/${id}`)
     if (!response.ok) {
         throw new Error(`Failed to get skill with id: ${id}`)
     }
@@ -41,7 +41,7 @@ export async function getSkillById(id: number) {
 
 export async function deleteSkill(skillId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/skills/${skillId}/delete`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${skillId}/delete`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -55,7 +55,7 @@ export async function deleteSkill(skillId: number) {
 
 export async function deleteExampleImage(skillId: number, imageId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/skills/${skillId}/image/delete/${imageId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${skillId}/image/delete/${imageId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -73,7 +73,7 @@ export async function createSkill(skill: SkillPayload) {
     console.log("Skill to send:")
     console.log(skill)
 
-    const response = await fetch("http://localhost:8080/api/admin/skills/create", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export async function createSkill(skill: SkillPayload) {
 export async function updateSkill(id: number, skill: SkillPayload) {
     const token = localStorage.getItem("token");
     
-    const res = await fetch(`http://localhost:8080/api/admin/skills/${id}/update`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${id}/update`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -112,7 +112,7 @@ export async function addExamplesToS3(skillId: number, skillFiles: File[]) {
         const formData = new FormData();
         formData.append("image", file);
 
-        const response = await fetch(`http://localhost:8080/api/admin/skills/${skillId}/image/upload`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${skillId}/image/upload`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -136,7 +136,7 @@ export async function addExamplesToS3(skillId: number, skillFiles: File[]) {
 export async function updateExampleImages(id: number, imageUrls: ImageUrlPayload) {
     const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8080/api/admin/skills/${id}/image/update`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${id}/image/update`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import { WorkExperienceResponse } from "../types/Dashboard";
 import { ExperiencePayload } from "../types/FormPayload";
 
 export async function getExperience() {
-    const response = await fetch(`http://localhost:8080/api/experience`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/experience`)
     if(!response.ok) {
         throw new Error("Failed to get experience")
     }
@@ -13,7 +13,7 @@ export async function getExperience() {
 }
 
 export async function getExperienceById(id: number) {
-    const response = await fetch(`http://localhost:8080/api/experience/${id}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/experience/${id}`)
     if(!response.ok) {
         throw new Error(`Failed to get work experience with id: ${id}`)
     }
@@ -25,7 +25,7 @@ export async function getExperienceById(id: number) {
 
 export async function deleteExperience(experienceId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/experience/${experienceId}/delete`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/experience/${experienceId}/delete`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -40,7 +40,7 @@ export async function deleteExperience(experienceId: number) {
 export async function createExperience(jobExperience: ExperiencePayload) {
     const token = localStorage.getItem("token")
     
-    const response = await fetch(`http://localhost:8080/api/admin/experience/create`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/experience/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export async function createExperience(jobExperience: ExperiencePayload) {
 export async function updateExperience(id: number, experience: ExperiencePayload) {
     const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8080/api/admin/experience/${id}/update`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/experience/${id}/update`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

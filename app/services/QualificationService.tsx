@@ -14,7 +14,7 @@ type ImageUrlPayload = {
     images: string[];
 }
 export async function getQualifications() {
-    const response = await fetch(`http://localhost:8080/api/education`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/education`)
     if(!response.ok) {
         throw new Error("Failed to get qualifications")
     }
@@ -25,7 +25,7 @@ export async function getQualifications() {
 }
 
 export async function getQualificationsById(id: number) {
-    const response = await fetch(`http://localhost:8080/api/education/${id}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/education/${id}`)
     if(!response.ok) {
         throw new Error(`Failed to get education with id: ${id}`)
     }
@@ -37,7 +37,7 @@ export async function getQualificationsById(id: number) {
 
 export async function deleteQualification(qualificationId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/education/${qualificationId}/delete`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${qualificationId}/delete`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -51,7 +51,7 @@ export async function deleteQualification(qualificationId: number) {
 
 export async function deleteCertificateImage(qualificationId: number, imageId: number) {
     const token = localStorage.getItem("token");
-    const response = await fetch(`http://localhost:8080/api/admin/education/${qualificationId}/image/delete/${imageId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${qualificationId}/image/delete/${imageId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -69,7 +69,7 @@ export async function createQualification(qualification: QualificationPayload) {
 
     console.log(qualification)
 
-    const response = await fetch(`http://localhost:8080/api/admin/education/create`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export async function addCertificateToS3(id: number, files: File[]){
         const formData = new FormData();
         formData.append("certificate", file);
 
-        const response = await fetch(`http://localhost:8080/api/admin/education/${id}/certificate/upload`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${id}/certificate/upload`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -117,7 +117,7 @@ export async function addCertificateToS3(id: number, files: File[]){
 export async function updateQualification(id: number, qualification: QualificationPayload) {
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`http://localhost:8080/api/admin/education/${id}/update`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${id}/update`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -136,7 +136,7 @@ export async function updateQualification(id: number, qualification: Qualificati
 export async function updateCertificateImages(id: number, imageUrls: ImageUrlPayload) {
     const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8080/api/admin/education/${id}/certificate/update`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${id}/certificate/update`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
