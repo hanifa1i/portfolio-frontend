@@ -3,8 +3,7 @@ import { useEffect, useState } from "react"
 import styles from "./Dashboard.module.css"
 import { type Section, 
     type Artwork, 
-    type Sketchbook,
-    type ArtworkResponse, SkillResponse, QualificationResponse, WorkExperienceResponse } from "@/app/types/Dashboard";
+    type Sketchbook, type ArtworkResponse, SkillResponse, QualificationResponse, WorkExperienceResponse } from "@/app/types/Dashboard";
 import { sections } from "@/app/data/dashboard/sections";
 import { ArtworkFields } from "./fields/ArtworkFields";
 import { SketchbookFields } from "./fields/SketchbookFields";
@@ -13,9 +12,7 @@ import { qualificationFields } from "./fields/QualificationFields";
 
 import SketchbookPages from "./sketchbookPages/SketchbookPages";
 import DataTable from "./table/DataTable";
-import EditArtworkCard from "./editCard/EditArtworkCard";
-import EditSketchbookCard from "./editCard/EditSketchbookCard";
-import EditSkillCard from "./editCard/EditSkillCard";
+
 
 import { artworks } from "@/app/data/dashboard/Artworks";
 import { sketchbooks } from "@/app/data/dashboard/Sketchbooks";
