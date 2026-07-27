@@ -191,7 +191,10 @@
 .linkCard {
     flex: 3;
     height: 70px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .linkCard:hover {
     background-color: #ffffff70;
