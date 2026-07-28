@@ -235,10 +235,12 @@ export default function book({ setBookActive }: Props) {
                             ${styles.infoBar} 
                             ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined ? styles.infoBarHide : ""} 
                             ${expandInfo ? styles.expand : ""}`}
+
                         onClick={() => { handleExpand(true), playSound("bell") }}
                         onMouseEnter={() => { setHovered(true), playSound("hover") }}
                         onMouseLeave={() => setHovered(false)}>
-                        <img className={`w-[30px] h-[30px]`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
+
+                        <img className={`w-[30px] h-[30px] ${!expandInfo ? `m-auto` : "" }`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
                         {expandInfo && (
                             <div className={`${styles.description} offscreenLeft`}>{selectedBookData.pages[currentPage - 3] !== undefined ? selectedBookData.pages[currentPage - 3].description : ""}</div>
                         )

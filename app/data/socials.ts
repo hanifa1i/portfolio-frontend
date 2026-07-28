@@ -1,7 +1,7 @@
 export const socials = [
     {
         name: "linkedIn",
-        image: "/images/socialIcons/linkedIn-2.png",
+        image: "/images/socialIcons/linkedin-2.png",
         link: "https://www.linkedin.com/in/hanif-a1i/",
     },
     {
