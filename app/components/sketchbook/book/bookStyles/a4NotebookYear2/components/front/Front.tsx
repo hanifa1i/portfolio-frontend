@@ -1,5 +1,5 @@
 import styles from "./Front.module.css"
-
+ 
 type Props = {
     state : string;
 }

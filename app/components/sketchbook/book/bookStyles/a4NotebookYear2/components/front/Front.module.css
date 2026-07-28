@@ -8,8 +8,10 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-style: dashed;
-    align-content: center;
-    justify-items: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
 }
 
 .button {

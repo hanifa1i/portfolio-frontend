@@ -92,7 +92,9 @@
 .background {
     position: fixed;
     bottom: 0px;
-    right: 670;
+    right: 0;
+    width: auto;
+max-width: none;
     height: 100%;
     object-fit:cover;
     overflow: visible;
@@ -101,6 +103,7 @@
     filter: blur(0px) invert();
     transition: all 1000ms;
     animation: bgFade  2000ms;
+    
 }
 @keyframes bgFade {
     0% {

@@ -150,8 +150,8 @@ export default function Skills() {
                 </video>
                 <img src="/images/skills/blueprint.jpg" className="absolute top-[00px] opacity-0 w-full left-1/2 -translate-x-1/2" /></div>
 
-            <div className={`${styles.headingsContainer}  ${isScrolled ? styles.headingsContainerTransition : ""}`}>
-
+            <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
+                <div>
                 {skillsByCategory.map((sections, index) => (
                     <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
                         <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
@@ -172,6 +172,7 @@ export default function Skills() {
                         </div>
                     </div>
                 ))}
+                </div>
             </div>
 
 

@@ -139,8 +139,10 @@
     border-bottom-right-radius: 25px;
     margin: 5px;
     margin-left: 0px;
-    align-content: center;
-    justify-items: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
 }
 
 .button {

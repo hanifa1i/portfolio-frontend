@@ -10,12 +10,15 @@
 
 .headingsContainer {
     margin-top: 20px;
-    position: sticky;
     transition: all 500ms;
     height: 80vh;
+    
     margin-bottom: 20vh;
     align-content: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .subHeadingsContainer {
@@ -186,11 +189,10 @@
     margin-left: 10%;
     width: 300px;
     transition: all 500ms;
-    justify-items: end;
     height: fit-content;
-
-    justify-items: end;
-
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .sidebarHeading {
@@ -219,7 +221,9 @@
 }
 
 .sidebarHeadingContainer {
-    justify-items: end;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .backButton {
