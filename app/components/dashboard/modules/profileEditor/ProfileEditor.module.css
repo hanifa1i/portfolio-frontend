@@ -89,8 +89,10 @@
 .health {
     border-right: 1px solid #11111130;
     width: 100%;
-    justify-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: auto;
     margin-bottom: auto;
 }

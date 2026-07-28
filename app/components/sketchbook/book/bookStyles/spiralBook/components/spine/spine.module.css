@@ -19,7 +19,7 @@
 
 .ring {
     position: absolute;
-    top: calc(30px+ var(--ringGap));
+    top: calc(50px+ var(--ringGap));
     background-color: #555;
     border-left: #cccccc50 solid 20px;
     border-right: #33333350 solid 30px;

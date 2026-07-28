@@ -8,7 +8,6 @@
     border-right: #482b1e solid 10px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .6));
 }
 
 .InnerCoverPage {
@@ -19,7 +18,6 @@
     border-left: #482b1e solid 10px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .2));
 }
 
 .rightPage {
@@ -30,7 +28,6 @@
     overflow: hidden;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .2));
 
 }
 
@@ -41,10 +38,8 @@
     overflow: hidden;
     height: 640px;
     width: 400;
-    margin-left: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, .2));
     justify-items: end;
 }
 .image {

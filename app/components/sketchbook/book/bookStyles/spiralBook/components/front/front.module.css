@@ -4,7 +4,7 @@
 }
 .ring {
     position: absolute;
-    top: calc(30px+ var(--ringGapFront));
+    top: calc(50px+ var(--ringGapFront));
     background-color: #222;
     width: 10px;
     height: 10px;

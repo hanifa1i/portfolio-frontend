@@ -165,7 +165,7 @@ export default function book({ setBookActive }: Props) {
 
 
                 {!enableBook && (
-                    <div className={`${styles.books}`}>
+                    <div className={`${styles.books} `}>
 
                         <div className={`${styles.pageInfo} ${selectedBook !== -1 ? styles.fadeOut : ""}`}>
                             <div>ⓘ   Sketchbooks</div>
@@ -176,6 +176,7 @@ export default function book({ setBookActive }: Props) {
                             <div className={`${styles.subInfo}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
                         </div>
 
+                        <div>
                         {sketchbooks.map((sketchbook, index) => (
                                                     
 
@@ -192,6 +193,7 @@ export default function book({ setBookActive }: Props) {
                                 setEnableAni={setEnableAnimation}
                             />
                         ))}
+                        </div>
 
 
                     </div>

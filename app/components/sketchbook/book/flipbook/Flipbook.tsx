@@ -5,6 +5,7 @@ import a5Styles from "../bookStyles/a5/Flipbook.module.css"
 import a4NotebookStyles from "../bookStyles/a4Notebook/Flipbook.module.css"
 import a4NotebookYear2Styles from "../bookStyles/a4NotebookYear2/Flipbook.module.css"
 import spiralBookStyle from "../bookStyles/spiralBook/Flipbook.module.css"
+import flipBookStyles from "./Flipbook.module.css"
 
 import A3Front from "../bookStyles/a3/components/front/front"
 import A5Front from "../bookStyles/a5/components/front/Front"
@@ -47,6 +48,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
 
     return (<>
         {data.pages.length % 2 === 1 ? <HTMLFlipBook
+            className={`${flipBookStyles.flipBookShadow}`}
             width={flipbookWidth}
             height={700}
             maxShadowOpacity={0}
@@ -92,6 +94,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
         :
 
         <HTMLFlipBook
+            className={`${flipBookStyles.flipBookShadow}`}
             width={flipbookWidth}
             height={700}
             maxShadowOpacity={0}

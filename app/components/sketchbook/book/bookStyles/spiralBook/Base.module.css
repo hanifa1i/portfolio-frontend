@@ -1,4 +1,5 @@
 .book {
+    padding: 20px;
     border-radius: 0px;
     border-color: #222;
     height: fit-content;
@@ -13,6 +14,9 @@
 }
 
 .bookHover:hover {
+    padding-right: 75px;
+    left: calc(15% + 25px + var(--bookGap));
+
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     top: 45%;
@@ -42,7 +46,7 @@
     transform: translateY(-50%) translateX(-50%);
     left: 50%;
     top: 45%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .6));
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .4));
 
 }
 

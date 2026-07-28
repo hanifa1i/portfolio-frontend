@@ -1,0 +1,6 @@
+.flipBookShadow {
+    
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .4));
+    padding: 20px;
+    padding-top: 0px;
+}
