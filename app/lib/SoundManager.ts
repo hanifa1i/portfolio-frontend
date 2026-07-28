@@ -25,24 +25,56 @@ type SoundKey =
 const sounds: Partial<Record<SoundKey, HTMLAudioElement>> = {};
 
 export function initSounds() {
+
+    const hover = new Audio("/sounds/hover.wav");
+    hover.preload = "auto";
+    hover.load();
+
+    const blob = new Audio("/sounds/blob.wav");
+    blob.preload = "auto";
+    blob.load();
+
+    const click = new Audio("/sounds/clickclick.wav");
+    click.preload = "auto";
+    click.load();
+
+    const bookHover = new Audio("/sounds/bookHover.wav");
+    bookHover.preload = "auto";
+    bookHover.load();
+    const error = new Audio("/sounds/error.wav");
+    error.preload = "auto";
+    error.load();
+
+    const bookPick = new Audio("/sounds/bookPick.wav");
+    bookPick.preload = "auto";
+    bookPick.load();
+
+    const bookClose = new Audio("/sounds/bookClose.wav");
+    bookClose.preload = "auto";
+    bookClose.load();
+
+    const bookFlip = new Audio("/sounds/bookFlip.wav");
+    bookFlip.preload = "auto";
+    bookFlip.load();
+    
     if (typeof window === "undefined") return;
 
     sounds.drum = new Audio("/sounds/drum.mp3")
-    sounds.hover = new Audio("/sounds/hover4.mp3");
+    sounds.hover = hover;
     sounds.smallClick = new Audio("/sounds/click.wav")
-    sounds.click = new Audio("/sounds/clickclick.mp3");
+    sounds.click = click;
     sounds.back = new Audio("/sounds/back.mp3");
-    sounds.blob = new Audio("/sounds/blob.mp3");
+    sounds.blob = blob;
     sounds.whosh = new Audio("/sounds/whosh.mp3");
     sounds.granted = new Audio("/sounds/granted.wav");
     sounds.granted2 = new Audio("/sounds/granted2.mp3");
     sounds.snap = new Audio("/sounds/snap.wav");
-    sounds.bookHover = new Audio("/sounds/bookHover.wav");
-    sounds.bookPick = new Audio("/sounds/bookPick.wav");
-    sounds.bookClose = new Audio("/sounds/bookClose.wav");
-    sounds.bookFlip = new Audio("/sounds/bookFlip.wav");
+    sounds.bookHover = bookHover;
+    sounds.bookPick = bookPick;
+    sounds.bookClose = bookClose;
+    sounds.bookFlip = bookFlip;
     sounds.accessDenied = new Audio("/sounds/accessDenied.wav");
-    sounds.error = new Audio("/sounds/error.mp3");
+    sounds.error = error;
     sounds.loading = new Audio("/sounds/loading.wav")
     sounds.loading2 = new Audio("/sounds/loading2.mp3")
     sounds.logout = new Audio("/sounds/logout.mp3")
