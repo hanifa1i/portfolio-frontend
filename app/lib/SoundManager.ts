@@ -1,26 +1,20 @@
 type SoundKey =
     | "drum"
     | "hover"
-    | "smallClick"
     | "click"
     | "back"
     | "blob"
     | "whosh"
-    | "granted"
     | "granted2"
-    | "snap"
     | "bookHover"
     | "bookPick"
     | "bookClose"
     | "bookFlip"
     | "accessDenied"
     | "error"
-    | "loading"
     | "loading2"
     | "logout"
-    | "bell"
-    | "bell2"
-    | "dream";
+    | "bell";
 
 const sounds: Partial<Record<SoundKey, HTMLAudioElement>> = {};
 
@@ -38,12 +32,45 @@ export function initSounds() {
     click.preload = "auto";
     click.load();
 
+    const whosh = new Audio("/sounds/whosh.wav");
+    whosh.preload = "auto";
+    whosh.load();
+
+    const drum = new Audio("/sounds/drum.wav");
+    drum.preload = "auto";
+    drum.load();
+
     const bookHover = new Audio("/sounds/bookHover.wav");
     bookHover.preload = "auto";
     bookHover.load();
+
+    const bell = new Audio("/sounds/bell.wav");
+    bell.preload = "auto";
+    bell.load();
+
     const error = new Audio("/sounds/error.wav");
     error.preload = "auto";
     error.load();
+
+    const back = new Audio("/sounds/back.wav");
+    back.preload = "auto";
+    back.load();
+
+    const granted = new Audio("/sounds/granted.wav");
+    granted.preload = "auto";
+    granted.load();
+
+    const loading = new Audio("/sounds/loading.wav");
+    loading.preload = "auto";
+    loading.load();
+
+    const logout = new Audio("/sounds/logout.wav");
+    logout.preload = "auto";
+    logout.load();
+
+    const accessDenied = new Audio("/sounds/accessDenied.wav");
+    accessDenied.preload = "auto";
+    accessDenied.load();
 
     const bookPick = new Audio("/sounds/bookPick.wav");
     bookPick.preload = "auto";
@@ -59,29 +86,22 @@ export function initSounds() {
     
     if (typeof window === "undefined") return;
 
-    sounds.drum = new Audio("/sounds/drum.mp3")
+    sounds.drum = drum;
     sounds.hover = hover;
-    sounds.smallClick = new Audio("/sounds/click.wav")
     sounds.click = click;
-    sounds.back = new Audio("/sounds/back.mp3");
+    sounds.back = back;
     sounds.blob = blob;
-    sounds.whosh = new Audio("/sounds/whosh.mp3");
-    sounds.granted = new Audio("/sounds/granted.wav");
-    sounds.granted2 = new Audio("/sounds/granted2.mp3");
-    sounds.snap = new Audio("/sounds/snap.wav");
+    sounds.whosh = whosh;
+    sounds.granted2 = granted;
     sounds.bookHover = bookHover;
     sounds.bookPick = bookPick;
     sounds.bookClose = bookClose;
     sounds.bookFlip = bookFlip;
-    sounds.accessDenied = new Audio("/sounds/accessDenied.wav");
+    sounds.accessDenied = accessDenied;
     sounds.error = error;
-    sounds.loading = new Audio("/sounds/loading.wav")
-    sounds.loading2 = new Audio("/sounds/loading2.mp3")
-    sounds.logout = new Audio("/sounds/logout.mp3")
-    sounds.bell = new Audio("/sounds/bell.mp3")
-    sounds.bell2 = new Audio("/sounds/bell-2.mp3")
-    sounds.dream = new Audio("/sounds/dream.wav")
-
+    sounds.loading2 = loading;
+    sounds.logout = logout;
+    sounds.bell = bell;
 }
 
 let soundEnabled = true;
