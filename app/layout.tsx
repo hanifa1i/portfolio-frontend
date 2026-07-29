@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     const unlockAudio = () => {
 
-        const audio = new Audio("/sounds/hover.mp3");
+        const audio = new Audio("/sounds/hover.wav");
 
         audio.volume = 0;
 

@@ -19,6 +19,7 @@ type SoundKey =
 const sounds: Partial<Record<SoundKey, HTMLAudioElement>> = {};
 
 export function initSounds() {
+    if (typeof window === "undefined") return;
 
     const hover = new Audio("/sounds/hover.wav");
     hover.preload = "auto";
@@ -84,7 +85,6 @@ export function initSounds() {
     bookFlip.preload = "auto";
     bookFlip.load();
     
-    if (typeof window === "undefined") return;
 
     sounds.drum = drum;
     sounds.hover = hover;
@@ -100,7 +100,7 @@ export function initSounds() {
     sounds.accessDenied = accessDenied;
     sounds.error = error;
     sounds.loading2 = loading;
-    sounds.logout = logout;
+    sounds.logout = logout
     sounds.bell = bell;
 }
 

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 .no-animations *,
 .no-animations *::before,
 .no-animations *::after {
