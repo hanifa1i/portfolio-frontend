@@ -139,3 +139,21 @@
     opacity: 0;
     transform: translateX(20px);
 }
+
+@media (max-width: 900px) {
+    .about {
+        flex-direction: column;
+        height: auto;
+
+
+    }
+
+    .socialsCard {
+        flex-direction: row;
+        text-align: center;
+        width: 100%;
+    }
+    .personalImage {
+        height: 500px;
+    }
+}
