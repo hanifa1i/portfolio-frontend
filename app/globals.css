@@ -343,27 +343,34 @@ body {
         max-width: 100%;
         overflow-x: hidden;
     }
+
     .home {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
         padding-top: 50px;
         overflow: hidden;
     }
-.customBigHeading {
-    padding-left: 40px;
+
+    .customBigHeading {
+        padding-left: 40px;
     }
-    .recentArtworkContainer{
-    padding-right: 0px;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid #333;
+
+    .recentArtworkContainer {
+        padding-right: 0px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #333;
 
     }
+    .recentHeading{
+        font-size: 70px;
+    }
+
     .recent {
         display: flex;
         flex-direction: column;
-        padding-left: 40px;
-        padding-right: 40px; 
+        padding-left: 30px;
+        padding-right: 30px;
         max-width: none;
         margin: auto;
     }

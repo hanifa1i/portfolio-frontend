@@ -35,7 +35,7 @@ export default function AboutMe() {
 
                 <div className={`${styles.aboutMe} `}>
                     <div className="offscreenRight customHeading">hi,</div>
-                    <div className="offscreenRight customHeading border-b border-[#333] h-[80px] text-[100px] mt-[50px] mb-[20px]">hanif ali</div>
+                    <div className={`offscreenRight customHeading border-b border-[#333] h-[80px] text-[100px] mt-[50px] mb-[20px] ${styles.name}`}>hanif ali</div>
                     <div className="offscreenRight customHeading flex text-[15px] mb-[20px] ">age:
                         <div className="mx-[20px] bg-[#333]/50 px-[20px] rounded-md">29</div>
                         location: <div className="ml-[20px] bg-[#333]/50 px-[20px] rounded-md">london</div></div>

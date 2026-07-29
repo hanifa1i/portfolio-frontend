@@ -141,19 +141,8 @@
 }
 
 @media (max-width: 900px) {
-    .about {
-        flex-direction: column;
-        height: auto;
-
-
+    .recentArtworks {
+        height: 300px;
     }
 
-    .socialsCard {
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-    }
-    .personalImage {
-        height: 500px;
-    }
 }

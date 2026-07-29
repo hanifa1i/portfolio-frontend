@@ -60,6 +60,9 @@
 
     }
 
+    .name {
+        font-size: 70px;
+    }
     .socialsCard {
         flex-direction: row;
         text-align: center;
