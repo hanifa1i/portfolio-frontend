@@ -45,6 +45,7 @@
     height: 100%;
     align-items: center;
 }
+
 .openLogin {
     width: fit-content;
     align-items: center;
@@ -58,8 +59,14 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.paddingRight{ padding-right: 15px;}
-.paddingRight:hover{ padding-right: 15px;}
+
+.paddingRight {
+    padding-right: 15px;
+}
+
+.paddingRight:hover {
+    padding-right: 15px;
+}
 
 
 .password {
@@ -81,7 +88,7 @@ input::placeholder {
 }
 
 .password:hover {
-        background-color: #ffffff80;
+    background-color: #ffffff80;
 
 }
 
@@ -89,10 +96,11 @@ input::placeholder {
     width: 100px;
     background-color: #ffffff;
 }
+
 .loginButton {
-display: flex;
-padding-top: 1px;
-  align-items: start;
+    display: flex;
+    padding-top: 1px;
+    align-items: start;
     background-color: #111;
     height: 70%;
     padding-left: 10px;
@@ -101,16 +109,19 @@ padding-top: 1px;
     border-radius: 20px;
     transition: all 300ms;
 }
+
 .loginButton:hover {
     background-color: #349c42;
     padding-left: 30px;
-        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
 
 }
+
 .loginButton:active {
     background-color: #223925;
     padding-left: 40px;
 }
+
 .logoutButton {
     align-items: center;
     padding-top: 0;
@@ -121,31 +132,35 @@ padding-top: 1px;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid #00000050;
-    animation: loadingProfile 500ms  ;
+    animation: loadingProfile 500ms;
 }
+
 .logoutButton:hover {
     background-color: #9c3434;
     color: #ccc;
 }
+
 .loginButton:active {
     background-color: #392222;
 }
-@keyframes loadingProfile{
-    0%{
-        padding: 0;
-    margin: 0;
-    width: 0;
-    height: 0;
-    transition: all 300ms;
-    overflow: hidden;
-    font-size: 0;
-    }
-    100%{
 
-    margin-left: 10px;
-    font-size: 12px;
-    padding-left: 10px;
-    padding-right: 10px;
+@keyframes loadingProfile {
+    0% {
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        transition: all 300ms;
+        overflow: hidden;
+        font-size: 0;
+    }
+
+    100% {
+
+        margin-left: 10px;
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -171,7 +186,7 @@ padding-top: 1px;
     border-radius: 10px;
     transition: all 500ms;
     font-size: 13px;
-    animation: easeInUsername 500ms ;
+    animation: easeInUsername 500ms;
 }
 
 
@@ -190,15 +205,18 @@ padding-top: 1px;
     filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
     cursor: pointer;
 }
+
 .exit:hover {
     background-color: #9c3434;
-        font-size: 12px;
-        transform: scale(1.1);
+    font-size: 12px;
+    transform: scale(1.1);
 
 }
+
 .exit:active {
     background-color: #662121;
 }
+
 .hide {
     padding: 0;
     margin: 0;
@@ -208,6 +226,7 @@ padding-top: 1px;
     overflow: hidden;
     font-size: 0;
 }
+
 .hideExit {
     position: absolute;
     left: 0px;
@@ -223,19 +242,34 @@ padding-top: 1px;
     margin-right: 0px;
     transition: all 500ms;
 }
+
 .loadingRotate {
     margin-left: 10px;
     margin-right: 10px;
-        height: 20px;
+    height: 20px;
     width: 7px;
     animation: rotate 1500ms forwards;
     animation-iteration-count: infinite;
 }
+
 @keyframes rotate {
-    0% { background-color:#111111 }
-    16% { background-color:#ff8d03; width: 20px }
-    33%{ transform: rotate(360deg) }
-    100%{ transform: rotate(360deg); background-color:#111111 }
+    0% {
+        background-color: #111111
+    }
+
+    16% {
+        background-color: #ff8d03;
+        width: 20px
+    }
+
+    33% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: #111111
+    }
 }
 
 .success {
@@ -245,39 +279,44 @@ padding-top: 1px;
     width: 7px;
     animation: success 500ms forwards;
 }
+
 @keyframes success {
-    100% {    background-color:#199d4c;
-    width: 20px;}
-    
+    100% {
+        background-color: #199d4c;
+        width: 20px;
+    }
+
 }
 
 
 
-@keyframes easeInUsername{
-    0%{
+@keyframes easeInUsername {
+    0% {
         padding: 0;
-    margin: 0;
-    width: 0;
-    height: 0;
-    transition: all 300ms;
-    overflow: hidden;
-    font-size: 0;
-    color: #fff;
+        margin: 0;
+        width: 0;
+        height: 0;
+        transition: all 300ms;
+        overflow: hidden;
+        font-size: 0;
+        color: #fff;
     }
-    100%{
-    height: fit-content;
-    margin-left: 5px;
-    margin-right: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #000000;
-    transition: all 500ms;
-    font-size: 13px;
+
+    100% {
+        height: fit-content;
+        margin-left: 5px;
+        margin-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #000000;
+        transition: all 500ms;
+        font-size: 13px;
         color: #fff;
 
     }
-    
+
 }
+
 .error {
     position: absolute;
     bottom: -35;
@@ -290,49 +329,59 @@ padding-top: 1px;
     white-space: nowrap;
     transition: all 500ms;
 }
+
 .hideError {
     opacity: 0;
     transform: translateY(-20);
     transition: all 500ms;
 
 }
-.hideUsername{
+
+.hideUsername {
     animation: easeOutUsername 300ms forwards;
 }
-@keyframes easeOutUsername{
-    
-    100%{
-    height: fit-content;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #000000;
-    transition: all 500ms;
-    font-size: 13px;
+
+@keyframes easeOutUsername {
+
+    100% {
+        height: fit-content;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #000000;
+        transition: all 500ms;
+        font-size: 13px;
     }
-    100%{
+
+    100% {
         padding: 0;
-    margin: 0;
-    width: 0;
-    height: 0;
-    transition: all 300ms;
-    overflow: hidden;
-    font-size: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        transition: all 300ms;
+        overflow: hidden;
+        font-size: 0;
     }
 }
 
 @media (max-width: 800px) {
     .avatar {
 
-          margin-right: 0px;
-          border-radius: 20px;
-          border-bottom-right-radius: 0px;
+        margin-right: 0px;
+        border-radius: 20px;
+        border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
 
     }
+
+    .openLogin {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .exit {
-    
-    left: 50%;
-    bottom: -50px;
+
+        left: 50%;
+        bottom: -50px;
 
     }
 }

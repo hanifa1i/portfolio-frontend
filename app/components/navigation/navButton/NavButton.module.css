@@ -214,8 +214,11 @@
 
         font-size: 10px;
             gap: 10px;
+    }
+    .navButton:last-child:hover {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
 
-       
     }
     .navImageSmall {
     width: 15px;
