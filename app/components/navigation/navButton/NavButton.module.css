@@ -197,3 +197,30 @@
 
     100% {}
 }
+
+@media (max-width: 800px) {
+    .navButton {
+
+        font-size: 0px;
+        border-radius: 0px;
+        gap: 0px;
+        border-right: 1px solid #333;
+    }
+    .navButton:last-child {
+        border-right: 0px solid #444;
+
+    }
+    .navButton:hover {
+
+        font-size: 10px;
+            gap: 10px;
+
+       
+    }
+    .navImageSmall {
+    width: 15px;
+    transition: all 200ms;
+    opacity: 0.7;
+}
+
+}

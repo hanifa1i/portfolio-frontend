@@ -339,10 +339,7 @@ body {
 }
 
 @media (max-width: 900px) {
-    .homePage {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+    
 
     .home {
         padding-left: 0px;

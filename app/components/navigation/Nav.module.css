@@ -71,26 +71,6 @@
 }
 
 
-@media (max-width: 900px) {
-    .avatar {
-        width: 40px;
-        border-radius: 0.5rem;
-        margin-right: 5px;
-        background-color: #e1b635;
-        transition: all;
-        transition-duration: 500ms;
-    }
-
-    .navButtons-large {
-        background: #222;
-        display: flex;
-        height: 120px;
-        width: 100%;
-        border-radius: 0.5rem;
-        padding: 0px;
-        gap: 0.2rem;
-    }
-}
 
 @keyframes expand {
 
@@ -144,5 +124,31 @@
     100% {
         scale: 1
     }
+
+}
+
+@media (max-width: 800px) {
+    .navigation {
+
+        padding: 0px;
+        padding-top: 1.5rem;
+
+        width: 100%;
+        justify-content: center;
+                        border-radius: 20px;
+
+    }
+    .navButtonsLarge {
+        gap: 0;
+                width: 90%;
+                
+
+    }
+    .navButtons {
+        border-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+
 
 }
