@@ -248,7 +248,14 @@
     }
 
     .infoExpand {
-        bottom: 50%;
-        transform: translateY(50%);
+        bottom: 0px;
+        transform: none;
+        right: 0px;
+        width: 100%;
+        border-radius: 40px;
+    }
+    .close {
+        border-radius: 20px;
+        scale: 1.2;
     }
 }

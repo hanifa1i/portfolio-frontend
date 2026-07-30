@@ -391,11 +391,28 @@ body {
         padding-left: 30px;
         padding-right: 30px;
         font-weight: bold;
-        color: #ffffff99;
+        color: #ffffff;
+
 
     }
+
     .title {
-            font-size: 30px;
+        font-size: 30px;
+    }
+
+    .topFadeHomePage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        z-index: 20;
+        background: radial-gradient(
+                ellipse at bottom,
+                transparent 30%,
+                #171717 75%
+                );
+                transform: scaleY(0.5) scaleX(2) translateY(-150px);
     }
 
 }
