@@ -382,15 +382,19 @@ body {
 
 
     }
-    .portfolioHeading {
-    width: fit-content;
-    margin-left: 0%;
-    text-align: right;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: bold;
-    color: #ffffff99;
 
-}
+    .portfolioHeading {
+        width: fit-content;
+        margin-left: 0%;
+        text-align: right;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-weight: bold;
+        color: #ffffff99;
+
+    }
+    .title {
+            font-size: 30px;
+    }
 
 }

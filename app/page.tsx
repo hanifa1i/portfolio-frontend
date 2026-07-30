@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className={`homePage flex  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
       <main className="w-full ">
-        <div className="bg-[#FFC700] items-center w-full h-fit ">
+        <div className="items-center w-full h-fit ">
           <div className="homeBg"></div>
 
           <div className="title gradient-text">software engineer</div>

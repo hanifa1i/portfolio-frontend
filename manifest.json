@@ -1,0 +1,8 @@
+{
+  "name": "My Web Application",
+  "short_name": "My App",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#317EFB"
+}

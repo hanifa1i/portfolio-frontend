@@ -35,8 +35,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <head>
       <meta name="theme-color" content="#222" />
-      <body className="bg-black text-white">
+      </head>
+      <body className="bg-[#171717] text-white">
         <AuthProvider>
           <SettingsProvider>{children}</SettingsProvider>
         </AuthProvider>
