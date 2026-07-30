@@ -35,7 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></meta>
+      <meta name="theme-color" content="#11111100" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
       <body className="bg-black text-white">
         <AuthProvider>
           <SettingsProvider>{children}</SettingsProvider>
