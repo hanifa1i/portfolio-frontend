@@ -149,8 +149,10 @@
         border-radius: 20px;
         border-bottom-left-radius: 0px;
         border-top-left-radius: 0px;
-        background: #11111190;
+        background: #11111195;
         backdrop-filter: blur(50px);
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .6));
+
     }
 
      .navButtonsLarge {

@@ -50,3 +50,18 @@
     background-color: #aaa;
 
 }
+
+@media (max-width: 900px) {
+    
+    .iconContainer:hover {
+            padding: 20px;
+        width: 60px;
+        gap: 0px;
+
+    }
+    .iconName {
+        font-size: 0px;
+
+    }
+
+}

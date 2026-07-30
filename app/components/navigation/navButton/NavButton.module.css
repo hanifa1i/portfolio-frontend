@@ -233,7 +233,7 @@
         border-width: 0px;
         background: #11111199;
         backdrop-filter: blur(50px);
-        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .6));
+        filter: drop-shadow(0 5px 3px rgba(0, 0, 0, .4));
     }
     .navButtonLarge:hover {
         animation: none;
@@ -254,7 +254,7 @@
     .navImageSmall {
         width: 15px;
         transition: all 200ms;
-        opacity: 0.7;
+        opacity: ;
     }
 
 }
