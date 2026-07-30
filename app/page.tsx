@@ -51,7 +51,7 @@ export default function Home() {
           <div className="home px-[100px] bg-zinc-900 h-fit justify-center pb-[200px] pt-[150px] z-20 relative text-4xl overflow-x-hidden">
             <AboutMe />
             <Divider />
-            <div className="customBigHeading recentHeading">RECENT</div>
+            <div className="customBigHeading recent">RECENT</div>
             <Recent 
               fadeOutRecent={fadeOutRecent}
               setFadeOutRecent={setFadeOutRecent}/>
