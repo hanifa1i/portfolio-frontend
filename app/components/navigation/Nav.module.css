@@ -137,20 +137,37 @@
         max-width: 320px;
 
         justify-content: center;
-                        border-radius: 20px;
-                        scale: 1.2;
+        border-radius: 20px;
+        scale: 1.2;
+        
 
     }
-    .navButtonsLarge {
-        gap: 0;
-                width: 95%;
-                
 
-    }
-    .navButtons {
+   
+
+    .navButtonsSmall {
         border-radius: 20px;
         border-bottom-left-radius: 0px;
         border-top-left-radius: 0px;
+        background: #11111190;
+        backdrop-filter: blur(50px);
+    }
+
+     .navButtonsLarge {
+        gap: 10px;
+        width: 100%;
+        height: fit-content;
+    
+        border-radius: 10px;
+        margin-top: 50px;
+
+        margin-bottom: 20px;
+        padding: 0px;
+        border-width: 0px;
+        padding-left: 20px;
+                padding-right: 20px;
+                height: 100px;
+
     }
 
 
