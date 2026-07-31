@@ -335,3 +335,20 @@
         padding: 20px;
     }
 }
+
+@media (max-width: 800px) {
+    .infoBar {
+        width: 100%;
+    }
+    .moreInfoHidden{
+        width: 50%;
+    }
+    .moreInfo {
+        width: 95%;
+        flex-direction: column;
+    }
+    .description{
+        border-width: 0px;
+        padding-bottom: 20px;
+    }
+}
