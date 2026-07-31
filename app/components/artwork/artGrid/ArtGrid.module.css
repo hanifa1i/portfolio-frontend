@@ -394,6 +394,10 @@
 }
 
 @media (max-width: 800px) {
+  .artGrid{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .artCard{
     width: 100%;
     height: auto;
