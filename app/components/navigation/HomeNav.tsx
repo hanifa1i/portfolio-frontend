@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import style from "./Nav.module.css"
 import NavButton from "./navButton/NavButton"
-import { navigation } from "@/app/data/navigation";
+import { navigation, navigationImageFinder } from "@/app/data/navigation";
 import Login from "../login/Login";
 
 export default function HomeNav() {
@@ -54,7 +54,9 @@ export default function HomeNav() {
                     ${pageName === "sketchbooks" ? style.sketchbookBg : ""}
                     ${pageName === "skills" ? style.skillsBg : ""}
                     ${pageName === "qualification" ? style.qualificationBg : ""}
-                    `}></div>
+                    `}>
+                        <img className={`${clicked ? style.pageSwitchImage : ""}`} src={navigationImageFinder[pageName as keyof typeof navigationImageFinder]?.image}/>
+                    </div>
 
             <nav className={`${style.navigation}`}>
                 
