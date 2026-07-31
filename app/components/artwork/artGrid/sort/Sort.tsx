@@ -39,46 +39,51 @@ export default function Sort({ setFilter }: Props) {
                 <div className={`${styles.filterHeading}`}>Filter<div className={`${styles.activeFilter}`}>{filterName}</div></div>
                 <div>
                     <div className={`${styles.filterName} `}>
-                        <button onMouseEnter={() => playSound("hover")} className="mr-[15px] w-[100px]">date</button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "most recent" ? styles.filterSubNameOn : ""}`} onClick={() => selected("date", "most recent")}>
-                            <div className={`  ${filterName === "most recent" ? styles.tick : "hidden"}`}>✓</div>
-                            <div className="">most recent</div>
-                        </button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "least recent" ? styles.filterSubNameOn : ""}`} onClick={() => selected("date", "least recent")}>
-                            <div className={`  ${filterName === "least recent" ? styles.tick : "hidden"}`}>✓</div>
-                            <div className="">least recent</div>
-                        </button>
-
+                        <button onMouseEnter={() => playSound("hover")} className={`mr-[15px] w-[100px] ${styles.categoryName} `}>date</button>
+                        
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "most recent" ? styles.filterSubNameOn : ""}`} onClick={() => selected("date", "most recent")}>
+                                <div className={`  ${filterName === "most recent" ? styles.tick : "hidden"}`}>✓</div>
+                                <div className="">most recent</div>
+                            </button>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "least recent" ? styles.filterSubNameOn : ""}`} onClick={() => selected("date", "least recent")}>
+                                <div className={`  ${filterName === "least recent" ? styles.tick : "hidden"}`}>✓</div>
+                                <div className="">least recent</div>
+                            </button>
                     </div>
                     <div className={`${styles.filterName}`}>
                         <button onMouseEnter={() => playSound("hover")} className="mr-[15px] w-[100px]">tool</button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Procreate" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Procreate")}>
-                            <div className={`  ${filterName === "Procreate" ? styles.tick : "hidden"}`}>✓</div>
-                            <div className="">procreate</div>
-                        </button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Photoshop" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Photoshop")}>
-                            <div className={`  ${filterName === "Photoshop" ? styles.tick : "hidden"}`}>✓</div>
-                            <div className="">photoshop</div>
-                        </button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Others" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Others")}>
-                            <div className={`  ${filterName === "Others" ? styles.tick : "hidden"}`}>✓</div>
-                            <div className="">others</div>
-                        </button>
+                        <div className={`${styles.tagContainer}`}>
+
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Procreate" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Procreate")}>
+                                <div className={`  ${filterName === "Procreate" ? styles.tick : "hidden"}`}>✓</div>
+                                <div className="">procreate</div>
+                            </button>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Photoshop" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Photoshop")}>
+                                <div className={`  ${filterName === "Photoshop" ? styles.tick : "hidden"}`}>✓</div>
+                                <div className="">photoshop</div>
+                            </button>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubName} ${filterName === "Others" ? styles.filterSubNameOn : ""}`} onClick={() => selected("tool", "Others")}>
+                                <div className={`  ${filterName === "Others" ? styles.tick : "hidden"}`}>✓</div>
+                                <div className="">others</div>
+                            </button>
+                        </div>
                     </div>
                     <div className={`${styles.filterName}`}>
                         <button onMouseEnter={() => playSound("hover")} className="mr-[15px] w-[100px]">ratio</button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "wide" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "wide")}>
-                            <div className={`  ${filterName === "wide" ? styles.tick : "hidden"}`}>✓</div>
-                            <img src="/images/filter/wide-ratio.svg" alt="" className={`${styles.ratioImage}`} />
-                        </button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "square" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "square")}>
-                            <div className={`  ${filterName === "square" ? styles.tick : "hidden"}`}>✓</div>
-                            <img src="/images/filter/square-ratio.svg" alt="" className={`${styles.ratioImage}`} />
-                        </button>
-                        <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "portrait" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "portrait")}>
-                            <div className={`  ${filterName === "1:1" ? styles.tick : "hidden"}`}>✓</div>
-                            <img src="/images/filter/wide-ratio.svg" alt="" className={`${styles.ratioImage} rotate-90`} />
-                        </button>
+                        <div className={`${styles.tagContainer}`}>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "wide" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "wide")}>
+                                <div className={`  ${filterName === "wide" ? styles.tick : "hidden"}`}>✓</div>
+                                <img src="/images/filter/wide-ratio.svg" alt="" className={`${styles.ratioImage}`} />
+                            </button>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "square" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "square")}>
+                                <div className={`  ${filterName === "square" ? styles.tick : "hidden"}`}>✓</div>
+                                <img src="/images/filter/square-ratio.svg" alt="" className={`${styles.ratioImage}`} />
+                            </button>
+                            <button onMouseEnter={() => playSound("hover")} className={`${styles.filterSubNameRatio} ${filterName === "portrait" ? styles.filterSubNameRatioOn : ""} w-fit`} onClick={() => selected("ratio", "portrait")}>
+                                <div className={`  ${filterName === "1:1" ? styles.tick : "hidden"}`}>✓</div>
+                                <img src="/images/filter/wide-ratio.svg" alt="" className={`${styles.ratioImage} rotate-90`} />
+                            </button>
+                        </div>
 
                     </div>
                     <div className={`${styles.filterName}`}>
