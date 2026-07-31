@@ -2,7 +2,8 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: #00000090;
+    backdrop-filter: blur(50);
     align-items: end;
     display: flex;
     padding: 40px;
@@ -110,8 +111,8 @@
 .exitButton {
     width: fit-content;
     height: 40px;
-    border-radius: 5px;
-    background-color: #222;
+    border-radius: 15px;
+    background-color: #55555550;
     display: flex;
     transition: all 100ms;
     justify-content: center;
@@ -141,8 +142,8 @@
 .infoButton {
     width: fit-content;
     height: 40px;
-    border-radius: 5px;
-    background-color: #222;
+    border-radius: 15px;
+    background-color: #55555550;
     display: flex;
     transition: all 100ms;
     justify-content: center;
@@ -304,6 +305,10 @@
     transform: translateX(50px);
     opacity: 0;
 }
+.infoIcon{
+    height: 20px;
+    filter: invert(.60);
+}
 
 @keyframes circleClose {
 
@@ -350,5 +355,16 @@
     .description{
         border-width: 0px;
         padding-bottom: 20px;
+    }
+    .fullscreenArt {
+        padding: 10px;
+    }
+    .spotlight {
+        border-width: 0px;
+        height: 70%;
+    margin-bottom: 50%;
+    }
+    .spotlightImage{
+        border-radius: 10px;
     }
 }

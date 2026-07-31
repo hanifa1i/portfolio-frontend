@@ -65,7 +65,7 @@ export default function FullScreenArt({ artwork, onClose }: Props) {
         <>
             <div className={`${styles.fullscreenArt} ${exit ? styles.closing : "offscreenLeft"}`}>
                 <div className={`${styles.spotlight} ${spotlightTransition ? styles.fadeOut : styles.fadeIn}`}>
-                    <img src={spotlight} className={`${styles.spotlightImage}`}/>
+                    <img src={spotlight} className={`${styles.spotlightImage}`} />
                 </div>
                 <div className={`${moreInfo ? styles.moreInfo : styles.moreInfoHidden}`}>
                     <div className={`${moreInfo ? styles.description : "hidden"}`}>
@@ -103,7 +103,7 @@ export default function FullScreenArt({ artwork, onClose }: Props) {
 
                 <div className={`${styles.infoBar} `}>
                     <div className={`${styles.sideContainer}  `}>
-                        <button onMouseEnter={() => playSound("hover")}  className={`${styles.exitButton}`} onClick={handleExit}>exit</button>
+                        <button onMouseEnter={() => playSound("hover")} className={`${styles.exitButton}`} onClick={handleExit}>←</button>
                     </div>
                     <div className={`${styles.imageSlider}`}>
                         {artwork.image_urls.map((image, key) => (
@@ -115,8 +115,10 @@ export default function FullScreenArt({ artwork, onClose }: Props) {
                     </div>
                     <div className={`${styles.sideContainer}  `}>
                         <button className={`${styles.infoButton}`} onMouseEnter={() => playSound("hover")} onClick={handleMoreInfo}>
-
-                            show info</button>
+                            <img
+                                className={`${styles.infoIcon}`}
+                                src={"images/sketchbook/info-static.png"} />
+                        </button>
                     </div>
                 </div>
 
