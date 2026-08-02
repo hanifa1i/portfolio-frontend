@@ -173,7 +173,7 @@
 @keyframes flapHideAni {
     0% {
         opacity: 100;
-                transform: translateX(0);
+        transform: translateX(0);
 
     }
 
@@ -267,51 +267,54 @@
 
 @media (max-width: 1200px) {
     .bookContainer {
-        width: fit-content;
-        margin: 0px;
-        align-content: center;
         
-    }
-    .books {
-                margin: 0px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        width: var(--bookContainerWidth);
+        border-width: 2px;
+            transform: translateX(calc(var(--bookContainerWidth) / -2 ));
 
+        display:flex;
+        justify-items: center;
+        align-content: center;
+    }
+
+    .books {
+        margin: 0px;
         display: flex;
-            position: relative;
+        position: relative;
         flex-direction: column-reverse;
         align-content: center;
-        width: fit-content ;
-        scale: 0.6;
+        width: fit-content;
     }
-    .centerer{
+
+    .centerer {
         display: flex;
         z-index: 100;
         align-items: center;
-        
+
     }
+
     .unit {
         z-index: 100;
 
-        margin:auto ;
+        margin: auto;
     }
+
     .pageInfo {
         margin: 0px;
     }
+
     .flipbookContainer {
-        width: calc(var(--bookContainerWidth) * 3);
-            padding: 0px;
-            border-width: 0px;
-    transform: translateX(-50%) scale(0.5);
-     width: 200vw;
-     height: 100%;
-     position: fixed;
-     top: 0px;
-     left: 0px;
-   
-
-
-
+        width: 100%;
+        margin: auto;
+        transform: scale(0.5);
+        position: relative;
+        
+        border-width: 2px;
     }
+
     .bookFrontCenter {
-    transform: translateX(-70%)  scale(0.5);
-}
+    }
 }

@@ -250,8 +250,8 @@ export default function book({ setBookActive }: Props) {
                     </div>
                 </div>
 
-                <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo}/>
             </div>
+                <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo}/>
 
 
         </>
