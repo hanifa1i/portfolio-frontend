@@ -297,7 +297,7 @@
         margin: 0px;
     }
     .flipbookContainer {
-        width: calc(var(--bookContainerWidth) * 0.6);
+        width: calc(var(--bookContainerWidth) * 2);
             padding: 0px;
             border-width: 0px;
     transform: translateX(-50%) scale(0.5);
