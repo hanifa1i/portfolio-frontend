@@ -147,3 +147,16 @@
         margin-top: 0;
     }
 }
+
+@media (max-width: 1200px) {
+    .book {
+        left: calc((50% - 200px) + var(--bookGap));
+        position: absolute;
+        top: 50%;
+
+    }
+    .bookAfter {
+        left: 50%;
+
+    }
+}

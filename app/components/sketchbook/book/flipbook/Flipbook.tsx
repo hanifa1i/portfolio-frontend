@@ -49,8 +49,8 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
     return (<>
         {data.pages.length % 2 === 1 ? <HTMLFlipBook
             className={`${flipBookStyles.flipBookShadow}`}
-            width={flipbookWidth}
-            height={700}
+            width={flipbookWidth * 0.6}
+            height={700 * 0.6}
             maxShadowOpacity={0}
             drawShadow={true}
             showCover={true}
