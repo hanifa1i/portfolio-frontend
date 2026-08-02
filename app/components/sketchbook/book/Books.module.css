@@ -300,19 +300,18 @@
         width: calc(var(--bookContainerWidth) * 0.6);
             padding: 0px;
             border-width: 0px;
-    transform: translateX(-52%);
+    transform: translateX(-50%) scale(0.5);
      width: 200vw;
      height: 100%;
      position: fixed;
      top: 0px;
      left: 0px;
-     
-     
+   
 
 
 
     }
     .bookFrontCenter {
-    transform: translateX(-65%);
+    transform: translateX(-70%);
 }
 }
