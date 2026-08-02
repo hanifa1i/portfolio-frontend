@@ -312,6 +312,6 @@
 
     }
     .bookFrontCenter {
-    transform: translateX(-70%);
+    transform: translateX(-70%)  scale(0.5);
 }
 }
