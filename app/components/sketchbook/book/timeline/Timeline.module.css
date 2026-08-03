@@ -71,7 +71,7 @@
 .fadeOut{
     transform: translateX(-50%) scale(0);
 }
-.shrinkX{
-    width: 0px;
+.fadeOut:hover{
+    transform: translateX(-50%) scale(0);
 }
 }

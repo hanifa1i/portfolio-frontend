@@ -149,11 +149,13 @@
     .book {
         left: calc((50% - 200px) + var(--bookGap));
         position: absolute;
-        top: 50%;
+        top: 45%;
 
     }
     .bookAfter {
         left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5)) ;
 
     }
 }
