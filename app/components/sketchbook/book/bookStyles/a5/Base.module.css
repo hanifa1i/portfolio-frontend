@@ -7,8 +7,8 @@
     transition: all 500ms;
     position: fixed;
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-                left: calc(15% + var(--bookGap));
+    transform: translateY(-50%) translateX(-50%);
+    left: calc(15% + var(--bookGap));
     filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, 0.5));
 }
 
