@@ -5,7 +5,7 @@
     height: fit-content;
     display: flex;
     transition: all 500ms;
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
                 left: calc(15% + var(--bookGap));
