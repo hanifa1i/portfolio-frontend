@@ -9,7 +9,7 @@
 }
 
 .books {
-    position: absolute;
+    position: fixed;
     justify-items: left;
     align-content: center;
     top: 0px;
