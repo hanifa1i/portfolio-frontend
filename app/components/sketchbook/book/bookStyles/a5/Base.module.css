@@ -7,7 +7,6 @@
     transition: all 500ms;
     position: absolute;
     top: 50%;
-    left: calc(15% + var(--bookGap));
     transform: translateX(-50%) translateY(-50%);
     filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, 0.5));
 }
@@ -147,6 +146,13 @@
 
     100% {
         margin-top: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .book {
+            left: calc(15% + var(--bookGap));
+
+
     }
 }
 @media (max-width: 1200px) {
