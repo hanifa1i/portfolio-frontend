@@ -289,7 +289,7 @@
         left: 50%;
         top: auto;
         transform: translateX(-50%) translateY(190%) scale(1.25);
-        animation: none;
+        animation: popInMobile 500ms forwards;
         padding: 30px;
         z-index: 10;
         width: 120vw;
@@ -327,5 +327,15 @@
         border-width: 0px;
     }
     
+
+}
+@keyframes popInMobile {
+    0% {
+        transform: translateX(-50%) translateY(190%) scale(0);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(190%) scale(1.25);
+    }
 
 }
