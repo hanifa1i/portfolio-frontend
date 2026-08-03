@@ -28,3 +28,10 @@
     left: 100%;
 
 }
+@media (max-width: 1200px) {
+    .sketchbookBg {
+        width: 100%;
+        left: 0%;
+        filter: invert(1);
+    }
+}

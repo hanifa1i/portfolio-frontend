@@ -268,41 +268,23 @@
 @media (max-width: 1200px) {
     .bookContainer {
         
-        position: fixed;
+        position:  fixed;
         top: 0;
         left: 50%;
         width: var(--bookContainerWidth);
         border-width: 0px;
-            transform: translateX(calc(var(--bookContainerWidth) / -2 ));
+        transform: translateX(calc(var(--bookContainerWidth) / -2 ));
 
         display:flex;
         justify-items: center;
         align-content: center;
     }
 
-    .books {
-        margin: 0px;
-        display: flex;
-        position: relative;
-        flex-direction: column-reverse;
-        align-content: center;
-        width: fit-content;
-    }
+    
 
-    .centerer {
-        display: flex;
-        z-index: 100;
-        align-items: center;
-
-    }
-
-    .unit {
-        z-index: 100;
-
-        margin: auto;
-    }
-
+ 
     .pageInfo {
+        display: none;
         margin: 0px;
     }
 
@@ -319,4 +301,8 @@
         transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / -5)) ;
 
     }
+    .books {
+        transform: scale(0.6);
+    }
+
 }

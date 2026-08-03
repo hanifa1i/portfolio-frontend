@@ -168,5 +168,9 @@
     }
     .bookAfter {
         left: 50%;
+
     }
+    .bookHover:hover {
+    left: calc((50% - 200px) + 25px + var(--bookGap));
+}
 }

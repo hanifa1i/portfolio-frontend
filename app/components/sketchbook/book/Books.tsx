@@ -177,24 +177,22 @@ export default function book({ setBookActive }: Props) {
                         </div>
 
                         <div className={`${styles.centerer}`}>
-                            <div className={`${styles.unit}`}>
-                        {sketchbooks.map((sketchbook, index) => (
-                                                    
+                                {sketchbooks.map((sketchbook, index) => (
 
-                            <Book
-                                key={index}
-                                selected={selectedBook}
-                                bookNumber={index + 1}
-                                sketchbook={sketchbook}
-                                bookId={sketchbook.id}
-                                selectBook={targetBook}
-                                bookGap={index * 100}
-                                pages={books[index] !== undefined ? books[index].pages.length : 0}
-                                enableAni={enableAnimation}
-                                setEnableAni={setEnableAnimation}
-                            />
-                        ))}
-                        </div>
+
+                                    <Book
+                                        key={index}
+                                        selected={selectedBook}
+                                        bookNumber={index + 1}
+                                        sketchbook={sketchbook}
+                                        bookId={sketchbook.id}
+                                        selectBook={targetBook}
+                                        bookGap={index * 100}
+                                        pages={books[index] !== undefined ? books[index].pages.length : 0}
+                                        enableAni={enableAnimation}
+                                        setEnableAni={setEnableAnimation}
+                                    />
+                                ))}
                         </div>
 
 
@@ -231,8 +229,8 @@ export default function book({ setBookActive }: Props) {
                     )}
 
                     {expandInfo && (<div onClick={() => { setExpandInfo(false), playSound("bell") }} className={`${styles.closeInfo}`} />)}
-                    
-                    <div 
+
+                    <div
                         className={`
                             ${styles.infoBar} 
                             ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined ? styles.infoBarHide : ""} 
@@ -242,7 +240,7 @@ export default function book({ setBookActive }: Props) {
                         onMouseEnter={() => { setHovered(true), playSound("hover") }}
                         onMouseLeave={() => setHovered(false)}>
 
-                        <img className={`w-[30px] h-[30px] ${!expandInfo ? `m-auto` : "" }`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
+                        <img className={`w-[30px] h-[30px] ${!expandInfo ? `m-auto` : ""}`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
                         {expandInfo && (
                             <div className={`${styles.description} offscreenLeft`}>{selectedBookData.pages[currentPage - 3] !== undefined ? selectedBookData.pages[currentPage - 3].description : ""}</div>
                         )
@@ -251,7 +249,7 @@ export default function book({ setBookActive }: Props) {
                 </div>
 
             </div>
-                <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo}/>
+            <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
 
 
         </>
