@@ -333,7 +333,7 @@
 
     .pageSwitch {
         position: fixed;
-        bottom: 70px;
+        bottom: 40px;
         left: 50%;
         transform: translateX(-120%);
         height: 50px;

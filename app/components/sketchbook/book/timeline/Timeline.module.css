@@ -69,7 +69,7 @@
 
 @media (max-width: 800px) {
     .timelineContainer {
-        bottom: 150px;
+        bottom: 110px;
         transform: translateX(-50%) scale(0.9);
     }
 
