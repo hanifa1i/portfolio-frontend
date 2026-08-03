@@ -267,22 +267,22 @@
 
 @media (max-width: 1200px) {
     .bookContainer {
-        
-        position:  fixed;
+
+        position: fixed;
         top: 0;
         left: 50%;
         width: var(--bookContainerWidth);
         border-width: 0px;
-        transform: translateX(calc(var(--bookContainerWidth) / -2 ));
+        transform: translateX(calc(var(--bookContainerWidth) / -2));
 
-        display:flex;
+        display: flex;
         justify-items: center;
         align-content: center;
     }
 
-    
 
- 
+
+
     .pageInfo {
         position: fixed;
         bottom: 10%;
@@ -299,7 +299,8 @@
         backdrop-filter: blur(30px);
         filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .4));
     }
-    .subInfo{
+
+    .subInfo {
         margin: 0px;
         padding: 0px;
     }
@@ -307,28 +308,74 @@
     .flipbookContainer {
         width: 100%;
         margin: auto;
-        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / -5)) ;
+        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / -5));
         position: relative;
-        
+
         border-width: 0px;
     }
 
     .bookFrontCenter {
-        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / -5)) ;
+        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / -5));
 
     }
+
     .books {
         transform: scale(0.6);
     }
-    .mobileHide{
+
+    .mobileHide {
         display: none;
     }
-    .borderHide{
+
+    .borderHide {
         border-width: 0px;
     }
-    
 
+    .pageSwitch {
+        position: fixed;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-120%);
+        height: 50px;
+        width: 40px;
+        border-radius: 5px;
+        background-color: #cccccc;
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .1));
+        transition: all 300ms;
+        font-size: 9px;
+        font-weight: 500;
+        text-align: center;
+        align-content: center;
+        color: #191919;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .pageSwitchLeft {
+        transform: translateX(-100%);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+    }
+    .pageSwitchLeft:active{
+        transform: translateX(-140%);
+    }
+    .pageSwitchRight {
+        transform: translateX(0%);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .pageSwitchRight:active{
+        transform: translateX(40%);
+    }
+    .leftPage {
+        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / 5));
+    }
+    .inactivePage {
+        opacity: 0.5;
+    }
 }
+
 @keyframes popInMobile {
     0% {
         transform: translateX(-50%) translateY(190%) scale(0);

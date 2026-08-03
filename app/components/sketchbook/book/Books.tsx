@@ -57,6 +57,7 @@ export default function book({ setBookActive }: Props) {
     const [expandInfo, setExpandInfo] = useState(false);
     const [hovered, setHovered] = useState(false);
     const [books, setBooks] = useState<BookData[]>([]);
+    const [leftPage, setLeftPage] = useState(false);
 
 
     const handleExpand = (state: boolean) => {
@@ -205,6 +206,7 @@ export default function book({ setBookActive }: Props) {
                     ${styles.flipbookContainer}
                     ${currentPage === 0 ? styles.bookFrontCenter : ""}
                     ${currentPage === totalPages - 1 ? styles.bookBackCenter : ""}
+                    ${leftPage ? styles.leftPage : ""}
 
                     ${settings?.page_style === "landscape" ? styles.landscapeTransformX : ""}
                     ${settings?.page_style === "landscape" && currentPage === 0 ? styles.bookFrontCenterLandscape : ""}
@@ -247,6 +249,15 @@ export default function book({ setBookActive }: Props) {
                         }
                     </div>
                 </div>
+
+            </div>
+            <div>
+                <div
+                    onClick={() => setLeftPage(true)} 
+                    className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""}`}></div>
+                <div 
+                    onClick={() => setLeftPage(false)} 
+                    className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""}`}></div>
 
             </div>
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />

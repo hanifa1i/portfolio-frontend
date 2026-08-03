@@ -10,10 +10,12 @@
     transition: all 200ms;
     transform: translateX(-50%) scale(1);
 }
-.fadeOut{
+
+.fadeOut {
     transform: translateX(-50%) scale(0);
 }
-.shrinkX{
+
+.shrinkX {
     width: 0px;
 }
 
@@ -29,15 +31,17 @@
     color: #ccc;
     margin-right: 30px;
 }
+
 .backButton:hover {
-        background-color: #e75c5c;
+    background-color: #e75c5c;
     height: 30px;
     width: 50px;
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .3));
 
 }
+
 .backButton:active {
-        background-color: #d25454;
+    background-color: #d25454;
     padding-right: 20px;
     font-size: 13px;
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .0));
@@ -58,20 +62,26 @@
 .timelineContainer:hover {
     transform: translateX(-50%) scale(1.2);
 }
+
 .fadeOut:hover {
     transform: translateX(-50%) scale(0);
 }
+
 @media (max-width: 800px) {
-    .timelineContainer{
-            transform: translateX(-50%) scale(0.7);
+    .timelineContainer {
+        bottom: 150px;
+        transform: translateX(-50%) scale(0.9);
     }
+
     .timelineContainer:hover {
-    transform: translateX(-50%) scale(0.8);
-}
-.fadeOut{
-    transform: translateX(-50%) scale(0);
-}
-.fadeOut:hover{
-    transform: translateX(-50%) scale(0);
-}
+        transform: translateX(-50%) scale(0.95);
+    }
+
+    .fadeOut {
+        transform: translateX(-50%) scale(0);
+    }
+
+    .fadeOut:hover {
+        transform: translateX(-50%) scale(0);
+    }
 }
