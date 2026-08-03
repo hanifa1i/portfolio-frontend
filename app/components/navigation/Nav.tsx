@@ -55,7 +55,7 @@ export default function HomeNav() {
 
                 <Login switchPage={switchPage} />
 
-                <div className={`${style.navButtons} ${style.navButtonsSmall}`}>
+                <div className={`${style.navButtons} ${style.navButtonsSmall} ${page === "sketchbooks" ? style.sketchbookNav : ""}`}>
                     {
                         navigation.map((items, index) => (
                             <NavButton
