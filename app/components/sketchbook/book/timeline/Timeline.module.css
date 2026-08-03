@@ -64,7 +64,8 @@
 @media (max-width: 800px) {
     .timelineContainer{
             transform: translateX(-50%) scale(0.7);
-            bottom: 70px;
-
     }
+    .timelineContainer:hover {
+    transform: translateX(-50%) scale(0.8);
+}
 }

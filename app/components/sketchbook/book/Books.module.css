@@ -309,12 +309,14 @@
     .flipbookContainer {
         width: 100%;
         margin: auto;
-        transform: scale(0.3);
+        transform: scale(0.45) translateY(40px) rotate(90deg);
         position: relative;
         
         border-width: 0px;
     }
 
     .bookFrontCenter {
+        transform: scale(0.45) translateX(calc(var(--bookContainerWidth) / -5)) ;
+
     }
 }
