@@ -24,6 +24,9 @@ export default function SketchbooksPage() {
         <Nav/>
         <Book setBookActive={setBookActive}/>
       </div>
+
+              <div className="topFadeHomePage"></div>
+
     </div>
   );
 }

@@ -68,4 +68,10 @@
     .timelineContainer:hover {
     transform: translateX(-50%) scale(0.8);
 }
+.fadeOut{
+    transform: translateX(-50%) scale(0);
+}
+.shrinkX{
+    width: 0px;
+}
 }
