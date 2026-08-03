@@ -357,24 +357,39 @@
         border-bottom-right-radius: 0px;
 
     }
-    .pageSwitchLeft:active{
+
+    .pageSwitchLeft:active {
         transform: translateX(-140%);
     }
+
     .pageSwitchRight {
         transform: translateX(0%);
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
     }
-    .pageSwitchRight:active{
+
+    .pageSwitchRight:active {
         transform: translateX(40%);
     }
+
     .leftPage {
         transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / 5));
     }
+
     .inactivePage {
         opacity: 0.5;
     }
+
+    .hidePageSwitch {
+        transition: all 300ms;
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+  
 }
+
 
 @keyframes popInMobile {
     0% {

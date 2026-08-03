@@ -83,6 +83,7 @@ export default function book({ setBookActive }: Props) {
     const reset = () => {
         if (currentPage === 0) {
             setEnableBook(false);
+            setLeftPage(false)
             setTimeout(() => { setSelectedBook(-1); }, 0);
         }
 
@@ -251,13 +252,13 @@ export default function book({ setBookActive }: Props) {
                 </div>
 
             </div>
-            <div>
+            <div >
                 <div
                     onClick={() => setLeftPage(true)} 
-                    className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""}`}></div>
+                    className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
                 <div 
                     onClick={() => setLeftPage(false)} 
-                    className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""}`}></div>
+                    className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
 
             </div>
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
