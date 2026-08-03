@@ -178,7 +178,7 @@ export default function book({ setBookActive }: Props) {
                             <div className={`${styles.subInfo} ${styles.mobileHide}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
                         </div>
 
-                        <div className={`${styles.centerer}`}>
+                        <div className={`${styles.centerer} border`}>
                                 {sketchbooks.map((sketchbook, index) => (
 
 
