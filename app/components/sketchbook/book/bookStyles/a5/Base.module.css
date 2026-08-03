@@ -158,6 +158,7 @@
     }
     .bookAfter {
         left: 50%;
+        transform: translateX(calc(var(--bookContainerWidth) / -5)) ;
 
     }
 }
