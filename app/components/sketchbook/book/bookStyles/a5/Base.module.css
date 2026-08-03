@@ -8,6 +8,7 @@
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+                left: calc(15% + var(--bookGap));
     filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, 0.5));
 }
 
@@ -150,14 +151,12 @@
 }
 @media (min-width: 1200px) {
     .book {
-            left: calc(15% + var(--bookGap));
 
 
     }
 }
 @media (max-width: 1200px) {
     .book {
-        left: calc((50% - 200px) + var(--bookGap));
             transform: translateX(-50%) translateY(-50%);
 
         position: fixed;
