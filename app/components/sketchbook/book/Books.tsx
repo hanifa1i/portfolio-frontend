@@ -254,10 +254,10 @@ export default function book({ setBookActive }: Props) {
             </div>
             <div >
                 <div
-                    onClick={() => setLeftPage(true)} 
+                    onClick={() => {setLeftPage(true), playSound("whosh")}} 
                     className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
                 <div 
-                    onClick={() => setLeftPage(false)} 
+                    onClick={() => {setLeftPage(false), playSound("whosh")}}
                     className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
 
             </div>
