@@ -23,6 +23,20 @@
 
     }
 }
+@keyframes sketchbookBgMobileAnimation {
+    0% {
+        top: 100%;
+        opacity: 0;
+        transform:  scale(1.7);
+    }
+
+    100% {
+        top: 85%;
+        opacity: .8;
+                transform: scale(1);
+
+    }
+}
 
 .sketchbookBgHidden {
     left: 100%;
@@ -32,6 +46,10 @@
     .sketchbookBg {
         width: 100%;
         left: 0%;
-        filter: invert(1);
+        height: 50%;
+        top: 85%;
+        filter: invert(0);
+        animation: sketchbookBgMobileAnimation 1000ms forwards;
+
     }
 }
