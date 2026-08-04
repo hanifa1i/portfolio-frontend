@@ -185,11 +185,15 @@
 
     .bookFrontBeforeReturn {
         width: none;
+        transform-origin: left center;
+        flex: 0 0 550px;
         transform: scaleX(0);
     }
 
     .bookFrontAfterReturn {
         width: none;
+        transform-origin: left center;
+        flex: 0 0 550px;
         transform: scaleX(1);
     }
 
