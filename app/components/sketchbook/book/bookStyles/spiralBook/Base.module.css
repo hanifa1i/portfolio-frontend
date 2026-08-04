@@ -1,11 +1,11 @@
 .book {
-    padding: 0px;
+    padding: 20px;
     border-radius: 0px;
     border-color: #222;
     height: fit-content;
     display: flex;
     transition: all 500ms;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: calc(15% + var(--bookGap));
     transform: translateX(-50%) translateY(-50%);
@@ -14,7 +14,7 @@
 }
 
 .bookHover:hover {
-    padding-right: 0px;
+    padding-right: 75px;
     left: calc(15% + 25px + var(--bookGap));
 
     border-top-right-radius: 30px;
@@ -99,12 +99,11 @@
 
 
 .moveRight {
-    left: calc(80% + var(--bookGap));
+    
     opacity: 0;
 }
 
 .moveLeft {
-    left: calc(20% + var(--bookGap));
     opacity: 0;
 }
 
@@ -162,7 +161,7 @@
 @media (max-width: 1200px) {
     .book {
         left: calc((50% - 200px) + var(--bookGap));
-        position: absolute;
+        position: fixed;
         top: 45%;
 
     }
