@@ -1,5 +1,5 @@
 .book {
-        padding: 20px;
+    padding: 20px;
     border-radius: 10px;
     border-color: #222;
     height: fit-content;
@@ -14,7 +14,7 @@
 }
 
 .bookHover:hover {
-    
+
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     top: 45%;
@@ -30,6 +30,7 @@
 .bookHover:hover .bookSpineBefore {
     background-color: #333333;
 }
+
 .bookAfter {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -51,6 +52,7 @@
     transition: all 500ms;
 
 }
+
 .bookSpineBefore {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
@@ -113,6 +115,7 @@
 
     color: #222;
 }
+
 .book:hover~.bookInfo {
     top: 50%;
     width: 300px;
@@ -145,26 +148,23 @@
         margin-top: 0;
     }
 }
+
 @media (max-width: 1200px) {
     .book {
         left: calc((50% - 200px) + var(--bookGap));
         position: absolute;
         top: 45%;
-                border-width: 1px;
-
     }
+
     .bookAfter {
         left: 50%;
         top: 50%;
-        transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5)) ;
-
+        transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5));
     }
     .bookSpineReturn {
         width: none;
         flex: 0 0 55px;
-
         transform-origin: right center;
-
     }
 
     .bookSpineBeforeReturn {
@@ -175,7 +175,6 @@
     .bookSpineAfterReturn {
         width: none;
         transform: scaleX(0);
-
     }
 
     .bookFronReturn {
@@ -195,11 +194,10 @@
         transform-origin: left center;
         flex: 0 0 550px;
         transform: scaleX(1);
-
     }
+
     .bookReturn {
-        border-width: 1px;
         transform: translateX(calc(-50%)) translateY(-50%);
     }
-    
+
 }
