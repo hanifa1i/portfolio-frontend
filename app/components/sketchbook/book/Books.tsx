@@ -169,15 +169,9 @@ export default function book({ setBookActive }: Props) {
                 {!enableBook && (
                     <div className={`${styles.books}`}>
 
-                        <div className={` ${styles.pageInfo} ${selectedBook !== -1 ? styles.fadeOut : ""}`}>
-                            <div className={`${styles.mobileHide}`}>ⓘ   Sketchbooks</div>
-                            <p className={`${styles.subInfo} ${styles.borderHide}`}>These are some of my physical sketchbooks i had drawn in, throughout my life. From practicing, to studies and live drawings.
-                                I had recreated these in digital form so anyone can view them </p>
-                            <div className={`${styles.subInfo} ${styles.mobileHide}`}>Click<img src={"/images/sketchbook/bell-static.png"} className={` ml-[5px] mr-[5px] h-[20px] invert`} />icon on the far left to know if I have added any new sketches</div>
+                        
 
-                            <div className={`${styles.subInfo} ${styles.mobileHide}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
-                        </div>
-
+                        <div className={`${styles.centerer}`}>
                                 {sketchbooks.map((sketchbook, index) => (
 
 
@@ -194,6 +188,7 @@ export default function book({ setBookActive }: Props) {
                                         setEnableAni={setEnableAnimation}
                                     />
                                 ))}
+                        </div>
 
 
                     </div>
