@@ -76,7 +76,13 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
 
 
                     </div>
-                    
+                    <div className={`${styles.bookFront} ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}`}>
+                        {bookId === 1 && (<A5Front />)}
+                        {bookId === 2 && (<A3Front state={selected === bookNumber ? "transition" : "peek"} />)}
+                        {bookId === 4 && (<A4Year2Front />)}
+                        {bookId === 5 && (<SpiralBookFront state={selected === bookNumber ? "transition" : "peek"} />)}
+
+                    </div>
 
                 </div>
 
