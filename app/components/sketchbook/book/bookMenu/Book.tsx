@@ -32,8 +32,10 @@ type Props = {
     pages: number;
     enableAni: boolean
     setEnableAni: (state: boolean) => void
+    enableMobileTrans : boolean
+    stopTransform: boolean
 }
-export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni}: Props) {
+export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni, enableMobileTrans, stopTransform}: Props) {
 
     const BOOK_STYLES: Record<number, typeof a5Styles> = {
         1: a5Styles,
@@ -54,7 +56,9 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
                     ${selected !== -1 && selected < bookNumber ? styles.moveRight : ""}
-                    ${selected !== -1 && selected > bookNumber ? styles.moveLeft : ""}`}>
+                    ${selected !== -1 && selected > bookNumber ? styles.moveLeft : ""}
+                    ${enableMobileTrans ? styles.bookReturn: ""}
+                    ${stopTransform ? styles.stopTransform : ""}`}>
 
                 <div style={{ "--delay": `${bookGap}ms` } as React.CSSProperties}
                     onAnimationStart={() => {
@@ -68,22 +72,26 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                         ${bookId === 2 ? stylesCommon.a3 : ""}
                         ${bookId === 5 ? stylesCommon.spiral : ""}`}>
 
-                    <div className={`${styles.bookSpine} ${selected === bookNumber ? styles.bookSpineAfter : styles.bookSpineBefore}`}>
+                    <div className={`${styles.bookSpine} ${enableMobileTrans === true ? styles.bookSpineReturn: ""}
+                        ${selected === bookNumber ? styles.bookSpineAfter : styles.bookSpineBefore}
+                        ${enableMobileTrans ? selected === bookNumber ? styles.bookSpineAfterReturn : styles.bookSpineBeforeReturn : ""}
+                    `}>
                         {bookId === 1 && (<A5Spine />)}
                         {bookId === 2 && (<A3Spine />)}
                         {bookId === 4 && (<A4NotebookYear2Spine />)}
                         {bookId === 5 && (<SpiralBookSpine />)}
 
-
                     </div>
-                    <div className={`${styles.bookFront} ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}`}>
+                    <div className={`${styles.bookFront} ${enableMobileTrans ? styles.bookFrontReturn: ""}
+                        ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}
+                        ${enableMobileTrans ? selected === bookNumber ? styles.bookFrontAfterReturn : styles.bookFrontBeforeReturn : ""}
+                    `}>
                         {bookId === 1 && (<A5Front />)}
                         {bookId === 2 && (<A3Front state={selected === bookNumber ? "transition" : "peek"} />)}
                         {bookId === 4 && (<A4Year2Front />)}
                         {bookId === 5 && (<SpiralBookFront state={selected === bookNumber ? "transition" : "peek"} />)}
 
                     </div>
-
                 </div>
 
             </div>

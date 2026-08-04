@@ -23,9 +23,8 @@
 }
 
 .bookHover:hover .bookFrontBefore {
-    background-color: #111111;
-    transform: scaleX(0.05);
-
+    width: 20px;
+    background-color: #111111
 }
 
 .bookHover:hover .bookSpineBefore {
@@ -48,21 +47,18 @@
     height: 700px;
     border-right: #00000060 solid 12px;
     border-left: #ffffff30 solid 12px;
+    width: 55px;
     transition: all 500ms;
-    flex: 0 0 55px;
-    transform-origin: right center;
 
 }
 .bookSpineBefore {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-    transform: scaleX(1);
 }
 
 .bookSpineAfter {
+    width: 0px;
     border-width: 0px;
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
-    transform: scaleX(0);
-
 }
 
 .bookFront {
@@ -71,24 +67,21 @@
     transition: all 500ms;
     border-right: #00000060 solid 0px;
     border-left: #ffffff30 solid 0px;
-    flex: 0 0 550px;
-    transform-origin: left center;
 }
 
 .bookFrontBefore {
+    width: 0px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-    transform: scaleX(0);
 }
 
 .bookFrontAfter {
     border-right-width: 10px;
     border-left-width: 10px;
     background-color: #222;
+    width: 550px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-        transform: scaleX(1);
-
 }
 
 .moveRight {
@@ -157,6 +150,7 @@
         left: calc((50% - 200px) + var(--bookGap));
         position: absolute;
         top: 45%;
+                border-width: 1px;
 
     }
     .bookAfter {
@@ -165,4 +159,47 @@
         transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5)) ;
 
     }
+    .bookSpineReturn {
+        width: none;
+        flex: 0 0 55px;
+
+        transform-origin: right center;
+
+    }
+
+    .bookSpineBeforeReturn {
+        width: none;
+        transform: scaleX(1);
+    }
+
+    .bookSpineAfterReturn {
+        width: none;
+        transform: scaleX(0);
+
+    }
+
+    .bookFronReturn {
+        flex: 0 0 550px;
+        transform-origin: left center;
+    }
+
+    .bookFrontBeforeReturn {
+        width: none;
+        transform-origin: left center;
+        flex: 0 0 550px;
+        transform: scaleX(0);
+    }
+
+    .bookFrontAfterReturn {
+        width: none;
+        transform-origin: left center;
+        flex: 0 0 550px;
+        transform: scaleX(1);
+
+    }
+    .bookReturn {
+        border-width: 1px;
+        transform: translateX(calc(-50%)) translateY(-50%);
+    }
+    
 }

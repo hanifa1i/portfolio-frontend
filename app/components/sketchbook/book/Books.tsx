@@ -52,6 +52,9 @@ export default function book({ setBookActive }: Props) {
 
 
     const [enableBook, setEnableBook] = useState(false);
+    const [enableMobileTrans, setEnableMobileTrans] = useState(false);
+    const [stopTransform, setStopTransform] = useState(false);
+
     const [sketchbook, setSketchbook] = useState<Sketchbook>();
     const [settings, setSettings] = useState<PageSettings>();
     const [expandInfo, setExpandInfo] = useState(false);
@@ -78,7 +81,7 @@ export default function book({ setBookActive }: Props) {
         setSketchbook(book)
         setSelectedBook(bookNo);
         setSelectedBookData(books[bookNo - 1]);
-        setTimeout(() => { setEnableBook(true); }, 500);
+        setTimeout(() => { setEnableBook(true); setEnableMobileTrans(true)}, 500);
     }
     const reset = () => {
         if (currentPage === 0) {
@@ -89,7 +92,10 @@ export default function book({ setBookActive }: Props) {
 
         bookRef.current.pageFlip().flip(0, top)
         setTimeout(() => { setEnableBook(false); }, 700);
-        setTimeout(() => { setSelectedBook(-1); }, 800);
+        setTimeout(() => { setSelectedBook(-1); setEnableMobileTrans(false)}, 800);
+        setTimeout(() => { setStopTransform(true)}, 900);
+        setTimeout(() => { setStopTransform(false)}, 1300);
+
     }
 
     useEffect(() => {
@@ -193,6 +199,8 @@ export default function book({ setBookActive }: Props) {
                                         pages={books[index] !== undefined ? books[index].pages.length : 0}
                                         enableAni={enableAnimation}
                                         setEnableAni={setEnableAnimation}
+                                        enableMobileTrans={enableMobileTrans}
+                                        stopTransform={stopTransform}
                                     />
                                 ))}
                         </div>
