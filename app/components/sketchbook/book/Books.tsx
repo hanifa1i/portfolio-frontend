@@ -189,7 +189,7 @@ export default function book({ setBookActive }: Props) {
                                         sketchbook={sketchbook}
                                         bookId={sketchbook.id}
                                         selectBook={targetBook}
-                                        bookGap={index }
+                                        bookGap={index * 100}
                                         pages={books[index] !== undefined ? books[index].pages.length : 0}
                                         enableAni={enableAnimation}
                                         setEnableAni={setEnableAnimation}
