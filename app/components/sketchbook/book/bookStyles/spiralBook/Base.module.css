@@ -5,7 +5,7 @@
     height: fit-content;
     display: flex;
     transition: all 500ms;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: calc(15% + var(--bookGap));
     transform: translateX(-50%) translateY(-50%);
@@ -99,11 +99,12 @@
 
 
 .moveRight {
-    
+    left: calc(80% + var(--bookGap));
     opacity: 0;
 }
 
 .moveLeft {
+    left: calc(20% + var(--bookGap));
     opacity: 0;
 }
 
@@ -161,7 +162,7 @@
 @media (max-width: 1200px) {
     .book {
         left: calc((50% - 200px) + var(--bookGap));
-        position: fixed;
+        position: absolute;
         top: 45%;
 
     }
