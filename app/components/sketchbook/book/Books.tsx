@@ -161,13 +161,13 @@ export default function book({ setBookActive }: Props) {
             <BookUpdate book={selectedBook} />
 
             <div
-                style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
+                style={{ "--bookContainerWidth": `0px` } as React.CSSProperties}
 
-                className={` `}>
+                className={`${styles.bookContainer} `}>
 
 
                 {!enableBook && (
-                    <div className={``}>
+                    <div className={`${styles.books}`}>
 
                         <div className={` ${styles.pageInfo} ${selectedBook !== -1 ? styles.fadeOut : ""}`}>
                             <div className={`${styles.mobileHide}`}>ⓘ   Sketchbooks</div>
