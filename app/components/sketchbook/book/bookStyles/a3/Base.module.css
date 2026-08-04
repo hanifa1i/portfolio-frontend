@@ -182,4 +182,40 @@
         transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5)) ;
 
     }
+
+    .bookSpineReturn {
+        width: none;
+        flex: 0 0 50px;
+        transform-origin: right center;
+    }
+
+    .bookSpineBeforeReturn {
+        width: none;
+        transform: scaleX(1);
+    }
+
+    .bookSpineAfterReturn {
+        width: none;
+        transform: scaleX(0);
+    }
+
+    .bookFronReturn {
+        flex: 0 0 550px;
+        transform-origin: left center;
+    }
+
+    .bookFrontBeforeReturn {
+        width: none;
+        transform: scaleX(0);
+    }
+
+    .bookFrontAfterReturn {
+        width: none;
+        transform: scaleX(1);
+    }
+
+    .bookReturn {
+        transform: translateX(calc(-50%)) translateY(-50%);
+    }
+
 }
