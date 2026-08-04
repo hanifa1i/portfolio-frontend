@@ -158,10 +158,10 @@ export default function book({ setBookActive }: Props) {
 
     return (
         <>
-            <BookUpdate book={selectedBook} />
+            
 
             <div
-                style={{ "--bookContainerWidth": `0px` } as React.CSSProperties}
+                style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
 
                 className={`${styles.bookContainer} `}>
 
