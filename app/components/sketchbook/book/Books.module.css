@@ -8,14 +8,7 @@
 }
 
 .books {
-    position: fixed;
-    justify-items: left;
-    align-content: center;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    gap: 20px;
-    transition: 300px;
+    
 }
 
 .pageInfo {
