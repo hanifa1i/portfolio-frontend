@@ -374,7 +374,7 @@
     }
 
     .leftPage {
-        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / 5));
+        transform: scale(0.6) translateX(calc(var(--bookContainerWidth) / 6));
     }
 
     .inactivePage {
