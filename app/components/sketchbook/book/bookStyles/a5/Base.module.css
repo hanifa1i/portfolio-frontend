@@ -50,9 +50,8 @@
     height: 700px;
     border-right: #482b1e solid 10px;
     border-left: #72442f75 solid 10px;
-    width: 1px;
-    transition: all 500ms;
-
+    width: 70px;
+    transition: width 500ms;
 }
 .bookSpineBefore {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
@@ -67,7 +66,8 @@
 .bookFront {
     height: 700px;
     background-color: #3b2319;
-    transition: all 500ms;
+    transition: width 500ms;
+
     border-right: #482b1e solid 0px;
     border-left: #72442f75 solid 0px;
 }
@@ -85,7 +85,7 @@
     border-right: #482b1e solid 10px;
     border-left: #72442f75 solid 10px;
 
-    width: 0;
+    width: 550px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
