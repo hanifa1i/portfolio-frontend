@@ -23,8 +23,9 @@
 }
 
 .bookHover:hover .bookFrontBefore {
-    width: 20px;
-    background-color: #111111
+    background-color: #111111;
+    transform: scaleX(0.05);
+
 }
 
 .bookHover:hover .bookSpineBefore {
@@ -47,18 +48,21 @@
     height: 700px;
     border-right: #00000060 solid 12px;
     border-left: #ffffff30 solid 12px;
-    width: 55px;
     transition: all 500ms;
-    flex: 0 0 70px;
+    flex: 0 0 55px;
+    transform-origin: right center;
 
 }
 .bookSpineBefore {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    transform: scaleX(1);
 }
 
 .bookSpineAfter {
     border-width: 0px;
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
+    transform: scaleX(0);
+
 }
 
 .bookFront {
@@ -69,7 +73,6 @@
     border-left: #ffffff30 solid 0px;
     flex: 0 0 550px;
     transform-origin: left center;
-    transition: transform 500ms;
 }
 
 .bookFrontBefore {
