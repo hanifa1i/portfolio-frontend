@@ -75,13 +75,14 @@
 }
 
 .bookFrontBefore {
-    width: 0px;
+    transform: translateX(-275px) scaleX(0.0);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 .bookFrontAfter {
+    transform: translateX(0px) scaleX(1);
     border-width: 1px;
     border-color: #482b1e;
     border-right: #482b1e solid 10px;
