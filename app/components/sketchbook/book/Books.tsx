@@ -99,13 +99,20 @@ export default function book({ setBookActive }: Props) {
     }
 
     useEffect(() => {
+        if (currentPage === 0){
+            setLeftPage(false)
+        }
+        else if (currentPage === totalPages - 1){
+            setLeftPage(true)
+        }
+
         if (selectedBook === -1) {
             setBookActive(false);
         }
         else {
             setBookActive(true);
         }
-    }, [selectedBook]);
+    }, [currentPage, selectedBook]);
 
 
     useEffect(() => {
@@ -260,13 +267,13 @@ export default function book({ setBookActive }: Props) {
                 </div>
 
             </div>
-            <div >
+            <div>
                 <div
                     onClick={() => {setLeftPage(true), playSound("whosh")}} 
-                    className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
+                    className={`${styles.pageSwitch} ${styles.pageSwitchLeft} ${!leftPage ? styles.inactivePage : ""} ${!enableBook || currentPage === 0 ? styles.hidePageSwitch : "" } ${currentPage === totalPages - 1 ? styles.centerPage : ""}`}></div>
                 <div 
                     onClick={() => {setLeftPage(false), playSound("whosh")}}
-                    className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook ? styles.hidePageSwitch : "" }`}></div>
+                    className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook || currentPage === totalPages -1 ? styles.hidePageSwitch : "" } ${currentPage === 0 ? styles.centerPage : ""}`}></div>
 
             </div>
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
