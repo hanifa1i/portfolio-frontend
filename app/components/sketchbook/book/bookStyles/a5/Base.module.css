@@ -55,11 +55,13 @@
 
 }
 .bookSpineBefore {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .bookSpineAfter {
     width: 0px;
     border-width: 0px;
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .bookFront {
@@ -74,6 +76,7 @@
     width: 0px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 .bookFrontAfter {
@@ -82,7 +85,8 @@
     border-right: #482b1e solid 10px;
     border-left: #72442f75 solid 10px;
 
-    width: 550px;
+    width: 0;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .moveRight {
