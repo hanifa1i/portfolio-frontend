@@ -158,7 +158,7 @@ export default function book({ setBookActive }: Props) {
 
     return (
         <>
-            
+            <BookUpdate book={selectedBook} />
 
             <div
                 style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
@@ -201,55 +201,7 @@ export default function book({ setBookActive }: Props) {
                     </div>
                 )}
 
-                <div
-                    style={{ "--transfromX": `${settings?.transform_x}px` } as React.CSSProperties}
-                    className={`
-                    ${styles.flipbookContainer}
-                    ${currentPage === 0 ? styles.bookFrontCenter : ""}
-                    ${currentPage === totalPages - 1 ? styles.bookBackCenter : ""}
-                    ${leftPage ? styles.leftPage : ""}
-
-                    ${settings?.page_style === "landscape" ? styles.landscapeTransformX : ""}
-                    ${settings?.page_style === "landscape" && currentPage === 0 ? styles.bookFrontCenterLandscape : ""}
-                    ${settings?.page_style === "landscape" && currentPage === totalPages - 1 ? styles.bookBackCenterLandscape : ""}`}>
-
-                    {enableBook && (
-                        <Flipbook
-                            bookId={selectedBook}
-                            bookRef={bookRef}
-                            setCurrentPage={setCurrentPage}
-                            setTotalPages={setTotalPages}
-                            flipbookWidth={settings?.page_width ?? 550}
-                            data={books[selectedBook - 1]} />
-
-                    )}
-                    {(selectedBook === 4) && (
-                        <div className={`${styles.flap} ${selectedBookData.pages.length + 3 <= currentPage ? styles.flapHide : styles.flapAni}`}>
-                            <div className={`${styles.stitching}`}>
-                                <div className={`${styles.button}`}></div>
-                            </div>
-                        </div>
-                    )}
-
-                    {expandInfo && (<div onClick={() => { setExpandInfo(false), playSound("bell") }} className={`${styles.closeInfo}`} />)}
-
-                    <div
-                        className={`
-                            ${styles.infoBar} 
-                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined ? styles.infoBarHide : ""} 
-                            ${expandInfo ? styles.expand : ""}`}
-
-                        onClick={() => { handleExpand(true), playSound("bell") }}
-                        onMouseEnter={() => { setHovered(true), playSound("hover") }}
-                        onMouseLeave={() => setHovered(false)}>
-
-                        <img className={`w-[30px] h-[30px] ${!expandInfo ? `m-auto` : ""}`} src={hovered ? "/images/sketchbook/info.png" : "/images/sketchbook/info-static.png"} />
-                        {expandInfo && (
-                            <div className={`${styles.description} offscreenLeft`}>{selectedBookData.pages[currentPage - 3] !== undefined ? selectedBookData.pages[currentPage - 3].description : ""}</div>
-                        )
-                        }
-                    </div>
-                </div>
+                
 
             </div>
             <div >
