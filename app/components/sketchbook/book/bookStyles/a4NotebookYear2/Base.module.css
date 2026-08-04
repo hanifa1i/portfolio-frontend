@@ -49,6 +49,7 @@
     border-left: #ffffff30 solid 12px;
     width: 55px;
     transition: all 500ms;
+    flex: 0 0 70px;
 
 }
 .bookSpineBefore {
@@ -56,7 +57,6 @@
 }
 
 .bookSpineAfter {
-    width: 0px;
     border-width: 0px;
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
 }
@@ -67,23 +67,25 @@
     transition: all 500ms;
     border-right: #00000060 solid 0px;
     border-left: #ffffff30 solid 0px;
-            width: 550px;
-
+    flex: 0 0 550px;
+    transform-origin: left center;
+    transition: transform 500ms;
 }
 
 .bookFrontBefore {
-    transform: translateX(-275px) scaleX(0.0);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    transform: scaleX(0);
 }
 
 .bookFrontAfter {
     border-right-width: 10px;
     border-left-width: 10px;
     background-color: #222;
-    transform: translateX(0px) scaleX(1);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+        transform: scaleX(1);
+
 }
 
 .moveRight {

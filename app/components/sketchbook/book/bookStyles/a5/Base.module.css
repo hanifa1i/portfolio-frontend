@@ -70,24 +70,22 @@
     transition: all 500ms;
     border-right: #482b1e solid 0px;
     border-left: #72442f75 solid 0px;
-        width: 550px;
-
 }
 
 .bookFrontBefore {
-    transform: translateX(-275px) scaleX(0.0);
+    width: 0px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 .bookFrontAfter {
-    transform: translateX(0px) scaleX(1);
     border-width: 1px;
     border-color: #482b1e;
     border-right: #482b1e solid 10px;
     border-left: #72442f75 solid 10px;
 
+    width: 550px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
