@@ -88,13 +88,13 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
 
             </div>
 
-            {enableAni === false && (<div
+            {/*enableAni === false && (<div
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={` ${selected >= 1 && selected <= 5 ? `opacity-0` : styles.bookInfo}`}>
-                {/*<div className={`${styles.line}`}></div>*/}
+                {/*<div className={`${styles.line}`}></div>}
 
                 <BookInfo sketchbook={sketchbook} pages={pages} />
-            </div>)}
+            </div>)*/}
 
         </>
     )
