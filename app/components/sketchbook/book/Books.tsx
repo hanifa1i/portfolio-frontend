@@ -178,7 +178,6 @@ export default function book({ setBookActive }: Props) {
                             <div className={`${styles.subInfo} ${styles.mobileHide}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
                         </div>
 
-                        <div className={`${styles.centerer}`}>
                                 {sketchbooks.map((sketchbook, index) => (
 
 
@@ -195,7 +194,6 @@ export default function book({ setBookActive }: Props) {
                                         setEnableAni={setEnableAnimation}
                                     />
                                 ))}
-                        </div>
 
 
                     </div>
