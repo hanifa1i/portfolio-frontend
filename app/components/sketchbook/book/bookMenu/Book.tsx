@@ -53,8 +53,7 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                 onClick={() => { playSound("bookPick"), selectBook(sketchbook.id, sketchbook)}}
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
-                    ${selected !== -1 && selected < bookNumber ? styles.moveRight : ""}
-                    ${selected !== -1 && selected > bookNumber ? styles.moveLeft : ""}`}>
+                   `}>
 
                 <div style={{ "--delay": `${bookGap}ms` } as React.CSSProperties}
                     onAnimationStart={() => {
@@ -88,13 +87,13 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
 
             </div>
 
-            {/*enableAni === false && (<div
+            {enableAni === false && (<div
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={` ${selected >= 1 && selected <= 5 ? `opacity-0` : styles.bookInfo}`}>
-                {/*<div className={`${styles.line}`}></div>}
+                {/*<div className={`${styles.line}`}></div>*/}
 
                 <BookInfo sketchbook={sketchbook} pages={pages} />
-            </div>)*/}
+            </div>)}
 
         </>
     )
