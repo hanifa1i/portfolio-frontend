@@ -57,7 +57,7 @@ export default function book({ setBookActive }: Props) {
     const [stopTransform, setStopTransform] = useState(false);
 
     const [sketchbook, setSketchbook] = useState<Sketchbook>();
-    const [highlightedBook, setHighlightedBook] = useState(-1);
+    const [highlightedBook, setHighlightedBook] = useState(1);
     const [highlighted, setHighlighted] = useState(false);
     const [settings, setSettings] = useState<PageSettings>();
     const [expandInfo, setExpandInfo] = useState(false);
@@ -281,11 +281,10 @@ export default function book({ setBookActive }: Props) {
                     className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook || currentPage === totalPages -1 ? styles.hidePageSwitch : "" } ${currentPage === 0 ? styles.centerPage : ""}`}></div>
 
             </div>
-            {highlightedBook !== -1 && (
+
             <div className={`${styles.bookInfoMobile} ${highlighted ? styles.bookInfoMobileShow : ""}`}>
                 <BookInfo sketchbook={sketchbooks[highlightedBook - 1]} pages={0}/>
             </div>
-            )}
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
 
 
