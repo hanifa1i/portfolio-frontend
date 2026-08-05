@@ -282,7 +282,7 @@ export default function book({ setBookActive }: Props) {
 
             </div>
 
-            <div className={`${styles.bookInfoMobile} ${highlighted ? styles.bookInfoMobileShow : ""}`}>
+            <div className={`${styles.bookInfoMobile} ${highlighted && !enableBook ? styles.bookInfoMobileShow : ""}`}>
                 <BookInfo sketchbook={sketchbooks[highlightedBook - 1]} pages={0}/>
             </div>
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
