@@ -45,20 +45,18 @@
     }
 
     .bookDescription {
-        flex: 2;
         font-size: 11px;
     }
 
     .subInfo {
-        flex: 1;
-        border-left: #33333320 solid 2px;
-        margin-left: 20px;
-        padding-left: 20px;
+        border-left: #33333320 solid 1px;
+        margin-left: 10px;
+        padding-left: 10px;
         height: fit-content;
     }
 
     .bookTag {
-        font-size: 11px;
+        font-size: 10px;
         width: fit-content;
 
     }
@@ -69,6 +67,7 @@
     }
 
     .tagValue {
-        font-size: 11px;
+        font-size: 10px;
+        white-space: nowrap;
     }
 }
