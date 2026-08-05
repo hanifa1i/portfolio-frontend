@@ -417,6 +417,9 @@
         z-index: 1000;
 
     }
+    .infoBar{
+        display: none;
+    }
 }
 
 
