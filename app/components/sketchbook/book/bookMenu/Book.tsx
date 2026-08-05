@@ -60,7 +60,7 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                     holdTimer = setTimeout(() => {
                         setHolding(true);
                         setShowInfo(true);
-                    }, 500);
+                    }, 200);
                 }}
 
                 onPointerUp={() => {
