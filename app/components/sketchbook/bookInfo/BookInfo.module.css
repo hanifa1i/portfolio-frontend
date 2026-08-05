@@ -1,7 +1,7 @@
 .bookName {
     border-bottom: #333333 solid 1px;
     width: fit-content;
-        padding-bottom: 5px;
+    padding-bottom: 5px;
     margin-bottom: 20px;
     font-weight: 600;
     font-size: medium;
@@ -24,7 +24,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: small;
-        align-items: center;
+    align-items: center;
 
 }
 
@@ -40,12 +40,15 @@
 }
 
 @media (max-width: 1200px) {
-    .container{
+    .container {
         display: flex;
     }
-    .bookDescription{
-        flex: 1;
+
+    .bookDescription {
+        flex: 2;
+        font-size: 11px;
     }
+
     .subInfo {
         flex: 1;
         border-left: #33333320 solid 2px;
@@ -53,15 +56,18 @@
         padding-left: 20px;
         height: fit-content;
     }
+
     .bookTag {
         font-size: 11px;
         width: fit-content;
 
     }
+
     .bookTag:first-child {
         border-width: 0px;
         padding-top: 0px;
     }
+
     .tagValue {
         font-size: 11px;
     }
