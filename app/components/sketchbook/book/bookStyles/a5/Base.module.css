@@ -202,6 +202,7 @@
     .bookReturn {
         transform: translateX(calc(-50%)) translateY(-50%);
     }
-
-
+    .bookInfo {
+        display: none;
+    }
 }

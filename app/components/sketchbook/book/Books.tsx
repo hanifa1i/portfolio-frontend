@@ -7,7 +7,7 @@ import { pageSettings } from "@/app/data/pageSettings"
 
 import Flipbook from "./flipbook/Flipbook"
 
-import { useEffect, useRef, useState } from "react"
+import { use, useEffect, useRef, useState } from "react"
 import { LargeNumberLike } from "crypto"
 import BookUpdate from "../bookUpdate/BookUpdate"
 import useScrollReveal from "@/app/hooks/useScrollReveal"
@@ -15,6 +15,7 @@ import { playSound } from "@/app/lib/SoundManager"
 import { ArtworkResponse } from "@/app/types/Dashboard"
 import { getSketchbookArt } from "@/app/services/artworkService"
 import { set } from "date-fns"
+import BookInfo from "../bookInfo/BookInfo"
 
 export type Props = {
     setBookActive: (active: boolean) => void
@@ -56,6 +57,8 @@ export default function book({ setBookActive }: Props) {
     const [stopTransform, setStopTransform] = useState(false);
 
     const [sketchbook, setSketchbook] = useState<Sketchbook>();
+    const [highlightedBook, setHighlightedBook] = useState(-1);
+    const [highlighted, setHighlighted] = useState(false);
     const [settings, setSettings] = useState<PageSettings>();
     const [expandInfo, setExpandInfo] = useState(false);
     const [hovered, setHovered] = useState(false);
@@ -200,6 +203,8 @@ export default function book({ setBookActive }: Props) {
                                         selected={selectedBook}
                                         bookNumber={index + 1}
                                         sketchbook={sketchbook}
+                                        setHighlightedBook={setHighlightedBook}
+                                        setHighlighted={setHighlighted}
                                         bookId={sketchbook.id}
                                         selectBook={targetBook}
                                         bookGap={index * 100}
@@ -276,6 +281,11 @@ export default function book({ setBookActive }: Props) {
                     className={`${styles.pageSwitch} ${styles.pageSwitchRight} ${leftPage ? styles.inactivePage : ""} ${!enableBook || currentPage === totalPages -1 ? styles.hidePageSwitch : "" } ${currentPage === 0 ? styles.centerPage : ""}`}></div>
 
             </div>
+            {highlightedBook !== -1 && (
+            <div className={`${styles.bookInfoMobile} ${highlighted ? styles.bookInfoMobileShow : ""}`}>
+                <BookInfo sketchbook={sketchbooks[highlightedBook - 1]} pages={0}/>
+            </div>
+            )}
             <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
 
 

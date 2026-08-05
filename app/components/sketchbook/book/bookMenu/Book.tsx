@@ -26,6 +26,8 @@ type Props = {
     selected: number
     bookNumber: number
     sketchbook: Sketchbook
+    setHighlightedBook: (bookId : number) => void
+    setHighlighted: (state : boolean) => void
     bookId: number
     selectBook: (bookNo: number, book: Sketchbook) => void;
     bookGap: number;
@@ -35,7 +37,7 @@ type Props = {
     enableMobileTrans: boolean
     stopTransform: boolean
 }
-export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni, enableMobileTrans, stopTransform }: Props) {
+export default function Book({ selected, bookNumber, sketchbook, setHighlightedBook, setHighlighted, bookId, selectBook, bookGap, pages, enableAni, setEnableAni, enableMobileTrans, stopTransform }: Props) {
 
     const BOOK_STYLES: Record<number, typeof a5Styles> = {
         1: a5Styles,
@@ -55,11 +57,13 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
     return (
         <>
             <div
-                onMouseEnter={() => playSoundAt("bookHover", 0.1)}
+                onMouseEnter={() => {playSoundAt("bookHover", 0.1), setHighlightedBook(sketchbook.id)}}
+                onMouseLeave={() => setHighlighted(false)}
                 onPointerDown={() => {
                     holdTimer = setTimeout(() => {
                         setHolding(true);
                         setShowInfo(true);
+                        setHighlighted(true)
                     }, 200);
                 }}
 
@@ -72,6 +76,8 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                     }
 
                     setHolding(false);
+                    setHighlighted(false)
+
                 }}
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
