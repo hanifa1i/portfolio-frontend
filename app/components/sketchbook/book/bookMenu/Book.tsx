@@ -32,10 +32,10 @@ type Props = {
     pages: number;
     enableAni: boolean
     setEnableAni: (state: boolean) => void
-    enableMobileTrans : boolean
+    enableMobileTrans: boolean
     stopTransform: boolean
 }
-export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni, enableMobileTrans, stopTransform}: Props) {
+export default function Book({ selected, bookNumber, sketchbook, bookId, selectBook, bookGap, pages, enableAni, setEnableAni, enableMobileTrans, stopTransform }: Props) {
 
     const BOOK_STYLES: Record<number, typeof a5Styles> = {
         1: a5Styles,
@@ -47,17 +47,37 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
 
     const styles = BOOK_STYLES[bookId];
 
+    const [holding, setHolding] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
+
+    let holdTimer: ReturnType<typeof setTimeout>;
 
     return (
         <>
             <div
                 onMouseEnter={() => playSoundAt("bookHover", 0.1)}
-                onClick={() => { playSound("bookPick"), selectBook(sketchbook.id, sketchbook)}}
+                onPointerDown={() => {
+                    holdTimer = setTimeout(() => {
+                        setHolding(true);
+                        setShowInfo(true);
+                    }, 500);
+                }}
+
+                onPointerUp={() => {
+                    clearTimeout(holdTimer);
+
+                    if (!holding) {
+                        playSound("bookPick");
+                        selectBook(sketchbook.id, sketchbook);
+                    }
+
+                    setHolding(false);
+                }}
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
                     ${selected !== -1 && selected < bookNumber ? styles.moveRight : ""}
                     ${selected !== -1 && selected > bookNumber ? styles.moveLeft : ""}
-                    ${enableMobileTrans ? styles.bookReturn: ""}
+                    ${enableMobileTrans ? styles.bookReturn : ""}
                     ${stopTransform ? styles.stopTransform : ""}`}>
 
                 <div style={{ "--delay": `${bookGap}ms` } as React.CSSProperties}
@@ -66,13 +86,13 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                             enableAni ? playSound("drum") : "";
                         }, 500);
                     }}
-                    onAnimationEnd={() => setTimeout(() => { setEnableAni(false)}, 500)}
+                    onAnimationEnd={() => setTimeout(() => { setEnableAni(false) }, 500)}
                     className={`flex ${enableAni ? stylesCommon.popInBooks : ""}
                         ${bookId === 1 ? stylesCommon.a5 : ""}
                         ${bookId === 2 ? stylesCommon.a3 : ""}
                         ${bookId === 5 ? stylesCommon.spiral : ""}`}>
 
-                    <div className={`${styles.bookSpine} ${enableMobileTrans === true ? styles.bookSpineReturn: ""}
+                    <div className={`${styles.bookSpine} ${enableMobileTrans === true ? styles.bookSpineReturn : ""}
                         ${selected === bookNumber ? styles.bookSpineAfter : styles.bookSpineBefore}
                         ${enableMobileTrans ? selected === bookNumber ? styles.bookSpineAfterReturn : styles.bookSpineBeforeReturn : ""}
                     `}>
@@ -82,7 +102,7 @@ export default function Book({ selected, bookNumber, sketchbook, bookId, selectB
                         {bookId === 5 && (<SpiralBookSpine />)}
 
                     </div>
-                    <div className={`${styles.bookFront} ${enableMobileTrans ? styles.bookFrontReturn: ""}
+                    <div className={`${styles.bookFront} ${enableMobileTrans ? styles.bookFrontReturn : ""}
                         ${selected === bookNumber ? styles.bookFrontAfter : styles.bookFrontBefore}
                         ${enableMobileTrans ? selected === bookNumber ? styles.bookFrontAfterReturn : styles.bookFrontBeforeReturn : ""}
                     `}>

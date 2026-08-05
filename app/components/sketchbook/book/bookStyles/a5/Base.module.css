@@ -151,9 +151,6 @@
 }
 
 @media (max-width: 1200px) {
-    .bookInfo {
-        display: none
-    }
     .book {
         left: calc((50% - 200px) + var(--bookGap));
         transform: translateX(-50%) translateY(-50%);
