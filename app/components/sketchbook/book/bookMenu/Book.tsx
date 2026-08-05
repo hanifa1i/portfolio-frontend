@@ -58,7 +58,7 @@ export default function Book({ selected, bookNumber, sketchbook, setHighlightedB
         <>
             <div
                 onMouseEnter={() => {playSoundAt("bookHover", 0.1)}}
-                onMouseLeave={() => setHighlighted(false)}
+                onPointerLeave={() => setHighlighted(false)}
                 onPointerDown={() => {
                     holdTimer = setTimeout(() => {
                         setHolding(true);
