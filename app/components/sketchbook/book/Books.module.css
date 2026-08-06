@@ -291,7 +291,7 @@
 
     .pageInfo {
         position: fixed;
-        bottom: 15%;
+        bottom: 20%;
         left: 50%;
         top: auto;
         transform: translateX(-50%) translateY(190%) scale(1.25);
