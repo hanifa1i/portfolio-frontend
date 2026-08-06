@@ -256,7 +256,9 @@
 .bookInfoMobile{
     display: none;
 }
-
+.instructions{
+    display: none;
+}
 @keyframes descriptionAnimation {
     0% {
         transform: translateX(-20px);
@@ -289,7 +291,7 @@
 
     .pageInfo {
         position: fixed;
-        bottom: 10%;
+        bottom: 15%;
         left: 50%;
         top: auto;
         transform: translateX(-50%) translateY(190%) scale(1.25);
@@ -302,6 +304,7 @@
         background-color: #19191999;
         backdrop-filter: blur(30px);
         filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .4));
+        
     }
 
     .subInfo {
@@ -419,6 +422,22 @@
     }
     .infoBar{
         display: none;
+    }
+    .instructions{
+        display: flex;
+        font-size: small;
+        gap: 20px;
+    }
+    .instruction {
+        padding: 5px;
+        padding-left: 0px;
+        padding-right: 20px;
+        margin-top: 10px;
+        border-right: 1px solid #cccccc60;
+
+    }
+    .instruction:last-child{
+        border-width: 0px;
     }
 }
 

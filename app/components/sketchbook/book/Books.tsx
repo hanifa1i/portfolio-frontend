@@ -192,6 +192,10 @@ export default function book({ setBookActive }: Props) {
                             <div className={`${styles.subInfo} ${styles.mobileHide}`}>Click<img src={"/images/sketchbook/bell-static.png"} className={` ml-[5px] mr-[5px] h-[20px] invert`} />icon on the far left to know if I have added any new sketches</div>
 
                             <div className={`${styles.subInfo} ${styles.mobileHide}`}><div className={`${styles.arrow}`}>←</div>now select a book or DIEEEEE </div>
+                            <div className={`${styles.instructions}`}>
+                                <div className={`${styles.instruction}`}><strong>hold down</strong> book to show info</div>
+                                <div className={`${styles.instruction}`}><strong>tap</strong> book to open</div>
+                            </div>
                         </div>
 
                         <div className={`${styles.centerer}`}>
