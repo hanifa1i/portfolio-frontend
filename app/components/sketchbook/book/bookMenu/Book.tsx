@@ -19,15 +19,15 @@ import { sketchbooks } from "@/app/data/sketchbooks"
 import { playSound, playSoundAt } from "@/app/lib/SoundManager"
 import stylesCommon from "./Book.module.css"
 import { Sketchbook } from "../Books"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 type Props = {
     selected: number
     bookNumber: number
     sketchbook: Sketchbook
-    setHighlightedBook: (bookId : number) => void
-    setHighlighted: (state : boolean) => void
+    setHighlightedBook: (bookId: number) => void
+    setHighlighted: (state: boolean) => void
     bookId: number
     selectBook: (bookNo: number, book: Sketchbook) => void;
     bookGap: number;
@@ -54,11 +54,21 @@ export default function Book({ selected, bookNumber, sketchbook, setHighlightedB
 
     let holdTimer: ReturnType<typeof setTimeout>;
 
+    useEffect(() => {
+    const handleTouchEnd = () => {
+        setHighlighted(false);
+    };
+
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+        window.removeEventListener("touchend", handleTouchEnd);
+    };
+}, []);
     return (
         <>
             <div
-                onPointerEnter={() => {playSoundAt("bookHover", 0.1)}}
-                onPointerLeave={() => setHighlighted(false)}
+                onPointerEnter={() => { playSoundAt("bookHover", 0.1) }}
                 onPointerDown={() => {
                     holdTimer = setTimeout(() => {
                         setHolding(true);
@@ -77,8 +87,6 @@ export default function Book({ selected, bookNumber, sketchbook, setHighlightedB
                     }
 
                     setHolding(false);
-                    setHighlighted(false)
-
                 }}
                 style={{ "--bookGap": `${bookGap}px` } as React.CSSProperties}
                 className={`${styles.book} ${selected === bookNumber ? styles.bookAfter : styles.bookHover} 
