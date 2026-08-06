@@ -177,11 +177,6 @@ export default function book({ setBookActive }: Props) {
             <BookUpdate book={selectedBook} />
 
             <div
-                onMouseOut={() => {
-
-                    setHighlighted(false)
-
-                }}
                 style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
 
                 className={`${styles.bookContainer} border`}>
