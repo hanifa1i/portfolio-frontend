@@ -425,7 +425,7 @@
     }
     .instructions{
         display: flex;
-        font-size: small;
+        font-size: medium;
         gap: 20px;
     }
     .instruction {
