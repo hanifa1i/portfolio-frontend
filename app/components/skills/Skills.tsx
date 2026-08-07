@@ -174,14 +174,14 @@ export default function Skills() {
                 ))}
                 </div>
             </div>*/}
-            <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
+            <div className={`${styles.headingsContainer}  ${isScrolled ? styles.headingsContainerTransition : ""}`}>
                 {skillsDummy.map((sections, index) => (
                     <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
-                        
-                        <div key={index} className={`${styles.container} `}>
-                            <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
+                        <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
                             {sections.title}
                         </div>
+                        <div key={index} className={`${styles.container} `}>
+                            
                             {sections.items.map((items, key) => (
                                 <div
                                     key={key}
