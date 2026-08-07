@@ -175,7 +175,6 @@ export default function Skills() {
                 </div>
             </div>*/}
             <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
-                <div>
                 {skillsDummy.map((sections, index) => (
                     <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
                         
@@ -196,7 +195,6 @@ export default function Skills() {
                         </div>
                     </div>
                 ))}
-                </div>
             </div>
 
 

@@ -531,15 +531,15 @@
 
 @media (max-width : 800px) {
     .headingsContainer {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
+        width: 100vw;
+        height: 90vh;
+        overflow-x:auto;
+        flex-direction: row;
         justify-content: start;
+       
 
     }
     .headingSubDivider{
-        flex-direction: column;
 
     }
     .heading{
@@ -557,6 +557,8 @@
     }
     .container{
         gap: 10px;
+        width: 80vw;
+        height: 80vh;
         margin-left: 0px;
         background-color: #00000010;
         padding: 10px;
@@ -568,16 +570,12 @@
         backdrop-filter: blur(50);
 
     }
-    .subheading{
-        width: fit-content;
-        animation: none;
-        white-space: nowrap;
-        padding: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        height: fit-content;
-        font-size: 11px;
-        filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .2));
-
+    .skillsInDetail {
+        max-width: 100vw;
     }
+    .offscreenPopUp{
+        margin: 20px;
+        width: auto;
+    }
+    
 }
