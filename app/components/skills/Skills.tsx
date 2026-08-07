@@ -187,7 +187,6 @@ export default function Skills() {
                                 <div
                                     key={key}
                                     onMouseEnter={() => playSound("hover")}
-                                    onClick={() => { playSound("drum"), document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }) }}
                                     className={`${styles.subheading} `}>
 
                                     {items}
