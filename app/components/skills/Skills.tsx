@@ -174,10 +174,10 @@ export default function Skills() {
                 ))}
                 </div>
             </div>*/}
-            <div className={`${styles.headingsContainer}  ${isScrolled ? styles.headingsContainerTransition : ""}`}>
+            <div className={`${styles.headingsContainer} ${isScrolled ? styles.headingsContainerTransition : ""}`}>
                 {skillsDummy.map((sections, index) => (
-                    <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
-                        <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
+                    <div className={`${styles.headingSubDivider} offscreenLeft`} key={index}>
+                        <div className={`${styles.heading} ${isScrolled ? styles.headingTransition : ""} `}>
                             {sections.title}
                         </div>
                         <div key={index} className={`${styles.container} `}>
@@ -304,6 +304,8 @@ export default function Skills() {
             <img
                 src={exampleImage}
                 className={`${styles.exampleImageHidden} ${enlargeExample ? styles.exampleImage : ""}`} />
+
+            <div className={`${styles.infoBar}`}>This page displays a list of my skill set</div>
 
         </>
     )
