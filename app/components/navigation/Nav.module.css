@@ -227,7 +227,7 @@
         background: #11111195;
         backdrop-filter: blur(50px);
         filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .6));
-
+        overflow: visible;
     }
 
     .sketchbookNav {

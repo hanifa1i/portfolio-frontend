@@ -4,7 +4,7 @@ export type SkillSection = {
   items: string[];
 };
 
-export const skills: SkillSection[] = [
+export const skillsDummy: SkillSection[] = [
   {
     id: "languages-frameworks",
     title: "languages & framework",

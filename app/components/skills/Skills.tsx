@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./Skills.module.css"
-//import { skills } from "@/app/data/skills/skills"
+import { skillsDummy } from "@/app/data/skills/skills"
 import useScrollReveal from "@/app/hooks/useScrollReveal";
 import { playSound } from "@/app/lib/SoundManager";
 import { SkillResponse } from "@/app/types/Dashboard";
@@ -150,7 +150,7 @@ export default function Skills() {
                 </video>
                 <img src="/images/skills/blueprint.jpg" className="absolute top-[00px] opacity-0 w-full left-1/2 -translate-x-1/2" /></div>
 
-            <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
+            {/*<div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
                 <div>
                 {skillsByCategory.map((sections, index) => (
                     <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
@@ -166,6 +166,31 @@ export default function Skills() {
                                     className={`${styles.subheading} `}>
 
                                     {items.name}
+
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+                </div>
+            </div>*/}
+            <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
+                <div>
+                {skillsDummy.map((sections, index) => (
+                    <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
+                        
+                        <div key={index} className={`${styles.container} `}>
+                            <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
+                            {sections.title}
+                        </div>
+                            {sections.items.map((items, key) => (
+                                <div
+                                    key={key}
+                                    onMouseEnter={() => playSound("hover")}
+                                    onClick={() => { playSound("drum"), document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }) }}
+                                    className={`${styles.subheading} `}>
+
+                                    {items}
 
                                 </div>
                             ))}
