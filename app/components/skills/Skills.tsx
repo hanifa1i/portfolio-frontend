@@ -25,7 +25,22 @@ export default function Skills() {
 
 
     const [isScrolled, setIsScrolled] = useState(false);
-    const [showSideBarMobile, setShowSideBarMobile] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
+    const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const [showSideBarMobile, setShowSideBarMobile] = useState(
+        typeof window !== "undefined" ? window.innerWidth >= 800 : false
+    );
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowSideBarMobile(window.innerWidth >= 800);
+            setIsDesktop(window.innerWidth >= 800);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const [maxReachedIndex, setMaxReachedIndex] = useState<number>(-1);
     const [progress, setProgress] = useState({
@@ -81,9 +96,9 @@ export default function Skills() {
         if (!trigger) return;
 
         const observer = new IntersectionObserver(
-            ([entry]) => { 
+            ([entry]) => {
                 setIsScrolled(!entry.isIntersecting);
-                if (entry.isIntersecting) { setShowSideBarMobile(!entry.isIntersecting); }
+                if (entry.isIntersecting && window.innerWidth <= 800) { setShowSideBarMobile(false); }
             },
             { threshold: 1 }
         );
@@ -137,8 +152,8 @@ export default function Skills() {
                     muted
                     playsInline
                     onEnded={() => {
-                            setLoop(true);
-                            loopRef.current?.play();
+                        setLoop(true);
+                        loopRef.current?.play();
                     }}
                     className={`absolute top-[00px]  w-full left-1/2 -translate-x-1/2 ${loop ? `opacity-0` : `opacity-10`}`}
                 >
@@ -180,26 +195,29 @@ export default function Skills() {
                 </div>
             </div>*/}
             <div className={`${styles.headingsContainer} ${isScrolled ? styles.headingsContainerTransition : ""}`}>
-                {skillsDummy.map((sections, index) => (
-                    <div className={`${styles.headingSubDivider} offscreenLeft`} key={index}>
-                        <div className={`${styles.heading} ${isScrolled ? styles.headingTransition : ""} `}>
-                            {sections.title}
-                        </div>
-                        <div key={index} className={`${styles.container} `}>
-                            
-                            {sections.items.map((items, key) => (
-                                <div
-                                    key={key}
-                                    onMouseEnter={() => playSound("hover")}
-                                    className={`${styles.subheading} `}>
+                <div>
 
-                                    {items}
+                    {skillsDummy.map((sections, index) => (
+                        <div className={`${styles.headingSubDivider} offscreenLeft`} key={index}>
+                            <div className={`${styles.heading} ${isScrolled ? styles.headingTransition : ""} `}>
+                                {sections.title}
+                            </div>
+                            <div key={index} className={`${styles.container} `}>
 
-                                </div>
-                            ))}
+                                {sections.items.map((items, key) => (
+                                    <div
+                                        key={key}
+                                        onMouseEnter={() => playSound("hover")}
+                                        className={`${styles.subheading} `}>
+
+                                        {items}
+
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
 
@@ -229,10 +247,11 @@ export default function Skills() {
                             {sections.skills.map((items, key) => (
                                 <div
                                     onMouseEnter={() => playSound("hover")}
-                                    onClick={() => { 
-                                        playSound("click"), 
-                                        setTimeout(() => { setShowSideBarMobile(false); }, 500);
-                                        document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }) }}
+                                    onClick={() => {
+                                        playSound("click"),
+                                            document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }),
+                                            setTimeout(() => { setShowSideBarMobile(false); }, 500);
+                                    }}
                                     key={key} className={`${styles.sidebarSubHeading}`}>
 
                                     {items.name}
@@ -268,9 +287,9 @@ export default function Skills() {
                                     <div className={`${styles.skillExperience} `}>
                                         <div>gained experience at</div>
                                         <div className={`${styles.skillExperienceNames}`}>
-                                        {items.experience_locations.map((location, key) => (
-                                            <div key={key} className={`${styles.skillExperienceName} `}>{location}</div>
-                                        ))}
+                                            {items.experience_locations.map((location, key) => (
+                                                <div key={key} className={`${styles.skillExperienceName} `}>{location}</div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -317,11 +336,11 @@ export default function Skills() {
                 className={`${styles.exampleImageHidden} ${enlargeExample ? styles.exampleImage : ""}`} />
 
             <div className={`${styles.infoBar} ${isScrolled ? styles.hide : ""}`}>This page displays a list of my skill set</div>
-            <div 
-                onClick={() => {setShowSideBarMobile(true), playSound("blob")}}
+            <div
+                onClick={() => { setShowSideBarMobile(true), playSound("blob") }}
                 className={`${styles.skillMenuButton} ${!isScrolled || showSideBarMobile ? styles.hide : ""}`}>Ξ</div>
-            <div 
-                onClick={() => {setShowSideBarMobile(false), playSound("blob")}}
+            <div
+                onClick={() => { setShowSideBarMobile(false), playSound("blob") }}
                 className={`${styles.skillMenuButton} ${styles.closeButton} ${!isScrolled || !showSideBarMobile ? styles.hide : ""}`}>close</div>
 
         </>

@@ -17,7 +17,8 @@
     align-content: center;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: center
 }
 
 .subHeadingsContainer {
@@ -514,6 +515,7 @@
     transition: all 500ms;
     border-radius: 10px;
     z-index: 250;
+    opacity: 0;
 }
 
 .exampleImage {
@@ -524,7 +526,7 @@
     background-color: #969696;
     border-radius: 10px;
     transform: translateY(-50%) translateX(-10vw);
-
+    opacity: 1;
 }
 
 .tint {
@@ -605,12 +607,14 @@
 
     .headingsContainer {
         width: 100vw;
-        height: fit-content;
+        height: 80vh;
         overflow-x: hidden;
         flex-direction: column;
-        justify-content: start;
+        justify-content: center;
         align-items: start;
         padding-top: 10px;
+        border: 1px solid #fff;
+        z-index: 1000;
     }
 
     .headingSubDivider {
@@ -765,5 +769,13 @@
 
     .skillDescription {
         font-size: 10px;
+    }
+    .exampleImage {
+        width: 80vw;
+        height: fit-content;
+        right: 50%;
+        transform: translateY(-50%) translateX(50%);
+        margin: 0px;
+
     }
 }
