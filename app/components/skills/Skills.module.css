@@ -539,10 +539,12 @@
     background-color: #1111116a;
     z-index: 200;
 }
+
 .infoBar {
     display: none;
 }
-.skillMenuButton{
+
+.skillMenuButton {
     display: none;
 }
 
@@ -567,6 +569,7 @@
         color: #ccc;
         transition: all 200ms;
     }
+
     .skillMenuButton {
         display: block;
         position: fixed;
@@ -587,9 +590,11 @@
         filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
         cursor: pointer;
     }
+
     .skillMenuButton:active {
         scale: 1.2;
     }
+
     .closeButton {
         background-color: #d0515150;
         z-index: 20;
@@ -601,6 +606,7 @@
         text-align: center;
 
     }
+
     .hide {
         scale: 0;
     }
@@ -770,6 +776,13 @@
     .skillDescription {
         font-size: 10px;
     }
+
+    .exampleImageHidden {
+        right: -50%;
+        width: 80vw;
+        height: auto;
+    }
+
     .exampleImage {
         width: 80vw;
         height: auto;
