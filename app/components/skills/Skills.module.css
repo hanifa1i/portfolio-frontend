@@ -772,7 +772,7 @@
     }
     .exampleImage {
         width: 80vw;
-        height: fit-content;
+        height: auto;
         object-fit: contain;
         right: 50%;
         transform: translateY(-50%) translateX(50%);
