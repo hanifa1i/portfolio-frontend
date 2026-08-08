@@ -310,7 +310,8 @@ export default function Skills() {
                 src={exampleImage}
                 className={`${styles.exampleImageHidden} ${enlargeExample ? styles.exampleImage : ""}`} />
 
-            <div className={`${styles.infoBar}`}>This page displays a list of my skill set</div>
+            <div className={`${styles.infoBar} ${isScrolled ? styles.hide : ""}`}>This page displays a list of my skill set</div>
+            <div className={`${styles.skillMenuButton} ${!isScrolled ? styles.hide : ""}`}>Skill Menu</div>
 
         </>
     )

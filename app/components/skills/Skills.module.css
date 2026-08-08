@@ -537,9 +537,16 @@
     background-color: #1111116a;
     z-index: 200;
 }
+.infoBar {
+    display: none;
+}
+.skillMenuButton{
+    display: none;
+}
 
 @media (max-width : 800px) {
     .infoBar {
+        display: block;
         position: fixed;
         bottom: 25px;
         left: 20px;
@@ -556,7 +563,32 @@
         font-weight: 600;
         align-content: center;
         color: #ccc;
+        transition: all 200ms;
+    }
+    .skillMenuButton {
+        display: block;
+        position: fixed;
+        bottom: 25px;
+        left: 20px;
+        height: 40px;
+        width: fit-content;
+        background-color: #cccccc50;
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 10px;
+        align-content: center;
+        color: #ccc;
+        transition: all 200ms;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
 
+    }
+    .skillMenuButton:active{
+        scale: 0.9;
+    }
+    .hide {
+        scale: 0;
     }
 
     .headingsContainer {
