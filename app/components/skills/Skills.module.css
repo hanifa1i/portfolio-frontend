@@ -690,7 +690,7 @@
     .skillHeadingName {
         padding: 0px;
         font-size: 20px;
-        flex: 1;
+        flex: 4;
         height: 100%;
     }
 
@@ -700,13 +700,15 @@
         align-items: end;
         gap: 10px;
         width: 100%;
-        flex: 1;
+        flex: 6;
 
 
     }
 
     .skillExperienceNames {
         gap: 10px;
+        flex-wrap: wrap;
+        justify-content: end;
     }
 
     .skillExperienceName {
