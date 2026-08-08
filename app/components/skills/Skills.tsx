@@ -25,6 +25,8 @@ export default function Skills() {
 
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showSideBarMobile, setShowSideBarMobile] = useState(true);
+
     const [maxReachedIndex, setMaxReachedIndex] = useState<number>(-1);
     const [progress, setProgress] = useState({
         section: -1,
@@ -201,7 +203,7 @@ export default function Skills() {
 
             {/* sidebar  */}
             <div className={`${styles.skillsInDetail} `}>
-                <div className={` ${isScrolled ? styles.sidebar : styles.sidebarHidden}`}>
+                <div className={` ${!isScrolled ? styles.sidebar : styles.sidebarHidden}`}>
                     <div
                         onMouseEnter={() => playSound("hover")}
                         onClick={() => { playSound("back"), window.scrollTo({ top: 0, behavior: "smooth" }) }}
@@ -257,10 +259,13 @@ export default function Skills() {
 
                                 <div className={`${styles.skillHeading} `}>
                                     <div className={`${styles.skillHeadingName} `}>{items.name}</div>
-                                    <div className={`${styles.skillExperience} `}>gained experience at
+                                    <div className={`${styles.skillExperience} `}>
+                                        <div>gained experience at</div>
+                                        <div className={`${styles.skillExperienceNames}`}>
                                         {items.experience_locations.map((location, key) => (
                                             <div key={key} className={`${styles.skillExperienceName} `}>{location}</div>
                                         ))}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={`${styles.skillDescription} `}>
