@@ -25,7 +25,7 @@ export default function Skills() {
 
 
     const [isScrolled, setIsScrolled] = useState(false);
-    const [showSideBarMobile, setShowSideBarMobile] = useState(true);
+    const [showSideBarMobile, setShowSideBarMobile] = useState(false);
 
     const [maxReachedIndex, setMaxReachedIndex] = useState<number>(-1);
     const [progress, setProgress] = useState({
@@ -81,7 +81,10 @@ export default function Skills() {
         if (!trigger) return;
 
         const observer = new IntersectionObserver(
-            ([entry]) => { setIsScrolled(!entry.isIntersecting); },
+            ([entry]) => { 
+                setIsScrolled(!entry.isIntersecting);
+                if (entry.isIntersecting) { setShowSideBarMobile(!entry.isIntersecting); }
+            },
             { threshold: 1 }
         );
 
@@ -203,7 +206,7 @@ export default function Skills() {
 
             {/* sidebar  */}
             <div className={`${styles.skillsInDetail} `}>
-                <div className={` ${!isScrolled ? styles.sidebar : styles.sidebarHidden}`}>
+                <div className={` ${isScrolled && showSideBarMobile ? styles.sidebar : styles.sidebarHidden}`}>
                     <div
                         onMouseEnter={() => playSound("hover")}
                         onClick={() => { playSound("back"), window.scrollTo({ top: 0, behavior: "smooth" }) }}
@@ -226,7 +229,10 @@ export default function Skills() {
                             {sections.skills.map((items, key) => (
                                 <div
                                     onMouseEnter={() => playSound("hover")}
-                                    onClick={() => { playSound("click"), document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }) }}
+                                    onClick={() => { 
+                                        playSound("click"), 
+                                        setTimeout(() => { setShowSideBarMobile(false); }, 500);
+                                        document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }) }}
                                     key={key} className={`${styles.sidebarSubHeading}`}>
 
                                     {items.name}
@@ -311,7 +317,12 @@ export default function Skills() {
                 className={`${styles.exampleImageHidden} ${enlargeExample ? styles.exampleImage : ""}`} />
 
             <div className={`${styles.infoBar} ${isScrolled ? styles.hide : ""}`}>This page displays a list of my skill set</div>
-            <div className={`${styles.skillMenuButton} ${!isScrolled ? styles.hide : ""}`}>Ξ</div>
+            <div 
+                onClick={() => {setShowSideBarMobile(true), playSound("blob")}}
+                className={`${styles.skillMenuButton} ${!isScrolled || showSideBarMobile ? styles.hide : ""}`}>Ξ</div>
+            <div 
+                onClick={() => {setShowSideBarMobile(false), playSound("blob")}}
+                className={`${styles.skillMenuButton} ${styles.closeButton} ${!isScrolled || !showSideBarMobile ? styles.hide : ""}`}>close</div>
 
         </>
     )
