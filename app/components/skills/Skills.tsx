@@ -155,7 +155,7 @@ export default function Skills() {
                         setLoop(true);
                         loopRef.current?.play();
                     }}
-                    className={`absolute top-[00px]  w-full left-1/2 -translate-x-1/2 ${loop ? `opacity-0` : `opacity-10`}`}
+                    className={`absolute top-[00px]  w-full left-1/2 -translate-x-1/2 ${loop ? `opacity-0` : `opacity-10`} ${styles.backgroundVid}`}
                 >
                     <source src={"/videos/skills/bg-intro.mp4"} type="video/mp4" />
                 </video>
@@ -164,7 +164,7 @@ export default function Skills() {
                     muted
                     loop
                     playsInline
-                    className={`absolute top-[00px]  w-full left-1/2 -translate-x-1/2 ${loop ? `opacity-10` : `opacity-0`}`}
+                    className={`absolute top-[00px]  w-full left-1/2 -translate-x-1/2 ${loop ? `opacity-10` : `opacity-0`} ${styles.backgroundVid}`}
                 >
                     <source src={"/videos/skills/bg2.mp4"} type="video/mp4" />
                 </video>

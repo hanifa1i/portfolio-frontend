@@ -10,6 +10,8 @@ export default function SkillsPage() {
         <Nav />
         <Skills/>
       </div>
+      <div className="topFadeHomePage"></div>
+
     </div>
   );
 }
