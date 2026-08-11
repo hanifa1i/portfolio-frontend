@@ -10,8 +10,8 @@ export default function qualificationPage() {
                     <Info/>
                     <Nav />
                     <Qualification />
-
                 </div>
+                <div className="topFadeHomePage"></div>
             </div>
 
         </>
