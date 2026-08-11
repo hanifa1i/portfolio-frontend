@@ -1,3 +1,4 @@
+"use client"
 import Info from "../components/info/Info";
 import Nav from "../components/navigation/Nav";
 import Skills from "../components/skills/Skills"
