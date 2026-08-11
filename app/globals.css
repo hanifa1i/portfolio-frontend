@@ -195,6 +195,9 @@ body {
 
 .qualContainer {
     background-color: #4b4140;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .expContainer {
