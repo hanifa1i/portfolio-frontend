@@ -99,9 +99,13 @@ padding-left: 10px;
 }
 
 @media (max-width: 800px) {
+    .timeline {
+        margin-bottom: 50px;
+    }
     .yearDivider {
         border-left: 2px solid #ccc;
-        height: 60px;
+        height: 30px;
+        transform: translateY(-30px);
     }
     .unselectedQual {
         height: 10px;
