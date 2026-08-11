@@ -228,6 +228,16 @@
 
 @media (max-height: 800px) {
     .section {
+        height: 80%
+    }
+}
+@media (max-height: 700px) {
+    .section {
         height: 70%
+    }
+}
+@media (max-height: 600px) {
+    .section {
+        height: 60%
     }
 }
