@@ -135,18 +135,18 @@
     .switch {
         width: 40px;
         top: auto;
-        bottom: 15%;
+        bottom: 4px;
     }
     .switch:active {
         width: 50px;
     }
 
     .previous {
-        left: 10;
+        left: 24;
     }
 
     .next {
-        right: 10;
+        left: 74;
     }
 
     .previous:hover {
