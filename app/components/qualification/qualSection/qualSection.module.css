@@ -4,17 +4,21 @@
     transition: all 500ms;
     display: flex;
 }
+
 .unselected {
     transform: scale(75%);
     opacity: .2;
 }
+
 .unselectedInfo {
     transform: translateY(200px);
 }
+
 .selected {
     transform: scale(100%);
     border-radius: 20px;
 }
+
 .qualInfoContainer {
     height: 100%;
     flex: 1;
@@ -26,18 +30,21 @@
     transition: all 500ms;
 
 }
+
 .col1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: end;
 }
+
 .col2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: end;
 }
+
 .qualDate {
     background-color: #ccc;
     color: #111;
@@ -48,19 +55,22 @@
     margin-bottom: 10px;
     font-size: small;
 }
+
 .qualLevel {
     font-size: 30px;
     color: #fff;
-    
+
 }
+
 .qualSubject {
     text-align: end;
     font-size: 50px;
     color: #fff;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ccc ;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
 }
+
 .qualGrade {
     font-size: 80px;
     font-weight: 500;
@@ -68,20 +78,23 @@
     margin-top: 20px;
     padding-right: 20px;
 }
+
 .qualInstitution {
     font-size: 25px;
     color: #fff;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ccc ;
+    border-bottom: 1px solid #ccc;
     text-align: end;
     margin-bottom: 10px;
-    
+
 }
+
 .qualDescription {
     text-align: end;
     color: #fff;
     width: 70%;
 }
+
 .qualCertificateContainer {
     height: 100%;
     flex: 1;
@@ -94,27 +107,28 @@
     width: 100%;
     object-fit: scale-down;
     overflow: hidden;
-    background-color: rgb(202, 202, 202);
     border-radius: 5px;
     transition: all 500ms;
     filter: drop-shadow(10px 10px 0px rgba(0, 0, 0, .2));
 
 }
-.unselectedCert{
+
+.unselectedCert {
     border-radius: 400px;
     height: 200;
     width: 200;
 }
 
 @media (max-width: 800px) {
-    .section{
+    .section {
         flex-direction: column-reverse;
         width: 90vw;
         margin-top: 5vh;
-        height: 70%;
+        height: 85%;
         justify-content: center;
         align-items: center;
     }
+
     .qualInfoContainer {
         flex-direction: row;
         border-radius: 10px;
@@ -127,9 +141,11 @@
         padding: 10px;
         width: fit-content;
     }
+
     .qualDate {
         display: none;
     }
+
     .qualLevel {
         font-size: small;
         margin: 0px;
@@ -137,7 +153,8 @@
         padding-right: 10px;
         border-right: 1px solid #555;
     }
-    .qualSubject{
+
+    .qualSubject {
         font-size: small;
         margin: 0px;
         padding: 0px;
@@ -146,6 +163,7 @@
         padding-right: 10px;
         border-right: 1px solid #555;
     }
+
     .qualInstitution {
         font-size: small;
         margin: 0px;
@@ -156,26 +174,35 @@
         border-right: 1px solid #555;
 
     }
+
     .qualCertificateContainer {
-    flex: none;
-    
-}
-    .certificate {
-        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .2));
-        height: fit-content;
-    }
-    .certificateImage{
-        object-fit:contain
+        flex: none;
+        width: fit-content;
+
 
     }
-    
+
+    .certificate {
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .2));
+        height: 100%;
+        width: fit-content;
+    }
+
+    .certificateImage {
+        object-fit: contain;
+        height: 100%;
+
+        width: fit-content
+    }
+
     .qualDescription {
-            display: none;
+        display: none;
 
         font-size: 8px;
         width: 100%;
-                text-align: start;
+        text-align: start;
     }
+
     .qualGrade {
         font-size: small;
         margin: 0px;
@@ -183,17 +210,24 @@
         text-align: center;
         margin-right: 10px;
     }
+
     .col1 {
         flex-direction: row;
         gap: 10;
-         align-items: start;
-         padding: 10px;
-         border-radius: 5px;
+        align-items: start;
+        padding: 10px;
+        border-radius: 5px;
         padding-left: 15px;
 
-         padding-right: 15px;
+        padding-right: 15px;
     }
-    .col2 {
+
+    .col2 {}
+
+}
+
+@media (max-height: 800px) {
+    .section {
+        height: 70%
     }
-    
 }
