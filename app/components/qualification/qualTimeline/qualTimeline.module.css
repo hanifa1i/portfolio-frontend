@@ -100,7 +100,7 @@ padding-left: 10px;
 
 @media (max-width: 800px) {
     .yearDivider {
-        border-left: 2px solid #ccc;
+        border-left: 2px solid #111;
     }
     .unselectedQual {
         height: 10px;
