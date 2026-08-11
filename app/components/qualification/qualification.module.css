@@ -134,6 +134,8 @@
 @media (max-width: 800px) {
     .switch {
         width: 40px;
+        top: auto;
+        bottom: 15%;
     }
     .switch:active {
         width: 50px;
@@ -161,8 +163,8 @@
     transform: translateY(-50%) translateX(10px);
 }
     .qualSlider {
-        padding-left: 10%;
-        transform: translateX(calc(1.3333333333 * var(--sliderPosition)));
+        padding-left: 5%;
+        transform: translateX(calc(1.5 * var(--sliderPosition)));
 
     }
     

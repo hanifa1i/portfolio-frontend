@@ -109,14 +109,14 @@
 @media (max-width: 800px) {
     .section{
         flex-direction: column-reverse;
-        width: 80vw;
+        width: 90vw;
 
     }
     .qualInfoContainer {
         flex-direction: column;
-                gap: 20px;
+                gap: 10px;
         border-radius: 10px;
-        align-items: start;
+        align-items: center;
         justify-content: start;
         padding: 0px;
         padding-bottom: 0px;
