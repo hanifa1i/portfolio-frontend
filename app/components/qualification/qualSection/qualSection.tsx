@@ -26,7 +26,7 @@ export default function qualSection({ qualNumber, qualSelected, data }: Props) {
                 </div>
                 <div className={`${styles.qualCertificateContainer} `}>
                     <div className={`${styles.certificate} ${qualNumber !== qualSelected ? styles.unselectedCert : ""}`}>
-                        <img src={data.certificates[0].image_url}/>
+                        <img className={`${styles.certificateImage}`} src={data.certificates[0].image_url}/>
                     </div>
                 </div>
             </div>

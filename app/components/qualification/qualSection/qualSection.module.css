@@ -110,21 +110,23 @@
     .section{
         flex-direction: column-reverse;
         width: 90vw;
-
+        margin-top: 5vh;
+        height: 85%;
+        justify-content: center;
+        align-items: center;
     }
     .qualInfoContainer {
-        flex-direction: column;
-                gap: 10px;
+        flex-direction: row;
         border-radius: 10px;
         align-items: center;
         justify-content: start;
         padding: 0px;
         padding-bottom: 0px;
         height: fit-content;
-    }
-    .unselectedInfo {
-        background-color: #cccccc20;
-        backdrop-filter: blur(20px);
+        background-color: #7a7a7a20;
+        backdrop-filter: blur(5px);
+        padding: 10px;
+        width: fit-content;
     }
     .qualDate {
         font-size: 10px;
@@ -156,26 +158,40 @@
         padding: 0px;
         border-width: 0px;
         text-align: start;
+        padding-right: 10px;
+        border-right: 1px solid #555;
 
     }
     .qualCertificateContainer {
     }
+    .certificate {
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, .2));
+    }
+    .certificateImage{
+        object-fit: contain;
+        max-height: 60vh;
+        height: fit-content;
+
+    }
     
     .qualDescription {
+            display: none;
+
         font-size: 8px;
         width: 100%;
                 text-align: start;
     }
     .qualGrade {
-        font-size: 30px;
-        text-align: end;
+        font-size: small;
         margin: 0px;
+        padding: 0px;
+        text-align: center;
+        margin-right: 10px;
     }
     .col1 {
         flex-direction: row;
         gap: 10;
          align-items: start;
-         background-color: #222;
          padding: 10px;
          border-radius: 5px;
         padding-left: 15px;
@@ -183,10 +199,6 @@
          padding-right: 15px;
     }
     .col2 {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
     }
     
 }
