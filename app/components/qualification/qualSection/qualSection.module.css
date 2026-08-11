@@ -113,13 +113,14 @@
 
     }
     .qualInfoContainer {
-        flex-direction: row;
+        flex-direction: column;
                 gap: 20px;
-        flex: 1;
         border-radius: 10px;
-        align-items: center;
+        align-items: start;
+        justify-content: start;
         padding: 0px;
         padding-bottom: 0px;
+        height: fit-content;
     }
     .unselectedInfo {
         background-color: #cccccc20;
@@ -134,25 +135,30 @@
         margin: 0px;
     }
     .qualLevel {
-        font-size: medium;
+        font-size: small;
         margin: 0px;
         padding: 0px;
+        padding-right: 10px;
+        border-right: 1px solid #555;
     }
     .qualSubject{
-        font-size: medium;
+        font-size: small;
         margin: 0px;
         padding: 0px;
+        border-width: 0px;
+        text-align: start;
+        padding-right: 10px;
+        border-right: 1px solid #555;
     }
     .qualInstitution {
         font-size: small;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
-            text-align: start;
+        text-align: start;
 
     }
     .qualCertificateContainer {
-        flex: 3;
     }
     
     .qualDescription {
@@ -167,8 +173,14 @@
     }
     .col1 {
         flex-direction: row;
-        gap: 20;
-         align-items: center;
+        gap: 10;
+         align-items: start;
+         background-color: #222;
+         padding: 10px;
+         border-radius: 5px;
+        padding-left: 15px;
+
+         padding-right: 15px;
     }
     .col2 {
     display: none;
