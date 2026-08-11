@@ -97,3 +97,21 @@ padding-left: 10px;
     white-space: nowrap;
 
 }
+
+@media (max-width: 800px) {
+    .yearDivider {
+        border-left: 2px solid #ccc;
+    }
+    .unselectedQual {
+        height: 10px;
+        width: 10px;
+        padding: 0px;
+    }
+    .selectedQual {
+        height: 20px;
+        width: 20px;
+        padding: 0px;
+        font-size: 0px;
+        background-color: #fff;
+    }
+}
