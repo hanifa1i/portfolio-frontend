@@ -5,9 +5,11 @@ import { getArtwork, getStandaloneArt } from "../services/artworkService";
 import { useEffect, useState } from "react";
 import { ArtworkResponse } from "../types/Dashboard";
 import Info from "../components/info/Info";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function ArtworkPage() {
 
+  useScrollReveal(".offscreenDown", "easeIn", false);
   const [artworks, setArtworks] = useState<ArtworkResponse[]>([]);
 
   useEffect(() => {
@@ -31,6 +33,7 @@ export default function ArtworkPage() {
         <Nav />
         <ArtGrid artworks={artworks} />
       </div>
+      <div className="topFadeHomePage offscreenDown"></div>
     </div>
   );
 }

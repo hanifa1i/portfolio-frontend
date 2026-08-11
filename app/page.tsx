@@ -9,9 +9,10 @@ import DepthImage from "./components/common/DepthImage";
 import Image from "next/image";
 import Info from "./components/info/Info";
 import { useState } from "react";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 export default function Home() {
-
+  useScrollReveal(".offscreenDown", "easeIn", false);
   const [fadeOutRecent, setFadeOutRecent] = useState(false);
   return (
     <div className={`homePage flex  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
@@ -63,7 +64,7 @@ export default function Home() {
 
         </div>
 
-        <div className="topFadeHomePage"></div>
+        <div className="topFadeHomePage offscreenDown"></div>
 
       </main>
     </div>

@@ -6,6 +6,7 @@ import styles from "./page.module.css"
 import { useEffect, useState } from "react";
 import Background from "../components/sketchbook/background/Background";
 import Info from "../components/info/Info";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function SketchbooksPage() {
   
@@ -14,6 +15,9 @@ export default function SketchbooksPage() {
   useEffect (() => {
     console.log(bookActive)
   }, [bookActive])
+
+  useScrollReveal(".offscreenDown", "easeIn", false);
+  
   
   return (
     <div className="sketchbookContainer">
@@ -25,7 +29,7 @@ export default function SketchbooksPage() {
         <Book setBookActive={setBookActive}/>
       </div>
 
-              <div className="topFadeHomePage"></div>
+        <div className="topFadeHomePage offscreenDown"></div>
 
     </div>
   );

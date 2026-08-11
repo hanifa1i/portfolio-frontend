@@ -1,8 +1,11 @@
 import Info from "../components/info/Info";
 import Nav from "../components/navigation/Nav";
 import Skills from "../components/skills/Skills"
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function SkillsPage() {
+  useScrollReveal(".offscreenDown", "easeIn", false);
+  
   return (
     <div className="skillsContainer">
       <div className="pageCenterer">
@@ -10,7 +13,7 @@ export default function SkillsPage() {
         <Nav />
         <Skills/>
       </div>
-      <div className="topFadeHomePage"></div>
+      <div className="topFadeHomePage offscreenDown"></div>
 
     </div>
   );
