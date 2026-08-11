@@ -102,7 +102,7 @@ export default function qualification() {
             {enableQual && (<div className={`${styles.qualContainer}`}>
                 <div
                     style={{ "--sliderPosition": `-${qual * 60}vw` } as React.CSSProperties}
-                    className={`${styles.qualSlider}  `}>
+                    className={`${styles.qualSlider}`}>
                     {qualifications.map((qualification, key) => (
                         <QualSection key={key} qualNumber={key} qualSelected={qual} data={qualification}/>
                     ))}
