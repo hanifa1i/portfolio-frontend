@@ -11,10 +11,10 @@ export default function qualSection({ qualNumber, qualSelected, data }: Props) {
             <div className={`${styles.section} ${qualNumber !== qualSelected ? styles.unselected : styles.selected}`}>
                 <div className={`${styles.qualInfoContainer} ${qualNumber !== qualSelected ? styles.unselectedInfo : ""}`}>
                     <div className={styles.col1}>
-                    <div className={`${styles.qualDate}`}>{data.start_date.slice(0, 4)}-{data.end_date.slice(0, 4)}</div>
-                    <div className={`${styles.qualLevel}`}>{data.level}</div>
-                    <div className={`${styles.qualSubject}`}>{data.qualification}</div>
-                    <div className={`${styles.qualInstitution}`}>at {data.institution}</div>
+                    <div className={` ${styles.qualDate}`}>{data.start_date.slice(0, 4)}-{data.end_date.slice(0, 4)}</div>
+                    <div className={` ${styles.qualLevel}`}>{data.level}</div>
+                    <div className={` ${styles.qualSubject}`}>{data.qualification}</div>
+                    <div className={` ${styles.qualInstitution}`}>at {data.institution}</div>
                     </div>
                     <div className={styles.col2}>
                     <div className={`${styles.qualDescription}`}>
