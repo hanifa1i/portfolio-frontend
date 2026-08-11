@@ -179,7 +179,7 @@ export default function book({ setBookActive }: Props) {
             <div
                 style={{ "--bookContainerWidth": `${settings?.container_width !== undefined ? settings?.container_width : 0}px` } as React.CSSProperties}
 
-                className={`${styles.bookContainer} border`}>
+                className={`${styles.bookContainer}`}>
 
 
                 {!enableBook && (
