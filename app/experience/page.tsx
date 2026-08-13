@@ -1,3 +1,4 @@
+"use client"
 import Nav from "../components/navigation/Nav"
 import Experience from "../components/experience/experience"
 import Info from "../components/info/Info"
