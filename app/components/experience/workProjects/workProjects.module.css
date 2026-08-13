@@ -57,3 +57,14 @@
 
 }
 
+@media (max-width : 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .project {
+        font-size: small;
+    }
+    .projectDescription {
+        font-size: small;
+    }
+}

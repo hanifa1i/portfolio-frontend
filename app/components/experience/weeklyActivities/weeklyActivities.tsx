@@ -20,41 +20,48 @@ export default function weeklyActivities({ data }: Props) {
 
     useScrollReveal(".offscreenLeft", "easeIn", false)
 
-    return (
-        <>
-            <div className={`${styles.week} `}>
-                {daysOfWeek.map((day, key) => {
+  
+return (
+    <>
+        <div className={`${styles.week} `}>
+            {daysOfWeek.map((day, key) => {
 
-                    const activites = data[day];
+                const activites = data[day];
 
-                    return (
-                        <div key={key} className={`${styles.dayContainer} offscreenLeft`}>
-                            <div className={`${styles.dayName}`}>{day}</div>
+                return (
+                    <div key={key} className={`${styles.dayContainer} offscreenLeft`}>
+                        <div className={`${styles.dayName}`}>{day}</div>
 
-                            {activites.map((activity, key) => (
-                                <div className={`${styles.block}`} key={key}>
-                                    <div className={`${styles.activity}`}>
+                        {activites.map((activity, key) => (
+                            <div className={`${styles.block}`} key={key}>
+                                <div className={`${styles.activity}`}>
+                                    <div className={`${styles.timeTitle}`}>
                                         <div className={`${styles.time}`}>{activity.start_time}-{activity.end_time}</div>
-                                        <div onClick={() => { playSound("click"), setDay(day), setOpen(true), setSelect(key) }}
+                                        <div onClick={() => { 
+                                            playSound("click"); 
+                                            setDay(day);
+                                            setSelect(key) 
+                                            currentDay === day && select === key ? setOpen(false) : setOpen(true); 
+                                            }}
                                             className={`${styles.title} ${day === currentDay && open && select === key ? styles.titleExpand : ""}`}>
                                             {activity.activity}
                                         </div>
-
-                                        <div className={`${styles.description} ${day === currentDay && open && select === key ? styles.descriptionExpand : ""}`}>{activity.description}</div>
                                     </div>
-                                    <div className={`${styles.connector}`}></div>
+                                    <div className={`${styles.description} ${day === currentDay && open && select === key ? styles.descriptionExpand : ""}`}>{activity.description}</div>
                                 </div>
-                            ))}
+                                <div className={`${styles.connector}`}></div>
+                            </div>
+                        ))}
 
 
-                        </div>
-                    )
-                }
+                    </div>
+                )
+            }
 
-                )}
+            )}
 
 
-            </div>
-        </>
-    )
+        </div>
+    </>
+)
 } 

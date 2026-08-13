@@ -108,3 +108,30 @@
     margin-left: 20px;
 
 }
+
+@media (max-width : 800px) {
+    .week {
+        font-size: small;
+        padding-top: 30px;
+    }
+    .dayContainer {
+        flex-direction: column;
+        align-items: start;
+        padding-bottom: 20px;
+    }
+    .activity {
+        padding-top: 10;
+        padding-bottom: 0;
+    }
+    .timeTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .title {
+        font-size: medium;
+    }
+    .descriptionExpand {
+        margin-bottom: 20px;
+    }
+}
