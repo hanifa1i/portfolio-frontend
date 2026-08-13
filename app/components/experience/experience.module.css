@@ -254,7 +254,7 @@
     }
 
     .role {
-        padding: 50px;
+        padding: 30px;
         font-size: 30px;
     }
 
@@ -284,9 +284,13 @@
         top: auto;
         bottom: 25px;
     }
+    
     .expNav {
         right: 50%;
         transform: translateX(50%);
+    }
+    .hideNav {
+        transform: translateX(50%) translateY(200px);
     }
     .expNavButton {
         font-size: 0px;
