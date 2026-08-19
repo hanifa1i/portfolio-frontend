@@ -37,9 +37,9 @@ import useScrollReveal from "@/app/hooks/useScrollReveal";
 
 export default function Dashboard() {
 
-    useScrollReveal(".offscreenLeft", "easeIn", true);
-    useScrollReveal(".offscreenUp", "easeIn", true);
-    useScrollReveal(".offscreenRight", "easeIn", true);
+    useScrollReveal(".offscreenLeft", "easeIn", false);
+    useScrollReveal(".offscreenUp", "easeIn", false);
+    useScrollReveal(".offscreenRight", "easeIn", false);
 
 
     const [state, setState] = useState<string>("");

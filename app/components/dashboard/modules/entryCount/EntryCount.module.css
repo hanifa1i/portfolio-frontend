@@ -31,3 +31,9 @@
     scale: 1.1;
     background-color: #11111120;
 }
+
+@media (max-width : 800px) {
+    .container {
+        flex-direction: row;
+    }
+}

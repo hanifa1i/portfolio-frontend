@@ -335,3 +335,16 @@ margin-top: auto;
     justify-items: center;
     padding-top: 100px;
 }
+
+@media (max-width: 800px) {
+    .dashboardContainer {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .dashboardDivider {
+        height: fit-content;
+        padding-bottom: 100px;
+                width: 90vw;
+        padding-top: 30px ;
+    }
+}
