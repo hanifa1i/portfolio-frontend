@@ -17,7 +17,7 @@ export default function HomeNav() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isSamePage, setIsSamePage] = useState(false);
     const [pageName, setPageName] = useState("");
-
+    const [openLogin, setOpenLogin] = useState(false);
 
     const switchPage = (url: string) => {
         if (page === url) {
@@ -60,7 +60,7 @@ export default function HomeNav() {
 
             <nav className={`${style.navigation}`}>
                 
-                {isScrolled && (<Login switchPage={switchPage}/>)}
+                {isScrolled && (<Login switchPage={switchPage} openLogin={openLogin} setOpenLogin={setOpenLogin}/>)}
 
                 <div className={`home ${style.navButtons} ${isScrolled ? style.navButtonsSmall : style.navButtonsLarge}`}>
                     {
