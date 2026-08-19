@@ -37,9 +37,29 @@ import useScrollReveal from "@/app/hooks/useScrollReveal";
 
 export default function Dashboard() {
 
-    useScrollReveal(".offscreenLeft", "easeIn", false);
-    useScrollReveal(".offscreenUp", "easeIn", false);
-    useScrollReveal(".offscreenRight", "easeIn", false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+    const handleResize = () => {
+        if (window.innerWidth < 800) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    };
+
+    handleResize(); // Check on first render
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+        window.removeEventListener("resize", handleResize);
+    };
+}, []);
+
+    useScrollReveal(".offscreenLeft", "easeIn", !isMobile);
+    useScrollReveal(".offscreenUp", "easeIn", !isMobile);
+    useScrollReveal(".offscreenRight", "easeIn", !isMobile);
 
 
     const [state, setState] = useState<string>("");
@@ -178,9 +198,9 @@ export default function Dashboard() {
                     <div className={`${styles.heading} ${state === "" ? "" : styles.hide}`}>Dashboard</div>
 
                     <div className={`${styles.dashboardContainer}`}>
-                        <div className={`${styles.recentActivites} ${state === "" ? "" : styles.hide} offscreenLeft`}>{state === "" && (<RecentActivites />)}</div>
-                        <div className={`${styles.entryCount} ${state === "" ? "" : styles.hide} offscreenUp`}>{state === "" && (<EntryCount />)}</div>
-                        <div className={`${styles.dashboardModules} ${state === "" ? "" : styles.hide} offscreenUp`}><ProfileEditor /></div>
+                        <div className={`${styles.recentActivites} border ${state === "" ? "" : styles.hide} offscreenLeft`}>{state === "" && (<RecentActivites />)}</div>
+                        <div className={`${styles.entryCount} border ${state === "" ? "" : styles.hide} offscreenUp`}>{state === "" && (<EntryCount />)}</div>
+                        <div className={`${styles.dashboardModules}  border ${state === "" ? "" : styles.hide} offscreenUp`}><ProfileEditor /></div>
 
                         <div className={`${styles.statButtons} offscreenRight`}>
                             {state === "" && (<Settings />)}
