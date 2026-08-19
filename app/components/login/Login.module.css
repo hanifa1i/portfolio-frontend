@@ -371,15 +371,28 @@ input::placeholder {
         border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
         filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .3));
+        
 
     }
+    .loginIndicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        border: 2px solid #7eda83;
+        position: absolute;
+        top: 2;
+        left: 0;
+    }
+    .usernameDisplay {
+        display: none;
+    }
+    
 
     .openLogin {
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 20px;
     }
-    
     .password {
             width: 80px;
     }

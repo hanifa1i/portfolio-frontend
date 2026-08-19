@@ -66,7 +66,7 @@ export default function Login( { switchPage, openLogin, setOpenLogin} : Props) {
                 onClick={() => { playSound("blob"), setOpenLogin(true) }}
                 className={`${style.avatar} ${openLogin ? style.openLogin : ""} ${isAuthenticated && openLogin ? style.paddingRight : ""}`}>
                 <img src="/images/nav/avatarTrans.png" className={`${style.avatarImage}`} />
-                
+                <div className={`${isAuthenticated ? style.loginIndicator : ""}`}/>
                 {isAuthenticated && (<div className={`${style.usernameDisplay} ${logoutTransition ? style.hideUsername : ""}`}>{username !== "" ? "hanif" : ""}</div>)}
 
 

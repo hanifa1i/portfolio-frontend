@@ -58,11 +58,11 @@ export default function HomeNav() {
                         <img className={`${clicked ? style.pageSwitchImage : ""}`} src={navigationImageFinder[pageName as keyof typeof navigationImageFinder]?.image}/>
                     </div>
 
-            <nav className={`${style.navigation}`}>
+            <nav className={`${style.navigation} ${openLogin ? style.mobileLoginLayout: ""}`}>
                 
                 {isScrolled && (<Login switchPage={switchPage} openLogin={openLogin} setOpenLogin={setOpenLogin}/>)}
 
-                <div className={`home ${style.navButtons} ${isScrolled ? style.navButtonsSmall : style.navButtonsLarge}`}>
+                <div className={`home ${style.navButtons} ${isScrolled ? style.navButtonsSmall : style.navButtonsLarge} ${isScrolled && openLogin ? style.navButtonsSmallOpenLogin: ""}`}>
                     {
                         navigation.map((items, index) => 
                             (items.label !== "←" && (<NavButton
