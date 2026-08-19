@@ -393,16 +393,27 @@ input::placeholder {
         padding-right: 20px;
         border-radius: 20px;
     }
-    .loginButton {
+    .logoutButton {
         font-size: 10px;
     }
+   
     .password {
             width: 80px;
     }
     .exit {
 
         left: 50%;
+        transform: translateX(-50%);
+                transform: translateX(-50%);
+        background-color: #b64f4f77;
+        border: 1px solid #b64f4f;
         bottom: -50px;
+        color: #fcc3c3;
+        backdrop-filter: blur(10px);
+
+    }
+    .exit:hover {
+        transform: translateX(-50%);
 
     }
 }
