@@ -66,6 +66,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 1.5rem;
+    transition: all 300ms;
 }
 
 .navButtons {
@@ -83,6 +84,7 @@
 }
 
 .navButtonsSmall {
+    transition: all 300ms;
     gap: 1px;
     height: 40px;
     background: #222222;
@@ -216,6 +218,15 @@
         scale: 1.2;
     }
 
+    .mobileLoginLayout {
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
     .popIn {
         animation: popInForMobile 500ms forwards;
     }
@@ -228,6 +239,11 @@
         backdrop-filter: blur(50px);
         filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .6));
         overflow: visible;
+    }
+
+    .navButtonsSmallOpenLogin {
+        border-radius: 20px;
+
     }
 
     .sketchbookNav {

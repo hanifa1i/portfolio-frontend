@@ -375,10 +375,14 @@ input::placeholder {
     }
 
     .openLogin {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 20px;
     }
-
+    
+    .password {
+            width: 80px;
+    }
     .exit {
 
         left: 50%;

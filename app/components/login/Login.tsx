@@ -8,12 +8,13 @@ import { blob } from "stream/consumers";
 
 type Props = {
     switchPage: (url: string) => void;
+    openLogin: boolean;
+    setOpenLogin: (state: boolean) => void
 }
 
-export default function Login( { switchPage } : Props) {
+export default function Login( { switchPage, openLogin, setOpenLogin} : Props) {
     const { login, username } = useAuth();
     const { isAuthenticated, logout } = useAuth();
-    const [openLogin, setOpenLogin] = useState(false);
     const [newUsername, setUsernameValue] = useState("");
     const [newPassword, setPasswordValue] = useState("");
 

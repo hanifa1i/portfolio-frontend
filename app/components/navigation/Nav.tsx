@@ -19,6 +19,7 @@ export default function HomeNav() {
     const [clicked, setClicked] = useState(false);
     const [isSamePage, setIsSamePage] = useState(false);
     const [pageName, setPageName] = useState("");
+    const [openLogin, setOpenLogin] = useState(false);
 
     const switchPage = (url: string) => {
         if (page === url) {
@@ -51,11 +52,11 @@ export default function HomeNav() {
                         <img className={`${clicked ? style.pageSwitchImage : ""}`} src={`${pageName === "←" ?  "/images/nav/home.svg" : navigationImageFinder[pageName as keyof typeof navigationImageFinder]?.image }`}/>
             </div>
 
-            <nav className={`${style.navigation} ${style.popIn}`}>
+            <nav className={`${style.navigation} ${style.popIn} ${openLogin ? style.mobileLoginLayout: ""}`}>
 
-                <Login switchPage={switchPage} />
+                <Login switchPage={switchPage} openLogin={openLogin} setOpenLogin={setOpenLogin}/>
 
-                <div className={`${style.navButtons} ${style.navButtonsSmall} ${page === "sketchbooks" ? style.sketchbookNav : ""}`}>
+                <div className={`${style.navButtons} ${style.navButtonsSmall} ${openLogin ? style.navButtonsSmallOpenLogin: ""} ${page === "sketchbooks" ? style.sketchbookNav : ""}`}>
                     {
                         navigation.map((items, index) => (
                             <NavButton
