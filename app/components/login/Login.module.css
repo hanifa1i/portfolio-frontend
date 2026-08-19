@@ -390,8 +390,11 @@ input::placeholder {
 
     .openLogin {
         padding-left: 10px;
-        padding-right: 10px;
+        padding-right: 20px;
         border-radius: 20px;
+    }
+    .loginButton {
+        font-size: 10px;
     }
     .password {
             width: 80px;
