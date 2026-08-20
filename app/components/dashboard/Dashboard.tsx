@@ -57,9 +57,8 @@ export default function Dashboard() {
     };
 }, []);
 
-    useScrollReveal(".offscreenLeft", "easeIn", !isMobile);
-    useScrollReveal(".offscreenUp", "easeIn", !isMobile);
-    useScrollReveal(".offscreenRight", "easeIn", !isMobile);
+
+    useScrollReveal(".offscreenUp", "easeIn", false);
 
 
     const [state, setState] = useState<string>("");
@@ -169,8 +168,8 @@ export default function Dashboard() {
 
     return (
         <>
-            <div className={`${styles.dashboardDivider} ${state === "new" || state === "list" ? styles.dashboardDividerForNewEntryList : ""}`}>
-                <div className={`${styles.section} ${styles.listContainer}
+            <div className={`${styles.dashboardDivider} ${state === "new" || state === "list" ? styles.dashboardDividerForNewEntryList : ""} ${state === "list" ? styles.flexCol : ""}`}>
+                <div className={`${styles.section} ${styles.listContainer} border
                     ${state === "list" ? styles.open : styles.close}`}>
 
                     {activeTable === "artwork" && (
@@ -194,15 +193,15 @@ export default function Dashboard() {
 
                 </div>
 
-                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""}`}>
+                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""} ${state === "list" ? styles.dashboardContainerWhenList : ""} `}>
                     <div className={`${styles.heading} ${state === "" ? "" : styles.hide}`}>Dashboard</div>
 
-                    <div className={`${styles.dashboardContainer}`}>
-                        <div className={`${styles.recentActivites} border ${state === "" ? "" : styles.hide} offscreenLeft`}>{state === "" && (<RecentActivites />)}</div>
-                        <div className={`${styles.entryCount} border ${state === "" ? "" : styles.hide} offscreenUp`}>{state === "" && (<EntryCount />)}</div>
-                        <div className={`${styles.dashboardModules}  border ${state === "" ? "" : styles.hide} offscreenUp`}><ProfileEditor /></div>
+                    <div className={`${styles.dashboardContainer} border `}>
+                        <div className={`${styles.recentActivites} ${state === "" ? "" : styles.hide}`}>{state === "" && (<RecentActivites />)}</div>
+                        <div className={`${styles.entryCount} ${state === "" ? "" : styles.hide}`}>{state === "" && (<EntryCount />)}</div>
+                        <div className={`${styles.dashboardModules}  ${state === "" ? "" : styles.hide}`}><ProfileEditor /></div>
 
-                        <div className={`${styles.statButtons} offscreenRight`}>
+                        <div className={`${styles.statButtons}`}>
                             {state === "" && (<Settings />)}
 
                             {state === "list" && (<div className={`${styles.toggleContainer}`}>
@@ -212,7 +211,7 @@ export default function Dashboard() {
                                 </div>
                             </div>)}
                             <div onClick={() => { setState(""), setActiveTable(null) }} className={`${styles.exitButton} ${state === "list" ? "" : styles.hide}`}>✕</div>
-                            <div className={`${styles.buttons}`}>
+                            <div className={`${styles.buttons} ${state === "list" ? styles.buttonsMobile : ""} `}>
                                 {sections.map((section, key) => (
                                     <div key={key} className={`${styles.statButtonContainer}`}>
                                         <div onMouseEnter={() => playSound("hover")} onClick={() => { playSound("click"), setState("list"), setActiveTable(section.label), setGetData(true) }}

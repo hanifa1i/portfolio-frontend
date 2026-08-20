@@ -23,10 +23,17 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
 .date {
     background-color: #eeeeee50;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
