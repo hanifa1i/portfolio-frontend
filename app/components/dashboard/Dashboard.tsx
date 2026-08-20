@@ -169,7 +169,7 @@ export default function Dashboard() {
     return (
         <>
             <div className={`${styles.dashboardDivider} ${state === "new" || state === "list" ? styles.dashboardDividerForNewEntryList : ""} ${state === "list" ? styles.flexCol : ""}`}>
-                <div className={`${styles.section} ${styles.listContainer} border
+                <div className={`${styles.section} ${styles.listContainer} 
                     ${state === "list" ? styles.open : styles.close}`}>
 
                     {activeTable === "artwork" && (
@@ -193,10 +193,10 @@ export default function Dashboard() {
 
                 </div>
 
-                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""} ${state === "list" ? styles.dashboardContainerWhenList : ""} `}>
+                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""} ${state === "list" ? styles.dashboardContainerWhenList : ""}`}>
                     <div className={`${styles.heading} ${state === "" ? "" : styles.hide}`}>Dashboard</div>
 
-                    <div className={`${styles.dashboardContainer} border `}>
+                    <div className={`${styles.dashboardContainer}  `}>
                         <div className={`${styles.recentActivites} ${state === "" ? "" : styles.hide}`}>{state === "" && (<RecentActivites />)}</div>
                         <div className={`${styles.entryCount} ${state === "" ? "" : styles.hide}`}>{state === "" && (<EntryCount />)}</div>
                         <div className={`${styles.dashboardModules}  ${state === "" ? "" : styles.hide}`}><ProfileEditor /></div>

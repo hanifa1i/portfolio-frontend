@@ -10,8 +10,7 @@
     height: fit-content;
 }
 
-.section {
-}
+.section {}
 
 .listContainer {
     flex: 0;
@@ -22,6 +21,7 @@
     display: grid;
     border-width: 0px;
 }
+
 .heading {
     font-size: 40px;
     width: fit-content;
@@ -38,21 +38,26 @@
     flex: 0;
     height: fit-content;
 }
+
 .dashboardContainer {
     display: flex;
 }
-.recentActivites{
+
+.recentActivites {
     flex: 3;
     border-width: 0px;
 }
-.entryCount{
+
+.entryCount {
     flex: 1;
     border-width: 0px;
 }
-.dashboardModules{
+
+.dashboardModules {
     flex: 4;
     border-width: 0px;
 }
+
 .statButtons {
     flex: 1;
     display: flex;
@@ -72,13 +77,15 @@
     border-radius: 25px;
     background-color: #ccc;
 }
-.buttons{
-margin-top: auto;
+
+.buttons {
+    margin-top: auto;
 }
+
 .statButtonContainer {
     display: flex;
     align-items: center;
-    
+
     height: fit-content;
 }
 
@@ -94,7 +101,7 @@ margin-top: auto;
     padding-left: 20px;
     display: flex;
     font-size: small;
-        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .3));
 
 }
 
@@ -330,6 +337,7 @@ margin-top: auto;
     border: 1px solid #21511f50;
     color: #eee;
 }
+
 .toggleContainer {
     height: 300px;
     justify-items: center;
@@ -341,41 +349,78 @@ margin-top: auto;
         flex-direction: column;
         gap: 30px;
     }
+
     .dashboardContainerWhenList {
-position: fixed;
-        bottom: 0px;
+        position: fixed;
+        bottom: 10px;
 
 
     }
+
     .listContainer {
         z-index: 10;
         position: fixed;
         top: 150px;
         padding: 0px;
         width: 90vw;
+        max-height: 80vh;
+        margin-bottom: 10vh;
     }
+
     .dashboardDivider {
         height: fit-content;
         padding-bottom: 100px;
         width: 90vw;
-        padding-top: 30px ;
+        padding-top: 30px;
 
     }
+
     .buttonsMobile {
         display: flex;
         flex-direction: row;
-        
+
     }
+
     .button {
         width: 100%;
     }
+
     .flexCol {
         flex-direction: column;
     }
+
     .toggleContainer {
         position: fixed;
         top: -40px;
         right: 80px;
         transform: rotate(90deg);
+    }
+
+    .exitButton {
+        position: fixed;
+        top: 80px;
+        left: 20px;
+    }
+
+    .selectedButton {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-height : 1100px) {
+    .listContainer {
+        max-height: 75vh;
+    }
+}
+
+@media (max-height : 1000px) {
+    .listContainer {
+        max-height: 70vh;
+    }
+}
+
+@media (max-height : 700px) {
+    .listContainer {
+        max-height: 60vh;
     }
 }
