@@ -193,15 +193,15 @@ export default function Dashboard() {
 
                 </div>
 
-                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""} ${state === "list" ? styles.dashboardContainerWhenList : ""}`}>
+                <div className={`${styles.section} ${styles.buttonContainer} ${state === "new" ? styles.hideButtons : ""} `}>
                     <div className={`${styles.heading} ${state === "" ? "" : styles.hide}`}>Dashboard</div>
 
-                    <div className={`${styles.dashboardContainer}  `}>
+                    <div className={`${styles.dashboardContainer} ${state === "list" ? styles.dashboardContainerWhenList : ""} `}>
                         <div className={`${styles.recentActivites} ${state === "" ? "" : styles.hide}`}>{state === "" && (<RecentActivites />)}</div>
                         <div className={`${styles.entryCount} ${state === "" ? "" : styles.hide}`}>{state === "" && (<EntryCount />)}</div>
                         <div className={`${styles.dashboardModules}  ${state === "" ? "" : styles.hide}`}><ProfileEditor /></div>
 
-                        <div className={`${styles.statButtons}`}>
+                        <div className={`${styles.statButtons} `}>
                             {state === "" && (<Settings />)}
 
                             {state === "list" && (<div className={`${styles.toggleContainer}`}>

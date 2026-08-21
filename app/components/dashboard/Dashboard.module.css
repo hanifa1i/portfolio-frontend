@@ -358,20 +358,27 @@
 
     .dashboardContainerWhenList {
         position: fixed;
-        bottom: 10px;
-        z-index: 30;
-
-
+        bottom: 0px;
+        height: 150px;
+        padding: 10px;
+        margin: 0px;
+        width: 100vw;
+        z-index: 40;
+        background-color: #11111150;
+        overflow: auto;
+        gap: 0px;
+        justify-items: start;
+        backdrop-filter: blur(10px);
     }
 
     .listContainer {
-        z-index: 40;
+        z-index: 30;
         position: fixed;
-        top: 150px;
+        top: 10vh;
         padding: 0px;
-        width: 90vw;
         max-height: 80vh;
         margin-bottom: 10vh;
+        height: 90vh;
     }
 
     .dashboardDivider {
@@ -396,37 +403,23 @@
     }
 
     .toggleContainer {
-        position: fixed;
-        top: -40px;
+        position: absolute;
+        top: -180px;
         right: 80px;
         transform: rotate(90deg);
     }
 
     .exitButton {
-        position: fixed;
-        top: 80px;
+        position: absolute;
+        top: -60;
         left: 20px;
     }
 
     .selectedButton {
         transform: scale(1.1);
     }
-}
-
-@media (max-height : 1100px) {
-    .listContainer {
-        max-height: 75vh;
+    .selectedButton:hover {
+        transform: scale(1.1);
     }
 }
 
-@media (max-height : 1000px) {
-    .listContainer {
-        max-height: 70vh;
-    }
-}
-
-@media (max-height : 700px) {
-    .listContainer {
-        max-height: 60vh;
-    }
-}

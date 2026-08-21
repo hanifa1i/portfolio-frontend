@@ -203,8 +203,9 @@
         padding: 0px;
         margin: 0px;
         width: 100vw;
-        max-height: 80vh;
+        max-height: 90vh;
         overflow-y: auto;
+        overflow-x: hidden;
         margin-bottom: 10vh;
         border-radius: 0px;
 
@@ -240,20 +241,3 @@
 
 }
 
-@media (max-height : 1100px) {
-    .table {
-        max-height: 75vh;
-    }
-}
-
-@media (max-height : 1000px) {
-    .table {
-        max-height: 70vh;
-    }
-}
-
-@media (max-height : 700px) {
-    .table {
-        max-height: 60vh;
-    }
-}
