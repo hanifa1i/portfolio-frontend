@@ -26,7 +26,7 @@ export default function dashboardPage() {
                 <div className="topFadeHomePage offscreenDown"></div>
 
                 <div className="pageCenterer">
-                    <Info/>
+                    {/*<Info/>*/}
                     <Nav />
                     <Dashboard/>
                 </div>
