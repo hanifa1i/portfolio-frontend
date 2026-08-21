@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Dashboard from "../components/dashboard/Dashboard";
 import Info from "../components/info/Info";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function dashboardPage() {
     const { isAuthenticated } = useAuth();
     const router = useRouter();
+    useScrollReveal(".offscreenDown", "easeIn", false);
 
     /*useEffect(() => {
         if (!isAuthenticated){
@@ -27,6 +29,7 @@ export default function dashboardPage() {
                     <Nav />
                     <Dashboard/>
                 </div>
+                <div className="topFadeHomePage offscreenDown"></div>
             </div>
 
         </>
