@@ -212,13 +212,16 @@
 
     }
 
+   
     .row {
         padding-left: 5vw;
         padding-right: 5vw;
         margin: 0;
         width: auto;
     }
-
+ .row {
+        position: sticky;
+    }
     .expand {
         min-height: 300px;
         height: fit-content;

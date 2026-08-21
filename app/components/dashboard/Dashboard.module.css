@@ -351,14 +351,20 @@
         display: none;
     }
     .dashboardContainer {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 30px;
         width: 96vw;
         margin-left: 2vw;
         margin-right: 2vw;
     }
+    .statButtons{
+        flex-direction: column-reverse;
+        position: relative;
+        gap: 20px;
+    }
 
     .dashboardContainerWhenList {
+        flex-direction: column;
         position: fixed;
         bottom: 0px;
         height: 150px;
