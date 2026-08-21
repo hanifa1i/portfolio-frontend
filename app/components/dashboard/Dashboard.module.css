@@ -345,10 +345,15 @@
 }
 
 @media (max-width: 800px) {
+    .heading {
+        display: none;
+    }
     .dashboardContainer {
         flex-direction: column;
         gap: 30px;
-        width: 100vw;
+        width: 96vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
     }
 
     .dashboardContainerWhenList {
