@@ -163,11 +163,13 @@
     border: 0px solid #11111130;
 
 }
-.changeToRow{
+
+.changeToRow {
     flex-direction: column;
     padding-top: 50px;
     gap: 20px;
 }
+
 .confirmDelete {
     font-size: 10;
     align-content: center;
@@ -179,6 +181,7 @@
     transition: all 200ms;
     margin-left: 5px;
 }
+
 .confirmDelete:hover {
     background-color: #b84f4f;
 }
@@ -187,6 +190,7 @@
     font-size: 0;
     padding: 0;
 }
+
 .hideRow {
     transition: 300ms;
     height: 0;
@@ -198,27 +202,56 @@
     .table {
         padding: 0px;
         margin: 0px;
+        width: 100vw;
         max-height: 80vh;
         overflow-y: auto;
         margin-bottom: 10vh;
-        border-radius: 10px;
+        border-radius: 0px;
 
     }
+
     .row {
-        padding: 0;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin: 0;
+        width: auto;
     }
-    
+
+    .expand {
+        min-height: 300px;
+        height: fit-content;
+        width: 100vw;
+        background-color: #bcb7a3;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-width: 0px;
+        border-radius: 10px;
+        transform: scale(1.02);
+        display: flex;
+        align-content: left;
+        border: 0px solid #11111130;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .0));
+
+    }
+
+    .customizeContainer {
+        margin: 0px;
+    }
+
 }
+
 @media (max-height : 1100px) {
     .table {
         max-height: 75vh;
     }
 }
+
 @media (max-height : 1000px) {
     .table {
         max-height: 70vh;
     }
 }
+
 @media (max-height : 700px) {
     .table {
         max-height: 60vh;

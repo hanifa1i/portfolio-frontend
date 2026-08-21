@@ -23,13 +23,13 @@ export default function dashboardPage() {
     return (
         <>
             <div className="dashboardContainer ">
+                <div className="topFadeHomePage offscreenDown"></div>
 
                 <div className="pageCenterer">
                     <Info/>
                     <Nav />
                     <Dashboard/>
                 </div>
-                <div className="topFadeHomePage offscreenDown"></div>
             </div>
 
         </>
