@@ -376,6 +376,31 @@
         gap: 0px;
         justify-items: start;
     }
+    .dashboardContainerWhenList::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 20, 20, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    mask-image: linear-gradient(
+        to top,
+        black 100%,
+        black 60%,
+        transparent 0%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to top,
+        black 0%,
+        black 60%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
 
     .listContainer {
         z-index: 30;
@@ -397,6 +422,7 @@
     .buttonsMobile {
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
     .button {
@@ -422,9 +448,12 @@
 
     .selectedButton {
         transform: scale(1.1);
+        margin: 5px;
+        border-width: 2px;
     }
     .selectedButton:hover {
         transform: scale(1.1);
+        border-width: 2px;
     }
 }
 

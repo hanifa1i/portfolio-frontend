@@ -219,9 +219,6 @@
         margin: 0;
         width: auto;
     }
- .row {
-        position: sticky;
-    }
     .expand {
         min-height: 300px;
         height: fit-content;
