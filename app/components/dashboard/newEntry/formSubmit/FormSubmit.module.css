@@ -105,3 +105,12 @@
     overflow: hidden;
     font-size: 0;
 }
+
+@media (max-width : 800px) {
+    .error {
+        bottom: auto;
+        width: 90%;
+        top: 100px;
+        right: 5%;
+    }
+}
