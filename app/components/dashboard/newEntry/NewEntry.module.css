@@ -192,12 +192,18 @@
         flex-direction:column;
     }
     .formContainer{
-        margin: 5vw;
+        margin-left: 5vw;
         margin-top: 50px;
-        width: 90vw;
+        width: 95vw;
         overflow-x: hidden;
     }
     .input {
-        width: 90vh;
+        width: 95vh;
+    }
+    .input:hover {
+        margin-left: 0px;
+    }
+    .input:focus {
+        margin-left: 0px;
     }
 }

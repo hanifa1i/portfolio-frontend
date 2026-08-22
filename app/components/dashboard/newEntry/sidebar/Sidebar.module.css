@@ -159,6 +159,9 @@
         height: fit-content;
         z-index: 20;
                 overflow: hidden;
+                gap: 20px;
+                padding-bottom: 30px;
+                padding-top: 10px;
 
     }
 
@@ -186,7 +189,11 @@
     .heading {
         writing-mode: horizontal-tb;
         white-space: nowrap;
-        font-size: 30px;
+        font-size: 20px;
+        padding: 0px;
+    }
+    .backButton{
+        margin: 0px;
     }
 
 }
