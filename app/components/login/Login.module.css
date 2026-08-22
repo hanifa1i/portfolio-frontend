@@ -231,6 +231,7 @@ input::placeholder {
     position: absolute;
     left: 0px;
     margin-top: 20px;
+    scale: 0;
 }
 
 .loading {
@@ -402,14 +403,15 @@ input::placeholder {
     }
     .exit {
 
-        left: 50%;
+        left: auto;
+        right: 0;
         transform: translateX(-50%);
-                transform: translateX(-50%);
+        transform: translateX(-50%);
         background-color: #b64f4f77;
         border: 1px solid #b64f4f;
-        bottom: -50px;
+        bottom: 5px;
         color: #fcc3c3;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blue;
 
     }
     .exit:hover {
