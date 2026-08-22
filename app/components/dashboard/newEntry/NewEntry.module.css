@@ -199,6 +199,7 @@
     }
     .input {
         width: 95vh;
+        font-size: small;
         margin-right: 0px;
     }
     .input:hover {

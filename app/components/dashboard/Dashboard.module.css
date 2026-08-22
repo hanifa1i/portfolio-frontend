@@ -447,5 +447,18 @@
         transform: scale(1.1);
         border-width: 2px;
     }
+    .addButton {
+        width: 30px;
+    height: 30px;
+        transform: translateX(0%);
+
+    font-size: small;
+    }
+    .statButtonContainer:hover .addButton {
+    width: 25px;
+    height: 25px;
+    transform: translateX(0%);
+    font-size: small;
+}
 }
 
