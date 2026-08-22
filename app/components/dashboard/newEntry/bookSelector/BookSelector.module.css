@@ -71,3 +71,10 @@
     background-color: #cccc;
     border-radius: 10px;
 }
+@media (max-width : 800px) {
+    .container {
+        scale: 0.5;
+        translate: -25%;
+        height: 70px;
+    }
+}

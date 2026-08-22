@@ -210,7 +210,7 @@ export default function Dashboard() {
                                     <div className={`${styles.toggleButton} ${toggle ? styles.toggleTrue : ""}`}></div>
                                 </div>
                             </div>)}
-                            <div onClick={() => { setState(""), setActiveTable(null) }} className={`${styles.exitButton} ${state === "list" ? "" : styles.hide}`}>✕</div>
+                            <div onClick={() => { setState(""), setActiveTable(null) }} className={`${styles.exitButton} ${state === "list" ? "" : styles.hide}`}>→</div>
                             <div className={`${styles.buttons} ${state === "list" ? styles.buttonsMobile : ""} `}>
                                 {sections.map((section, key) => (
                                     <div key={key} className={`${styles.statButtonContainer}`}>
