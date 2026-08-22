@@ -11,7 +11,7 @@ type Props = {
     handleBackButton: () => void;
 }
 
-export default function Sidebar({heading, handleCreate, switchSection, setFadeOut, loading, handleBackButton}: Props) {
+export default function Sidebar({ heading, handleCreate, switchSection, setFadeOut, loading, handleBackButton }: Props) {
 
     useScrollReveal(".offscreenRight", "easeIn", false);
 
@@ -22,23 +22,27 @@ export default function Sidebar({heading, handleCreate, switchSection, setFadeOu
     }
 
     return (
-        <div className={`${styles.backContainer} offscreenRight`}>
+
+
+        <div className={`${styles.backContainer}`}>
+            <div className={styles.blur}>
+            </div>
             <div className={`${styles.heading}`}>{heading}</div>
-            <div 
+            <div
                 className={`${styles.backButton}`}
                 onMouseEnter={() => playSound("hover")}
-                onClick={() => {handleSwitch(""), playSound("blob"), handleBackButton()}}>
-                    ←
+                onClick={() => { handleSwitch(""), playSound("blob"), handleBackButton() }}>
+                ←
             </div>
             <div
                 className={`${styles.backButton} ${styles.saveButton}`}
                 onMouseEnter={() => playSound("hover")}
                 onClick={() => { handleCreate(), playSound("blob") }}>
-                    <img className={`${styles.buttonIcon}`} src="/images/dashboard/save.png" />
-                    <div className={`${loading === "true" ? `${styles.loading} ${styles.loadingRotate}` : styles.hide}`} />
-                    <div className={`${loading === "completed" ? `${styles.completed}` : styles.hide}`}>
-                        ✓
-                    </div>
+                <img className={`${styles.buttonIcon}`} src="/images/dashboard/save.png" />
+                <div className={`${loading === "true" ? `${styles.loading} ${styles.loadingRotate}` : styles.hide}`} />
+                <div className={`${loading === "completed" ? `${styles.completed}` : styles.hide}`}>
+                    ✓
+                </div>
             </div>
         </div>
     )
