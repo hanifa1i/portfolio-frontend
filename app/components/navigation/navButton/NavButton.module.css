@@ -313,4 +313,7 @@
     .blockAction:hover .navImage{
         filter: invert(1);
     }
+    .highlightedMobile {
+        filter: invert(0.70);
+    }
 }

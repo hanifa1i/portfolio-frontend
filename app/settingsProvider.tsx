@@ -19,8 +19,18 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
     const [soundOn, setSoundOn] = useState(true);
     const [animationsOn, setAnimationsOn] = useState(true);
     const [shadowsOn, setShadowsOn] = useState(true);
+    const [oneTimeRun, setOneTimeRun] = useState(true);
+
 
     useEffect(() => {
+        if (oneTimeRun) {
+            if (window.innerWidth >= 800) {
+                setSoundOn(true);   // Desktop default: on
+            } else {
+                setSoundOn(false);  // Mobile default: off
+            }
+            setOneTimeRun(false);
+        }
         setSoundEnabled(soundOn);
     }, [soundOn]);
 

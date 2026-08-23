@@ -32,11 +32,14 @@ export default function Button({ label, icon, page, isScrolled, isSamePage, swit
                     ${page === label ? style.currentPage : ""}
                     ${isSamePage && page === label ? style.blockAction : ""}`}>
 
-                <img src={icon} alt="" className={`${style.navImage} ${isScrolled ? style.navImageSmall : ""}`} />
+                <img src={icon} alt="" className={`
+                    ${style.navImage} 
+                    ${isScrolled ? style.navImageSmall : ""}
+                    ${page !== label ? style.highlightedMobile : ""}`} />
                 <div className={`${style.label}`}>{label}</div>
 
             </div>
-                {isSamePage && page === label && (<div className={`${style.blockMessage}`}>your already on this page :)..... dumbass</div>)}
+            {isSamePage && page === label && (<div className={`${style.blockMessage}`}>your already on this page :)..... dumbass</div>)}
 
         </>
     )
