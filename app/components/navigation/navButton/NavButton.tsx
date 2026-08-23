@@ -35,7 +35,7 @@ export default function Button({ label, icon, page, isScrolled, isSamePage, swit
                 <img src={icon} alt="" className={`
                     ${style.navImage} 
                     ${isScrolled ? style.navImageSmall : ""}
-                    ${page !== label ? style.highlightedMobile : ""}`} />
+                    ${page !== label ? style.nonHighlightedMobile : style.highlightedMobile}`} />
                 <div className={`${style.label}`}>{label}</div>
 
             </div>
