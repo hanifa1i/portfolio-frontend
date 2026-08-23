@@ -314,6 +314,6 @@
         filter: invert(1);
     }
     .highlightedMobile {
-        filter: invert(0.70);
+        filter: invert(0.6);
     }
 }
