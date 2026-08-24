@@ -53,7 +53,7 @@ body {
     font-weight: bold;
     color: #ffffff90;
 
-    animation: portHeading 4000ms forwards;
+    animation: portHeading 3000ms forwards;
 }
 
 @keyframes portHeading {
@@ -62,7 +62,7 @@ body {
         transform: translateX(-1000px) scale(3);
     }
 
-    80% {
+    60% {
         opacity: 0;
         transform: translateX(-1000px) scale(3);
 
