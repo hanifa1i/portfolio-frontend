@@ -229,7 +229,7 @@ body {
 }
 
 .homeIntro {
-    animation: homeAni 4000ms forwards;
+    animation: homeAni 3000ms forwards;
 }
 
 @keyframes homeAni {
@@ -238,12 +238,12 @@ body {
         scale: 2;
     }
 
-    66% {
+    44% {
         opacity: 0;
         scale: 2;
     }
 
-    82% {
+    60% {
         opacity: 1;
     }
 
@@ -255,7 +255,7 @@ body {
 }
 
 .home {
-    animation: home 4000ms;
+    animation: home 3000ms;
 }
 
 @keyframes home {
@@ -264,12 +264,12 @@ body {
         opacity: 0;
     }
 
-    66% {
+    44% {
         transform: translateY(1000px);
         opacity: 0;
     }
 
-    82% {
+    60% {
         opacity: 0;
     }
 

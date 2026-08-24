@@ -65,7 +65,7 @@ export default function Recent({fadeOutRecent, setFadeOutRecent} : Props) {
                 </div>
 
                 <div className=" recentBlogsContainer">
-                    <div className="custom-heading">blog posts</div>
+                    <div className="custom-heading flex gap-1">blog posts<p className="opacity-[0.6]">(currently not implemented)</p></div>
                     <ul className={styles.recentBlogs}>
                         {[...Array(6)].map((_, i) => (
                             <RecentBlogs

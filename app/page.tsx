@@ -21,9 +21,7 @@ export default function Home() {
         <div className="items-center w-full h-fit ">
           <div className="homeBg"></div>
 
-          <div className="title gradient-text">software engineer</div>
-          <div className="title title2 gradient-text">and a artist</div>
-          <div className="title title3 gradient-text">welcome </div>
+          <div className="title gradient-text">welcome</div>
 
           <div className="homeIntro homeBg gradient "></div>
 
