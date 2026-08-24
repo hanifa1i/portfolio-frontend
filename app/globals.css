@@ -68,7 +68,7 @@ body {
 
     }
 
-    100% {
+    80% {
         opacity: 1;
         transform: translateX(0) scale(1);
     }
@@ -247,7 +247,7 @@ body {
         opacity: 1;
     }
 
-    100% {
+    80% {
         opacity: 0.9;
         scale: 1;
     }
@@ -273,7 +273,7 @@ body {
         opacity: 0;
     }
 
-    100% {
+    80% {
         transform: translateY(0px);
         opacity: 1;
     }
