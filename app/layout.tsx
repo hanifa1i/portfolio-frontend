@@ -37,6 +37,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
       <meta name="theme-color" content="#222" />
+       <link
+    rel="icon"
+    href="/logo-dark.png"
+    media="(prefers-color-scheme: light)"
+  />
+
+  <link
+    rel="icon"
+    href="/logo-dark.png"
+    media="(prefers-color-scheme: dark)"
+  />
       </head>
       <body className="bg-[#171717] text-white">
         <AuthProvider>
