@@ -118,7 +118,7 @@ export async function updateQualification(id: number, qualification: Qualificati
     const token = localStorage.getItem("token");
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/education/${id}/update`, {
-        method: "PATCH",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,

@@ -302,7 +302,11 @@ export default function Skills() {
                                             <div
                                                 key={key}
                                                 onMouseEnter={() => playSound("hover")}
-                                                onClick={() => playSound("blob")}
+                                                onClick={() => {
+                                                    playSound("blob"),
+                                                    window.open(example.url, "_blank", "noopener,noreferrer")
+                                                }}
+                                                
                                                 className={`${styles.skillLinks}`}> {example.note} ↗</div>
                                         )
                                     ))}

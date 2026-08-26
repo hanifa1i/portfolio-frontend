@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { WorkExperience } from "../types/experience";
 import { WorkExperienceResponse } from "../types/Dashboard";
 
-export default function useScrollReveal(selector: string, activeClass: string, rootMargin: boolean) {
+export default function useScrollReveal(selector: string, activeClass: string, rootMargin: boolean, dependency?: unknown) {
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
 
@@ -29,7 +29,7 @@ export default function useScrollReveal(selector: string, activeClass: string, r
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [selector, activeClass]);
+  }, [selector, activeClass, dependency]);
 }
 
 export function useScrollRevealExperience(selector: string, activeClass: string, rootMargin: boolean, workExperience: WorkExperienceResponse[]) {

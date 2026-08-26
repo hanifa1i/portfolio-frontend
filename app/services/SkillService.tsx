@@ -94,7 +94,7 @@ export async function updateSkill(id: number, skill: SkillPayload) {
     const token = localStorage.getItem("token");
     
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/skills/${id}/update`, {
-        method: "PATCH",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,

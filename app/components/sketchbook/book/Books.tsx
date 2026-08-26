@@ -64,6 +64,7 @@ export default function book({ setBookActive }: Props) {
     const [hovered, setHovered] = useState(false);
     const [books, setBooks] = useState<BookData[]>([]);
     const [leftPage, setLeftPage] = useState(false);
+    const [blocker, setBlocker] = useState(false);
 
 
     const handleExpand = (state: boolean) => {
@@ -87,6 +88,7 @@ export default function book({ setBookActive }: Props) {
         setTimeout(() => { setEnableBook(true); setEnableMobileTrans(true)}, 500);
     }
     const reset = () => {
+        setBlocker(true);
         if (currentPage === 0) {
             setEnableBook(false);
             setLeftPage(false)
@@ -97,7 +99,7 @@ export default function book({ setBookActive }: Props) {
         setTimeout(() => { setEnableBook(false); }, 700);
         setTimeout(() => { setSelectedBook(-1); setEnableMobileTrans(false)}, 800);
         setTimeout(() => { setStopTransform(true)}, 900);
-        setTimeout(() => { setStopTransform(false)}, 1300);
+        setTimeout(() => { setStopTransform(false), setBlocker(false)}, 1300);
 
     }
 
@@ -174,6 +176,7 @@ export default function book({ setBookActive }: Props) {
 
     return (
         <>
+            <div className={`${blocker ? styles.blocker : styles.hideBlocker}`}></div>
             <BookUpdate book={selectedBook} />
 
             <div

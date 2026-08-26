@@ -209,6 +209,12 @@
         padding: 0px;
         text-align: center;
         margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        align-content: center;
+        background-color: #ccc;
+        color: #111;
     }
 
     .col1 {

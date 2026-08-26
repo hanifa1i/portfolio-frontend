@@ -17,7 +17,7 @@ export default function ArtGrid({ artworks }: Props) {
     const [expandArt, setExpandArt] = useState(false);
 
     const [artwork, setArtwork] = useState<ArtworkResponse>();
-
+    const [mobileResizer, setMobileResizer] = useState("large");
     const [activeTool, setActiveTool] = useState("All");
     const [filtertedArtworks, setFilteredArtworks] = useState<ArtworkResponse[]>([]);
 
@@ -106,13 +106,21 @@ export default function ArtGrid({ artworks }: Props) {
                     onClose={handleCloseArt}
                 />)}
 
-                <div className={`${styles.artGrid} `}>
+                <div className={`${styles.artGrid} ${mobileResizer === "small" ? styles.artGridSmall : ""}`}>
                     {filtertedArtworks.map((items, index) => (
                         <ArtCard
                             key={index}
                             artwork={items}
-                            onExpand={handleExpandArt} />
+                            onExpand={handleExpandArt} 
+                            resize={mobileResizer}/>
                     ))}
+                </div>
+
+                <div className={`${styles.resizer}`}>
+                    <div className={`${styles.resizeButton} ${styles.resizeSelector} ${mobileResizer === "small" ? styles.resizeSelectorSmall : ""}`}></div>
+                    <div onClick={() => setMobileResizer("large")}className={`${styles.resizeButton} ${mobileResizer === "large" ? styles.resizeSelect : ""}`}>⊟</div>
+                    <div onClick={() => setMobileResizer("small")} className={`${styles.resizeButton} ${mobileResizer === "small" ? styles.resizeSelect : ""}`}>⊞</div>
+
                 </div>
             </div>
         </>

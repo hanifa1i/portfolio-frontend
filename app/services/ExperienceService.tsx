@@ -60,7 +60,7 @@ export async function updateExperience(id: number, experience: ExperiencePayload
     const token = localStorage.getItem("token");
 
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/experience/${id}/update`, {
-        method: "PATCH",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
