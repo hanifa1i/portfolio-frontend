@@ -412,13 +412,15 @@
 
   .artCardSmall {
     width: 30%;
-    max-height: 100px;
+    max-height: auto;
     border-radius: 5px;
-    
+    aspect-ratio: 1 / 1;
   }
 
   .artGridSmall {
     gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .artCardImage {
