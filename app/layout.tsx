@@ -45,12 +45,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   <link
     rel="icon"
-    href="/favicon-light.png"
+    href="/favicon.png"
     media="(prefers-color-scheme: dark)"
   />
   <link
         rel="apple-touch-icon"
-        href="/favicon-light.png"
+        href="/favicon.png"
     />
       </head>
       <body className="bg-[#171717] text-white">
