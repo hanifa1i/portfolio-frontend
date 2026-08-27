@@ -39,13 +39,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" content="#222" />
        <link
     rel="icon"
-    href="/logo-dark.png"
+    href="/favicon.png"
     media="(prefers-color-scheme: light)"
   />
 
   <link
     rel="icon"
-    href="/logo-dark.png"
+    href="/favicon-light.png"
     media="(prefers-color-scheme: dark)"
   />
       </head>
