@@ -229,6 +229,7 @@ body {
 }
 
 .homeIntro {
+    transition: all 1000ms;
     animation: homeAni 2400ms forwards;
 }
 
@@ -359,7 +360,15 @@ body {
         overflow: hidden;
     }
     .backgroundViewer{
-        max-height: 50%;
+        transition: all 1000ms;
+        width: 1500px;
+        transform: translateX(-35%);
+    }
+    .backgroundViewerLeft{
+        transform: translateX(-5%);
+    }
+    .backgroundViewerRight{
+        transform: translateX(-60%);
     }
 
     .customBigHeading {
@@ -405,7 +414,7 @@ body {
         padding-left: 30px;
         padding-right: 30px;
         font-weight: bold;
-        color: #00000099;
+        color: #ffffff99;
 
     }
 

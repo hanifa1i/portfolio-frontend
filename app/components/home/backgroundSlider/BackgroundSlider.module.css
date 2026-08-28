@@ -1,0 +1,59 @@
+.container {
+    display: none;
+}
+@media (max-width : 800px) {
+
+    .container {
+        display: block;
+        position: sticky;
+        height: 20px;
+        width: 90px;
+        background-color: #11111190;
+        top: 50px;
+        left: 50%;
+        border-radius: 50px;
+        z-index: 50;
+        transform: translateX(-50%);
+        display: flex;
+        transition: all 200ms;
+    }
+
+    .container:active {
+        transform: translateX(-50%);
+
+    }
+
+    .slide {
+        flex: 1;
+        transition: all 200ms;
+    }
+
+    .selected {}
+
+    .slider {
+        position: absolute;
+        height: 100%;
+        width: 33%;
+        background-color: #ccc;
+        transition: all 200ms;
+        border-radius: 50px;
+
+    }
+
+    .container:active .slider {
+        background-color: #ffffff80;
+
+    }
+
+    .posLeft {
+        transform: translateX(0%);
+    }
+
+    .posCenter {
+        transform: translateX(100%);
+    }
+
+    .posRight {
+        transform: translateX(200%);
+    }
+}

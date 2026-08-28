@@ -10,10 +10,12 @@ import Image from "next/image";
 import Info from "./components/info/Info";
 import { useState } from "react";
 import useScrollReveal from "./hooks/useScrollReveal";
+import BackgroundSlider from "./components/home/backgroundSlider/BackgroundSlider";
 
 export default function Home() {
   useScrollReveal(".offscreenDown", "easeIn", false);
   const [fadeOutRecent, setFadeOutRecent] = useState(false);
+  const [backgroundPos, setBackgroundPos] = useState("center");
   return (
     <div className={`homePage flex  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
 
@@ -25,7 +27,9 @@ export default function Home() {
 
           <div className="homeIntro homeBg gradient "></div>
 
-          <div className="homeIntro fixed top-[00px] w-full h-[95vh] backgroundViewer ">
+          <div className={`homeIntro fixed top-[00px] w-full h-[95vh] 
+          
+           backgroundViewer ${backgroundPos === "left" ? "backgroundViewerLeft" : backgroundPos === "right" ? "backgroundViewerRight" : ""}`}>
             <video
               autoPlay
               muted
@@ -36,7 +40,7 @@ export default function Home() {
               <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
             </video>
           </div>
-
+          <BackgroundSlider position={backgroundPos} setPosition={setBackgroundPos}/>
 
           <Info />
           <div className=" portfolioHeadingContainer ">
