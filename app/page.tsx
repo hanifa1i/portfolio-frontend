@@ -25,13 +25,13 @@ export default function Home() {
 
           <div className="homeIntro homeBg gradient "></div>
 
-          <div className="homeIntro fixed top-[00px] w-full h-[95vh]">
+          <div className="homeIntro fixed top-[00px] w-full h-[95vh] backgroundViewer ">
             <video
               autoPlay
               muted
               loop
               playsInline
-              className={`min-h-full object-cover`}
+              className={`min-h-full object-cover  `}
             >
               <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
             </video>

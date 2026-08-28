@@ -358,6 +358,9 @@ body {
         padding-top: 50px;
         overflow: hidden;
     }
+    .backgroundViewer{
+        max-height: 50%;
+    }
 
     .customBigHeading {
         padding-left: 40px;
