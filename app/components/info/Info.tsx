@@ -44,7 +44,7 @@ export default function Info() {
 
                             <div className={`${styles.guideDivider}`} />
                             <div className={`${styles.addGuide}`}>
-                                on iPhone Safari: click the 
+                                on <strong>Safari </strong>: click the 
                             <img className={styles.guideIcon} src={"images/toolIcons/share-symbol.svg"} /> icon, then 
                             <img className={styles.guideIcon} src={"images/toolIcons/down-symbol.png"} /> <strong>view more </strong>then click the 
                             <img className={`${styles.guideIcon} p-[2px]`} src={"images/toolIcons/add-home-symbol.png"} /><strong>add to home screen</strong>, then 

@@ -279,7 +279,7 @@
 
     .addGuide{
         display: flex;
-        gap: 5px;
+        gap: 3px;
         align-items: center;
         flex-wrap: wrap;
         text-wrap: wrap;
@@ -306,7 +306,7 @@
         background-color: #ffffff99;
         color: #111111;
         height: fit-content;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: 11;
         padding: 20px;
         padding-left: 20px;
