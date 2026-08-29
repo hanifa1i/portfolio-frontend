@@ -36,25 +36,23 @@ export default function Info() {
                         Portfolio information
                     </div>
                     <div className={`${styles.mobileNotesContainer}`}>
-                       
+
                         <div className={`${styles.mobileNotes}`}>
-                            <strong>Recommended: </strong>for the best experience, view on desktop, if on iPhone, I'd recommend adding site to home page
-                             to get a better more app like experience, as when view on a mobile device I had better configured
-                             the site for a full screen app-like experience 
+                            <strong>Recommended: </strong>for the best experience, view on desktop. If on iPhone, I'd recommend adding site to home page
+                            to get a better more app like experience, as when coding for mobile devices, I had better configured
+                            the site for a full screen app-like experience
 
                             <div className={`${styles.guideDivider}`} />
                             <div className={`${styles.addGuide}`}>
-                                on <strong>Safari </strong>: click the 
-                            <img className={styles.guideIcon} src={"images/toolIcons/share-symbol.svg"} /> icon, then 
-                            <img className={styles.guideIcon} src={"images/toolIcons/down-symbol.png"} /> <strong>view more </strong>then click the 
-                            <img className={`${styles.guideIcon} p-[2px]`} src={"images/toolIcons/add-home-symbol.png"} /><strong>add to home screen</strong>, then 
-                            <img className={styles.addIcon} src={"images/toolIcons/add-symbol.png"} /> then go to home screen to open the web-app
+                                on<strong>Safari </strong>: click the
+                                <img className={styles.guideIcon} src={"images/toolIcons/share-symbol.svg"} /> icon, then
+                                <img className={styles.guideIcon} src={"images/toolIcons/down-symbol.png"} /> <strong>view more </strong>then click the
+                                <img className={`${styles.guideIcon} p-[2px]`} src={"images/toolIcons/add-home-symbol.png"} /><strong>add to home screen</strong>, then
+                                <img className={styles.addIcon} src={"images/toolIcons/add-symbol.png"} /> then go to home screen to open the web-app
                             </div>
                         </div>
                         <div className={`${styles.divider}`} />
                     </div>
-
-
                     <div className={`${styles.subHeading}`}>
                         build notes
                     </div>
@@ -89,6 +87,27 @@ export default function Info() {
                             className={`${styles.card} ${styles.linkCard} ${styles.noMarginLeft}`}>backend
                             <img className={styles.linkIcon} src={"images/socialIcons/github.png"} />
                         </a>
+
+                    </div>
+                    <div className={`${styles.divider}`} />
+                    <div className={`${styles.subHeading}`}>
+                        navigation guide
+                    </div>
+                    <div className={styles.navInfoContainer}>
+                        <div className={styles.navInfo}><img className={styles.navIcon} src={"images/nav/digital-art-b.svg"} /> <strong>Artworks:</strong> to view all my artworks i had done</div>
+                        <div className={`${styles.guideDivider}`} />
+                        <div className={styles.navInfo}><img className={styles.navIcon} src={"images/nav/sketchbooks.svg"} /> <strong>Sketchbook:</strong> a view of my actual sketchbooks which ive drawn and practices sketches in, recreated digitally</div>
+                        <div className={`${styles.guideDivider}`} />
+
+                        <div className={styles.navInfo}><img className={styles.navIcon} src={"images/nav/skills.svg"} /> <strong>Skills:</strong> a list of all the things I've learnt over the years from a software engineering perpective </div>
+                        <div className={`${styles.guideDivider}`} />
+
+                        <div className={styles.navInfo}><img className={styles.navIcon} src={"images/nav/qualification.svg"} /><strong>Qualification:</strong> shows my qualificaiton I've earned during my studies </div>
+                        <div className={`${styles.guideDivider}`} />
+
+                        <div className={styles.navInfo}><img className={styles.navIcon} src={"images/nav/experience.svg"} /><strong>Experience:</strong>to view the jobs ive worked and the thing I had to do in them</div>
+
+
 
                     </div>
                     <div className={`${styles.divider}`} />
