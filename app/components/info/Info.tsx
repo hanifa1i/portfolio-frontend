@@ -29,12 +29,31 @@ export default function Info() {
                     src={"images/sketchbook/info-static.png"} />
                 <div className={`${infoExpand ? styles.containerExpand : styles.container}`}>
                     <div
-                        onMouseEnter={()=> playSound("hover")}
-                        onClick={(e) => { e.stopPropagation(); setInfoExpand(false); playSound("blob")}}
+                        onMouseEnter={() => playSound("hover")}
+                        onClick={(e) => { e.stopPropagation(); setInfoExpand(false); playSound("blob") }}
                         className={`${styles.close}`}>✕</div>
                     <div className={`${styles.heading}`}>
                         Portfolio information
                     </div>
+                    <div className={`${styles.mobileNotesContainer}`}>
+                       
+                        <div className={`${styles.mobileNotes}`}>
+                            <strong>Recommended: </strong>for the best experience, view on desktop, if on iPhone, I'd recommend adding site to home page
+                             to get a better more app like experience, as when view on a mobile device I had better configured
+                             the site for a full screen app-like experience 
+
+                            <div className={`${styles.guideDivider}`} />
+                            <div className={`${styles.addGuide}`}>
+                                on iPhone Safari: click the 
+                            <img className={styles.guideIcon} src={"images/toolIcons/share-symbol.svg"} /> icon, then 
+                            <img className={styles.guideIcon} src={"images/toolIcons/down-symbol.png"} /> <strong>view more </strong>then click the 
+                            <img className={`${styles.guideIcon} p-[2px]`} src={"images/toolIcons/add-home-symbol.png"} /><strong>add to home screen</strong>, then 
+                            <img className={styles.addIcon} src={"images/toolIcons/add-symbol.png"} /> then go to home screen to open the web-app
+                            </div>
+                        </div>
+                        <div className={`${styles.divider}`} />
+                    </div>
+
 
                     <div className={`${styles.subHeading}`}>
                         build notes
