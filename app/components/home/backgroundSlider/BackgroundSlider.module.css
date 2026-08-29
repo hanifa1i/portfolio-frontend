@@ -5,17 +5,18 @@
 
     .container {
         display: block;
-        position: sticky;
-        height: 20px;
+        position: fixed;
+        height: 30px;
         width: 90px;
-        background-color: #11111190;
-        top: 50px;
-        left: 50%;
+        background-color: #00000090;
+        bottom: 30px;
+        left: 80px;
         border-radius: 50px;
         z-index: 50;
         transform: translateX(-50%);
         display: flex;
         transition: all 200ms;
+        backdrop-filter: blur(10px);
     }
 
     .container:active {
@@ -41,19 +42,32 @@
     }
 
     .container:active .slider {
-        background-color: #ffffff80;
+        background-color: #ffffff;
 
     }
 
     .posLeft {
         transform: translateX(0%);
     }
+    .container:active .posLeft {
+        transform: translateX(0%) scale(1.2);
+        
+    }
 
     .posCenter {
         transform: translateX(100%);
+    }
+    .container:active .posCenter {
+        transform: translateX(100%) scale(1.2);
+        
     }
 
     .posRight {
         transform: translateX(200%);
     }
+    .container:active .posRight {
+        transform: translateX(200%) scale(1.2);
+        
+    }
+    
 }
