@@ -13,10 +13,24 @@
         left: 50%;
         border-radius: 50px;
         z-index: 90;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(0);
         display: flex;
         transition: all 200ms;
         backdrop-filter: blur(10px);
+        animation: delayIntro 300ms forwards;
+        animation-delay: 2000ms;
+    }
+    @keyframes delayIntro {
+        0%{
+            transform: translateX(-50%) scale(0);
+        }
+        90%{
+            transform: translateX(-50%) scale(1.2);
+        }
+        100%{
+            transform: translateX(-50%) scale(1);
+        }
+        
     }
 
     .container:active {
