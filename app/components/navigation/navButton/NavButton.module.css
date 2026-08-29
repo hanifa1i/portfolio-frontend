@@ -275,13 +275,15 @@
         transition: all 200ms;
     }
 
+    .label {
+        display: none;
+    }
     .navButtonLarge .label {
         display: block;
         position: absolute;
-        bottom: -15px;
-        font-size: 7px;
+        bottom: -20px;
+        font-size: 8px;
         color: #ffffff;
-        text-transform: capitalize;
         transition: 300ms all;
     }
     .navButtonLarge:hover .label {
