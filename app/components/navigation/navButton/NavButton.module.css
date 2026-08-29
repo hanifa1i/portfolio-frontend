@@ -223,7 +223,6 @@
         width: 50px;
         padding: 5px;
         border-radius: 10px;
-        font-size: 0px;
         border-width: 0px;
         background: #11111199;
         backdrop-filter: blur(50px);
@@ -276,8 +275,19 @@
         transition: all 200ms;
     }
 
-    .label {
-        display: none;
+    .navButtonLarge .label {
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        font-size: 7px;
+        color: #ffffff99;
+        text-transform: capitalize;
+        transition: 300ms all;
+    }
+    .navButtonLarge:hover .label {
+        font-size: 0;
+        bottom: -5px;
+
     }
     .navButtonSmall:hover {
         background-color: #d2d2d200;
