@@ -323,6 +323,9 @@ body {
 .gradient {
     background: linear-gradient(90deg, #ff4d4d, #6200ff, #00ff33);
 }
+.video {
+    min-width: 100vw;
+}
 
 @keyframes title {
     0% {
@@ -361,7 +364,7 @@ body {
     }
     .backgroundViewer{
         transition: all 1000ms;
-        width: 1500px;
+        width: 2000px;
         transform: translateX(-35%);
     }
     .backgroundViewerLeft{
@@ -422,6 +425,21 @@ body {
         font-size: 30px;
     }
 
+    .topFadePage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 600px;
+        z-index: 20;
+        pointer-events: none;
+        background: radial-gradient(
+                ellipse at bottom,
+                transparent 30%,
+                #171717 55%
+                );
+                transform: scaleY(0.5) scaleX(2) translateY(-300px);
+    }
     .topFadeHomePage {
         position: fixed;
         top: 0;
@@ -429,6 +447,7 @@ body {
         width: 100%;
         height: 300px;
         z-index: 20;
+        pointer-events: none;
         background: radial-gradient(
                 ellipse at bottom,
                 transparent 30%,
@@ -443,6 +462,7 @@ body {
         width: 100%;
         height: 300px;
         z-index: 20;
+        pointer-events: none;
         background: radial-gradient(
                 ellipse at bottom,
                 transparent 30%,

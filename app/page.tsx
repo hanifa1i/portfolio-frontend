@@ -35,7 +35,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              className={`min-h-full object-cover  `}
+              className={`min-h-full object-cover video`}
             >
               <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
             </video>
@@ -66,7 +66,7 @@ export default function Home() {
 
         </div>
 
-        <div className="topFadeHomePage offscreenDown"></div>
+        <div className="topFadePage offscreenDown"></div>
 
       </main>
     </div>
