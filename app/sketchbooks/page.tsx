@@ -29,7 +29,7 @@ export default function SketchbooksPage() {
         <Book setBookActive={setBookActive}/>
       </div>
 
-        <div className="topFadeHomePage offscreenDown"></div>
+        <div className="topBookPage offscreenDown"></div>
 
     </div>
   );
