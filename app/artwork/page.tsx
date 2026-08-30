@@ -33,7 +33,7 @@ export default function ArtworkPage() {
         <Nav />
         <ArtGrid artworks={artworks} />
       </div>
-      <div className="topFadeArtPage offscreenDown"></div>
+      <div className="topFadePage offscreenDown"></div>
     </div>
   );
 }

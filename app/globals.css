@@ -436,7 +436,7 @@ body {
         background: radial-gradient(
                 ellipse at bottom,
                 transparent 30%,
-                #111111 70%
+                #111111 75%
                 );
                 transform: scaleY(0.5) scaleX(2) translateY(-305px);
     }
