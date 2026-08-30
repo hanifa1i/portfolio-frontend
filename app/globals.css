@@ -431,7 +431,7 @@ body {
     }
 
     .video {
-        min-width: none;
+        max-height: 100vh;
     }
 
     .topFadePage {
