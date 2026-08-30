@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
@@ -12,7 +13,7 @@ html,
 body {
     overflow-x: visible;
     max-width: 100%;
-    
+
 }
 
 
@@ -265,7 +266,7 @@ body {
         opacity: 0;
     }
 
-    
+
     55% {
         transform: translateY(1000px);
         opacity: 0;
@@ -323,6 +324,7 @@ body {
 .gradient {
     background: linear-gradient(90deg, #ff4d4d, #6200ff, #00ff33);
 }
+
 .video {
     min-width: 100vw;
 }
@@ -362,15 +364,18 @@ body {
         padding-top: 50px;
         overflow: hidden;
     }
-    .backgroundViewer{
+
+    .backgroundViewer {
         transition: all 1000ms;
         width: 2000px;
         transform: translateX(-35%);
     }
-    .backgroundViewerLeft{
+
+    .backgroundViewerLeft {
         transform: translateX(-5%);
     }
-    .backgroundViewerRight{
+
+    .backgroundViewerRight {
         transform: translateX(-60%);
     }
 
@@ -425,6 +430,10 @@ body {
         font-size: 30px;
     }
 
+    .video {
+        min-width: none;
+    }
+
     .topFadePage {
         position: fixed;
         top: 0;
@@ -433,13 +442,12 @@ body {
         height: 600px;
         z-index: 20;
         pointer-events: none;
-        background: radial-gradient(
-                ellipse at bottom,
+        background: radial-gradient(ellipse at bottom,
                 transparent 40%,
-                #111111 75%
-                );
-                transform: scaleY(0.5) scaleX(2) translateY(-305px);
+                #111111 75%);
+        transform: scaleY(0.5) scaleX(2) translateY(-305px);
     }
+
     .topBookPage {
         position: fixed;
         top: 0;
@@ -448,13 +456,12 @@ body {
         height: 600px;
         z-index: 0;
         pointer-events: none;
-        background: radial-gradient(
-                ellipse at bottom,
+        background: radial-gradient(ellipse at bottom,
                 transparent 40%,
-                #111111 75%
-                );
-                transform: scaleY(0.5) scaleX(2) translateY(-305px);
+                #111111 75%);
+        transform: scaleY(0.5) scaleX(2) translateY(-305px);
     }
+
     .topFadeHomePage {
         position: fixed;
         top: 0;
@@ -463,13 +470,12 @@ body {
         height: 300px;
         z-index: 20;
         pointer-events: none;
-        background: radial-gradient(
-                ellipse at bottom,
+        background: radial-gradient(ellipse at bottom,
                 transparent 30%,
-                #171717 75%
-                );
-                transform: scaleY(0.5) scaleX(2) translateY(-150px);
+                #171717 75%);
+        transform: scaleY(0.5) scaleX(2) translateY(-150px);
     }
+
     .topFadeArtPage {
         position: fixed;
         top: 0;
@@ -478,12 +484,10 @@ body {
         height: 300px;
         z-index: 20;
         pointer-events: none;
-        background: radial-gradient(
-                ellipse at bottom,
+        background: radial-gradient(ellipse at bottom,
                 transparent 30%,
-                #111111 75%
-                );
-                transform: scaleY(0.5) scaleX(2) translateY(-150px);
+                #111111 75%);
+        transform: scaleY(0.5) scaleX(2) translateY(-150px);
     }
 
 }
