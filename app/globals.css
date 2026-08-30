@@ -435,7 +435,7 @@ body {
         pointer-events: none;
         background: radial-gradient(
                 ellipse at bottom,
-                transparent 30%,
+                transparent 40%,
                 #111111 75%
                 );
                 transform: scaleY(0.5) scaleX(2) translateY(-305px);
@@ -446,12 +446,12 @@ body {
         left: 0;
         width: 100%;
         height: 600px;
-        z-index: 20;
+        z-index: 0;
         pointer-events: none;
         background: radial-gradient(
                 ellipse at bottom,
-                transparent 30%,
-                #a09c97 75%
+                transparent 40%,
+                #111111 75%
                 );
                 transform: scaleY(0.5) scaleX(2) translateY(-305px);
     }

@@ -14,7 +14,7 @@ export default function experiencePage() {
                     <Nav />
                     <Experience />
                 </div>
-                <div className="topFadeHomePage offscreenDown"></div>
+                <div className="topFadePage offscreenDown"></div>
 
             </div>
 

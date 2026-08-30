@@ -14,7 +14,7 @@ export default function qualificationPage() {
                     <Nav />
                     <Qualification />
                 </div>
-                <div className="topFadeHomePage offscreenDown"></div>
+                <div className="topFadePage offscreenDown"></div>
             </div>
 
         </>

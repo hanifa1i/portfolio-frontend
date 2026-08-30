@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         href="/favicon.png"
     />
       </head>
-      <body className="bg-[#171717] text-white">
+      <body className="bg-[#111111] text-white">
         <AuthProvider>
           <SettingsProvider>{children}</SettingsProvider>
         </AuthProvider>
