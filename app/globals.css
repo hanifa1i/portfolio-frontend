@@ -368,7 +368,7 @@ body {
     .backgroundViewer {
         transition: all 1000ms;
         width: 2000px;
-        transform: translateX(-35%);
+        transform: translateX(-25%);
     }
 
     .backgroundViewerLeft {
@@ -376,7 +376,7 @@ body {
     }
 
     .backgroundViewerRight {
-        transform: translateX(-60%);
+        transform: translateX(-45%);
     }
 
     .customBigHeading {
