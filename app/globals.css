@@ -436,9 +436,9 @@ body {
         background: radial-gradient(
                 ellipse at bottom,
                 transparent 30%,
-                #171717 70%
+                #111111 70%
                 );
-                transform: scaleY(0.5) scaleX(2) translateY(-300px);
+                transform: scaleY(0.5) scaleX(2) translateY(-305px);
     }
     .topFadeHomePage {
         position: fixed;
