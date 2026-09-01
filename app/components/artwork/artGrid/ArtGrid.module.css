@@ -449,6 +449,7 @@
     z-index: 200;
     border-radius: 30px;
     padding: 30px;
+    overflow: hidden;
 
   }
 
@@ -502,7 +503,7 @@
     left: 40px;
   }
   .tagContainer {
-    max-height: 300px;
-    overflow-y: auto;
+    max-height: 600px;
+    overflow-x: auto;
   }
 }
