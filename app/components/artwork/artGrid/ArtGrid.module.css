@@ -445,7 +445,7 @@
     left: 0px;
     bottom: 0px;
     width: 100%;
-    height: 50%;
+    height: 60vh;
     z-index: 200;
     border-radius: 30px;
     padding: 30px;
@@ -503,7 +503,7 @@
     left: 40px;
   }
   .tagContainer {
-    max-height: 600px;
+    height: 60vh;
     overflow-x: auto;
   }
 }
