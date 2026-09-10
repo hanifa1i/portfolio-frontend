@@ -66,7 +66,7 @@
         font-size: small;
     }
     .project:hover {
-    flex: 5;
+    flex: none;
     height: fit-content;
     }
     .projectDescription {
