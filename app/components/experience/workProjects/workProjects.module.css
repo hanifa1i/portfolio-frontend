@@ -60,9 +60,14 @@
 @media (max-width : 800px) {
     .container {
         flex-direction: column;
+        height: 80vh;
     }
     .project {
         font-size: small;
+    }
+    .project:hover {
+    flex: 5;
+    height: fit-content;
     }
     .projectDescription {
         font-size: small;

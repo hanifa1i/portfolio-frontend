@@ -267,15 +267,17 @@
 
     .company {
         font-size: medium;
+        padding-top: 10px;
     }
 
     .period {
         font-size: medium;
+        padding-top: 10px;
     }
 
     .description {
         margin: 0px;
-        font-size: 12px;
+        font-size: 13px;
 
     }
 
