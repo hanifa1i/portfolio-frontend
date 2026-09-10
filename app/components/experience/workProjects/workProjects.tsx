@@ -4,15 +4,24 @@ import type { Project } from "@/app/types/experience";
 
 
 type Props = {
-    projects : Project[];
+    projects: Project[];
 }
 
-export default function workProjects( {projects} : Props) {
+export default function workProjects({ projects }: Props) {
     return (
         <>
             <div className={`${styles.container}`}>
                 {projects.map((project, key) => (
-                    <div key={key} onMouseEnter={() => playSound("whosh")} className={`${styles.project}`}>
+                    <div
+                        key={key}
+                        onMouseEnter={() => playSound("whosh")}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+                        }}
+                        className={`${styles.project}`}>
                         <div className={`${styles.projectHeading}`}>{project.title}</div>
                         <div className={`${styles.projectDescription} `}>{project.description}</div>
                     </div>

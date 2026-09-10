@@ -64,12 +64,17 @@
     }
     .project {
         font-size: small;
+                    overflow-y:hidden;
+
     }
     .project:hover {
-    flex: none;
+    flex: 5;
     height: fit-content;
+            overflow-y: auto;
+
     }
     .projectDescription {
         font-size: small;
     }
+
 }
