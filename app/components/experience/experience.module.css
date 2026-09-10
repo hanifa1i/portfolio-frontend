@@ -296,9 +296,6 @@
         flex-direction: column;
         align-items: start;
         gap: 10px;
-
-
-
     }
 
     .hideNav {
@@ -309,67 +306,41 @@
         font-size: 0px;
         padding: 15px;
         height: 20px;
-        width: 30px;
+        width: 15px;
         border-top-left-radius: 0px;
         border-bottom-right-radius: 5px;
     }
 
+    .unselectedButton {
+        padding-left: 0px;
+    }
+
     .unselectedButton:hover {
         padding-bottom: 15px;
-        padding-left: 30px;
-        background-color: #999;
+        padding-left: 0px;
+        background-color: #222;
 
     }
 
     .unselectedButton:active {
         transform: translateY(0px);
-        padding-left: 40px;
-
+        padding-left: 20px;
         background-color: #999;
         color: #111;
     }
 
     .selectedButton {
         height: 20px;
-        padding-left: 30px;
+        width: 20px;
+        padding-left: 0px;
         border-bottom-right-radius: 10px;
+    }
+
+    .hideNav {
+        transform: translateY(0px) translateX(-200px);
     }
 
     .buttonYear {
         display: none;
     }
 }
-
-/*
-.expNav {
-    position: fixed;
-    right: 50px;
-    bottom: 00px;
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    align-items: end;
-    transition: all 500ms;
-}
-
-.expNavButton {
-    width: fit-content;
-    padding: 20px;
-    height: 60px;
-    background: #222;
-    border-radius: 5px;
-    color: #999;
-    font-size: small;
-    text-align: center;
-    align-content: center;
-    transition: all 200ms;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    filter: drop-shadow(0 -10px 10px rgba(0, 0, 0, .1));
-    cursor: pointer;
-
-}
-
-.hideNav {
-    transform: translateY(200px);
-}*/
