@@ -12,15 +12,15 @@
     transition: all 300ms;
     font-size: 1vw;
     padding: 20px;
-    overflow: hidden;
+    overflow: auto;
         color:#444;
         align-content: start;
 
 }
 
 .project:hover {
-    flex: 5;
-        height: 300px;
+    flex: 8;
+        height: 350px;
 
         border: 5px #999 solid ;
         border-radius: 20px;
