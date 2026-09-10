@@ -117,7 +117,6 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
             </div>
 
             <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}>
-                {bookId === 1 && (<A5InnerCover />)}
             </div>
 
             <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
