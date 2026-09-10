@@ -123,7 +123,7 @@ if (grouped[day as keyof typeof grouped]) {
 
                                 {/* projects - optional */}
                                 {role.projects.length !== 0 && (
-                                    <div className={`${styles.subHead} offscreenLeft`}> projects worked on
+                                    <div className={`${styles.subHead} offscreenLeft`}> projects and other responsibilities
                                         <WorkProjects projects={role.projects} />
                                         <Divider />
                                     </div>)
