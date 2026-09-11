@@ -15,7 +15,7 @@ export default function workProjects({ projects }: Props) {
                     <div
                         key={key}
                         onMouseEnter={() => playSound("whosh")}
-                        onMouseLeave={(e) => {
+                        onPointerLeave={(e) => {
                             e.currentTarget.scrollTo({
                                 top: 0,
                                 behavior: "smooth"

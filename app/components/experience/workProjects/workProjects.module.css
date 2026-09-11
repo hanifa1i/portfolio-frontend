@@ -60,16 +60,17 @@
 @media (max-width : 800px) {
     .container {
         flex-direction: column;
-        height: 80vh;
     }
     .project {
         font-size: small;
-                    overflow-y:hidden;
+        overflow-y:hidden;
+        height: 150px;
+        flex: auto;
 
     }
     .project:hover {
-    flex: 5;
-    height: fit-content;
+        flex: auto;
+        height: 350px;
             overflow-y: auto;
 
     }
