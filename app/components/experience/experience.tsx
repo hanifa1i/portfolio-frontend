@@ -47,7 +47,7 @@ export default function experience() {
                 );
 
                 setWorkExperience(sortedData);
-                const act: WeeklyActivities[] = data.map(exp => {
+                const act: WeeklyActivities[] = sortedData.map(exp => {
                     return transformActivities(exp.activities)
                 })
                 setFormattedActivites(act);
