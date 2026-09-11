@@ -41,7 +41,12 @@ export default function experience() {
         const fetchRecent = async () => {
             try {
                 const data: WorkExperienceResponse[] = await getExperience();
-                setWorkExperience(data);
+                const sortedData = [...data].sort(
+                    (a, b) =>
+                        new Date(b.start_date).getTime() - new Date(a.start_date).getTime()
+                );
+
+                setWorkExperience(sortedData);
                 const act: WeeklyActivities[] = data.map(exp => {
                     return transformActivities(exp.activities)
                 })
@@ -69,9 +74,9 @@ export default function experience() {
 
             const day = activity.day.trim().toLowerCase();
 
-if (grouped[day as keyof typeof grouped]) {
-    grouped[day as keyof typeof grouped].push(activity);
-}
+            if (grouped[day as keyof typeof grouped]) {
+                grouped[day as keyof typeof grouped].push(activity);
+            }
         });
 
         return grouped;
@@ -101,7 +106,7 @@ if (grouped[day as keyof typeof grouped]) {
                                 {/* company and period - optional */}
                                 <div className={`flex offscreenLeft`}>
                                     <div className={`${styles.company}`}>{role.company_name}</div>
-                                    <div className={`${styles.period}`}>{role.start_date.slice(0,4)}-{role.end_date.slice(2,4)}</div>
+                                    <div className={`${styles.period}`}>{role.start_date.slice(0, 4)}-{role.end_date.slice(2, 4)}</div>
                                 </div>
                                 <Divider />
 
@@ -123,7 +128,7 @@ if (grouped[day as keyof typeof grouped]) {
 
                                 {/* projects - optional */}
                                 {role.projects.length !== 0 && (
-                                    <div className={`${styles.subHead} offscreenLeft`}> projects and other responsibilities
+                                    <div className={`${styles.subHead} offscreenLeft`}> projects and technical work
                                         <WorkProjects projects={role.projects} />
                                         <Divider />
                                     </div>)
@@ -131,11 +136,11 @@ if (grouped[day as keyof typeof grouped]) {
 
                                 {/* activities - optional */}
                                 {role.activities.length > 0 && (
-                                        <div className={`${styles.subHead} offscreenLeft`}> weekly activities
-                                            <WeeklyActivities data={formattedActivities[index]} />
-                                            <Divider />
-                                        </div>
-                                    )
+                                    <div className={`${styles.subHead} offscreenLeft`}> weekly activities
+                                        <WeeklyActivities data={formattedActivities[index]} />
+                                        <Divider />
+                                    </div>
+                                )
                                 }
                             </div>
                         </div>
@@ -159,7 +164,7 @@ if (grouped[day as keyof typeof grouped]) {
                         onClick={() => { playSound("click"), setSelectedExperience(key) }}
                         className={`${styles.expNavButton} ${selectedExperience === key ? styles.selectedButton : styles.unselectedButton}`}>
                         {role.job_title}
-                        <div className={`${selectedExperience === key ? styles.buttonYear : styles.buttonYearHidden}`}>{role.start_date.slice(0,4)}-{role.end_date.slice(2,4)}</div>
+                        <div className={`${selectedExperience === key ? styles.buttonYear : styles.buttonYearHidden}`}>{role.start_date.slice(0, 4)}-{role.end_date.slice(2, 4)}</div>
                     </div>
                 ))}
             </div>
