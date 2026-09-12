@@ -293,9 +293,9 @@ export default function Skills() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`${styles.skillDescription} `}>
+                                <p className={`${styles.skillDescription} `}>
                                     {items.description}
-                                </div>
+                                </p>
                                 {items.examples.length !== 0 && (<div className={`${styles.skillExamples}`}>
                                     {items.examples.map((example, key) => (
                                         example.exampleType === "LINK" && (
