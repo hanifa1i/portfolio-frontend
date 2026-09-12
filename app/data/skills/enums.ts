@@ -28,7 +28,7 @@ export const experiencedLabels = [
 
 export const experienceList = [
     { enum: "SELF_STUDY", label: "self-study" },
-    { enum: "UXBRIDGE_COLLAGE", label: "uxbridge college" },
+    { enum: "UXBRIDGE_COLLEGE", label: "uxbridge college" },
     { enum: "BRUNEL_UNIVERSITY", label: "brunel university" },
     { enum: "SPARTA_GLOBAL", label: "sparta global" },
     { enum: "HMLR", label: "land registry" },
