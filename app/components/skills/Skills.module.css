@@ -391,6 +391,7 @@
 
 .skillDescription {
     text-align: left;
+    white-space: pre-line;
     flex: 2;
 }
 
