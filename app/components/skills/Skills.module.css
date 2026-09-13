@@ -61,6 +61,8 @@
     transition: all 500ms;
     align-items: center;
     animation: containerGap 1250ms;
+    max-width: 80vw;
+    flex-wrap: wrap;
 }
 
 @keyframes containerGap {
@@ -666,7 +668,8 @@
         overflow-x: auto;
         overflow-y: hidden;
         animation: none;
-
+        max-width: none;
+        flex-wrap: nowrap;
     }
 
     .container::-webkit-scrollbar {
