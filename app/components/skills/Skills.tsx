@@ -28,13 +28,13 @@ export default function Skills() {
     const [isDesktop, setIsDesktop] = useState(false);
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const [showSideBarMobile, setShowSideBarMobile] = useState(
-        typeof window !== "undefined" ? window.innerWidth >= 800 : false
+        typeof window !== "undefined" ? window.innerWidth >= 1000 : false
     );
 
     useEffect(() => {
         const handleResize = () => {
-            setShowSideBarMobile(window.innerWidth >= 800);
-            setIsDesktop(window.innerWidth >= 800);
+            setShowSideBarMobile(window.innerWidth >= 1000);
+            setIsDesktop(window.innerWidth >= 1000);
         };
 
         window.addEventListener("resize", handleResize);
@@ -98,7 +98,7 @@ export default function Skills() {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsScrolled(!entry.isIntersecting);
-                if (entry.isIntersecting && window.innerWidth <= 800) { setShowSideBarMobile(false); }
+                if (entry.isIntersecting && window.innerWidth <= 1000) { setShowSideBarMobile(false); }
             },
             { threshold: 1 }
         );
@@ -250,7 +250,7 @@ export default function Skills() {
                                     onClick={() => {
                                         playSound("click");
                                             document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
-                                            if(window.innerWidth <= 800) {setTimeout(() => { setShowSideBarMobile(false); }, 500)};
+                                            if(window.innerWidth <= 1000) {setTimeout(() => { setShowSideBarMobile(false); }, 500)};
                                     }}
                                     key={key} className={`${styles.sidebarSubHeading}`}>
 
