@@ -49,11 +49,12 @@ export default function Skills() {
     });
     const [activeId, setActiveId] = useState(-1);
 
-    useScrollReveal(".offscreenLeft", "easeIn", false);
-    useScrollReveal(`.${styles.offscreenPopUp}`, styles.subheadingInfo, true);
 
-    const [skillse, setSkills] = useState<SkillResponse[]>([]);
+    const [skill, setSkills] = useState<SkillResponse[]>([]);
     const [skillsByCategory, setSkillsByCategory] = useState<SkillsByCategory[]>([]);
+    
+    useScrollReveal(".offscreenLeft", "easeIn", false, skill);
+    useScrollReveal(`.${styles.offscreenPopUp}`, styles.subheadingInfo, true);
 
     useEffect(() => {
         const fetchRecent = async () => {
@@ -173,7 +174,7 @@ export default function Skills() {
             <div className={`${styles.headingsContainer} border ${isScrolled ? styles.headingsContainerTransition : ""}`}>
                 <div>
                 {skillsByCategory.map((sections, index) => (
-                    <div className={`${styles.headingSubDivider} offscreenLef`} key={index}>
+                    <div className={`${styles.headingSubDivider} offscreenLeft`} key={index}>
                         <div className={`${styles.heading}  ${isScrolled ? styles.headingTransition : ""} `}>
                             {sections.category}
                         </div>
