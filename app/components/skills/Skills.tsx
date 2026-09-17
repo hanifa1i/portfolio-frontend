@@ -248,9 +248,9 @@ export default function Skills() {
                                 <div
                                     onMouseEnter={() => playSound("hover")}
                                     onClick={() => {
-                                        playSound("click"),
-                                            document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }),
-                                            setTimeout(() => { setShowSideBarMobile(false); }, 500);
+                                        playSound("click");
+                                            document.getElementById(`${items.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+                                            if(window.innerWidth <= 800) {setTimeout(() => { setShowSideBarMobile(false); }, 500)};
                                     }}
                                     key={key} className={`${styles.sidebarSubHeading}`}>
 
