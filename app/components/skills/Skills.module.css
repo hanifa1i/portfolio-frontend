@@ -194,7 +194,7 @@
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 0%;
+    margin-left: 10vw;
     width: fit-content;
 
     transition: all 500ms;
@@ -553,11 +553,18 @@
     display: none;
 }
 
+@media (max-width : 1200px) {
+    .sidebar {
+        margin-left: 5vw;
+    }
+}
+
 @media (max-width : 800px) {
     .backgroundVid {
         height: 100%;
         scale: 3;
     }
+
     .infoBar {
         display: block;
         position: fixed;
