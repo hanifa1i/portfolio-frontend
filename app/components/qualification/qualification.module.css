@@ -132,6 +132,9 @@
 }
 
 @media (max-width: 800px) {
+    .qualSlider {
+            align-items: center;
+    }
     .switch {
         width: 40px;
         top: auto;

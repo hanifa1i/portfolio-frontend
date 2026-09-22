@@ -3,6 +3,7 @@
     width: 60vw;
     transition: all 500ms;
     display: flex;
+    
 }
 
 .unselected {
@@ -128,7 +129,6 @@
     .section {
         flex-direction: column-reverse;
         width: 90vw;
-        margin-top: 5vh;
         height: 85%;
         justify-content: center;
         align-items: center;
