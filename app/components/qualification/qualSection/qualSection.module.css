@@ -153,7 +153,7 @@
     }
 
     .qualLevel {
-        font-size: small;
+        font-size: 10px;
         margin: 0px;
         padding: 0px;
         padding-right: 10px;
@@ -161,7 +161,7 @@
     }
 
     .qualSubject {
-        font-size: small;
+        font-size: 10px;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
@@ -171,7 +171,7 @@
     }
 
     .qualInstitution {
-        font-size: small;
+        font-size: 10px;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
@@ -208,7 +208,7 @@
     }
 
     .qualGrade {
-        font-size: small;
+        font-size: 10px;
         margin: 0px;
         padding: 0px;
         text-align: center;
