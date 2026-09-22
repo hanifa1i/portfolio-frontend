@@ -8,13 +8,13 @@ export default function qualificationPage() {
     return (
         <>
             <div className="qualContainer">
+                <div className="topFadeQualPage offscreenDown"></div>
 
                 <div className="pageCenterer">
                     <Info/>
                     <Nav />
                     <Qualification />
                 </div>
-                <div className="topFadePage offscreenDown"></div>
             </div>
 
         </>

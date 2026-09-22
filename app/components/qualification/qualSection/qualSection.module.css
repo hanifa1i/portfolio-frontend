@@ -214,11 +214,11 @@
         text-align: center;
         margin-right: 10px;
         width: 30px;
-        height: 30px;
+        height: 20px;
         border-radius: 5px;
         align-content: center;
-        background-color: #ccc;
-        color: #111;
+        border: 1px solid #cccccc50;
+        color: #ccc;
     }
 
     .col1 {
