@@ -136,6 +136,9 @@
     .qualSlider {
             align-items: center;
     }
+    .qualTimelineContainer:hover {
+    scale: 1;
+}
     .switch {
         width: 40px;
         top: auto;
