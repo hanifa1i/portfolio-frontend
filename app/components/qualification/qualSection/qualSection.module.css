@@ -3,7 +3,7 @@
     width: 60vw;
     transition: all 500ms;
     display: flex;
-    
+
 }
 
 .unselected {
@@ -74,8 +74,11 @@
 
 .qualGrade {
     font-size: 80px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(to bottom, #fff706, #c8ff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     margin-top: 20px;
     padding-right: 20px;
 }
@@ -92,10 +95,11 @@
 
 .qualDescription {
     text-align: end;
-    color: #fff;
+    font-weight: 500;
+    color: #222;
     width: 70%;
-    font-size: 13px;
-    background-color: #cccccc50;
+    font-size: 15px;
+    background-color: #ccc;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     backdrop-filter: blur(5px);
@@ -107,7 +111,7 @@
     flex: 1;
     align-content: center;
     padding: 20px;
-    
+
 }
 
 .certificate {
@@ -127,15 +131,18 @@
     height: 200;
     width: 200;
 }
-.certificateImage{
+
+.certificateImage {
     max-height: 100%;
 }
+
 @media (max-width: 2000px) {
     .qualDescription {
- 
-    width: 100%;
+        font-size: 13px;
+        width: 100%;
+    }
 }
-}
+
 @media (max-width: 800px) {
     .section {
         flex-direction: column-reverse;
@@ -245,23 +252,23 @@
         padding-right: 15px;
     }
 
-    .col2 {
-
-    }
+    .col2 {}
 
 }
 
-@media (max-height: 800px) and (max-width: 800px){
+@media (max-height: 800px) and (max-width: 800px) {
     .section {
         height: 80%
     }
 }
-@media (max-height: 700px) and (max-width: 800px){
+
+@media (max-height: 700px) and (max-width: 800px) {
     .section {
         height: 70%
     }
 }
-@media (max-height: 600px) and (max-width: 800px){
+
+@media (max-height: 600px) and (max-width: 800px) {
     .section {
         height: 60%
     }
