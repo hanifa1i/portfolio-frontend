@@ -139,7 +139,6 @@
 @media (max-width: 2000px) {
     .qualDescription {
         font-size: 13px;
-        width: 100%;
     }
 }
 
@@ -171,7 +170,7 @@
     }
 
     .qualLevel {
-        font-size: 10px;
+        font-size: 13px;
         margin: 0px;
         padding: 0px;
         padding-right: 10px;
@@ -179,7 +178,7 @@
     }
 
     .qualSubject {
-        font-size: 10px;
+        font-size: 13px;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
@@ -189,7 +188,7 @@
     }
 
     .qualInstitution {
-        font-size: 10px;
+        font-size: 13px;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
@@ -226,19 +225,23 @@
     }
 
     .qualGrade {
-        font-size: 10px;
+        font-size: 13px;
         margin: 0px;
         padding: 0px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
         text-align: center;
         margin-right: 10px;
         width: fit-content;
-        height: 20px;
+        height: 30px;
         border-radius: 5px;
         align-content: center;
         border: 1px solid #cccccc50;
-        color: #ccc;
+        color: #111;
+            background: linear-gradient(to bottom, #fff706, #c8ff00);
+background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     }
 
     .col1 {
@@ -254,6 +257,26 @@
 
     .col2 {}
 
+}
+@media (max-width: 500px) {
+    .qualLevel {
+        font-size: 10px;
+    }
+
+    .qualSubject {
+        font-size: 10px;
+    }
+
+    .qualInstitution {
+        font-size: 10px;
+    }
+    .qualGrade {
+                height: 20px;
+        font-size: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+    }
 }
 
 @media (max-height: 800px) and (max-width: 800px) {
