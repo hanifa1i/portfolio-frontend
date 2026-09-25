@@ -94,7 +94,7 @@
 }
 
 .landscapeTransformX {
-    transform: translateX(-1100) translateY(-5.7%);
+    transform: translateX(-1100px) translateY(-5.7%);
 }
 
 .bookFrontCenter {

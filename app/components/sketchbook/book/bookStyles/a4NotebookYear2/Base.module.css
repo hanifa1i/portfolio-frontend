@@ -82,7 +82,7 @@
     border-right-width: 10px;
     border-left-width: 10px;
     background-color: #222;
-    width: 495px;
+    width: 500px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
@@ -178,21 +178,21 @@
     }
 
     .bookFronReturn {
-        flex: 0 0 550px;
+        flex: 0 0 500px;
         transform-origin: left center;
     }
 
     .bookFrontBeforeReturn {
         width: none;
         transform-origin: left center;
-        flex: 0 0 550px;
+        flex: 0 0 500px;
         transform: scaleX(0);
     }
 
     .bookFrontAfterReturn {
         width: none;
         transform-origin: left center;
-        flex: 0 0 550px;
+        flex: 0 0 500px;
         transform: scaleX(1);
     }
 

@@ -88,7 +88,6 @@ export default function book({ setBookActive }: Props) {
         setTimeout(() => { setEnableBook(true); setEnableMobileTrans(true)}, 500);
     }
     const reset = () => {
-        setBlocker(true);
         if (currentPage === 0) {
             setEnableBook(false);
             setLeftPage(false)
@@ -246,7 +245,7 @@ export default function book({ setBookActive }: Props) {
                             bookRef={bookRef}
                             setCurrentPage={setCurrentPage}
                             setTotalPages={setTotalPages}
-                            flipbookWidth={settings?.page_width ?? 495}
+                            flipbookWidth={settings?.page_width ?? 500}
                             data={books[selectedBook - 1]} />
 
                     )}
