@@ -82,7 +82,7 @@
     border-right-width: 10px;
     border-left-width: 10px;
     background-color: #222;
-    width: 550px;
+    width: 495px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 

@@ -246,7 +246,7 @@ export default function book({ setBookActive }: Props) {
                             bookRef={bookRef}
                             setCurrentPage={setCurrentPage}
                             setTotalPages={setTotalPages}
-                            flipbookWidth={settings?.page_width ?? 550}
+                            flipbookWidth={settings?.page_width ?? 495}
                             data={books[selectedBook - 1]} />
 
                     )}

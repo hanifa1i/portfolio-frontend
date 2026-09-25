@@ -7,7 +7,7 @@ export const pageSettings = [
 },
 {
     page_style: "portrait",
-    page_width: 550,
+    page_width: 495,
     container_width: 1500,
 }
 ]
