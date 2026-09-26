@@ -6,6 +6,7 @@ type Props = {
 export default function Front({ state }: Props) {
 
     return (<>
+        <img className={styles.coverArt} src="images/sketchbook/1st-sketch-cover.jpeg"></img>
         {Array.from({ length: 22 }).map((_, index) => (
             <div key={index}>
                 <div
