@@ -81,7 +81,6 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
                     key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
                     className={styles.leftPage}>
-                    <img className={styles.image} src="/images/sketchbook/1st-sketch-blank-page.jpeg" />
                 </div>,
                 <div
                     key={`image-${index}`}
@@ -138,8 +137,8 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
                 <div
                     key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
-                    className={styles.leftPage}
-                />,
+                    className={styles.leftPage}>
+                </div>,
                 <div
                     key={`image-${index}`}
                     onClick={() => playSound("bookFlip")}
