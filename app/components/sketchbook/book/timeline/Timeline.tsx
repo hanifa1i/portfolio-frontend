@@ -11,9 +11,11 @@ type Props = {
     visibility: boolean;
     back: () => void;
     additionalFunction: (state: boolean) => void;
+    rotateTrue: boolean;
+    rotate: (state: boolean) => void;
 }
 
-export default function Timeline({ bookRef, currentPage, totalPages, visibility, back, additionalFunction }: Props) {
+export default function Timeline({ bookRef, currentPage, totalPages, visibility, back, additionalFunction, rotateTrue, rotate }: Props) {
 
 
         const spreads: number[] = [];
@@ -52,6 +54,15 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
 
 
                 </div>
+                <button 
+                    onClick={() => {
+                        if (rotateTrue === false) { playSound("blob"), rotate(true);}
+                        else{ playSound("blob"), rotate(false);} 
+                    }} 
+                    className={`${styles.rotateButton} ${currentPage === 0 ? styles.rotateButtonHide : ""} ${rotateTrue ? styles.rotateButtonRotate : ""}`}>
+                        ↻ {rotateTrue ? "" : "Rotate"}
+                </button>
+                
             </div>
 
         </>

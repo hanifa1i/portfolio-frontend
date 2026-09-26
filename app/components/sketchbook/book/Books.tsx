@@ -16,6 +16,7 @@ import { ArtworkResponse } from "@/app/types/Dashboard"
 import { getSketchbookArt } from "@/app/services/artworkService"
 import { set } from "date-fns"
 import BookInfo from "../bookInfo/BookInfo"
+import { rotate } from "three/tsl"
 
 export type Props = {
     setBookActive: (active: boolean) => void
@@ -61,6 +62,7 @@ export default function book({ setBookActive }: Props) {
     const [highlighted, setHighlighted] = useState(false);
     const [settings, setSettings] = useState<PageSettings>();
     const [expandInfo, setExpandInfo] = useState(false);
+    const [rotateBook, setRotateBook] = useState(false);
     const [hovered, setHovered] = useState(false);
     const [books, setBooks] = useState<BookData[]>([]);
     const [leftPage, setLeftPage] = useState(false);
@@ -93,7 +95,7 @@ export default function book({ setBookActive }: Props) {
             setLeftPage(false)
             setTimeout(() => { setSelectedBook(-1); }, 0);
         }
-
+        setRotateBook(false)
         bookRef.current.pageFlip().flip(0, top)
         setTimeout(() => { setEnableBook(false); }, 700);
         setTimeout(() => { setSelectedBook(-1); setEnableMobileTrans(false)}, 800);
@@ -233,12 +235,13 @@ export default function book({ setBookActive }: Props) {
                     ${styles.flipbookContainer}
                     ${currentPage === 0 ? styles.bookFrontCenter : ""}
                     ${currentPage === totalPages - 1 ? styles.bookBackCenter : ""}
+                    ${rotateBook ? styles.flipbookContainerForSecondImage : ""}
+
                     ${leftPage ? styles.leftPage : ""}
 
                     ${settings?.page_style === "landscape" ? styles.landscapeTransformX : ""}
                     ${settings?.page_style === "landscape" && currentPage === 0 ? styles.bookFrontCenterLandscape : ""}
                     ${settings?.page_style === "landscape" && currentPage === totalPages - 1 ? styles.bookBackCenterLandscape : ""}`}>
-
                     {enableBook && (
                         <Flipbook
                             bookId={selectedBook}
@@ -249,6 +252,7 @@ export default function book({ setBookActive }: Props) {
                             data={books[selectedBook - 1]} />
 
                     )}
+
                     {(selectedBook === 4) && (
                         <div className={`${styles.flap} ${selectedBookData.pages.length + 3 <= currentPage ? styles.flapHide : styles.flapAni}`}>
                             <div className={`${styles.stitching}`}>
@@ -258,11 +262,10 @@ export default function book({ setBookActive }: Props) {
                     )}
 
                     {expandInfo && (<div onClick={() => { setExpandInfo(false), playSound("bell") }} className={`${styles.closeInfo}`} />)}
-
                     <div
                         className={`
                             ${styles.infoBar} 
-                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined ? styles.infoBarHide : ""} 
+                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined || rotateBook ? styles.infoBarHide : ""} 
                             ${expandInfo ? styles.expand : ""}`}
 
                         onClick={() => { handleExpand(true), playSound("bell") }}
@@ -275,6 +278,7 @@ export default function book({ setBookActive }: Props) {
                         )
                         }
                     </div>
+                    
                 </div>
 
             </div>
@@ -291,7 +295,7 @@ export default function book({ setBookActive }: Props) {
             <div className={`${styles.bookInfoMobile} ${highlighted && !enableBook ? styles.bookInfoMobileShow : ""}`}>
                 <BookInfo sketchbook={sketchbooks[highlightedBook - 1]} pages={0}/>
             </div>
-            <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} />
+            <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} rotateTrue={rotateBook} rotate={setRotateBook}/>
 
 
         </>
