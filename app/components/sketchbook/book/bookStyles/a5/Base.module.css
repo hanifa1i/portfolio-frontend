@@ -161,7 +161,7 @@
     .bookAfter {
         left: 50%;
         top: 50%;
-        transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5)) ;
+        transform: translateY(-50%) translateX(calc(var(--bookContainerWidth) / -5.5)) ;
 
     }
     .bookSpineReturn {
