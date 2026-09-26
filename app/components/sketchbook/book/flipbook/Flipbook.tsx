@@ -14,7 +14,7 @@ import SpiralBookFront from "../bookStyles/spiralBook/components/front/front"
 
 import A5InnerCover from "../bookStyles/a5/components/innerCover/InnerCover"
 import HTMLFlipBook from "react-pageflip"
-import { RefObject } from "react"
+import { Fragment, RefObject } from "react"
 import { playSound } from "@/app/lib/SoundManager"
 import { BookData } from "../Books"
 
@@ -76,64 +76,76 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
 
             <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
 
-            {data.pages.map((page, index) => (
+            {bookId === 2 ? data.pages.flatMap((page, index) => [
                 <div
-                    key={index}
+                    key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
-                    className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
-                        <img className={styles.image} src={page.image_urls[0].image_url}/>
+                    className={styles.leftPage}
+                />,
+                <div
+                    key={`image-${index}`}
+                    onClick={() => playSound("bookFlip")}
+                    className={styles.rightPage}>
+                    <img className={styles.image} src={page.image_urls[0].image_url} />
                 </div>
-            ))}
-            <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
+            ]) :
+                data.pages.flatMap((page, index) => [
+                    <div
+                        key={index}
+                        onClick={() => playSound("bookFlip")}
+                        className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
+                        <img className={styles.image} src={page.image_urls[0].image_url} />
+                    </div>])
+            }
 
             <div onClick={() => playSound("bookFlip")} className={styles.leftPage}></div>
             <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>  </div>
             <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}></div>
         </HTMLFlipBook>
-        
-        :
 
-        <HTMLFlipBook
-            className={`${flipBookStyles.flipBookShadow}`}
-            width={flipbookWidth}
-            height={700}
-            maxShadowOpacity={0}
-            drawShadow={true}
-            showCover={true}
-            flippingTime={200}
-            ref={bookRef}
-            onFlip={(e) => setCurrentPage(e.data)}
-            onInit={() => {
-                const count = bookRef.current?.pageFlip().getPageCount();
-                if (count) setTotalPages(count);
-            }}
-        >
-            <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>
-                {bookId === 1 && (<A5Front />)}
-                {bookId === 2 && (<A3Front state="front" />)}
-                {bookId === 4 && (<A4Year2Front />)}
-                {bookId === 5 && (<SpiralBookFront state="front" />)}
+            :
 
-            </div>
+            <HTMLFlipBook
+                className={`${flipBookStyles.flipBookShadow}`}
+                width={flipbookWidth}
+                height={700}
+                maxShadowOpacity={0}
+                drawShadow={true}
+                showCover={true}
+                flippingTime={200}
+                ref={bookRef}
+                onFlip={(e) => setCurrentPage(e.data)}
+                onInit={() => {
+                    const count = bookRef.current?.pageFlip().getPageCount();
+                    if (count) setTotalPages(count);
+                }}
+            >
+                <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>
+                    {bookId === 1 && (<A5Front />)}
+                    {bookId === 2 && (<A3Front state="front" />)}
+                    {bookId === 4 && (<A4Year2Front />)}
+                    {bookId === 5 && (<SpiralBookFront state="front" />)}
 
-            <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}>
-            </div>
-
-            <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
-
-            {data.pages.map((page, index) => (
-                <div
-                    key={index}
-                    onClick={() => playSound("bookFlip")}
-                    className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
-                        <img className={styles.image} src={page.image_urls[0].image_url}/>
                 </div>
-            ))}
-            <div onClick={() => playSound("bookFlip")} className={styles.leftPage}></div>
 
-            <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>  </div>
-            <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}></div>
-        </HTMLFlipBook>}
+                <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}>
+                </div>
+
+                <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
+
+                {data.pages.map((page, index) => (
+                    <div
+                        key={index}
+                        onClick={() => playSound("bookFlip")}
+                        className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
+                        <img className={styles.image} src={page.image_urls[0].image_url} />
+                    </div>
+                ))}
+                <div onClick={() => playSound("bookFlip")} className={styles.leftPage}></div>
+
+                <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>  </div>
+                <div onClick={() => playSound("bookClose")} className={`${styles.InnerCoverPage}`}></div>
+            </HTMLFlipBook>}
 
     </>)
 }
