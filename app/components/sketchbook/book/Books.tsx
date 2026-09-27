@@ -16,7 +16,6 @@ import { ArtworkResponse } from "@/app/types/Dashboard"
 import { getSketchbookArt } from "@/app/services/artworkService"
 import { set } from "date-fns"
 import BookInfo from "../bookInfo/BookInfo"
-import { rotate } from "three/tsl"
 
 export type Props = {
     setBookActive: (active: boolean) => void
