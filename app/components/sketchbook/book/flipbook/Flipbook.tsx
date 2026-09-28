@@ -81,6 +81,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
                     key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
                     className={styles.leftPage}>
+                    {bookId === 5 && (<img className={styles.image} src="/images/sketchbook/a3-blank-page.jpeg" />)}
                 </div>,
                 <div
                     key={`image-${index}`}
@@ -134,26 +135,28 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
                 <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
 
                 {bookId === 2 || bookId === 5 ? data.pages.flatMap((page, index) => [
-                <div
-                    key={`blank-${index}`}
-                    onClick={() => playSound("bookFlip")}
-                    className={styles.leftPage}>
-                </div>,
-                <div
-                    key={`image-${index}`}
-                    onClick={() => playSound("bookFlip")}
-                    className={styles.rightPage}>
-                    <img className={styles.image} src={page.image_urls[0].image_url} />
-                </div>
-            ]) :
-                data.pages.map((page, index) => (
                     <div
-                        key={index}
+                        key={`blank-${index}`}
                         onClick={() => playSound("bookFlip")}
-                        className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
+                        className={styles.leftPage}>
+                        {bookId === 5 && (<img className={styles.image} src="/images/sketchbook/a3-blank-page.jpeg" />)}
+
+                    </div>,
+                    <div
+                        key={`image-${index}`}
+                        onClick={() => playSound("bookFlip")}
+                        className={styles.rightPage}>
                         <img className={styles.image} src={page.image_urls[0].image_url} />
                     </div>
-                ))}
+                ]) :
+                    data.pages.map((page, index) => (
+                        <div
+                            key={index}
+                            onClick={() => playSound("bookFlip")}
+                            className={index % 2 === 1 ? styles.rightPage : styles.leftPage}>
+                            <img className={styles.image} src={page.image_urls[0].image_url} />
+                        </div>
+                    ))}
                 <div onClick={() => playSound("bookFlip")} className={styles.leftPage}></div>
 
                 <div onClick={() => playSound("bookClose")} className={`${styles.coverPage}`}>  </div>
