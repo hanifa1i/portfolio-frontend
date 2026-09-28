@@ -97,7 +97,7 @@ export default function book({ setBookActive }: Props) {
         }
         
         bookRef.current.pageFlip().flip(0, top)
-        setTimeout(() => { setEnableBook(false); }, 700);
+        setTimeout(() => { setEnableBook(false); setLeftPage(false)}, 700);
         setTimeout(() => { setSelectedBook(-1); setEnableMobileTrans(false)}, 800);
         setTimeout(() => { setStopTransform(true)}, 900);
         setTimeout(() => { setStopTransform(false), setBlocker(false)}, 1300);
