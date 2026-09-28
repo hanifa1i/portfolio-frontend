@@ -35,6 +35,7 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
                     if (currentPage !== 0) { playSound("bookClose"), playSoundDelay( "bookPick", 800);}
                     else{playSound("bookPick")} back()}} className={`${styles.backButton}`}>← </button>
                 </div>
+                <div className={`${styles.timelineMobileScroll}`}>
                 <div className={`${styles.timeline} ${visibility ? "" : styles.shrinkX}`}>
                     <PageButton bookRef={bookRef} currentPage={currentPage} pageNumber={0} lastPageNumber={totalPages} booleanFunction={additionalFunction}/>
                     
@@ -56,7 +57,7 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
 
 
                 </div>
-                
+                </div>
                 <button 
                     onClick={() => {
                         if (enlargeBook === false) { playSound("click"), setEnlargeBook(true);}
