@@ -76,7 +76,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
 
             <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
 
-            {bookId === 2 ? data.pages.flatMap((page, index) => [
+            {bookId === 2 || bookId === 5 ? data.pages.flatMap((page, index) => [
                 <div
                     key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
@@ -133,7 +133,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
 
                 <div onClick={() => playSound("bookFlip")} className={styles.rightPage}></div>
 
-                {bookId === 2 ? data.pages.flatMap((page, index) => [
+                {bookId === 2 || bookId === 5 ? data.pages.flatMap((page, index) => [
                 <div
                     key={`blank-${index}`}
                     onClick={() => playSound("bookFlip")}
