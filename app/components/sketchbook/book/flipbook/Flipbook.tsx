@@ -139,7 +139,7 @@ export default function Flipbook({ bookId, bookRef, setCurrentPage, setTotalPage
                         key={`blank-${index}`}
                         onClick={() => playSound("bookFlip")}
                         className={styles.leftPage}>
-                        {bookId === 5 && (<img className={styles.image} src="/images/sketchbook/a3-blank-page-v2.jpeg" />)}
+                        {bookId === 5 && (<img className={styles.image} src="/images/sketchbook/a3-blank-page.jpeg" />)}
 
                     </div>,
                     <div
