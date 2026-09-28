@@ -32,8 +32,14 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
 
                 <div className="">
                 <button onClick={() => {
-                    if (currentPage !== 0) { playSound("bookClose"), playSoundDelay( "bookPick", 800);}
-                    else{playSound("bookPick")} back()}} className={`${styles.backButton}`}>← </button>
+                     if (enlargeBook || rotateTrue) {
+                            setEnlargeBook(false); rotate(false); setTimeout(() => { playSoundDelay("bookClose", 200), playSoundDelay("bookPick", 1100); back()} , 500);
+                        } else {
+                            if (currentPage !== 0) { playSound("bookClose"), playSoundDelay("bookPick", 800); }
+                            else { playSound("bookPick") }
+                            back()
+                        }
+                     }} className={`${styles.backButton}`}>← </button>
                 </div>
                 <div className={`${styles.timelineMobileScroll}`}>
                 <div className={`${styles.timeline} ${visibility ? "" : styles.shrinkX}`}>
@@ -63,7 +69,7 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
                         if (enlargeBook === false) { playSound("click"), setEnlargeBook(true);}
                         else{ playSound("click"), setEnlargeBook(false);} 
                     }} 
-                    className={`${styles.rotateButton} ${styles.enlargeButton} ${enlargeBook ? styles.enlargeButtonEnlarge : ""}`}>
+                    className={`${styles.rotateButton} ${currentPage === 0 ? styles.rotateButtonHide : ""} ${styles.enlargeButton} ${enlargeBook ? styles.enlargeButtonEnlarge : ""}`}>
                         ⌞⌝
                 </button>
                 <button 
