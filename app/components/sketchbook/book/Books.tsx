@@ -100,7 +100,7 @@ export default function book({ setBookActive }: Props) {
         setTimeout(() => { setEnableBook(false); setLeftPage(false); setEnableMobileTrans(false)}, 700);
         setTimeout(() => { setSelectedBook(-1); setBlocker(true)}, 800);
         setTimeout(() => { setStopTransform(true)}, 900);
-        setTimeout(() => { setStopTransform(false), setBlocker(false)}, 1300);
+        setTimeout(() => { setStopTransform(false), setBlocker(false)}, 2000);
 
     }
 
