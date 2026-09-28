@@ -62,6 +62,7 @@ export default function book({ setBookActive }: Props) {
     const [settings, setSettings] = useState<PageSettings>();
     const [expandInfo, setExpandInfo] = useState(false);
     const [rotateBook, setRotateBook] = useState(false);
+    const [enlargeBook, setEnlargeBook] = useState(false);
     const [hovered, setHovered] = useState(false);
     const [books, setBooks] = useState<BookData[]>([]);
     const [leftPage, setLeftPage] = useState(false);
@@ -95,6 +96,7 @@ export default function book({ setBookActive }: Props) {
             setTimeout(() => { setSelectedBook(-1); }, 0);
         }
         setRotateBook(false)
+        setEnlargeBook(false)
         bookRef.current.pageFlip().flip(0, top)
         setTimeout(() => { setEnableBook(false); }, 700);
         setTimeout(() => { setSelectedBook(-1); setEnableMobileTrans(false)}, 800);
@@ -235,6 +237,8 @@ export default function book({ setBookActive }: Props) {
                     ${currentPage === 0 ? styles.bookFrontCenter : ""}
                     ${currentPage === totalPages - 1 ? styles.bookBackCenter : ""}
                     ${rotateBook ? styles.flipbookContainerForSecondImage : ""}
+                    ${enlargeBook ? styles.scaleUpBook : ""}
+                    ${enlargeBook && selectedBook === 5 ? styles.scaleUpBook5 : ""}
 
                     ${leftPage ? styles.leftPage : ""}
 
@@ -264,7 +268,7 @@ export default function book({ setBookActive }: Props) {
                     <div
                         className={`
                             ${styles.infoBar} 
-                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined || rotateBook ? styles.infoBarHide : ""} 
+                            ${selectedBook === -1 || selectedBookData.pages[currentPage - 3] === undefined || rotateBook || enlargeBook ? styles.infoBarHide : ""} 
                             ${expandInfo ? styles.expand : ""}`}
 
                         onClick={() => { handleExpand(true), playSound("bell") }}
@@ -294,7 +298,7 @@ export default function book({ setBookActive }: Props) {
             <div className={`${styles.bookInfoMobile} ${highlighted && !enableBook ? styles.bookInfoMobileShow : ""}`}>
                 <BookInfo sketchbook={sketchbooks[highlightedBook - 1]} pages={0}/>
             </div>
-            <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} rotateTrue={rotateBook} rotate={setRotateBook}/>
+            <Timeline bookRef={bookRef} currentPage={currentPage} totalPages={totalPages} visibility={enableBook} back={reset} additionalFunction={setExpandInfo} rotateTrue={rotateBook} rotate={setRotateBook} enlargeBook={enlargeBook} setEnlargeBook={setEnlargeBook}/>
 
 
         </>

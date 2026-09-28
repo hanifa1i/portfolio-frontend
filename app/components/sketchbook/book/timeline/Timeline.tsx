@@ -13,9 +13,11 @@ type Props = {
     additionalFunction: (state: boolean) => void;
     rotateTrue: boolean;
     rotate: (state: boolean) => void;
+    enlargeBook: boolean;
+    setEnlargeBook: (state: boolean) => void;
 }
 
-export default function Timeline({ bookRef, currentPage, totalPages, visibility, back, additionalFunction, rotateTrue, rotate }: Props) {
+export default function Timeline({ bookRef, currentPage, totalPages, visibility, back, additionalFunction, rotateTrue, rotate, enlargeBook, setEnlargeBook }: Props) {
 
 
         const spreads: number[] = [];
@@ -54,6 +56,15 @@ export default function Timeline({ bookRef, currentPage, totalPages, visibility,
 
 
                 </div>
+                
+                <button 
+                    onClick={() => {
+                        if (enlargeBook === false) { playSound("click"), setEnlargeBook(true);}
+                        else{ playSound("click"), setEnlargeBook(false);} 
+                    }} 
+                    className={`${styles.rotateButton} ${styles.enlargeButton} ${enlargeBook ? styles.enlargeButtonEnlarge : ""}`}>
+                        ⌞⌝
+                </button>
                 <button 
                     onClick={() => {
                         if (rotateTrue === false) { playSound("blob"), rotate(true);}
