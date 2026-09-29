@@ -12,7 +12,7 @@ export default function Sort({ setFilter }: Props) {
 
     const [tagList, setTagList] = useState<String[]>([]);
     const [update, setUpdate] = useState(true);
-    const [filterName, setFilterName] = useState("");
+    const [filterName, setFilterName] = useState("most recent");
     useScrollReveal(".offscreenDown", "easeIn", false);
 
 
@@ -103,7 +103,7 @@ export default function Sort({ setFilter }: Props) {
                     </div>
 
                     <div className={`${filterName !== "" ? styles.removeFilter : "text-[0px]"}`}
-                        onClick={() => selected("", "")}>reset</div>
+                        onClick={() => selected("date", "most recent")}>reset</div>
 
                 </div>
             </div>
