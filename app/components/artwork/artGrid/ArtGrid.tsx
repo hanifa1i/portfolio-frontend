@@ -22,7 +22,10 @@ export default function ArtGrid({ artworks }: Props) {
     const [filtertedArtworks, setFilteredArtworks] = useState<ArtworkResponse[]>([]);
 
     useEffect(() => {
-        setFilteredArtworks(artworks);
+        const sorted = [...artworks].sort(
+            (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+        );
+        setFilteredArtworks(sorted);
     }, [artworks]);
 
     const handleExpandArt = (artwork: ArtworkResponse) => {
@@ -42,9 +45,9 @@ export default function ArtGrid({ artworks }: Props) {
         console.log(artworks)
         if (filterType === "") {
             const sorted = [...artworks].sort(
-                    (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-                );
-                setFilteredArtworks(sorted);
+                (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+            );
+            setFilteredArtworks(sorted);
 
             console.log("hello", filtertedArtworks)
 
@@ -115,14 +118,14 @@ export default function ArtGrid({ artworks }: Props) {
                         <ArtCard
                             key={index}
                             artwork={items}
-                            onExpand={handleExpandArt} 
-                            resize={mobileResizer}/>
+                            onExpand={handleExpandArt}
+                            resize={mobileResizer} />
                     ))}
                 </div>
 
                 <div className={`${styles.resizer}`}>
                     <div className={`${styles.resizeButton} ${styles.resizeSelector} ${mobileResizer === "small" ? styles.resizeSelectorSmall : ""}`}></div>
-                    <div onClick={() => setMobileResizer("large")}className={`${styles.resizeButton} ${mobileResizer === "large" ? styles.resizeSelect : ""}`}>⊟</div>
+                    <div onClick={() => setMobileResizer("large")} className={`${styles.resizeButton} ${mobileResizer === "large" ? styles.resizeSelect : ""}`}>⊟</div>
                     <div onClick={() => setMobileResizer("small")} className={`${styles.resizeButton} ${mobileResizer === "small" ? styles.resizeSelect : ""}`}>⊞</div>
 
                 </div>
