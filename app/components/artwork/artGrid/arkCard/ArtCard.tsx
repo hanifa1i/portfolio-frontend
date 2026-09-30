@@ -19,7 +19,7 @@ export default function ArtCard({artwork, onExpand, resize} : Props) {
 
     return (
         <>
-            <div onMouseEnter={() => playSoundAt("hover", 0.3)} className={` ${styles.artCard} ${resize === "small" ? styles.artCardSmall : ""} ${loaded ? "" : styles.unloaded} offscreenLeft`}>
+            <div onMouseEnter={() => playSoundAt("hover", 0.3)} className={` ${styles.artCard} ${resize === "small" ? styles.artCardSmall : ""} offscreenLeft`}>
                 <img onLoad={() => setLoaded(true)} src={artwork.image_urls[0].image_url} className={`${styles.artCardImage} ${loaded ? "" : styles.unloaded}`}/>
                 <img 
                     src="/images/expand.png" 

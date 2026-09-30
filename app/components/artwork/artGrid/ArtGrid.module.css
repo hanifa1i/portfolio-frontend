@@ -12,13 +12,12 @@
 .artCard {
   background: #333;
   height: 300px;
+  width: fit-content;
   color: #333;
   border-color: #333;
   border-radius: 10px;
   transition: all 500ms;
   position: relative;
-  opacity: 1;
-  scale: 1;
 }
 
 .artCard:hover {
