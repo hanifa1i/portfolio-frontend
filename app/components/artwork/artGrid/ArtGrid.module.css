@@ -18,7 +18,6 @@
   border-radius: 10px;
   transition: all 500ms;
   position: relative;
-  opacity: 1;
 }
 
 .artCard:hover {
@@ -38,9 +37,6 @@
   scale: 0;
     border-radius: 100px;
 
-}
-.unloadedCard {
-  opacity: 0;
 }
 .loadAni{
   position: absolute;
