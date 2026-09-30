@@ -16,6 +16,7 @@ import Input, { InputLarge } from "./input/Input";
 import { ExperiencePayload, WorkActivity, WorkProject } from "@/app/types/FormPayload";
 import { isFormValid } from "@/app/services/CommonService";
 import { WorkExperienceResponse } from "@/app/types/Dashboard";
+import { getSkills } from "@/app/services/SkillService";
 
 type Props = {
     section: string
@@ -26,7 +27,7 @@ type Props = {
 }
 export default function NewEntry({ section, switchSection, setNewEntry, existingId, setExistingId }: Props) {
     useScrollReveal("offscreenRight", "easeIn", false);
-    const tagList = ["landscape", "potriate"];
+    const [tagList, setTagList] = useState<string[]>([]);
     const [loading, setLoading] = useState("false");
     const [fadeOut, setFadeOut] = useState(false);
 
@@ -77,6 +78,21 @@ export default function NewEntry({ section, switchSection, setNewEntry, existing
         setActivities(existingExperience.activities);
         setValidation({jobTitle: "", companyName: "", location: "", startDate: "", endDate: "", description: ""})
     }
+
+    const callSkills = async () => {
+            const tags = await getSkills();
+            const tagNames = tags.map(tag => tag.name);
+            console.log(tagNames);
+            setTagList(tagNames);
+        }
+    const [update, setUpdate] = useState(true)
+
+    if (update === true) {
+        callSkills();
+        setUpdate(false);
+    }
+    
+
     const [oneTimeRun, setOneTimeRun] = useState(true);
     if (oneTimeRun === true && existingId !== 0) {
         transferInfo(existingId);

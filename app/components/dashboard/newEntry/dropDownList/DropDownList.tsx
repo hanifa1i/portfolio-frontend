@@ -44,12 +44,12 @@ export default function DropDownList({ heading, validationMessage, values, onCha
             <div className="flex">
                 <div onClick={() => setOpenList(true)} className={`${styles.input} ${openList ? styles.openList : ""} ${validation === "" ? styles.expandInput : ""}  `}>
                     {selected}
-                    {items.map((item, key) => (
+                    <div className={`${openList ? "flex flex-col gap-1" : "flex gap-1"}`}>{items.map((item, key) => (
                         <div
                             key={key}
                             onClick={(e) => { e.stopPropagation(); removeItem(key) }}
                             className={`${styles.value}`}>{item}</div>
-                    ))}
+                    ))}</div>
                     <div className={`${styles.list}`}>
                         <button
                             onClick={(e) => { if (openList) { e.stopPropagation(); setOpenList(false) } }}
@@ -61,7 +61,7 @@ export default function DropDownList({ heading, validationMessage, values, onCha
                         {values.map((item, key) => (
                             <button
                                 key={key}
-                                onClick={(e) => { e.stopPropagation(); setSelected(heading + `: `); addItem(item); setOpenList(false) }}
+                                onClick={(e) => { e.stopPropagation(); setSelected(heading + `: `); addItem(item);}}
                                 className={`${styles.value} ${openList ? "" : styles.hide}`}>{item}</button>
                         ))}
                         </div>
