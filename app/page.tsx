@@ -16,6 +16,8 @@ export default function Home() {
   useScrollReveal(".offscreenDown", "easeIn", false);
   const [fadeOutRecent, setFadeOutRecent] = useState(false);
   const [backgroundPos, setBackgroundPos] = useState("center");
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div className={`homePage flex  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
 
@@ -25,7 +27,7 @@ export default function Home() {
 
           <div className="title gradient-text">welcome</div>
 
-          <div className="homeIntro homeBg gradient "></div>
+          {loaded && (<div className="homeIntro homeBg gradient "></div>)}
 
           <div className={`homeIntro fixed top-[00px] w-full h-[95vh] 
           
@@ -36,6 +38,8 @@ export default function Home() {
               loop
               playsInline
               className={`min-h-full object-cover video`}
+              onCanPlay={() => setTimeout(() => { setLoaded(true) }, 2000)}
+
             >
               <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
             </video>

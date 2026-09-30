@@ -322,6 +322,7 @@ body {
 }
 
 .gradient {
+
     background: linear-gradient(90deg, #ff4d4d, #6200ff, #00ff33);
 }
 
