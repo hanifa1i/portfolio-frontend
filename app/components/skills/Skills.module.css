@@ -46,7 +46,7 @@
     display: flex;
     padding-left: 20px;
     filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .3));
-    animation: headingPop 500ms forwards;
+    animation: headingPop 1000ms forwards;
 }
 
 .heading:hover {
@@ -61,7 +61,7 @@
     gap: 20px;
     transition: all 500ms;
     align-items: center;
-    animation: containerGap 1250ms;
+    animation: containerGap 2500ms;
     max-width: 80vw;
     flex-wrap: wrap;
 }
@@ -90,7 +90,7 @@
     padding: 5px;
     filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, .3));
     cursor: pointer;
-    animation: pop 500ms;
+    animation: pop 1000ms;
 }
 
 @keyframes headingPop {
@@ -103,7 +103,7 @@
 
     }
 
-    50% {
+    70% {
         width: 250px;
         height: 70px;
         font-size: small;
@@ -132,7 +132,7 @@
 
     }
 
-    50% {
+    70% {
         width: 80px;
         height: 70px;
         font-size: 10px;
