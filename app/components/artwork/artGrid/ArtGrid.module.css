@@ -492,6 +492,8 @@
     width: 30%;
     max-height: auto;
     border-radius: 5px;
+    max-height: none;
+    height: none;
     aspect-ratio: 3 / 3;
   }
 
