@@ -133,18 +133,18 @@
     }
 
     70% {
-        width: 90px;
+        width: 80px;
         height: 70px;
-        font-size: 11px;
+        font-size: 10px;
         border-radius: 5px;
         transform: translateY(-50px);
 
     }
 
     100% {
-        width: 90px;
+        width: 80px;
         height: 70px;
-        font-size: 11px;
+        font-size: 10px;
         border-radius: 5px;
         transform: translateY(0px);
 
