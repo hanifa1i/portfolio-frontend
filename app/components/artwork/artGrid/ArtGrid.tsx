@@ -17,7 +17,7 @@ export default function ArtGrid({ artworks }: Props) {
     const [expandArt, setExpandArt] = useState(false);
 
     const [artwork, setArtwork] = useState<ArtworkResponse>();
-    const [mobileResizer, setMobileResizer] = useState("large");
+    const [mobileResizer, setMobileResizer] = useState("small");
     const [activeTool, setActiveTool] = useState("All");
     const [filtertedArtworks, setFilteredArtworks] = useState<ArtworkResponse[]>([]);
 
