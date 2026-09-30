@@ -117,14 +117,16 @@ export default function experience() {
                                 <Divider />
 
                                 {/* skills - optional */}
+                                {role.skills.length !== 0 && (
                                 <div className={`${styles.subHead} offscreenLeft`}> skills and tools used
                                     <div className={`${styles.skills} offscreenLeft`}>
                                         {role.skills.map((skill, index) => (
-                                            <div key={index} onClick={() => playSound("blob")} className={`${styles.skillName}`}>{skill}</div>
+                                            <div key={index} className={`${styles.skillName}`}>{skill}</div>
                                         ))}
                                     </div>
                                     <Divider />
                                 </div>
+                                )}
 
                                 {/* projects - optional */}
                                 {role.projects.length !== 0 && (

@@ -114,10 +114,9 @@
     padding-bottom: 10px;
     border: 1px solid #555;
     transition: all 200ms;
-    cursor: pointer;
 }
 
-.skillName:hover {
+/*}.skillName:hover {
     border-color: #eee;
     background-color: #eee;
     color: #111;
@@ -129,7 +128,7 @@
     border-color: #aaa;
     padding-left: 30px;
     padding-right: 30px;
-}
+}*/
 
 .expNav {
     position: fixed;
@@ -345,4 +344,14 @@
     .buttonYear {
         display: none;
     }
+    .skills{
+        gap: 5px;
+    }
+    .skillName{
+        font-size: 10px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
 }
