@@ -30,7 +30,7 @@ export default function AboutMe() {
                 </div>
 
                 <div className={`${styles.personalImageContainer} offscreenUp`}>
-                    <img src="/images/about-me-image.jpeg" className={styles.personalImage} />
+                    <img src="/images/about-me.jpeg" className={styles.personalImage} />
                 </div>
 
                 <div className={`${styles.aboutMe} `}>
