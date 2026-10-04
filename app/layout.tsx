@@ -9,27 +9,6 @@ import { SettingsProvider } from "./settingsProvider";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-
-    const unlockAudio = () => {
-
-      const audio = new Audio("/sounds/hover.wav");
-
-      audio.volume = 0;
-
-      audio.play();
-
-      window.removeEventListener("click", unlockAudio);
-    };
-
-    window.addEventListener("click", unlockAudio);
-
-    return () => {
-      window.removeEventListener("click", unlockAudio);
-    };
-
-  }, []);
-
-  useEffect(() => {
     initSounds();
   }, []);
 
