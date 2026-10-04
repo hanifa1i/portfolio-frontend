@@ -29,7 +29,10 @@
         align-items: center;
         text-align: center;
         border: 1px solid #cccccc60;
-
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
     }
 
     .playButton:active {
@@ -38,7 +41,22 @@
     }
 
     .pause {
-        border: 1px solid #dd3e3e90;
+        border: 1px solid #dd3e3e6c;
+
+    }
+
+    .show {
+        height: 15px;
+        transition: all 300ms;
+        filter: invert(1);
+
+    }
+
+    .hide {
+        height: 0px;
+        transition: all 300ms;
+        filter: invert(1);
+
 
     }
 
