@@ -21,7 +21,7 @@
     .playButton {
         height: 30px;
         width: fit-content;
-        background-color: #cccccc50;
+        background-color: #cccccc20;
         border-radius: 20px;
         transition: all 300ms;
         color: #ccc;
@@ -32,7 +32,7 @@
         padding-left: 10px;
         padding-right: 10px;
         display: flex;
-    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .4));
 
     }
 
@@ -44,7 +44,7 @@
     }
 
     .pause {
-                filter: invert(1);
+        filter: invert(1);
         background-color: #111111;
 
     }
