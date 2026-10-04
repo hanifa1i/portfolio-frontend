@@ -8,7 +8,7 @@ import DepthImage from "./components/common/DepthImage";
 
 import Image from "next/image";
 import Info from "./components/info/Info";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useScrollReveal from "./hooks/useScrollReveal";
 import BackgroundSlider from "./components/home/backgroundSlider/BackgroundSlider";
 
@@ -17,6 +17,7 @@ export default function Home() {
   const [fadeOutRecent, setFadeOutRecent] = useState(false);
   const [backgroundPos, setBackgroundPos] = useState("center");
   const [loaded, setLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <div className={`homePage flex  w-full bg-zinc-900 font-sans ${fadeOutRecent ? "fadeOutRecent" : ""}`}>
@@ -33,6 +34,7 @@ export default function Home() {
           
            backgroundViewer ${backgroundPos === "left" ? "backgroundViewerLeft" : backgroundPos === "right" ? "backgroundViewerRight" : ""}`}>
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
@@ -44,7 +46,7 @@ export default function Home() {
               <source src={"/videos/home/bg-home.mp4"} type="video/mp4" />
             </video>
           </div>
-          <BackgroundSlider position={backgroundPos} setPosition={setBackgroundPos}/>
+          <BackgroundSlider position={backgroundPos} setPosition={setBackgroundPos} videoRef={videoRef}/>
 
           <Info />
           <div className=" portfolioHeadingContainer ">
