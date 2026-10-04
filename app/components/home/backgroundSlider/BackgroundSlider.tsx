@@ -28,7 +28,7 @@ export default function BackgroundSlider({ position, setPosition, videoRef }: Pr
     return (
         <div className={`${styles.player}`}>
             <button className={`${styles.playButton} ${!playing ? styles.pause : ""}`} onClick={toggleVideo}>
-                {playing ? "⏸" : "▶"}
+                {playing ? "pause" : "play"}
             </button>
             <div className={`${styles.container}`}>
                 <div onPointerDown={() => { setPosition("left"), playSound("hover") }} className={`${styles.slide} ${position === "left" ? styles.selected : ""}`}></div>
